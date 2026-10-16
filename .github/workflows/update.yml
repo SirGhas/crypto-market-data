@@ -11,7 +11,7 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -21,16 +21,16 @@ jobs:
         run: python collector.py
       - name: Screen legacy signals
         run: python signal_engine.py
-      - name: Collect Binance spot candles
-        run: python binance_collector.py
-      - name: Create v5 report
-        run: python report_v5.py
+      - name: Collect multi-source spot candles
+        run: python multisource_collector.py
+      - name: Create multi-source report
+        run: python report_v51.py
       - name: Commit data snapshots
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/market.json data/dominance_history.json data/signals.json data/signal_state.json data/binance_market.json data/report_v5.json
+          git add data/market.json data/dominance_history.json data/signals.json data/signal_state.json data/multisource_market.json data/report_v51.json
           if ! git diff --cached --quiet; then
-            git commit -m 'Update market and v5 report'
+            git commit -m 'Update market and v5.1 report'
             git push
           fi
