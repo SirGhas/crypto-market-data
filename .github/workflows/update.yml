@@ -26,27 +26,24 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
-          # A rejected push means the remote changed. Discard ONLY the
-          # unpushed generated workspace, update to remote main, and
-          # regenerate from the latest committed deduplication state.
-          # Never force-push, and never overwrite another run's state.
+          # On push conflict, regenerate against the latest remote state.
           for attempt in 1 2 3; do
             echo "Collection attempt ${attempt}/3"
             python collector.py
             python signal_engine.py
             python multisource_collector.py
-            # Fail closed before downstream research snapshots are generated.
+            python freshness_report_v54.py data/multisource_market.json data/freshness_report_v54.json
             python data_integrity_gate_v54.py data/multisource_market.json
             python report_v51.py
             python event_engine_v52.py
             python dual_screen_v53.py
 
-            git add -- data/market.json data/dominance_history.json data/signals.json data/signal_state.json data/multisource_market.json data/report_v51.json data/events_v52.json data/event_state_v52.json data/dual_screen_v53.json
+            git add -- data/market.json data/dominance_history.json data/signals.json data/signal_state.json data/multisource_market.json data/freshness_report_v54.json data/report_v51.json data/events_v52.json data/event_state_v52.json data/dual_screen_v53.json
             if git diff --cached --quiet; then
               echo 'No changes to commit.'
               exit 0
             fi
-            git commit -m "Update crypto portfolio research snapshots (v5.3; integrity v5.4)"
+            git commit -m "Update crypto research snapshots (v5.3; freshness v5.4.1)"
             if git push origin HEAD:main; then
               echo 'Snapshots committed successfully.'
               exit 0
