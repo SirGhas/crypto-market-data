@@ -1,0 +1,24 @@
+name: Probe alternative BTC pairs v5.4.3
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Probe Kraken and Gate.io without modifying engine
+        run: python source_probe_v543.py
+      - name: Upload diagnostic artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-probe-v543
+          path: data/source_probe_v543.json
+          if-no-files-found: warn
+          retention-days: 7
