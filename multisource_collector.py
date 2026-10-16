@@ -1,4 +1,4 @@
-"""Public spot OHLCV: Bybit first, OKX fallback; no synthetic volume."""
+"""Public spot OHLCV: OKX primary, Bybit fallback; no synthetic volume."""
 import datetime as dt, json, time, urllib.request, urllib.parse
 from pathlib import Path
 COINS=('BTC','ETH','BNB','SOL','LTC','LINK','XRP','AVAX','SUI','AAVE')
@@ -51,7 +51,7 @@ def main():
             symbol=coin+quote; entry={'frames':{}}
             for frame in FRAMES:
                 failures=[]
-                for source,fn in [('Bybit Spot',bybit),('OKX Spot',okx)]:
+                for source,fn in [('OKX Spot',okx),('Bybit Spot',bybit)]:
                     try:
                         candles=validate(fn(symbol,frame),frame,now)
                         entry['frames'][frame]={'status':'available','source':source,'last_closed_at_utc':dt.datetime.fromtimestamp(candles[-1]['t']+FRAMES[frame][0]*60,dt.timezone.utc).isoformat(),'candles':candles}

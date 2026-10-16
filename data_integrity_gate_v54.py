@@ -21,7 +21,7 @@ def check_frame(frame, interval, now):
     if frame.get('status') != 'available':
         return ['frame_unavailable']
     cs = frame.get('candles')
-    if not isinstance(cs, list) or len(cs) < 234:
+    if not isinstance(cs, list) or len(cs) < 233:
         return ['insufficient_candles']
     previous = None
     for i, c in enumerate(cs):
