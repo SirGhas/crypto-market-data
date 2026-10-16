@@ -1,7 +1,7 @@
 {
   "schema_version": 53,
-  "generated_at_utc": "2026-10-16T18:11:43.265951+00:00",
-  "source_generated_at_utc": "2026-10-16T18:10:56.647053+00:00",
+  "generated_at_utc": "2026-10-16T18:41:17.367343+00:00",
+  "source_generated_at_utc": "2026-10-16T18:40:31.667591+00:00",
   "mode": "two_tier_research_only_no_orders_no_push_notifications",
   "weights": {
     "static_levels": 30,
@@ -55,55 +55,6 @@
       "relative_strength_btc": null,
       "reasons": [
         "btc_cross_missing_or_stale",
-        "dominance_trend_unverified"
-      ],
-      "sources": {
-        "4h": "OKX Spot",
-        "1h": "OKX Spot",
-        "15m": "OKX Spot"
-      },
-      "notes": "Heuristic static pivots, not verified order book; excludes fees/slippage. No trade instruction."
-    },
-    {
-      "coin": "XRP",
-      "tier": "tier_2_conditional_watch",
-      "score": 70,
-      "score_components": {
-        "static_levels": 30,
-        "volume": 25,
-        "trend_4h": 0,
-        "risk_reward": 15,
-        "relative_btc": 0,
-        "lower_timeframes": 0,
-        "btc_and_dominance": 0
-      },
-      "weights": {
-        "static_levels": 30,
-        "volume": 25,
-        "trend_4h": 15,
-        "risk_reward": 15,
-        "relative_btc": 5,
-        "lower_timeframes": 5,
-        "btc_and_dominance": 5
-      },
-      "reference_price_usdt": 1.2999,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "closed_1h_at_utc": "2026-10-16T18:00:00+00:00",
-      "static_levels": {
-        "support": 1.2838,
-        "support_touches": 2,
-        "resistance": 1.3845,
-        "resistance_touches": 2
-      },
-      "provisional_20x4h_bounds_not_validated": {
-        "support": 1.2837,
-        "resistance": 1.3867
-      },
-      "risk_reward_validated_levels": 5.255,
-      "relative_volume_1h": 3.416,
-      "relative_volume_4h": 1.352,
-      "relative_strength_btc": false,
-      "reasons": [
         "dominance_trend_unverified"
       ],
       "sources": {
@@ -215,6 +166,57 @@
       "notes": "Heuristic static pivots, not verified order book; excludes fees/slippage. No trade instruction."
     },
     {
+      "coin": "XRP",
+      "tier": "below_threshold_watch_only",
+      "score": 70,
+      "score_components": {
+        "static_levels": 30,
+        "volume": 25,
+        "trend_4h": 0,
+        "risk_reward": 15,
+        "relative_btc": 0,
+        "lower_timeframes": 0,
+        "btc_and_dominance": 0
+      },
+      "weights": {
+        "static_levels": 30,
+        "volume": 25,
+        "trend_4h": 15,
+        "risk_reward": 15,
+        "relative_btc": 5,
+        "lower_timeframes": 5,
+        "btc_and_dominance": 5
+      },
+      "reference_price_usdt": 1.2999,
+      "reference_price_kind": "last_closed_1h_not_live",
+      "closed_1h_at_utc": "2026-10-16T18:00:00+00:00",
+      "static_levels": {
+        "support": 1.2838,
+        "support_touches": 2,
+        "resistance": 1.3845,
+        "resistance_touches": 2
+      },
+      "provisional_20x4h_bounds_not_validated": {
+        "support": 1.2837,
+        "resistance": 1.3867
+      },
+      "risk_reward_validated_levels": 5.255,
+      "relative_volume_1h": 3.416,
+      "relative_volume_4h": 1.352,
+      "relative_strength_btc": false,
+      "reasons": [
+        "dominance_trend_unverified",
+        "xrp_btc_gate_liquidity_unconfirmed_v546"
+      ],
+      "sources": {
+        "4h": "OKX Spot",
+        "1h": "OKX Spot",
+        "15m": "OKX Spot"
+      },
+      "notes": "Heuristic static pivots, not verified order book; excludes fees/slippage. No trade instruction.",
+      "liquidity_gate_v546": "BLOCK"
+    },
+    {
       "coin": "AVAX",
       "tier": "below_threshold_watch_only",
       "score": 70,
@@ -256,56 +258,6 @@
       "reasons": [
         "btc_cross_missing_or_stale",
         "dominance_trend_unverified"
-      ],
-      "sources": {
-        "4h": "OKX Spot",
-        "1h": "OKX Spot",
-        "15m": "OKX Spot"
-      },
-      "notes": "Heuristic static pivots, not verified order book; excludes fees/slippage. No trade instruction."
-    },
-    {
-      "coin": "SOL",
-      "tier": "below_threshold_watch_only",
-      "score": 55,
-      "score_components": {
-        "static_levels": 30,
-        "volume": 25,
-        "trend_4h": 0,
-        "risk_reward": 0,
-        "relative_btc": 0,
-        "lower_timeframes": 0,
-        "btc_and_dominance": 0
-      },
-      "weights": {
-        "static_levels": 30,
-        "volume": 25,
-        "trend_4h": 15,
-        "risk_reward": 15,
-        "relative_btc": 5,
-        "lower_timeframes": 5,
-        "btc_and_dominance": 5
-      },
-      "reference_price_usdt": 103.71,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "closed_1h_at_utc": "2026-10-16T18:00:00+00:00",
-      "static_levels": {
-        "support": 101.0266666667,
-        "support_touches": 3,
-        "resistance": 108.87,
-        "resistance_touches": 2
-      },
-      "provisional_20x4h_bounds_not_validated": {
-        "support": 100.56,
-        "resistance": 109.07
-      },
-      "risk_reward_validated_levels": 1.923,
-      "relative_volume_1h": 2.016,
-      "relative_volume_4h": 1.368,
-      "relative_strength_btc": false,
-      "reasons": [
-        "dominance_trend_unverified",
-        "risk_reward_below_2"
       ],
       "sources": {
         "4h": "OKX Spot",
@@ -565,7 +517,7 @@
     },
     {
       "coin": "XRP",
-      "tier": "tier_2_conditional_watch",
+      "tier": "below_threshold_watch_only",
       "score": 70,
       "score_components": {
         "static_levels": 30,
@@ -603,14 +555,16 @@
       "relative_volume_4h": 1.352,
       "relative_strength_btc": false,
       "reasons": [
-        "dominance_trend_unverified"
+        "dominance_trend_unverified",
+        "xrp_btc_gate_liquidity_unconfirmed_v546"
       ],
       "sources": {
         "4h": "OKX Spot",
         "1h": "OKX Spot",
         "15m": "OKX Spot"
       },
-      "notes": "Heuristic static pivots, not verified order book; excludes fees/slippage. No trade instruction."
+      "notes": "Heuristic static pivots, not verified order book; excludes fees/slippage. No trade instruction.",
+      "liquidity_gate_v546": "BLOCK"
     },
     {
       "coin": "AVAX",
@@ -767,7 +721,7 @@
     "scanned": 9,
     "blocked": 0,
     "tier_1": 0,
-    "tier_2": 6
+    "tier_2": 5
   },
   "limitations": [
     "Score is not win probability",
@@ -775,5 +729,10 @@
     "No verified BTC.D/USDT.D candle trend",
     "No live prices or trade execution",
     "Partial BTC crosses are not assumed bullish"
-  ]
+  ],
+  "liquidity_guard_v546": {
+    "pair": "XRPBTC",
+    "status": "BLOCK",
+    "reason": "xrp_btc_gate_liquidity_unconfirmed_v546"
+  }
 }
