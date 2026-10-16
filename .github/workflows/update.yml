@@ -32,18 +32,19 @@ jobs:
             python collector.py
             python signal_engine.py
             python multisource_collector.py
+            python feed_diagnostics_v542.py data/multisource_market.json data/feed_diagnostics_v542.json
             python freshness_report_v54.py data/multisource_market.json data/freshness_report_v54.json
             python data_integrity_gate_v54.py data/multisource_market.json
             python report_v51.py
             python event_engine_v52.py
             python dual_screen_v53.py
 
-            git add -- data/market.json data/dominance_history.json data/signals.json data/signal_state.json data/multisource_market.json data/freshness_report_v54.json data/report_v51.json data/events_v52.json data/event_state_v52.json data/dual_screen_v53.json
+            git add -- data/market.json data/dominance_history.json data/signals.json data/signal_state.json data/multisource_market.json data/feed_diagnostics_v542.json data/freshness_report_v54.json data/report_v51.json data/events_v52.json data/event_state_v52.json data/dual_screen_v53.json
             if git diff --cached --quiet; then
               echo 'No changes to commit.'
               exit 0
             fi
-            git commit -m "Update crypto research snapshots (v5.3; freshness v5.4.1)"
+            git commit -m "Update crypto research snapshots (v5.4.2 diagnostics)"
             if git push origin HEAD:main; then
               echo 'Snapshots committed successfully.'
               exit 0
