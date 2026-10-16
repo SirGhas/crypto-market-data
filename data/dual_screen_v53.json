@@ -1,7 +1,7 @@
 {
   "schema_version": 53,
-  "generated_at_utc": "2026-10-16T18:41:17.367343+00:00",
-  "source_generated_at_utc": "2026-10-16T18:40:31.667591+00:00",
+  "generated_at_utc": "2026-10-16T18:48:48.150347+00:00",
+  "source_generated_at_utc": "2026-10-16T18:48:16.570959+00:00",
   "mode": "two_tier_research_only_no_orders_no_push_notifications",
   "weights": {
     "static_levels": 30,
@@ -219,14 +219,14 @@
     {
       "coin": "AVAX",
       "tier": "below_threshold_watch_only",
-      "score": 70,
+      "score": 68,
       "score_components": {
         "static_levels": 30,
         "volume": 15,
         "trend_4h": 15,
         "risk_reward": 8,
         "relative_btc": 0,
-        "lower_timeframes": 2,
+        "lower_timeframes": 0,
         "btc_and_dominance": 0
       },
       "weights": {
@@ -569,14 +569,14 @@
     {
       "coin": "AVAX",
       "tier": "below_threshold_watch_only",
-      "score": 70,
+      "score": 68,
       "score_components": {
         "static_levels": 30,
         "volume": 15,
         "trend_4h": 15,
         "risk_reward": 8,
         "relative_btc": 0,
-        "lower_timeframes": 2,
+        "lower_timeframes": 0,
         "btc_and_dominance": 0
       },
       "weights": {

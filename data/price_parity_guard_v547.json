@@ -1,0 +1,101 @@
+{
+  "schema_version": "5.4.7",
+  "generated_at_utc": "2026-10-16T18:48:48.264146+00:00",
+  "mode": "fail_closed_research_only_no_trades",
+  "max_deviation_percent": 1.5,
+  "pairs": {
+    "BNB": {
+      "coin": "BNB",
+      "cross": "BNBBTC",
+      "status": "PASS",
+      "frames": {
+        "4h": {
+          "status": "PASS",
+          "errors": [],
+          "matched_closed_candles": 3,
+          "latest_candle_id": "1792152000",
+          "observed_gate_btc": 0.008903,
+          "implied_okx_btc": 0.008888249712,
+          "max_deviation_percent": 0.166
+        },
+        "1h": {
+          "status": "PASS",
+          "errors": [],
+          "matched_closed_candles": 3,
+          "latest_candle_id": "1792170000",
+          "observed_gate_btc": 0.008893,
+          "implied_okx_btc": 0.008885036299,
+          "max_deviation_percent": 0.166
+        },
+        "15m": {
+          "status": "PASS",
+          "errors": [],
+          "matched_closed_candles": 3,
+          "latest_candle_id": "1792175400",
+          "observed_gate_btc": 0.00891,
+          "implied_okx_btc": 0.008890220388,
+          "max_deviation_percent": 0.2225
+        },
+        "5m": {
+          "status": "PASS",
+          "errors": [],
+          "matched_closed_candles": 3,
+          "latest_candle_id": "1792176000",
+          "observed_gate_btc": 0.00891,
+          "implied_okx_btc": 0.008890220388,
+          "max_deviation_percent": 0.2225
+        }
+      },
+      "reasons": []
+    },
+    "XRP": {
+      "coin": "XRP",
+      "cross": "XRPBTC",
+      "status": "PASS",
+      "frames": {
+        "4h": {
+          "status": "PASS",
+          "errors": [],
+          "matched_closed_candles": 3,
+          "latest_candle_id": "1792152000",
+          "observed_gate_btc": 1.606e-05,
+          "implied_okx_btc": 1.6090055e-05,
+          "max_deviation_percent": 0.1868
+        },
+        "1h": {
+          "status": "PASS",
+          "errors": [],
+          "matched_closed_candles": 3,
+          "latest_candle_id": "1792170000",
+          "observed_gate_btc": 1.599e-05,
+          "implied_okx_btc": 1.6005625e-05,
+          "max_deviation_percent": 0.1868
+        },
+        "15m": {
+          "status": "PASS",
+          "errors": [],
+          "matched_closed_candles": 3,
+          "latest_candle_id": "1792175400",
+          "observed_gate_btc": 1.597e-05,
+          "implied_okx_btc": 1.5982917e-05,
+          "max_deviation_percent": 0.2993
+        },
+        "5m": {
+          "status": "PASS",
+          "errors": [],
+          "matched_closed_candles": 3,
+          "latest_candle_id": "1792176000",
+          "observed_gate_btc": 1.599e-05,
+          "implied_okx_btc": 1.5982917e-05,
+          "max_deviation_percent": 0.1327
+        }
+      },
+      "reasons": []
+    }
+  },
+  "limitations": [
+    "Comparison uses aligned closed candles and OKX implied cross, not independent price attestation",
+    "No order-book liquidity, execution prices or BTC.D/USDT.D verification",
+    "No changes to original scores, scoring weights or collector"
+  ]
+}

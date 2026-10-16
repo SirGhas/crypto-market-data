@@ -1,7 +1,7 @@
 {
   "schema_version": 51,
-  "generated_at_utc": "2026-10-16T18:41:17.285296+00:00",
-  "source_generated_at_utc": "2026-10-16T18:40:31.667591+00:00",
+  "generated_at_utc": "2026-10-16T18:48:48.043138+00:00",
+  "source_generated_at_utc": "2026-10-16T18:48:16.570959+00:00",
   "status": "partial",
   "mode": "research_only_no_trade_or_push",
   "evaluations": [
@@ -216,7 +216,7 @@
     {
       "coin": "AVAX",
       "status": "watch_only",
-      "score": 35,
+      "score": 25,
       "reference_price_usdt": 10.009,
       "reference_price_kind": "last_closed_1h_candle_not_live",
       "support_4h": 9.337,
@@ -232,7 +232,8 @@
       "reasons": [
         "volume_not_confirmed",
         "btc_pair_unavailable",
-        "market_entry_rr_below_2_5"
+        "market_entry_rr_below_2_5",
+        "15m_below_sma233"
       ],
       "sources": {
         "4h": "OKX Spot",
@@ -393,7 +394,7 @@
   "worst_market_entry": {
     "coin": "AVAX",
     "status": "watch_only",
-    "score": 35,
+    "score": 25,
     "reference_price_usdt": 10.009,
     "reference_price_kind": "last_closed_1h_candle_not_live",
     "support_4h": 9.337,
@@ -409,7 +410,8 @@
     "reasons": [
       "volume_not_confirmed",
       "btc_pair_unavailable",
-      "market_entry_rr_below_2_5"
+      "market_entry_rr_below_2_5",
+      "15m_below_sma233"
     ],
     "sources": {
       "4h": "OKX Spot",

@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-16T18:40:31.619688+00:00",
-  "source_generated_at_utc": "2026-10-16T18:39:56.118418+00:00",
+  "generated_at_utc": "2026-10-16T18:48:16.510319+00:00",
+  "source_generated_at_utc": "2026-10-16T18:47:41.332111+00:00",
   "mode": "screening_only_no_trades_no_notifications",
   "dominance": {
     "latest_percent": {
-      "BTC.D": 59.351288,
-      "USDT.D": 6.662962
+      "BTC.D": 59.356734,
+      "USDT.D": 6.661931
     },
     "historical_samples": 8,
     "trend_ready": false,
@@ -90,7 +90,8 @@
       "status": "rejected",
       "reasons": [
         "btc_4h_below_sma233",
-        "no_closed_1h_breakout"
+        "no_closed_1h_breakout",
+        "15m_not_confirmed"
       ]
     },
     {
