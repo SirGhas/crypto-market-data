@@ -1,7 +1,7 @@
 {
   "schema_version": 52,
-  "generated_at_utc": "2026-10-16T13:16:49.995763+00:00",
-  "source_generated_at_utc": "2026-10-16T13:16:21.926323+00:00",
+  "generated_at_utc": "2026-10-16T15:23:07.147862+00:00",
+  "source_generated_at_utc": "2026-10-16T15:22:39.556219+00:00",
   "mode": "event_screening_only_no_push_no_orders",
   "observations": [
     {
@@ -92,7 +92,7 @@
       "4h_resistance": 163.16,
       "relative_strength_vs_btc": null,
       "4h_volume_ratio": 1.166,
-      "observations": 2
+      "observations": 1
     }
   ],
   "new_events": [],
