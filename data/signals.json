@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-10-16T09:53:15.205865+00:00",
-  "source_generated_at_utc": "2026-10-16T09:52:45.352333+00:00",
+  "generated_at_utc": "2026-10-16T10:03:03.729022+00:00",
+  "source_generated_at_utc": "2026-10-16T10:02:29.318077+00:00",
   "mode": "screening_only_no_trades_no_notifications",
   "dominance": {
     "latest_percent": {
-      "BTC.D": 59.212568,
-      "USDT.D": 6.588354
+      "BTC.D": 59.198565,
+      "USDT.D": 6.598126
     },
-    "historical_samples": 2,
+    "historical_samples": 3,
     "trend_ready": false,
     "kind": "coingecko_market_cap_snapshots_not_ohlcv"
   },
@@ -30,8 +30,7 @@
         "4h_below_sma233",
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
-        "15m_not_confirmed",
-        "insufficient_real_usd_volume"
+        "15m_not_confirmed"
       ]
     },
     {
@@ -40,6 +39,7 @@
       "reasons": [
         "4h_below_sma233",
         "relative_strength_below_sma233",
+        "no_closed_1h_breakout",
         "insufficient_real_usd_volume"
       ]
     },
@@ -59,6 +59,7 @@
       "reasons": [
         "4h_below_sma233",
         "relative_strength_below_sma233",
+        "no_closed_1h_breakout",
         "insufficient_real_usd_volume"
       ]
     },
@@ -69,6 +70,7 @@
         "4h_below_sma233",
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
+        "15m_not_confirmed",
         "insufficient_real_usd_volume"
       ]
     },
@@ -76,7 +78,7 @@
       "coin": "AVAX",
       "status": "rejected",
       "reasons": [
-        "insufficient_real_usd_volume"
+        "invalid_or_wide_stop"
       ]
     },
     {
