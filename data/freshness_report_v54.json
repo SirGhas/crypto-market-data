@@ -1,14 +1,14 @@
 {
   "schema_version": "5.4.1",
-  "generated_at_utc": "2026-10-16T17:34:35+00:00",
-  "source_snapshot_generated_at_utc": "2026-10-16T17:33:56.197881+00:00",
-  "previous_report_generated_at_utc": "2026-10-16T17:32:27+00:00",
+  "generated_at_utc": "2026-10-16T18:11:43+00:00",
+  "source_snapshot_generated_at_utc": "2026-10-16T18:10:56.647053+00:00",
+  "previous_report_generated_at_utc": "2026-10-16T17:34:35+00:00",
   "status": "REVIEW_REQUIRED",
   "summary": {
-    "PASS": 0,
+    "PASS": 47,
     "STALE": 0,
-    "UNCHANGED": 52,
-    "UNVERIFIED": 24
+    "UNCHANGED": 13,
+    "UNVERIFIED": 16
   },
   "feeds": {
     "AAVEBTC:5m": {
@@ -80,55 +80,49 @@
       ]
     },
     "AAVEUSDT:5m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792171500",
-      "last_candle_open_utc": "2026-10-16T17:25:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 154.64,
-      "last_volume": 21.846975,
+      "last_candle_id": "1792173900",
+      "last_candle_open_utc": "2026-10-16T18:05:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:10:00+00:00",
+      "age_seconds": 103,
+      "last_close": 154.93,
+      "last_volume": 7.810592,
       "previous_candle_id": "1792171500",
       "previous_close": 154.64,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 0.29,
+      "reasons": []
     },
     "AAVEUSDT:15m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792170900",
-      "last_candle_open_utc": "2026-10-16T17:15:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 154.64,
-      "last_volume": 212.007691,
+      "last_candle_id": "1792172700",
+      "last_candle_open_utc": "2026-10-16T17:45:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 154.74,
+      "last_volume": 458.611749,
       "previous_candle_id": "1792170900",
       "previous_close": 154.64,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 0.1,
+      "reasons": []
     },
     "AAVEUSDT:1h": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792166400",
-      "last_candle_open_utc": "2026-10-16T16:00:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:00:00+00:00",
-      "age_seconds": 2075,
-      "last_close": 156.03,
-      "last_volume": 655.555303,
+      "last_candle_id": "1792170000",
+      "last_candle_open_utc": "2026-10-16T17:00:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 154.74,
+      "last_volume": 1407.531529,
       "previous_candle_id": "1792166400",
       "previous_close": 156.03,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": -1.29,
+      "reasons": []
     },
     "AAVEUSDT:4h": {
       "status": "UNCHANGED",
@@ -136,7 +130,7 @@
       "last_candle_id": "1792152000",
       "last_candle_open_utc": "2026-10-16T12:00:00+00:00",
       "last_closed_at_utc": "2026-10-16T16:00:00+00:00",
-      "age_seconds": 5675,
+      "age_seconds": 7903,
       "last_close": 157.41,
       "last_volume": 4635.029744,
       "previous_candle_id": "1792152000",
@@ -216,55 +210,49 @@
       ]
     },
     "AVAXUSDT:5m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792171500",
-      "last_candle_open_utc": "2026-10-16T17:25:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 9.95,
-      "last_volume": 321.673511,
+      "last_candle_id": "1792173900",
+      "last_candle_open_utc": "2026-10-16T18:05:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:10:00+00:00",
+      "age_seconds": 103,
+      "last_close": 10.033,
+      "last_volume": 1046.000238,
       "previous_candle_id": "1792171500",
       "previous_close": 9.95,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 0.083,
+      "reasons": []
     },
     "AVAXUSDT:15m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792170900",
-      "last_candle_open_utc": "2026-10-16T17:15:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 9.95,
-      "last_volume": 9628.805163,
+      "last_candle_id": "1792172700",
+      "last_candle_open_utc": "2026-10-16T17:45:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 10.009,
+      "last_volume": 2729.341929,
       "previous_candle_id": "1792170900",
       "previous_close": 9.95,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 0.059,
+      "reasons": []
     },
     "AVAXUSDT:1h": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792166400",
-      "last_candle_open_utc": "2026-10-16T16:00:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:00:00+00:00",
-      "age_seconds": 2075,
-      "last_close": 10.035,
-      "last_volume": 25126.557495,
+      "last_candle_id": "1792170000",
+      "last_candle_open_utc": "2026-10-16T17:00:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 10.009,
+      "last_volume": 28661.534066,
       "previous_candle_id": "1792166400",
       "previous_close": 10.035,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": -0.026,
+      "reasons": []
     },
     "AVAXUSDT:4h": {
       "status": "UNCHANGED",
@@ -272,7 +260,7 @@
       "last_candle_id": "1792152000",
       "last_candle_open_utc": "2026-10-16T12:00:00+00:00",
       "last_closed_at_utc": "2026-10-16T16:00:00+00:00",
-      "age_seconds": 5675,
+      "age_seconds": 7903,
       "last_close": 10.09,
       "last_volume": 139636.398432,
       "previous_candle_id": "1792152000",
@@ -284,123 +272,109 @@
       ]
     },
     "BNBBTC:5m": {
-      "status": "UNVERIFIED",
-      "source": null,
-      "last_candle_id": null,
-      "last_candle_open_utc": null,
-      "last_closed_at_utc": null,
-      "age_seconds": null,
-      "last_close": null,
-      "last_volume": null,
+      "status": "PASS",
+      "source": "Gate.io Spot",
+      "last_candle_id": "1792173900",
+      "last_candle_open_utc": "2026-10-16T18:05:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:10:00+00:00",
+      "age_seconds": 103,
+      "last_close": 0.008893,
+      "last_volume": 0.001,
       "previous_candle_id": null,
       "previous_close": null,
       "candle_id_changed": null,
       "close_change": null,
-      "reasons": [
-        "feed_unavailable"
-      ]
+      "reasons": []
     },
     "BNBBTC:15m": {
-      "status": "UNVERIFIED",
-      "source": null,
-      "last_candle_id": null,
-      "last_candle_open_utc": null,
-      "last_closed_at_utc": null,
-      "age_seconds": null,
-      "last_close": null,
-      "last_volume": null,
+      "status": "PASS",
+      "source": "Gate.io Spot",
+      "last_candle_id": "1792172700",
+      "last_candle_open_utc": "2026-10-16T17:45:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 0.008893,
+      "last_volume": 0.008,
       "previous_candle_id": null,
       "previous_close": null,
       "candle_id_changed": null,
       "close_change": null,
-      "reasons": [
-        "feed_unavailable"
-      ]
+      "reasons": []
     },
     "BNBBTC:1h": {
-      "status": "UNVERIFIED",
-      "source": null,
-      "last_candle_id": null,
-      "last_candle_open_utc": null,
-      "last_closed_at_utc": null,
-      "age_seconds": null,
-      "last_close": null,
-      "last_volume": null,
+      "status": "PASS",
+      "source": "Gate.io Spot",
+      "last_candle_id": "1792170000",
+      "last_candle_open_utc": "2026-10-16T17:00:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 0.008893,
+      "last_volume": 0.176,
       "previous_candle_id": null,
       "previous_close": null,
       "candle_id_changed": null,
       "close_change": null,
-      "reasons": [
-        "feed_unavailable"
-      ]
+      "reasons": []
     },
     "BNBBTC:4h": {
-      "status": "UNVERIFIED",
-      "source": null,
-      "last_candle_id": null,
-      "last_candle_open_utc": null,
-      "last_closed_at_utc": null,
-      "age_seconds": null,
-      "last_close": null,
-      "last_volume": null,
+      "status": "PASS",
+      "source": "Gate.io Spot",
+      "last_candle_id": "1792152000",
+      "last_candle_open_utc": "2026-10-16T12:00:00+00:00",
+      "last_closed_at_utc": "2026-10-16T16:00:00+00:00",
+      "age_seconds": 7903,
+      "last_close": 0.008903,
+      "last_volume": 2.321,
       "previous_candle_id": null,
       "previous_close": null,
       "candle_id_changed": null,
       "close_change": null,
-      "reasons": [
-        "feed_unavailable"
-      ]
+      "reasons": []
     },
     "BNBUSDT:5m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792171500",
-      "last_candle_open_utc": "2026-10-16T17:25:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 719.7,
-      "last_volume": 53.224061,
+      "last_candle_id": "1792173900",
+      "last_candle_open_utc": "2026-10-16T18:05:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:10:00+00:00",
+      "age_seconds": 103,
+      "last_close": 722.2,
+      "last_volume": 1.36026,
       "previous_candle_id": "1792171500",
       "previous_close": 719.7,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 2.5,
+      "reasons": []
     },
     "BNBUSDT:15m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792170900",
-      "last_candle_open_utc": "2026-10-16T17:15:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 719.7,
-      "last_volume": 154.954737,
+      "last_candle_id": "1792172700",
+      "last_candle_open_utc": "2026-10-16T17:45:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 721.6,
+      "last_volume": 27.376523,
       "previous_candle_id": "1792170900",
       "previous_close": 719.7,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 1.9,
+      "reasons": []
     },
     "BNBUSDT:1h": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792166400",
-      "last_candle_open_utc": "2026-10-16T16:00:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:00:00+00:00",
-      "age_seconds": 2075,
-      "last_close": 723.3,
-      "last_volume": 150.919875,
+      "last_candle_id": "1792170000",
+      "last_candle_open_utc": "2026-10-16T17:00:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 721.6,
+      "last_volume": 350.48647,
       "previous_candle_id": "1792166400",
       "previous_close": 723.3,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": -1.7,
+      "reasons": []
     },
     "BNBUSDT:4h": {
       "status": "UNCHANGED",
@@ -408,7 +382,7 @@
       "last_candle_id": "1792152000",
       "last_candle_open_utc": "2026-10-16T12:00:00+00:00",
       "last_closed_at_utc": "2026-10-16T16:00:00+00:00",
-      "age_seconds": 5675,
+      "age_seconds": 7903,
       "last_close": 723.1,
       "last_volume": 1058.678924,
       "previous_candle_id": "1792152000",
@@ -420,55 +394,49 @@
       ]
     },
     "BTCUSDT:5m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792171500",
-      "last_candle_open_utc": "2026-10-16T17:25:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 80900.2,
-      "last_volume": 26.16614755,
+      "last_candle_id": "1792173900",
+      "last_candle_open_utc": "2026-10-16T18:05:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:10:00+00:00",
+      "age_seconds": 103,
+      "last_close": 81322.4,
+      "last_volume": 19.23745895,
       "previous_candle_id": "1792171500",
       "previous_close": 80900.2,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 422.199999999997,
+      "reasons": []
     },
     "BTCUSDT:15m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792170900",
-      "last_candle_open_utc": "2026-10-16T17:15:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 80900.2,
-      "last_volume": 116.87037593,
+      "last_candle_id": "1792172700",
+      "last_candle_open_utc": "2026-10-16T17:45:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 81215.2,
+      "last_volume": 58.95771396,
       "previous_candle_id": "1792170900",
       "previous_close": 80900.2,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 315.0,
+      "reasons": []
     },
     "BTCUSDT:1h": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792166400",
-      "last_candle_open_utc": "2026-10-16T16:00:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:00:00+00:00",
-      "age_seconds": 2075,
-      "last_close": 81434.6,
-      "last_volume": 208.66054686,
+      "last_candle_id": "1792170000",
+      "last_candle_open_utc": "2026-10-16T17:00:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 81215.2,
+      "last_volume": 557.45107186,
       "previous_candle_id": "1792166400",
       "previous_close": 81434.6,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": -219.400000000009,
+      "reasons": []
     },
     "BTCUSDT:4h": {
       "status": "UNCHANGED",
@@ -476,7 +444,7 @@
       "last_candle_id": "1792152000",
       "last_candle_open_utc": "2026-10-16T12:00:00+00:00",
       "last_closed_at_utc": "2026-10-16T16:00:00+00:00",
-      "age_seconds": 5675,
+      "age_seconds": 7903,
       "last_close": 81354.6,
       "last_volume": 1548.64044769,
       "previous_candle_id": "1792152000",
@@ -488,55 +456,49 @@
       ]
     },
     "ETHBTC:5m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792171500",
-      "last_candle_open_utc": "2026-10-16T17:25:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 0.02967,
-      "last_volume": 2.461628,
+      "last_candle_id": "1792173900",
+      "last_candle_open_utc": "2026-10-16T18:05:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:10:00+00:00",
+      "age_seconds": 103,
+      "last_close": 0.0297,
+      "last_volume": 0.872052,
       "previous_candle_id": "1792171500",
       "previous_close": 0.02967,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 3e-05,
+      "reasons": []
     },
     "ETHBTC:15m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792170900",
-      "last_candle_open_utc": "2026-10-16T17:15:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 0.02967,
-      "last_volume": 50.862075,
+      "last_candle_id": "1792172700",
+      "last_candle_open_utc": "2026-10-16T17:45:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 0.02969,
+      "last_volume": 12.926693,
       "previous_candle_id": "1792170900",
       "previous_close": 0.02967,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 2e-05,
+      "reasons": []
     },
     "ETHBTC:1h": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792166400",
-      "last_candle_open_utc": "2026-10-16T16:00:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:00:00+00:00",
-      "age_seconds": 2075,
-      "last_close": 0.02987,
-      "last_volume": 613.365421,
+      "last_candle_id": "1792170000",
+      "last_candle_open_utc": "2026-10-16T17:00:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 0.02969,
+      "last_volume": 178.154622,
       "previous_candle_id": "1792166400",
       "previous_close": 0.02987,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": -0.00018,
+      "reasons": []
     },
     "ETHBTC:4h": {
       "status": "UNCHANGED",
@@ -544,7 +506,7 @@
       "last_candle_id": "1792152000",
       "last_candle_open_utc": "2026-10-16T12:00:00+00:00",
       "last_closed_at_utc": "2026-10-16T16:00:00+00:00",
-      "age_seconds": 5675,
+      "age_seconds": 7903,
       "last_close": 0.0299,
       "last_volume": 1330.570788,
       "previous_candle_id": "1792152000",
@@ -556,55 +518,49 @@
       ]
     },
     "ETHUSDT:5m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792171500",
-      "last_candle_open_utc": "2026-10-16T17:25:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 2401.12,
-      "last_volume": 500.624245,
+      "last_candle_id": "1792173900",
+      "last_candle_open_utc": "2026-10-16T18:05:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:10:00+00:00",
+      "age_seconds": 103,
+      "last_close": 2415.79,
+      "last_volume": 437.318039,
       "previous_candle_id": "1792171500",
       "previous_close": 2401.12,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 14.67,
+      "reasons": []
     },
     "ETHUSDT:15m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792170900",
-      "last_candle_open_utc": "2026-10-16T17:15:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 2401.12,
-      "last_volume": 4919.579994,
+      "last_candle_id": "1792172700",
+      "last_candle_open_utc": "2026-10-16T17:45:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 2412.05,
+      "last_volume": 2002.714736,
       "previous_candle_id": "1792170900",
       "previous_close": 2401.12,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 10.93,
+      "reasons": []
     },
     "ETHUSDT:1h": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792166400",
-      "last_candle_open_utc": "2026-10-16T16:00:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:00:00+00:00",
-      "age_seconds": 2075,
-      "last_close": 2431.9,
-      "last_volume": 5887.596579,
+      "last_candle_id": "1792170000",
+      "last_candle_open_utc": "2026-10-16T17:00:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 2412.05,
+      "last_volume": 15852.692303,
       "previous_candle_id": "1792166400",
       "previous_close": 2431.9,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": -19.85,
+      "reasons": []
     },
     "ETHUSDT:4h": {
       "status": "UNCHANGED",
@@ -612,7 +568,7 @@
       "last_candle_id": "1792152000",
       "last_candle_open_utc": "2026-10-16T12:00:00+00:00",
       "last_closed_at_utc": "2026-10-16T16:00:00+00:00",
-      "age_seconds": 5675,
+      "age_seconds": 7903,
       "last_close": 2431.25,
       "last_volume": 28468.287846,
       "previous_candle_id": "1792152000",
@@ -692,55 +648,49 @@
       ]
     },
     "LINKUSDT:5m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792171500",
-      "last_candle_open_utc": "2026-10-16T17:25:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 12.248,
-      "last_volume": 2652.947026,
+      "last_candle_id": "1792173900",
+      "last_candle_open_utc": "2026-10-16T18:05:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:10:00+00:00",
+      "age_seconds": 103,
+      "last_close": 12.301,
+      "last_volume": 265.8417,
       "previous_candle_id": "1792171500",
       "previous_close": 12.248,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 0.053,
+      "reasons": []
     },
     "LINKUSDT:15m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792170900",
-      "last_candle_open_utc": "2026-10-16T17:15:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 12.248,
-      "last_volume": 10755.387544,
+      "last_candle_id": "1792172700",
+      "last_candle_open_utc": "2026-10-16T17:45:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 12.308,
+      "last_volume": 576.884422,
       "previous_candle_id": "1792170900",
       "previous_close": 12.248,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 0.06,
+      "reasons": []
     },
     "LINKUSDT:1h": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792166400",
-      "last_candle_open_utc": "2026-10-16T16:00:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:00:00+00:00",
-      "age_seconds": 2075,
-      "last_close": 12.351,
-      "last_volume": 11086.370614,
+      "last_candle_id": "1792170000",
+      "last_candle_open_utc": "2026-10-16T17:00:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 12.308,
+      "last_volume": 37485.711485,
       "previous_candle_id": "1792166400",
       "previous_close": 12.351,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": -0.043,
+      "reasons": []
     },
     "LINKUSDT:4h": {
       "status": "UNCHANGED",
@@ -748,7 +698,7 @@
       "last_candle_id": "1792152000",
       "last_candle_open_utc": "2026-10-16T12:00:00+00:00",
       "last_closed_at_utc": "2026-10-16T16:00:00+00:00",
-      "age_seconds": 5675,
+      "age_seconds": 7903,
       "last_close": 12.325,
       "last_volume": 63404.783361,
       "previous_candle_id": "1792152000",
@@ -760,55 +710,49 @@
       ]
     },
     "LTCBTC:5m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792171500",
-      "last_candle_open_utc": "2026-10-16T17:25:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
+      "last_candle_id": "1792173900",
+      "last_candle_open_utc": "2026-10-16T18:05:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:10:00+00:00",
+      "age_seconds": 103,
       "last_close": 0.0010146,
       "last_volume": 0.0,
       "previous_candle_id": "1792171500",
       "previous_close": 0.0010146,
-      "candle_id_changed": false,
+      "candle_id_changed": true,
       "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "reasons": []
     },
     "LTCBTC:15m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792170900",
-      "last_candle_open_utc": "2026-10-16T17:15:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
+      "last_candle_id": "1792172700",
+      "last_candle_open_utc": "2026-10-16T17:45:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
       "last_close": 0.0010146,
       "last_volume": 0.0,
       "previous_candle_id": "1792170900",
       "previous_close": 0.0010146,
-      "candle_id_changed": false,
+      "candle_id_changed": true,
       "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "reasons": []
     },
     "LTCBTC:1h": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792166400",
-      "last_candle_open_utc": "2026-10-16T16:00:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:00:00+00:00",
-      "age_seconds": 2075,
+      "last_candle_id": "1792170000",
+      "last_candle_open_utc": "2026-10-16T17:00:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
       "last_close": 0.0010146,
       "last_volume": 0.0,
       "previous_candle_id": "1792166400",
       "previous_close": 0.0010146,
-      "candle_id_changed": false,
+      "candle_id_changed": true,
       "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "reasons": []
     },
     "LTCBTC:4h": {
       "status": "UNCHANGED",
@@ -816,7 +760,7 @@
       "last_candle_id": "1792152000",
       "last_candle_open_utc": "2026-10-16T12:00:00+00:00",
       "last_closed_at_utc": "2026-10-16T16:00:00+00:00",
-      "age_seconds": 5675,
+      "age_seconds": 7903,
       "last_close": 0.0010146,
       "last_volume": 0.0,
       "previous_candle_id": "1792152000",
@@ -828,55 +772,49 @@
       ]
     },
     "LTCUSDT:5m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792171500",
-      "last_candle_open_utc": "2026-10-16T17:25:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 59.43,
-      "last_volume": 408.058177,
+      "last_candle_id": "1792173900",
+      "last_candle_open_utc": "2026-10-16T18:05:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:10:00+00:00",
+      "age_seconds": 103,
+      "last_close": 59.52,
+      "last_volume": 172.521527,
       "previous_candle_id": "1792171500",
       "previous_close": 59.43,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 0.09,
+      "reasons": []
     },
     "LTCUSDT:15m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792170900",
-      "last_candle_open_utc": "2026-10-16T17:15:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 59.43,
-      "last_volume": 1614.125855,
+      "last_candle_id": "1792172700",
+      "last_candle_open_utc": "2026-10-16T17:45:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 59.58,
+      "last_volume": 173.820165,
       "previous_candle_id": "1792170900",
       "previous_close": 59.43,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 0.15,
+      "reasons": []
     },
     "LTCUSDT:1h": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792166400",
-      "last_candle_open_utc": "2026-10-16T16:00:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:00:00+00:00",
-      "age_seconds": 2075,
-      "last_close": 59.74,
-      "last_volume": 3772.437958,
+      "last_candle_id": "1792170000",
+      "last_candle_open_utc": "2026-10-16T17:00:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 59.58,
+      "last_volume": 5827.76737,
       "previous_candle_id": "1792166400",
       "previous_close": 59.74,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": -0.16,
+      "reasons": []
     },
     "LTCUSDT:4h": {
       "status": "UNCHANGED",
@@ -884,7 +822,7 @@
       "last_candle_id": "1792152000",
       "last_candle_open_utc": "2026-10-16T12:00:00+00:00",
       "last_closed_at_utc": "2026-10-16T16:00:00+00:00",
-      "age_seconds": 5675,
+      "age_seconds": 7903,
       "last_close": 59.9,
       "last_volume": 15722.770373,
       "previous_candle_id": "1792152000",
@@ -896,55 +834,49 @@
       ]
     },
     "SOLBTC:5m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792171500",
-      "last_candle_open_utc": "2026-10-16T17:25:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 0.0012748,
-      "last_volume": 10.0774,
+      "last_candle_id": "1792173900",
+      "last_candle_open_utc": "2026-10-16T18:05:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:10:00+00:00",
+      "age_seconds": 103,
+      "last_close": 0.0012762,
+      "last_volume": 0.0,
       "previous_candle_id": "1792171500",
       "previous_close": 0.0012748,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 1.4e-06,
+      "reasons": []
     },
     "SOLBTC:15m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792170900",
-      "last_candle_open_utc": "2026-10-16T17:15:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 0.0012748,
-      "last_volume": 197.6666,
+      "last_candle_id": "1792172700",
+      "last_candle_open_utc": "2026-10-16T17:45:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 0.0012775,
+      "last_volume": 49.6935,
       "previous_candle_id": "1792170900",
       "previous_close": 0.0012748,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 2.7e-06,
+      "reasons": []
     },
     "SOLBTC:1h": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792166400",
-      "last_candle_open_utc": "2026-10-16T16:00:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:00:00+00:00",
-      "age_seconds": 2075,
-      "last_close": 0.0012766,
-      "last_volume": 190.5155,
+      "last_candle_id": "1792170000",
+      "last_candle_open_utc": "2026-10-16T17:00:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 0.0012775,
+      "last_volume": 934.8344,
       "previous_candle_id": "1792166400",
       "previous_close": 0.0012766,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 9e-07,
+      "reasons": []
     },
     "SOLBTC:4h": {
       "status": "UNCHANGED",
@@ -952,7 +884,7 @@
       "last_candle_id": "1792152000",
       "last_candle_open_utc": "2026-10-16T12:00:00+00:00",
       "last_closed_at_utc": "2026-10-16T16:00:00+00:00",
-      "age_seconds": 5675,
+      "age_seconds": 7903,
       "last_close": 0.0012758,
       "last_volume": 2101.9053,
       "previous_candle_id": "1792152000",
@@ -964,55 +896,49 @@
       ]
     },
     "SOLUSDT:5m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792171500",
-      "last_candle_open_utc": "2026-10-16T17:25:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 103.14,
-      "last_volume": 1128.898993,
+      "last_candle_id": "1792173900",
+      "last_candle_open_utc": "2026-10-16T18:05:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:10:00+00:00",
+      "age_seconds": 103,
+      "last_close": 103.81,
+      "last_volume": 945.170635,
       "previous_candle_id": "1792171500",
       "previous_close": 103.14,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 0.67,
+      "reasons": []
     },
     "SOLUSDT:15m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792170900",
-      "last_candle_open_utc": "2026-10-16T17:15:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 103.14,
-      "last_volume": 16736.731909,
+      "last_candle_id": "1792172700",
+      "last_candle_open_utc": "2026-10-16T17:45:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 103.71,
+      "last_volume": 7595.957345,
       "previous_candle_id": "1792170900",
       "previous_close": 103.14,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 0.57,
+      "reasons": []
     },
     "SOLUSDT:1h": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792166400",
-      "last_candle_open_utc": "2026-10-16T16:00:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:00:00+00:00",
-      "age_seconds": 2075,
-      "last_close": 104.04,
-      "last_volume": 48172.533063,
+      "last_candle_id": "1792170000",
+      "last_candle_open_utc": "2026-10-16T17:00:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 103.71,
+      "last_volume": 60095.339929,
       "previous_candle_id": "1792166400",
       "previous_close": 104.04,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": -0.33,
+      "reasons": []
     },
     "SOLUSDT:4h": {
       "status": "UNCHANGED",
@@ -1020,7 +946,7 @@
       "last_candle_id": "1792152000",
       "last_candle_open_utc": "2026-10-16T12:00:00+00:00",
       "last_closed_at_utc": "2026-10-16T16:00:00+00:00",
-      "age_seconds": 5675,
+      "age_seconds": 7903,
       "last_close": 103.79,
       "last_volume": 178990.706494,
       "previous_candle_id": "1792152000",
@@ -1100,55 +1026,49 @@
       ]
     },
     "SUIUSDT:5m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792171500",
-      "last_candle_open_utc": "2026-10-16T17:25:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 1.007,
-      "last_volume": 30857.7064,
+      "last_candle_id": "1792173900",
+      "last_candle_open_utc": "2026-10-16T18:05:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:10:00+00:00",
+      "age_seconds": 103,
+      "last_close": 1.0121,
+      "last_volume": 11304.0613,
       "previous_candle_id": "1792171500",
       "previous_close": 1.007,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 0.0051,
+      "reasons": []
     },
     "SUIUSDT:15m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792170900",
-      "last_candle_open_utc": "2026-10-16T17:15:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 1.007,
-      "last_volume": 204041.9303,
+      "last_candle_id": "1792172700",
+      "last_candle_open_utc": "2026-10-16T17:45:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 1.0116,
+      "last_volume": 113087.5305,
       "previous_candle_id": "1792170900",
       "previous_close": 1.007,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 0.0046,
+      "reasons": []
     },
     "SUIUSDT:1h": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792166400",
-      "last_candle_open_utc": "2026-10-16T16:00:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:00:00+00:00",
-      "age_seconds": 2075,
-      "last_close": 1.0182,
-      "last_volume": 738431.9041,
+      "last_candle_id": "1792170000",
+      "last_candle_open_utc": "2026-10-16T17:00:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 1.0116,
+      "last_volume": 1016803.8944,
       "previous_candle_id": "1792166400",
       "previous_close": 1.0182,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": -0.0066,
+      "reasons": []
     },
     "SUIUSDT:4h": {
       "status": "UNCHANGED",
@@ -1156,7 +1076,7 @@
       "last_candle_id": "1792152000",
       "last_candle_open_utc": "2026-10-16T12:00:00+00:00",
       "last_closed_at_utc": "2026-10-16T16:00:00+00:00",
-      "age_seconds": 5675,
+      "age_seconds": 7903,
       "last_close": 1.0212,
       "last_volume": 3571213.9071,
       "previous_candle_id": "1792152000",
@@ -1168,123 +1088,109 @@
       ]
     },
     "XRPBTC:5m": {
-      "status": "UNVERIFIED",
-      "source": null,
-      "last_candle_id": null,
-      "last_candle_open_utc": null,
-      "last_closed_at_utc": null,
-      "age_seconds": null,
-      "last_close": null,
-      "last_volume": null,
+      "status": "PASS",
+      "source": "Gate.io Spot",
+      "last_candle_id": "1792173900",
+      "last_candle_open_utc": "2026-10-16T18:05:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:10:00+00:00",
+      "age_seconds": 103,
+      "last_close": 1.601e-05,
+      "last_volume": 0.0,
       "previous_candle_id": null,
       "previous_close": null,
       "candle_id_changed": null,
       "close_change": null,
-      "reasons": [
-        "feed_unavailable"
-      ]
+      "reasons": []
     },
     "XRPBTC:15m": {
-      "status": "UNVERIFIED",
-      "source": null,
-      "last_candle_id": null,
-      "last_candle_open_utc": null,
-      "last_closed_at_utc": null,
-      "age_seconds": null,
-      "last_close": null,
-      "last_volume": null,
+      "status": "PASS",
+      "source": "Gate.io Spot",
+      "last_candle_id": "1792172700",
+      "last_candle_open_utc": "2026-10-16T17:45:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 1.599e-05,
+      "last_volume": 4.19,
       "previous_candle_id": null,
       "previous_close": null,
       "candle_id_changed": null,
       "close_change": null,
-      "reasons": [
-        "feed_unavailable"
-      ]
+      "reasons": []
     },
     "XRPBTC:1h": {
-      "status": "UNVERIFIED",
-      "source": null,
-      "last_candle_id": null,
-      "last_candle_open_utc": null,
-      "last_closed_at_utc": null,
-      "age_seconds": null,
-      "last_close": null,
-      "last_volume": null,
+      "status": "PASS",
+      "source": "Gate.io Spot",
+      "last_candle_id": "1792170000",
+      "last_candle_open_utc": "2026-10-16T17:00:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 1.599e-05,
+      "last_volume": 724.06,
       "previous_candle_id": null,
       "previous_close": null,
       "candle_id_changed": null,
       "close_change": null,
-      "reasons": [
-        "feed_unavailable"
-      ]
+      "reasons": []
     },
     "XRPBTC:4h": {
-      "status": "UNVERIFIED",
-      "source": null,
-      "last_candle_id": null,
-      "last_candle_open_utc": null,
-      "last_closed_at_utc": null,
-      "age_seconds": null,
-      "last_close": null,
-      "last_volume": null,
+      "status": "PASS",
+      "source": "Gate.io Spot",
+      "last_candle_id": "1792152000",
+      "last_candle_open_utc": "2026-10-16T12:00:00+00:00",
+      "last_closed_at_utc": "2026-10-16T16:00:00+00:00",
+      "age_seconds": 7903,
+      "last_close": 1.606e-05,
+      "last_volume": 69.46,
       "previous_candle_id": null,
       "previous_close": null,
       "candle_id_changed": null,
       "close_change": null,
-      "reasons": [
-        "feed_unavailable"
-      ]
+      "reasons": []
     },
     "XRPUSDT:5m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792171500",
-      "last_candle_open_utc": "2026-10-16T17:25:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 1.2976,
-      "last_volume": 117928.491844,
+      "last_candle_id": "1792173900",
+      "last_candle_open_utc": "2026-10-16T18:05:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:10:00+00:00",
+      "age_seconds": 103,
+      "last_close": 1.3015,
+      "last_volume": 61587.117881,
       "previous_candle_id": "1792171500",
       "previous_close": 1.2976,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 0.0039,
+      "reasons": []
     },
     "XRPUSDT:15m": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792170900",
-      "last_candle_open_utc": "2026-10-16T17:15:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:30:00+00:00",
-      "age_seconds": 275,
-      "last_close": 1.2976,
-      "last_volume": 831703.996414,
+      "last_candle_id": "1792172700",
+      "last_candle_open_utc": "2026-10-16T17:45:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 1.2999,
+      "last_volume": 216918.670987,
       "previous_candle_id": "1792170900",
       "previous_close": 1.2976,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": 0.0023,
+      "reasons": []
     },
     "XRPUSDT:1h": {
-      "status": "UNCHANGED",
+      "status": "PASS",
       "source": "OKX Spot",
-      "last_candle_id": "1792166400",
-      "last_candle_open_utc": "2026-10-16T16:00:00+00:00",
-      "last_closed_at_utc": "2026-10-16T17:00:00+00:00",
-      "age_seconds": 2075,
-      "last_close": 1.3068,
-      "last_volume": 1236350.039143,
+      "last_candle_id": "1792170000",
+      "last_candle_open_utc": "2026-10-16T17:00:00+00:00",
+      "last_closed_at_utc": "2026-10-16T18:00:00+00:00",
+      "age_seconds": 703,
+      "last_close": 1.2999,
+      "last_volume": 2305277.22098,
       "previous_candle_id": "1792166400",
       "previous_close": 1.3068,
-      "candle_id_changed": false,
-      "close_change": 0.0,
-      "reasons": [
-        "same_closed_candle_as_previous_run_not_necessarily_stale"
-      ]
+      "candle_id_changed": true,
+      "close_change": -0.0069,
+      "reasons": []
     },
     "XRPUSDT:4h": {
       "status": "UNCHANGED",
@@ -1292,7 +1198,7 @@
       "last_candle_id": "1792152000",
       "last_candle_open_utc": "2026-10-16T12:00:00+00:00",
       "last_closed_at_utc": "2026-10-16T16:00:00+00:00",
-      "age_seconds": 5675,
+      "age_seconds": 7903,
       "last_close": 1.309,
       "last_volume": 5212619.236956,
       "previous_candle_id": "1792152000",

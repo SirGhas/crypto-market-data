@@ -1,7 +1,7 @@
 {
   "schema_version": 52,
-  "generated_at_utc": "2026-10-16T17:34:36.114998+00:00",
-  "source_generated_at_utc": "2026-10-16T17:33:56.197881+00:00",
+  "generated_at_utc": "2026-10-16T18:11:43.211862+00:00",
+  "source_generated_at_utc": "2026-10-16T18:10:56.647053+00:00",
   "mode": "event_screening_only_no_push_no_orders",
   "observations": [
     {
@@ -27,7 +27,7 @@
       "status": "scanned",
       "4h_support": 709.0,
       "4h_resistance": 748.0,
-      "relative_strength_vs_btc": null,
+      "relative_strength_vs_btc": false,
       "4h_volume_ratio": 0.89,
       "observations": 0
     },
@@ -63,9 +63,9 @@
       "status": "scanned",
       "4h_support": 1.2837,
       "4h_resistance": 1.3867,
-      "relative_strength_vs_btc": null,
+      "relative_strength_vs_btc": false,
       "4h_volume_ratio": 1.352,
-      "observations": 0
+      "observations": 1
     },
     {
       "coin": "AVAX",
@@ -95,12 +95,33 @@
       "observations": 0
     }
   ],
-  "new_events": [],
+  "new_events": [
+    {
+      "id": "XRP:approaching_support:1792152000",
+      "coin": "XRP",
+      "event_type": "approaching_support",
+      "status": "forming_watch",
+      "level_usdt": 1.2837,
+      "reference_price_usdt": 1.2999,
+      "reference_price_kind": "last_closed_1h_not_live",
+      "distance_from_level_percent": 1.262,
+      "volume_ratio_4h": 1.352,
+      "volume_ratio_1h": 3.416,
+      "volume_confirmed_4h": true,
+      "trend_4h_above_sma233": false,
+      "lower_tf_confirmed": false,
+      "relative_strength_vs_btc": false,
+      "source_4h": "OKX Spot",
+      "source_1h": "OKX Spot",
+      "closed_4h_at_utc": "2026-10-16T16:00:00+00:00",
+      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+    }
+  ],
   "summary": {
     "scanned": 10,
     "blocked": 0,
-    "new_events": 0,
-    "forming": 0
+    "new_events": 1,
+    "forming": 1
   },
   "limitations": [
     "Levels are prior 20 4h high/low, not multi-touch validated",
