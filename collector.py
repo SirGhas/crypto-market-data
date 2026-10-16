@@ -11,6 +11,66 @@ DERIVED_BTC = {'BNB', 'AVAX', 'SUI'}
 BASE = 'https://api.kraken.com/0/public/OHLC'
 OUTPUT = Path('data/market.json')
 
+DOMINANCE_URL = 'https://api.coingecko.com/api/v3/global'
+DOMINANCE_HISTORY = Path('data/dominance_history.json')
+
+
+def fetch_dominance(now):
+    """Public global market-cap shares; snapshots, NOT TradingView OHLC candles."""
+    result = {}
+    try:
+        req = urllib.request.Request(DOMINANCE_URL, headers={
+            'User-Agent': 'PortfolioResearch/3.0 (public market research)',
+            'Accept': 'application/json',
+        })
+        with urllib.request.urlopen(req, timeout=20) as response:
+            payload = json.load(response)['data']
+        shares = payload.get('market_cap_percentage') or {}
+        updated = payload.get('updated_at')
+        if not isinstance(updated, (int, float)) or now.timestamp() - updated > 7200 or updated > now.timestamp() + 300:
+            raise ValueError('CoinGecko global snapshot timestamp is stale or invalid')
+        for key, coin in [('BTC.D', 'btc'), ('USDT.D', 'usdt')]:
+            value = shares.get(coin)
+            if isinstance(value, (int, float)) and 0 <= value <= 100:
+                result[key] = {
+                    'status': 'available', 'value_percent': round(float(value), 6),
+                    'source': 'CoinGecko /api/v3/global market_cap_percentage',
+                    'source_updated_at_utc': dt.datetime.fromtimestamp(updated, dt.timezone.utc).isoformat(),
+                    'data_kind': 'global_market_cap_snapshot_not_ohlcv',
+                    'tradingview_equivalent': False,
+                }
+            else:
+                result[key] = {'status': 'unavailable', 'reason': 'CoinGecko global market cap share missing for ' + coin}
+    except Exception as exc:
+        for key in ('BTC.D', 'USDT.D'):
+            result[key] = {'status': 'unavailable', 'reason': 'Dominance fetch failed: ' + str(exc)[:180]}
+    return result
+
+
+def save_dominance_history(dominance, generated):
+    """Store historical snapshots, with bounded size and no synthetic candles."""
+    history = {'schema_version': 1, 'source': 'CoinGecko global snapshots', 'snapshots': []}
+    if DOMINANCE_HISTORY.exists():
+        try:
+            old = json.loads(DOMINANCE_HISTORY.read_text(encoding='utf-8'))
+            if isinstance(old.get('snapshots'), list):
+                history['snapshots'] = old['snapshots'][-2159:]
+        except (ValueError, OSError, TypeError):
+            pass
+    values = {key: dominance[key]['value_percent'] for key in ('BTC.D', 'USDT.D')
+              if dominance[key].get('status') == 'available'}
+    if values:
+        # Only append when data actually changes or one hour has passed.
+        point = {'captured_at_utc': generated, 'percent': values}
+        history['snapshots'].append(point)
+        history['snapshots'] = history['snapshots'][-2160:]
+        DOMINANCE_HISTORY.parent.mkdir(parents=True, exist_ok=True)
+        tmp = DOMINANCE_HISTORY.with_suffix('.json.tmp')
+        tmp.write_text(json.dumps(history, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
+        tmp.replace(DOMINANCE_HISTORY)
+    return len(history['snapshots'])
+
+
 
 def request(pair, interval):
     req = urllib.request.Request(
@@ -83,13 +143,10 @@ def main():
     now = dt.datetime.now(dt.timezone.utc)
     now_ts = now.timestamp()
     out = {
-        'schema_version': 2, 'generated_at_utc': now.isoformat(),
+        'schema_version': 3, 'generated_at_utc': now.isoformat(),
         'source': 'Kraken public OHLC', 'quote': 'USD, not USDT',
         'forming_candle_excluded': True,
-        'dominance': {
-            'BTC.D': {'status': 'unavailable', 'reason': 'No verified dominance OHLCV source configured'},
-            'USDT.D': {'status': 'unavailable', 'reason': 'No verified dominance OHLCV source configured'},
-        },
+        'dominance': fetch_dominance(now),
         'markets': {}, 'summary': {},
     }
     direct_success = derived_success = 0
@@ -149,6 +206,8 @@ def main():
     }
     if total == 0:
         raise RuntimeError('No successful market feeds; refusing to overwrite previous snapshot')
+    out['dominance_history_samples'] = save_dominance_history(out['dominance'], now.isoformat())
+    out['dominance_signal_ready'] = False  # Snapshot history is not verified OHLCV.
     OUTPUT.parent.mkdir(exist_ok=True)
     temp = OUTPUT.with_suffix('.json.tmp')
     temp.write_text(json.dumps(out, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
