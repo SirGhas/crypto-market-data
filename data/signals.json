@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-10-16T17:25:28.931181+00:00",
-  "source_generated_at_utc": "2026-10-16T17:24:52.484223+00:00",
+  "generated_at_utc": "2026-10-16T17:32:00.820066+00:00",
+  "source_generated_at_utc": "2026-10-16T17:31:26.946319+00:00",
   "mode": "screening_only_no_trades_no_notifications",
   "dominance": {
     "latest_percent": {
@@ -88,7 +88,8 @@
       "status": "rejected",
       "reasons": [
         "btc_4h_below_sma233",
-        "no_closed_1h_breakout"
+        "no_closed_1h_breakout",
+        "15m_not_confirmed"
       ]
     },
     {

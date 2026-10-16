@@ -1,7 +1,7 @@
 {
   "schema_version": 51,
-  "generated_at_utc": "2026-10-16T17:26:00.298384+00:00",
-  "source_generated_at_utc": "2026-10-16T17:25:28.981144+00:00",
+  "generated_at_utc": "2026-10-16T17:32:27.932966+00:00",
+  "source_generated_at_utc": "2026-10-16T17:32:00.878985+00:00",
   "status": "partial",
   "mode": "research_only_no_trade_or_push",
   "evaluations": [
@@ -221,7 +221,7 @@
     {
       "coin": "AVAX",
       "status": "watch_only",
-      "score": 35,
+      "score": 25,
       "reference_price_usdt": 10.035,
       "reference_price_kind": "last_closed_1h_candle_not_live",
       "support_4h": 9.337,
@@ -237,7 +237,8 @@
       "reasons": [
         "volume_not_confirmed",
         "btc_pair_unavailable",
-        "market_entry_rr_below_2_5"
+        "market_entry_rr_below_2_5",
+        "15m_below_sma233"
       ],
       "sources": {
         "4h": "OKX Spot",
@@ -367,25 +368,26 @@
       "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
     },
     {
-      "coin": "AVAX",
+      "coin": "SOL",
       "status": "watch_only",
-      "score": 35,
-      "reference_price_usdt": 10.035,
+      "score": 25,
+      "reference_price_usdt": 104.04,
       "reference_price_kind": "last_closed_1h_candle_not_live",
-      "support_4h": 9.337,
-      "resistance_4h": 10.61,
-      "distance_above_support_percent": 7.476,
-      "distance_below_resistance_percent": 5.73,
-      "market_entry_rr": 0.824,
-      "risk_percent_to_support": 6.956,
-      "reward_percent_to_resistance": 5.73,
-      "relative_volume_1h": 0.775,
-      "above_4h_sma233": true,
-      "relative_strength_btc": null,
+      "support_4h": 100.56,
+      "resistance_4h": 109.07,
+      "distance_above_support_percent": 3.461,
+      "distance_below_resistance_percent": 4.835,
+      "market_entry_rr": 1.445,
+      "risk_percent_to_support": 3.345,
+      "reward_percent_to_resistance": 4.835,
+      "relative_volume_1h": 1.703,
+      "above_4h_sma233": false,
+      "relative_strength_btc": false,
       "reasons": [
-        "volume_not_confirmed",
-        "btc_pair_unavailable",
-        "market_entry_rr_below_2_5"
+        "below_4h_sma233",
+        "weak_against_btc",
+        "market_entry_rr_below_2_5",
+        "15m_below_sma233"
       ],
       "sources": {
         "4h": "OKX Spot",
@@ -399,7 +401,7 @@
   "worst_market_entry": {
     "coin": "AVAX",
     "status": "watch_only",
-    "score": 35,
+    "score": 25,
     "reference_price_usdt": 10.035,
     "reference_price_kind": "last_closed_1h_candle_not_live",
     "support_4h": 9.337,
@@ -415,7 +417,8 @@
     "reasons": [
       "volume_not_confirmed",
       "btc_pair_unavailable",
-      "market_entry_rr_below_2_5"
+      "market_entry_rr_below_2_5",
+      "15m_below_sma233"
     ],
     "sources": {
       "4h": "OKX Spot",
