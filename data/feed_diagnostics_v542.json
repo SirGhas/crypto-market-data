@@ -1,0 +1,187 @@
+{
+  "schema_version": "5.4.2",
+  "generated_at_utc": "2026-10-16T17:34:35.892091+00:00",
+  "snapshot_generated_at_utc": "2026-10-16T17:33:56.197881+00:00",
+  "summary": {
+    "attempted": 76,
+    "available": 52,
+    "unavailable": 24,
+    "available_by_source": {
+      "OKX Spot": 52
+    }
+  },
+  "unavailable_feeds": {
+    "AAVEBTC:15m": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "AAVEBTC:1h": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "AAVEBTC:4h": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "AAVEBTC:5m": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "AVAXBTC:15m": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "AVAXBTC:1h": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "AVAXBTC:4h": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "AVAXBTC:5m": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "BNBBTC:15m": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "BNBBTC:1h": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "BNBBTC:4h": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "BNBBTC:5m": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "LINKBTC:15m": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "LINKBTC:1h": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "LINKBTC:4h": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "LINKBTC:5m": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "SUIBTC:15m": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "SUIBTC:1h": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "SUIBTC:4h": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "SUIBTC:5m": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "XRPBTC:15m": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "XRPBTC:1h": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "XRPBTC:4h": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "XRPBTC:5m": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    }
+  },
+  "limitations": [
+    "Diagnostic only; no trades or signals",
+    "Does not independently verify exchange provenance"
+  ]
+}
