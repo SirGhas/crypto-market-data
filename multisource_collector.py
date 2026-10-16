@@ -1,12 +1,15 @@
-"""Public spot OHLCV: OKX primary, Bybit fallback; no synthetic volume."""
+"""Public spot OHLCV: OKX primary; controlled Gate.io BTC-pair fallback.
+No Binance. No synthetic OHLCV. Existing Bybit fallback retained for other feeds.
+"""
 import datetime as dt, json, time, urllib.request, urllib.parse
 from pathlib import Path
 COINS=('BTC','ETH','BNB','SOL','LTC','LINK','XRP','AVAX','SUI','AAVE')
 FRAMES={'5m':(5,'5','5m'),'15m':(15,'15','15m'),'1h':(60,'60','1H'),'4h':(240,'240','4H')}
+GATE_APPROVED={'BNBBTC','XRPBTC'}
 ROOT=Path('data'); ROOT.mkdir(exist_ok=True)
 
 def get(url):
-    req=urllib.request.Request(url,headers={'User-Agent':'crypto-market-research/5.1','Accept':'application/json'})
+    req=urllib.request.Request(url,headers={'User-Agent':'crypto-market-research/5.4.5','Accept':'application/json'})
     with urllib.request.urlopen(req,timeout=13) as res: return json.load(res)
 
 def bybit(symbol,frame):
@@ -19,7 +22,6 @@ def bybit(symbol,frame):
 def okx(symbol,frame):
     inst=symbol[:-4]+'-USDT' if symbol.endswith('USDT') else symbol[:-3]+'-BTC'
     bar=FRAMES[frame][2]
-    # OKX history-candles returns at most 100 records per page; use 4 pages for SMA233.
     rows=[]; after=None
     for _ in range(4):
         args={'instId':inst,'bar':bar,'limit':'100'}
@@ -32,6 +34,22 @@ def okx(symbol,frame):
         if len(rows)>=255: break
     return [{'t':int(a[0])//1000,'o':float(a[1]),'h':float(a[2]),'l':float(a[3]),'c':float(a[4]),'v':float(a[5]),'confirmed':a[8]=='1'} for a in rows]
 
+def gate(symbol,frame):
+    if symbol not in GATE_APPROVED:
+        raise ValueError('gate_pair_not_approved')
+    pair=symbol[:-3]+'_BTC'
+    interval={'5m':'5m','15m':'15m','1h':'1h','4h':'4h'}[frame]
+    q=urllib.parse.urlencode({'currency_pair':pair,'interval':interval,'limit':350})
+    d=get('https://api.gateio.ws/api/v4/spot/candlesticks?'+q)
+    if not isinstance(d,list): raise ValueError('unexpected_gate_response')
+    # Gate spot: [timestamp, quote_volume, close, high, low, open, base_volume, ...]
+    # v is BASE asset volume, same unit as OKX/Bybit spot volume for the pair.
+    rows=[]
+    for a in d:
+        if not isinstance(a,list) or len(a)<7: raise ValueError('malformed_gate_candle')
+        rows.append({'t':int(a[0]),'o':float(a[5]),'h':float(a[3]),'l':float(a[4]),'c':float(a[2]),'v':float(a[6])})
+    return rows
+
 def validate(rows,frame,now):
     seconds=FRAMES[frame][0]*60
     clean={}
@@ -41,6 +59,8 @@ def validate(rows,frame,now):
         clean[a['t']]=a
     candles=[clean[k] for k in sorted(clean)]
     if len(candles)<233: raise ValueError('insufficient_closed_candles:'+str(len(candles)))
+    if any(b['t']-a['t']!=seconds for a,b in zip(candles[-233:],candles[-232:])):
+        raise ValueError('gap_in_last_233_candles')
     if now-(candles[-1]['t']+seconds)>seconds+180: raise ValueError('stale_closed_candle')
     return candles[-250:]
 
@@ -51,10 +71,21 @@ def main():
             symbol=coin+quote; entry={'frames':{}}
             for frame in FRAMES:
                 failures=[]
-                for source,fn in [('OKX Spot',okx),('Bybit Spot',bybit)]:
+                # Never change the OKX-first rule. Gate is approved only for two BTC pairs.
+                providers=[('OKX Spot',okx)]
+                if symbol in GATE_APPROVED:
+                    providers.append(('Gate.io Spot',gate))
+                else:
+                    providers.append(('Bybit Spot',bybit))
+                for source,fn in providers:
                     try:
                         candles=validate(fn(symbol,frame),frame,now)
-                        entry['frames'][frame]={'status':'available','source':source,'last_closed_at_utc':dt.datetime.fromtimestamp(candles[-1]['t']+FRAMES[frame][0]*60,dt.timezone.utc).isoformat(),'candles':candles}
+                        feed={'status':'available','source':source,'last_closed_at_utc':dt.datetime.fromtimestamp(candles[-1]['t']+FRAMES[frame][0]*60,dt.timezone.utc).isoformat(),'candles':candles}
+                        if source=='Gate.io Spot' and symbol=='XRPBTC':
+                            recent=candles[-233:]
+                            nonzero=sum(c['v']>0 for c in recent)
+                            feed['liquidity_caution']={'low_timeframe_volume_confirmation_required':frame in ('5m','15m'),'nonzero_volume_candles_last_233':nonzero,'total_candles':len(recent)}
+                        entry['frames'][frame]=feed
                         break
                     except Exception as exc:
                         failures.append(source+': '+str(exc)[:130])
