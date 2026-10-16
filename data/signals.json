@@ -1,0 +1,95 @@
+{
+  "generated_at_utc": "2026-10-16T09:33:09.813787+00:00",
+  "source_generated_at_utc": "2026-10-16T09:32:33.281823+00:00",
+  "mode": "screening_only_no_trades_no_notifications",
+  "dominance": {
+    "latest_percent": {
+      "BTC.D": 59.223899,
+      "USDT.D": 6.58766
+    },
+    "historical_samples": 2,
+    "trend_ready": false,
+    "kind": "coingecko_market_cap_snapshots_not_ohlcv"
+  },
+  "new_events": [],
+  "evaluations": [
+    {
+      "coin": "ETH",
+      "status": "blocked",
+      "reasons": [
+        "missing_or_stale_USD_4h",
+        "missing_or_stale_BTC_4h"
+      ]
+    },
+    {
+      "coin": "BNB",
+      "status": "blocked",
+      "reasons": [
+        "missing_or_stale_USD_4h",
+        "missing_or_stale_BTC_4h"
+      ]
+    },
+    {
+      "coin": "SOL",
+      "status": "blocked",
+      "reasons": [
+        "missing_or_stale_USD_4h",
+        "missing_or_stale_BTC_4h"
+      ]
+    },
+    {
+      "coin": "LTC",
+      "status": "blocked",
+      "reasons": [
+        "missing_or_stale_USD_4h",
+        "missing_or_stale_BTC_4h"
+      ]
+    },
+    {
+      "coin": "LINK",
+      "status": "blocked",
+      "reasons": [
+        "missing_or_stale_USD_4h",
+        "missing_or_stale_BTC_4h"
+      ]
+    },
+    {
+      "coin": "XRP",
+      "status": "blocked",
+      "reasons": [
+        "missing_or_stale_USD_4h",
+        "missing_or_stale_BTC_4h"
+      ]
+    },
+    {
+      "coin": "AVAX",
+      "status": "blocked",
+      "reasons": [
+        "missing_or_stale_USD_4h",
+        "missing_or_stale_BTC_4h"
+      ]
+    },
+    {
+      "coin": "SUI",
+      "status": "blocked",
+      "reasons": [
+        "missing_or_stale_USD_4h",
+        "missing_or_stale_BTC_4h"
+      ]
+    },
+    {
+      "coin": "AAVE",
+      "status": "blocked",
+      "reasons": [
+        "missing_or_stale_USD_4h",
+        "missing_or_stale_BTC_4h"
+      ]
+    }
+  ],
+  "summary": {
+    "evaluated": 9,
+    "new_events": 0,
+    "blocked": 9,
+    "rejected": 0
+  }
+}
