@@ -1,7 +1,7 @@
 {
   "schema_version": 52,
-  "generated_at_utc": "2026-10-16T15:25:37.126685+00:00",
-  "source_generated_at_utc": "2026-10-16T15:24:57.576204+00:00",
+  "generated_at_utc": "2026-10-16T17:20:24.435881+00:00",
+  "source_generated_at_utc": "2026-10-16T17:19:49.428755+00:00",
   "mode": "event_screening_only_no_push_no_orders",
   "observations": [
     {
@@ -10,7 +10,7 @@
       "4h_support": 79775.1,
       "4h_resistance": 84166.3,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.76,
+      "4h_volume_ratio": 1.448,
       "observations": 0
     },
     {
@@ -19,7 +19,7 @@
       "4h_support": 2317.0,
       "4h_resistance": 2538.65,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.771,
+      "4h_volume_ratio": 1.168,
       "observations": 0
     },
     {
@@ -28,7 +28,7 @@
       "4h_support": 709.0,
       "4h_resistance": 748.0,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.768,
+      "4h_volume_ratio": 0.89,
       "observations": 0
     },
     {
@@ -37,7 +37,7 @@
       "4h_support": 100.56,
       "4h_resistance": 109.07,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.91,
+      "4h_volume_ratio": 1.368,
       "observations": 0
     },
     {
@@ -46,7 +46,7 @@
       "4h_support": 57.2,
       "4h_resistance": 62.68,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 1.052,
+      "4h_volume_ratio": 0.899,
       "observations": 0
     },
     {
@@ -55,7 +55,7 @@
       "4h_support": 11.824,
       "4h_resistance": 13.193,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.492,
+      "4h_volume_ratio": 0.982,
       "observations": 0
     },
     {
@@ -64,7 +64,7 @@
       "4h_support": 1.2837,
       "4h_resistance": 1.3867,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.64,
+      "4h_volume_ratio": 1.352,
       "observations": 0
     },
     {
@@ -73,7 +73,7 @@
       "4h_support": 9.337,
       "4h_resistance": 10.61,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 1.061,
+      "4h_volume_ratio": 1.312,
       "observations": 0
     },
     {
@@ -82,17 +82,17 @@
       "4h_support": 0.9588,
       "4h_resistance": 1.0784,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.627,
+      "4h_volume_ratio": 1.187,
       "observations": 0
     },
     {
       "coin": "AAVE",
       "status": "scanned",
       "4h_support": 147.04,
-      "4h_resistance": 163.16,
+      "4h_resistance": 165.98,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 1.166,
-      "observations": 1
+      "4h_volume_ratio": 1.384,
+      "observations": 0
     }
   ],
   "new_events": [],
