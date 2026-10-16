@@ -1,7 +1,7 @@
 {
   "schema_version": 52,
-  "generated_at_utc": "2026-10-16T12:24:23.364762+00:00",
-  "source_generated_at_utc": "2026-10-16T12:23:52.999343+00:00",
+  "generated_at_utc": "2026-10-16T13:16:49.995763+00:00",
+  "source_generated_at_utc": "2026-10-16T13:16:21.926323+00:00",
   "mode": "event_screening_only_no_push_no_orders",
   "observations": [
     {
@@ -95,53 +95,12 @@
       "observations": 2
     }
   ],
-  "new_events": [
-    {
-      "id": "AAVE:4h_closed_breakout:1792137600",
-      "coin": "AAVE",
-      "event_type": "4h_closed_breakout",
-      "status": "forming_watch",
-      "level_usdt": 163.16,
-      "reference_price_usdt": 164.36,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 0.735,
-      "volume_ratio_4h": 1.166,
-      "volume_ratio_1h": 4.13,
-      "volume_confirmed_4h": false,
-      "trend_4h_above_sma233": true,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": null,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-10-16T12:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    },
-    {
-      "id": "AAVE:approaching_resistance:1792137600",
-      "coin": "AAVE",
-      "event_type": "approaching_resistance",
-      "status": "forming_watch",
-      "level_usdt": 163.16,
-      "reference_price_usdt": 164.36,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 0.735,
-      "volume_ratio_4h": 1.166,
-      "volume_ratio_1h": 4.13,
-      "volume_confirmed_4h": false,
-      "trend_4h_above_sma233": true,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": null,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-10-16T12:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    }
-  ],
+  "new_events": [],
   "summary": {
     "scanned": 10,
     "blocked": 0,
-    "new_events": 2,
-    "forming": 2
+    "new_events": 0,
+    "forming": 0
   },
   "limitations": [
     "Levels are prior 20 4h high/low, not multi-touch validated",

@@ -1,55 +1,26 @@
 {
-  "generated_at_utc": "2026-10-16T12:23:52.938737+00:00",
-  "source_generated_at_utc": "2026-10-16T12:23:16.875862+00:00",
+  "generated_at_utc": "2026-10-16T13:16:21.865962+00:00",
+  "source_generated_at_utc": "2026-10-16T13:15:45.598462+00:00",
   "mode": "screening_only_no_trades_no_notifications",
   "dominance": {
     "latest_percent": {
-      "BTC.D": 59.232952,
-      "USDT.D": 6.57601
+      "BTC.D": 59.219821,
+      "USDT.D": 6.600888
     },
-    "historical_samples": 4,
+    "historical_samples": 5,
     "trend_ready": false,
     "kind": "coingecko_market_cap_snapshots_not_ohlcv"
   },
-  "new_events": [
-    {
-      "coin": "SUI",
-      "status": "watch",
-      "event_id": "SUI:1h_breakout:1792148400",
-      "entry_reference_usd": 1.0516,
-      "stop_reference_usd": 1.0059,
-      "illustrative_target_2_5R_usd": 1.16585,
-      "illustrative_rr": 2.5,
-      "volume_ratio_1h": 1.7559912350764526,
-      "candle_start_utc": 1792148400,
-      "notes": "Early watch only; 4H static breakout/retest and market target are NOT verified. No purchase recommendation.",
-      "reasons": [
-        "dominance_history_insufficient_for_trend_confirmation"
-      ]
-    },
-    {
-      "coin": "AAVE",
-      "status": "watch",
-      "event_id": "AAVE:1h_breakout:1792148400",
-      "entry_reference_usd": 164.08,
-      "stop_reference_usd": 152.77,
-      "illustrative_target_2_5R_usd": 192.355,
-      "illustrative_rr": 2.5,
-      "volume_ratio_1h": 3.159055420353236,
-      "candle_start_utc": 1792148400,
-      "notes": "Early watch only; 4H static breakout/retest and market target are NOT verified. No purchase recommendation.",
-      "reasons": [
-        "dominance_history_insufficient_for_trend_confirmation"
-      ]
-    }
-  ],
+  "new_events": [],
   "evaluations": [
     {
       "coin": "ETH",
       "status": "rejected",
       "reasons": [
         "4h_below_sma233",
-        "relative_strength_below_sma233"
+        "relative_strength_below_sma233",
+        "no_closed_1h_breakout",
+        "insufficient_real_usd_volume"
       ]
     },
     {
@@ -88,6 +59,7 @@
       "reasons": [
         "4h_below_sma233",
         "relative_strength_below_sma233",
+        "no_closed_1h_breakout",
         "insufficient_real_usd_volume"
       ]
     },
@@ -97,7 +69,8 @@
       "reasons": [
         "4h_below_sma233",
         "relative_strength_below_sma233",
-        "no_closed_1h_breakout"
+        "no_closed_1h_breakout",
+        "15m_not_confirmed"
       ]
     },
     {
@@ -110,39 +83,24 @@
     },
     {
       "coin": "SUI",
-      "status": "watch",
-      "event_id": "SUI:1h_breakout:1792148400",
-      "entry_reference_usd": 1.0516,
-      "stop_reference_usd": 1.0059,
-      "illustrative_target_2_5R_usd": 1.16585,
-      "illustrative_rr": 2.5,
-      "volume_ratio_1h": 1.7559912350764526,
-      "candle_start_utc": 1792148400,
-      "notes": "Early watch only; 4H static breakout/retest and market target are NOT verified. No purchase recommendation.",
+      "status": "rejected",
       "reasons": [
-        "dominance_history_insufficient_for_trend_confirmation"
+        "no_closed_1h_breakout"
       ]
     },
     {
       "coin": "AAVE",
-      "status": "watch",
-      "event_id": "AAVE:1h_breakout:1792148400",
-      "entry_reference_usd": 164.08,
-      "stop_reference_usd": 152.77,
-      "illustrative_target_2_5R_usd": 192.355,
-      "illustrative_rr": 2.5,
-      "volume_ratio_1h": 3.159055420353236,
-      "candle_start_utc": 1792148400,
-      "notes": "Early watch only; 4H static breakout/retest and market target are NOT verified. No purchase recommendation.",
+      "status": "rejected",
       "reasons": [
-        "dominance_history_insufficient_for_trend_confirmation"
+        "no_closed_1h_breakout",
+        "insufficient_real_usd_volume"
       ]
     }
   ],
   "summary": {
     "evaluated": 9,
-    "new_events": 2,
+    "new_events": 0,
     "blocked": 0,
-    "rejected": 7
+    "rejected": 9
   }
 }
