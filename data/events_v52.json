@@ -1,7 +1,7 @@
 {
   "schema_version": 52,
-  "generated_at_utc": "2026-10-16T18:48:48.096419+00:00",
-  "source_generated_at_utc": "2026-10-16T18:48:16.570959+00:00",
+  "generated_at_utc": "2026-10-16T19:34:27.006440+00:00",
+  "source_generated_at_utc": "2026-10-16T19:33:28.357198+00:00",
   "mode": "event_screening_only_no_push_no_orders",
   "observations": [
     {
@@ -107,9 +107,5 @@
     "Not a TradingView or Binance feed",
     "No automatic notification is connected",
     "Missing BTC crosses must not be treated as strength confirmation"
-  ],
-  "liquidity_guard_v546": {
-    "pair": "XRPBTC",
-    "status": "BLOCK"
-  }
+  ]
 }
