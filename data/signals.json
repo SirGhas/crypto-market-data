@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-16T15:22:39.497399+00:00",
-  "source_generated_at_utc": "2026-10-16T15:22:03.981836+00:00",
+  "generated_at_utc": "2026-10-16T15:24:57.515041+00:00",
+  "source_generated_at_utc": "2026-10-16T15:24:27.671550+00:00",
   "mode": "screening_only_no_trades_no_notifications",
   "dominance": {
     "latest_percent": {
-      "BTC.D": 59.247443,
-      "USDT.D": 6.6265
+      "BTC.D": 59.258908,
+      "USDT.D": 6.63402
     },
     "historical_samples": 6,
     "trend_ready": false,
