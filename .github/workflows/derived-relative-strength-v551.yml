@@ -1,0 +1,36 @@
+name: Derived Relative Strength v5.5.1
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run fail-closed tests
+        run: python -m unittest -v test_derived_relative_strength_v551.py
+      - name: Refresh primary spot candles
+        run: python multisource_collector.py
+      - name: Generate informational relative strength report
+        run: python derived_relative_strength_v551.py
+      - name: Show compact result
+        run: |
+          python - <<'PY'
+          import json
+          p = json.load(open('data/derived_relative_strength_v551.json'))
+          print(json.dumps({'summary': p['summary'], 'statuses': {coin: {tf: f['status'] for tf, f in item['frames'].items()} for coin, item in p['pairs'].items()}}, indent=2))
+          PY
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: derived-relative-strength-v551
+          path: data/derived_relative_strength_v551.json
+          if-no-files-found: error
+          retention-days: 14
