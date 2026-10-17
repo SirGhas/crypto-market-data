@@ -1,0 +1,63 @@
+name: Preflight v5.9.0
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run regression and preflight tests
+        run: |
+          python -m unittest -v test_liquidity_guard_v546.py test_price_parity_guard_v547.py test_unified_guard_v548.py test_event_lifecycle_v549.py test_delivery_health_v550.py test_derived_relative_strength_v551.py test_relative_strength_audit_v552.py test_shadow_relative_screen_v553.py test_integration_validation_v560.py test_release_readiness_v570.py test_controlled_candidate_v580.py test_preflight_v590.py
+      - name: Refresh data and guards without committing
+        run: |
+          python collector.py
+          python signal_engine.py
+          python multisource_collector.py
+          python feed_diagnostics_v542.py data/multisource_market.json data/feed_diagnostics_v542.json
+          python freshness_report_v54.py data/multisource_market.json data/freshness_report_v54.json
+          python data_integrity_gate_v54.py data/multisource_market.json
+          python report_v51.py
+          python event_engine_v52.py
+          python dual_screen_v53.py
+          python liquidity_guard_v546.py
+          python price_parity_guard_v547.py
+          python unified_guard_v548.py
+          python event_lifecycle_v549.py
+          python delivery_health_v550.py
+          python derived_relative_strength_v551.py
+          python relative_strength_audit_v552.py
+          python shadow_relative_screen_v553.py
+          python integration_validation_v560.py
+          python release_readiness_v570.py
+      - name: Generate candidate without auto-authorizing
+        shell: bash
+        run: |
+          set +e
+          python controlled_candidate_v580.py
+          code=$?
+          if [ "$code" -ne 0 ]; then
+            if [ ! -s data/controlled_candidate_v580.json ]; then
+              echo 'Candidate failed without report' >&2
+              exit 1
+            fi
+            echo 'Candidate reported a safety block; continuing to read-only diagnosis.'
+          fi
+      - name: Diagnose divergence and dry-run delivery
+        run: python preflight_v590.py
+      - name: Upload diagnostic reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: preflight-v590
+          path: |
+            data/preflight_v590.json
+            data/controlled_candidate_v580.json
+          if-no-files-found: warn
+          retention-days: 14
