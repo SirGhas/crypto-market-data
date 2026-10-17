@@ -25,11 +25,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-
-          # Fail closed if guard unit tests fail; no data collection is published.
-          python -m unittest -v test_liquidity_guard_v546.py test_price_parity_guard_v547.py
-
-          # On push conflict, regenerate against the latest remote state.
+          python -m unittest -v test_liquidity_guard_v546.py test_price_parity_guard_v547.py test_unified_guard_v548.py
           for attempt in 1 2 3; do
             echo "Collection attempt ${attempt}/3"
             python collector.py
@@ -41,21 +37,19 @@ jobs:
             python report_v51.py
             python event_engine_v52.py
             python dual_screen_v53.py
-            # Guard MUST run after every signal/screening engine and before git add.
             python liquidity_guard_v546.py
             python price_parity_guard_v547.py
-
-            git add -- data/market.json data/dominance_history.json data/signals.json data/signal_state.json data/multisource_market.json data/feed_diagnostics_v542.json data/freshness_report_v54.json data/report_v51.json data/events_v52.json data/event_state_v52.json data/dual_screen_v53.json data/liquidity_guard_v546.json data/price_parity_guard_v547.json
+            python unified_guard_v548.py
+            git add -- data/market.json data/dominance_history.json data/signals.json data/signal_state.json data/multisource_market.json data/feed_diagnostics_v542.json data/freshness_report_v54.json data/report_v51.json data/events_v52.json data/event_state_v52.json data/dual_screen_v53.json data/liquidity_guard_v546.json data/price_parity_guard_v547.json data/unified_guard_v548.json
             if git diff --cached --quiet; then
               echo 'No changes to commit.'
               exit 0
             fi
-            git commit -m "Update crypto research snapshots (v5.4.7 parity and liquidity gates)"
+            git commit -m "Update crypto research snapshots (v5.4.8 unified guard)"
             if git push origin HEAD:main; then
               echo 'Snapshots committed successfully.'
               exit 0
             fi
-
             echo 'Push rejected; another commit landed first.'
             if [ "$attempt" -eq 3 ]; then
               echo 'Three push attempts failed; refusing force-push.' >&2
