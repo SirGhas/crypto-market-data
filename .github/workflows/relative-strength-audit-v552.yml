@@ -1,0 +1,33 @@
+name: Relative Strength Audit v5.5.2
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run fail-closed tests
+        run: python -m unittest -v test_derived_relative_strength_v551.py test_relative_strength_audit_v552.py
+      - name: Refresh direct spot market
+        run: python multisource_collector.py
+      - name: Generate current baseline screening
+        run: python dual_screen_v53.py
+      - name: Calculate research-only derived ratios
+        run: python derived_relative_strength_v551.py
+      - name: Audit relative strength without modifying scoring
+        run: python relative_strength_audit_v552.py
+      - name: Upload audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: relative-strength-audit-v552
+          path: data/relative_strength_audit_v552.json
+          if-no-files-found: error
+          retention-days: 14
