@@ -1,0 +1,43 @@
+name: Safety Reliability v5.9.1-5.9.3
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run new and existing safety tests
+        run: |
+          python -m unittest -v test_safety_reliability_v593.py test_liquidity_guard_v546.py test_price_parity_guard_v547.py test_unified_guard_v548.py test_event_lifecycle_v549.py test_delivery_health_v550.py
+      - name: Refresh research data without committing
+        run: |
+          python collector.py
+          python signal_engine.py
+          python multisource_collector.py
+          python feed_diagnostics_v542.py data/multisource_market.json data/feed_diagnostics_v542.json
+          python freshness_report_v54.py data/multisource_market.json data/freshness_report_v54.json
+          python data_integrity_gate_v54.py data/multisource_market.json
+          python report_v51.py
+          python event_engine_v52.py
+          python dual_screen_v53.py
+          python liquidity_guard_v546.py
+          python price_parity_guard_v547.py
+          python unified_guard_v548.py
+          python event_lifecycle_v549.py
+          python delivery_health_v550.py
+      - name: Run consolidated fail-closed shadow audit
+        run: python safety_reliability_v593.py
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: safety-reliability-v593
+          path: data/safety_reliability_v593.json
+          if-no-files-found: warn
+          retention-days: 14
