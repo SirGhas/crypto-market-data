@@ -1,7 +1,7 @@
 {
   "schema_version": 52,
-  "generated_at_utc": "2026-10-17T18:29:37.506670+00:00",
-  "source_generated_at_utc": "2026-10-17T18:28:54.859133+00:00",
+  "generated_at_utc": "2026-10-17T19:25:46.429465+00:00",
+  "source_generated_at_utc": "2026-10-17T19:24:54.275702+00:00",
   "mode": "event_screening_only_no_push_no_orders",
   "observations": [
     {
@@ -56,7 +56,7 @@
       "4h_resistance": 13.102,
       "relative_strength_vs_btc": null,
       "4h_volume_ratio": 0.878,
-      "observations": 1
+      "observations": 0
     },
     {
       "coin": "XRP",
@@ -107,5 +107,9 @@
     "Not a TradingView or Binance feed",
     "No automatic notification is connected",
     "Missing BTC crosses must not be treated as strength confirmation"
-  ]
+  ],
+  "liquidity_guard_v546": {
+    "pair": "XRPBTC",
+    "status": "BLOCK"
+  }
 }
