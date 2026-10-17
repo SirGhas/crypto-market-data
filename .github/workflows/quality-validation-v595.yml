@@ -1,0 +1,39 @@
+name: Quality Validation v5.9.5
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run regression tests
+        run: python -m unittest -v test_quality_validation_v595.py test_historical_reliability_v594.py test_safety_reliability_v593.py
+      - name: Collect fresh research data
+        run: |
+          python collector.py
+          python signal_engine.py
+          python multisource_collector.py
+          python feed_diagnostics_v542.py data/multisource_market.json data/feed_diagnostics_v542.json
+          python freshness_report_v54.py data/multisource_market.json data/freshness_report_v54.json
+          python data_integrity_gate_v54.py data/multisource_market.json
+          python report_v51.py
+          python event_engine_v52.py
+          python dual_screen_v53.py
+          python liquidity_guard_v546.py
+          python price_parity_guard_v547.py
+          python unified_guard_v548.py
+      - name: Compare volume thresholds RR and queue safety
+        run: python quality_validation_v595.py
+      - name: Upload quality report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-validation-v595
+          path: data/quality_validation_v595.json
+          if-no-files-found: warn
