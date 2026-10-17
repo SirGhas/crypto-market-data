@@ -12,9 +12,9 @@
   "frames": {
     "5m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792244100",
-      "last_closed_age_seconds": 297.9,
-      "nonzero_fraction": 0.2232,
+      "last_candle_id": "1792256700",
+      "last_closed_age_seconds": 123.1,
+      "nonzero_fraction": 0.2318,
       "relative_volume": 0.0,
       "status": "BLOCK",
       "reasons": [
@@ -24,8 +24,8 @@
     },
     "15m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792242900",
-      "last_closed_age_seconds": 897.9,
+      "last_candle_id": "1792255500",
+      "last_closed_age_seconds": 723.1,
       "nonzero_fraction": 0.5708,
       "relative_volume": 0.0,
       "status": "BLOCK",
@@ -36,10 +36,10 @@
     },
     "1h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792238400",
-      "last_closed_age_seconds": 2697.9,
+      "last_candle_id": "1792252800",
+      "last_closed_age_seconds": 723.1,
       "nonzero_fraction": 0.9571,
-      "relative_volume": 1.256,
+      "relative_volume": 0.1059,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -47,10 +47,10 @@
     },
     "4h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792224000",
-      "last_closed_age_seconds": 6297.9,
+      "last_candle_id": "1792238400",
+      "last_closed_age_seconds": 4323.1,
       "nonzero_fraction": 1.0,
-      "relative_volume": 0.1074,
+      "relative_volume": 0.5879,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -63,9 +63,9 @@
     "minimum_relative_volume_1h_4h": 1.3
   },
   "suppressed_event_ids": [
-    "XRP:approaching_support:1792224000"
+    "XRP:approaching_support:1792238400"
   ],
   "schema_version": "5.4.6",
-  "generated_at_utc": "2026-10-17T13:44:57.938630+00:00",
+  "generated_at_utc": "2026-10-17T17:12:03.104250+00:00",
   "mode": "research_only_fail_closed_no_orders"
 }
