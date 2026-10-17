@@ -1,7 +1,7 @@
 {
   "schema_version": 52,
-  "generated_at_utc": "2026-10-17T19:25:46.429465+00:00",
-  "source_generated_at_utc": "2026-10-17T19:24:54.275702+00:00",
+  "generated_at_utc": "2026-10-17T21:27:36.005936+00:00",
+  "source_generated_at_utc": "2026-10-17T21:26:57.981195+00:00",
   "mode": "event_screening_only_no_push_no_orders",
   "observations": [
     {
@@ -10,7 +10,7 @@
       "4h_support": 79775.1,
       "4h_resistance": 84147.1,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.191,
+      "4h_volume_ratio": 0.187,
       "observations": 0
     },
     {
@@ -19,7 +19,7 @@
       "4h_support": 2317.0,
       "4h_resistance": 2530.51,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.616,
+      "4h_volume_ratio": 0.309,
       "observations": 0
     },
     {
@@ -28,8 +28,8 @@
       "4h_support": 709.0,
       "4h_resistance": 747.1,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.902,
-      "observations": 1
+      "4h_volume_ratio": 1.073,
+      "observations": 0
     },
     {
       "coin": "SOL",
@@ -37,16 +37,16 @@
       "4h_support": 100.56,
       "4h_resistance": 108.67,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.556,
+      "4h_volume_ratio": 0.24,
       "observations": 0
     },
     {
       "coin": "LTC",
       "status": "scanned",
       "4h_support": 57.2,
-      "4h_resistance": 62.27,
+      "4h_resistance": 62.26,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.425,
+      "4h_volume_ratio": 0.395,
       "observations": 0
     },
     {
@@ -55,7 +55,7 @@
       "4h_support": 11.824,
       "4h_resistance": 13.102,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.878,
+      "4h_volume_ratio": 1.135,
       "observations": 0
     },
     {
@@ -64,8 +64,8 @@
       "4h_support": 1.2837,
       "4h_resistance": 1.3867,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.556,
-      "observations": 1
+      "4h_volume_ratio": 0.333,
+      "observations": 0
     },
     {
       "coin": "AVAX",
@@ -73,7 +73,7 @@
       "4h_support": 9.337,
       "4h_resistance": 10.521,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.481,
+      "4h_volume_ratio": 0.469,
       "observations": 0
     },
     {
@@ -82,7 +82,7 @@
       "4h_support": 0.9588,
       "4h_resistance": 1.0714,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.509,
+      "4h_volume_ratio": 0.839,
       "observations": 0
     },
     {
@@ -91,7 +91,7 @@
       "4h_support": 147.04,
       "4h_resistance": 165.98,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.384,
+      "4h_volume_ratio": 0.398,
       "observations": 0
     }
   ],
@@ -107,9 +107,5 @@
     "Not a TradingView or Binance feed",
     "No automatic notification is connected",
     "Missing BTC crosses must not be treated as strength confirmation"
-  ],
-  "liquidity_guard_v546": {
-    "pair": "XRPBTC",
-    "status": "BLOCK"
-  }
+  ]
 }
