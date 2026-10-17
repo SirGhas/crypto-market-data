@@ -1,0 +1,43 @@
+{
+  "schema_version": "5.5.0",
+  "generated_at_utc": "2026-10-17T09:08:03.188618+00:00",
+  "mode": "research_only_no_transport_no_orders",
+  "freshness": {
+    "summary": {
+      "PASS": 60,
+      "UNCHANGED_EXPECTED": 0,
+      "STALE": 0,
+      "UNVERIFIED": 16
+    },
+    "unchanged_expected_feeds": [],
+    "stale_feeds": [],
+    "unverified_feeds": [
+      "AAVEBTC:5m",
+      "AAVEBTC:15m",
+      "AAVEBTC:1h",
+      "AAVEBTC:4h",
+      "AVAXBTC:5m",
+      "AVAXBTC:15m",
+      "AVAXBTC:1h",
+      "AVAXBTC:4h",
+      "LINKBTC:5m",
+      "LINKBTC:15m",
+      "LINKBTC:1h",
+      "LINKBTC:4h",
+      "SUIBTC:5m",
+      "SUIBTC:15m",
+      "SUIBTC:1h",
+      "SUIBTC:4h"
+    ]
+  },
+  "outbox": {
+    "pending_delivery": 0,
+    "new_events_in_lifecycle": 0,
+    "delivered_in_this_run": 0
+  },
+  "limitations": [
+    "UNCHANGED is validated by age and candle ID, not independent exchange attestation",
+    "UNVERIFIED feeds remain unverified",
+    "No notification transport configured; no delivered status is assigned"
+  ]
+}

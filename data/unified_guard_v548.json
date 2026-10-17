@@ -1,37 +1,37 @@
 {
   "schema_version": "5.4.8",
   "mode": "research_only_no_orders_no_push",
-  "generated_at_utc": "2026-10-17T07:01:46.599231+00:00",
+  "generated_at_utc": "2026-10-17T09:08:03.105146+00:00",
   "coins": {
     "ETH": {
-      "score": 32,
+      "score": 37,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 1.855
+      "risk_reward": 1.346
     },
     "BNB": {
-      "score": 50,
+      "score": 45,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 4.344
+      "risk_reward": 4.252
     },
     "SOL": {
-      "score": 32,
+      "score": 37,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 0.529
+      "risk_reward": 0.946
     },
     "LTC": {
       "score": 45,
@@ -41,17 +41,17 @@
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 6.971
+      "risk_reward": 12.5
     },
     "LINK": {
-      "score": 30,
+      "score": 45,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 1.923
+      "risk_reward": 5.592
     },
     "XRP": {
       "score": 30,
@@ -61,17 +61,17 @@
       "reason_codes": [
         "xrp_btc_liquidity_unconfirmed"
       ],
-      "risk_reward": 1.534
+      "risk_reward": 1.911
     },
     "AVAX": {
-      "score": 50,
+      "score": 42,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 2.326
+      "risk_reward": 1.872
     },
     "SUI": {
       "score": 55,
@@ -81,7 +81,7 @@
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 7.653
+      "risk_reward": 9.656
     },
     "AAVE": {
       "score": 42,
@@ -91,7 +91,7 @@
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 1.813
+      "risk_reward": 1.819
     }
   },
   "bands": {
