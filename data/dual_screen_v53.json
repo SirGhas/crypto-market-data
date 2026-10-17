@@ -1,7 +1,7 @@
 {
   "schema_version": 53,
-  "generated_at_utc": "2026-10-17T09:18:38.372964+00:00",
-  "source_generated_at_utc": "2026-10-17T09:17:46.647292+00:00",
+  "generated_at_utc": "2026-10-17T09:22:51.321376+00:00",
+  "source_generated_at_utc": "2026-10-17T09:21:55.837456+00:00",
   "mode": "two_tier_research_only_no_orders_no_push_notifications",
   "weights": {
     "static_levels": 30,
