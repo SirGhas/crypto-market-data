@@ -3,6 +3,7 @@
   "status": "BLOCK",
   "reason_codes": [
     "5m:thin_market_nonzero_frequency",
+    "5m:last_closed_candle_zero_volume",
     "15m:thin_market_nonzero_frequency",
     "15m:last_closed_candle_zero_volume",
     "1h:relative_volume_not_confirmed",
@@ -11,20 +12,21 @@
   "frames": {
     "5m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792214400",
-      "last_closed_age_seconds": 119.2,
-      "nonzero_fraction": 0.3348,
-      "relative_volume": null,
+      "last_candle_id": "1792220100",
+      "last_closed_age_seconds": 106.5,
+      "nonzero_fraction": 0.309,
+      "relative_volume": 0.0,
       "status": "BLOCK",
       "reasons": [
-        "thin_market_nonzero_frequency"
+        "thin_market_nonzero_frequency",
+        "last_closed_candle_zero_volume"
       ]
     },
     "15m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792213200",
-      "last_closed_age_seconds": 719.2,
-      "nonzero_fraction": 0.5923,
+      "last_candle_id": "1792219500",
+      "last_closed_age_seconds": 106.5,
+      "nonzero_fraction": 0.5708,
       "relative_volume": 0.0,
       "status": "BLOCK",
       "reasons": [
@@ -34,9 +36,9 @@
     },
     "1h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792209600",
-      "last_closed_age_seconds": 1619.2,
-      "nonzero_fraction": 0.9614,
+      "last_candle_id": "1792216800",
+      "last_closed_age_seconds": 106.5,
+      "nonzero_fraction": 0.9571,
       "relative_volume": 0.0,
       "status": "BLOCK",
       "reasons": [
@@ -46,7 +48,7 @@
     "4h": {
       "source": "Gate.io Spot",
       "last_candle_id": "1792195200",
-      "last_closed_age_seconds": 5219.2,
+      "last_closed_age_seconds": 10906.5,
       "nonzero_fraction": 1.0,
       "relative_volume": 0.0162,
       "status": "BLOCK",
@@ -61,6 +63,6 @@
     "minimum_relative_volume_1h_4h": 1.3
   },
   "schema_version": "5.4.6",
-  "generated_at_utc": "2026-10-17T05:26:59.187884+00:00",
+  "generated_at_utc": "2026-10-17T07:01:46.479112+00:00",
   "mode": "research_only_fail_closed_no_orders"
 }
