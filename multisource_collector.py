@@ -5,7 +5,7 @@ import datetime as dt, json, time, urllib.request, urllib.parse
 from pathlib import Path
 COINS=('BTC','ETH','BNB','SOL','LTC','LINK','XRP','AVAX','SUI','AAVE')
 FRAMES={'5m':(5,'5','5m'),'15m':(15,'15','15m'),'1h':(60,'60','1H'),'4h':(240,'240','4H')}
-GATE_APPROVED={'BNBBTC','XRPBTC'}
+GATE_APPROVED={'BNBBTC','XRPBTC','AAVEBTC','AVAXBTC','LINKBTC','SUIBTC'}
 ROOT=Path('data'); ROOT.mkdir(exist_ok=True)
 
 def get(url):
@@ -71,7 +71,7 @@ def main():
             symbol=coin+quote; entry={'frames':{}}
             for frame in FRAMES:
                 failures=[]
-                # Never change the OKX-first rule. Gate is approved only for two BTC pairs.
+                # Never change the OKX-first rule. Gate is approved only for the six explicitly reviewed BTC pairs.
                 providers=[('OKX Spot',okx)]
                 if symbol in GATE_APPROVED:
                     providers.append(('Gate.io Spot',gate))
@@ -81,7 +81,7 @@ def main():
                     try:
                         candles=validate(fn(symbol,frame),frame,now)
                         feed={'status':'available','source':source,'last_closed_at_utc':dt.datetime.fromtimestamp(candles[-1]['t']+FRAMES[frame][0]*60,dt.timezone.utc).isoformat(),'candles':candles}
-                        if source=='Gate.io Spot' and symbol=='XRPBTC':
+                        if source=='Gate.io Spot':
                             recent=candles[-233:]
                             nonzero=sum(c['v']>0 for c in recent)
                             feed['liquidity_caution']={'low_timeframe_volume_confirmation_required':frame in ('5m','15m'),'nonzero_volume_candles_last_233':nonzero,'total_candles':len(recent)}
