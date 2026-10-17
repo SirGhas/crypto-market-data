@@ -1,0 +1,51 @@
+name: Integration Validation v5.6.0
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run all guards and integration tests
+        run: |
+          python -m unittest -v test_liquidity_guard_v546.py test_price_parity_guard_v547.py test_unified_guard_v548.py test_event_lifecycle_v549.py test_delivery_health_v550.py test_derived_relative_strength_v551.py test_relative_strength_audit_v552.py test_shadow_relative_screen_v553.py test_integration_validation_v560.py
+      - name: Refresh primary data and run production logic without commit
+        run: |
+          python collector.py
+          python signal_engine.py
+          python multisource_collector.py
+          python feed_diagnostics_v542.py data/multisource_market.json data/feed_diagnostics_v542.json
+          python freshness_report_v54.py data/multisource_market.json data/freshness_report_v54.json
+          python data_integrity_gate_v54.py data/multisource_market.json
+          python report_v51.py
+          python event_engine_v52.py
+          python dual_screen_v53.py
+          python liquidity_guard_v546.py
+          python price_parity_guard_v547.py
+          python unified_guard_v548.py
+          python event_lifecycle_v549.py
+          python delivery_health_v550.py
+      - name: Calculate derived and shadow audit
+        run: |
+          python derived_relative_strength_v551.py
+          python relative_strength_audit_v552.py
+          python shadow_relative_screen_v553.py
+      - name: Integrated fail-closed threshold audit
+        run: python integration_validation_v560.py
+      - name: Upload integration report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: integration-validation-v560
+          path: |
+            data/integration_validation_v560.json
+            data/shadow_relative_screen_v553.json
+            data/relative_strength_audit_v552.json
+          if-no-files-found: warn
+          retention-days: 14
