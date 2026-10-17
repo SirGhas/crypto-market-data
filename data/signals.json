@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-10-17T04:26:33.172553+00:00",
-  "source_generated_at_utc": "2026-10-17T04:25:57.447842+00:00",
+  "generated_at_utc": "2026-10-17T05:26:27.483443+00:00",
+  "source_generated_at_utc": "2026-10-17T05:25:53.055278+00:00",
   "mode": "screening_only_no_trades_no_notifications",
   "dominance": {
     "latest_percent": {
-      "BTC.D": 59.297933,
-      "USDT.D": 6.646795
+      "BTC.D": 59.298887,
+      "USDT.D": 6.63864
     },
-    "historical_samples": 14,
+    "historical_samples": 15,
     "trend_ready": true,
     "kind": "coingecko_market_cap_snapshots_not_ohlcv"
   },
@@ -20,7 +20,8 @@
         "btc_4h_below_sma233",
         "4h_below_sma233",
         "relative_strength_below_sma233",
-        "no_closed_1h_breakout"
+        "no_closed_1h_breakout",
+        "insufficient_real_usd_volume"
       ]
     },
     {
@@ -54,6 +55,7 @@
         "4h_below_sma233",
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
+        "15m_not_confirmed",
         "insufficient_real_usd_volume"
       ]
     },
