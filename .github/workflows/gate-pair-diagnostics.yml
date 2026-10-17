@@ -1,0 +1,35 @@
+name: Gate.io Pair Diagnostics
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Diagnose Gate.io spot pairs
+        run: python diagnose_gate_pairs.py
+      - name: Show readable results
+        if: always()
+        shell: bash
+        run: |
+          if [ -f data/gate_pair_diagnostics.json ]; then
+            python -m json.tool data/gate_pair_diagnostics.json
+          else
+            echo 'Diagnostic report was not generated.'
+          fi
+      - name: Upload diagnostic report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gate-pair-diagnostics-v551
+          path: data/gate_pair_diagnostics.json
+          if-no-files-found: warn
+          retention-days: 14
