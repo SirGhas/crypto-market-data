@@ -25,7 +25,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          python -m unittest -v test_liquidity_guard_v546.py test_price_parity_guard_v547.py test_unified_guard_v548.py test_event_lifecycle_v549.py
+          python -m unittest -v test_liquidity_guard_v546.py test_price_parity_guard_v547.py test_unified_guard_v548.py test_event_lifecycle_v549.py test_delivery_health_v550.py
           for attempt in 1 2 3; do
             echo "Collection attempt ${attempt}/3"
             python collector.py
@@ -40,14 +40,14 @@ jobs:
             python liquidity_guard_v546.py
             python price_parity_guard_v547.py
             python unified_guard_v548.py
-            # Re-scan raw observations AFTER all guards. Only eligible events get deduped.
             python event_lifecycle_v549.py
-            git add -- data/market.json data/dominance_history.json data/signals.json data/signal_state.json data/multisource_market.json data/feed_diagnostics_v542.json data/freshness_report_v54.json data/report_v51.json data/events_v52.json data/event_state_v52.json data/dual_screen_v53.json data/liquidity_guard_v546.json data/price_parity_guard_v547.json data/unified_guard_v548.json data/event_lifecycle_v549.json data/event_lifecycle_state_v549.json
+            python delivery_health_v550.py
+            git add -- data/market.json data/dominance_history.json data/signals.json data/signal_state.json data/multisource_market.json data/feed_diagnostics_v542.json data/freshness_report_v54.json data/report_v51.json data/events_v52.json data/event_state_v52.json data/dual_screen_v53.json data/liquidity_guard_v546.json data/price_parity_guard_v547.json data/unified_guard_v548.json data/event_lifecycle_v549.json data/event_lifecycle_state_v549.json data/delivery_health_v550.json data/delivery_outbox_state_v550.json
             if git diff --cached --quiet; then
               echo 'No changes to commit.'
               exit 0
             fi
-            git commit -m "Update crypto research snapshots (v5.4.9 event lifecycle)"
+            git commit -m "Update crypto research snapshots (v5.5.0 delivery health)"
             if git push origin HEAD:main; then
               echo 'Snapshots committed successfully.'
               exit 0
@@ -60,5 +60,4 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             sleep "$attempt"
-
           done
