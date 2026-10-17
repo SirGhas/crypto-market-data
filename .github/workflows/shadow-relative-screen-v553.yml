@@ -1,0 +1,39 @@
+name: Shadow Relative Screen v5.5.3
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  shadow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run shadow and prior audit tests
+        run: python -m unittest -v test_relative_strength_audit_v552.py test_shadow_relative_screen_v553.py
+      - name: Refresh spot market
+        run: python multisource_collector.py
+      - name: Refresh baseline screening
+        run: python dual_screen_v53.py
+      - name: Build research-only derived relative ratios
+        run: python derived_relative_strength_v551.py
+      - name: Recompute audit
+        run: python relative_strength_audit_v552.py
+      - name: Generate fresh baseline publication guard (no lifecycle or delivery)
+        run: |
+          python liquidity_guard_v546.py
+          python price_parity_guard_v547.py
+          python event_engine_v52.py
+          python unified_guard_v548.py
+      - name: Compare shadow scores without publishing
+        run: python shadow_relative_screen_v553.py
+      - name: Upload shadow report
+        uses: actions/upload-artifact@v4
+        with:
+          name: shadow-relative-screen-v553
+          path: data/shadow_relative_screen_v553.json
+          if-no-files-found: error
+          retention-days: 14
