@@ -1,31 +1,15 @@
 {
   "schema_version": "5.5.0",
-  "generated_at_utc": "2026-10-17T19:25:46.649080+00:00",
+  "generated_at_utc": "2026-10-17T22:20:27.565952+00:00",
   "mode": "research_only_no_transport_no_orders",
   "freshness": {
     "summary": {
-      "PASS": 45,
-      "UNCHANGED_EXPECTED": 15,
+      "PASS": 60,
+      "UNCHANGED_EXPECTED": 0,
       "STALE": 0,
       "UNVERIFIED": 16
     },
-    "unchanged_expected_feeds": [
-      "AAVEUSDT:4h",
-      "AVAXUSDT:4h",
-      "BNBBTC:4h",
-      "BNBUSDT:4h",
-      "BTCUSDT:4h",
-      "ETHBTC:4h",
-      "ETHUSDT:4h",
-      "LINKUSDT:4h",
-      "LTCBTC:4h",
-      "LTCUSDT:4h",
-      "SOLBTC:4h",
-      "SOLUSDT:4h",
-      "SUIUSDT:4h",
-      "XRPBTC:4h",
-      "XRPUSDT:4h"
-    ],
+    "unchanged_expected_feeds": [],
     "stale_feeds": [],
     "unverified_feeds": [
       "AAVEBTC:5m",
@@ -47,8 +31,8 @@
     ]
   },
   "outbox": {
-    "pending_delivery": 0,
-    "new_events_in_lifecycle": 0,
+    "pending_delivery": 2,
+    "new_events_in_lifecycle": 2,
     "delivered_in_this_run": 0
   },
   "limitations": [
