@@ -1,6 +1,6 @@
 {
   "schema_version": "5.4.7",
-  "generated_at_utc": "2026-10-17T09:08:03.048490+00:00",
+  "generated_at_utc": "2026-10-17T09:18:38.443485+00:00",
   "mode": "fail_closed_research_only_no_trades",
   "max_deviation_percent": 1.5,
   "pairs": {
@@ -31,19 +31,19 @@
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1792226700",
-          "observed_gate_btc": 0.008858,
-          "implied_okx_btc": 0.008839465325,
+          "latest_candle_id": "1792227600",
+          "observed_gate_btc": 0.008852,
+          "implied_okx_btc": 0.008843244407,
           "max_deviation_percent": 0.2097
         },
         "5m": {
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1792227600",
-          "observed_gate_btc": 0.008853,
-          "implied_okx_btc": 0.008840970218,
-          "max_deviation_percent": 0.2097
+          "latest_candle_id": "1792228200",
+          "observed_gate_btc": 0.008852,
+          "implied_okx_btc": 0.008843244407,
+          "max_deviation_percent": 0.1361
         }
       },
       "reasons": []
@@ -75,18 +75,18 @@
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1792226700",
-          "observed_gate_btc": 1.599e-05,
-          "implied_okx_btc": 1.6003788e-05,
+          "latest_candle_id": "1792227600",
+          "observed_gate_btc": 1.6e-05,
+          "implied_okx_btc": 1.5994195e-05,
           "max_deviation_percent": 0.0862
         },
         "5m": {
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1792227600",
-          "observed_gate_btc": 1.601e-05,
-          "implied_okx_btc": 1.5998179e-05,
+          "latest_candle_id": "1792228200",
+          "observed_gate_btc": 1.6e-05,
+          "implied_okx_btc": 1.5994195e-05,
           "max_deviation_percent": 0.0739
         }
       },
