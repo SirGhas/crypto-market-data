@@ -1,0 +1,22 @@
+name: Kraken ZEC-BTC Pair Probe v5.11.2
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+      - name: Probe public market catalogue from GitHub runner
+        run: python3 tests/kraken_pair_probe_v5112.py
+      - name: Upload diagnostic JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kraken-pair-probe-v5112-${{ github.run_id }}
+          path: artifacts/kraken_pair_probe_v5112.json
+          if-no-files-found: error
+          retention-days: 30
