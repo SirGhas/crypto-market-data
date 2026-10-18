@@ -1,0 +1,27 @@
+name: ZEC live feed audit v5.10.0
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run audit unit tests
+        run: python -m unittest -v test_zec_feed_audit_v5100.py
+      - name: Collect fresh exchange data
+        run: python multisource_collector.py
+      - name: Inspect all eight ZEC feeds
+        run: python zec_feed_audit_v5100.py
+      - name: Upload independent audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: zec-feed-audit-v5100
+          path: data/zec_feed_audit_v5100.json
+          if-no-files-found: warn
