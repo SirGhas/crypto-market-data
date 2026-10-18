@@ -1,0 +1,34 @@
+name: Alpha Multi-Timeframe Watch v1.2
+on:
+  workflow_dispatch:
+# Schedule stays disabled until two manual runs establish baseline and performance.
+#  schedule:
+#    - cron: '7,22,37,52 * * * *'
+permissions:
+  contents: read
+  actions: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate engine
+        run: python -m unittest discover -s tests -p 'test_alpha_swing_v12.py' -v
+      - name: Get previous research baseline
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python -m engine.alpha_prev_swing_v12
+      - name: Collect six timeframes and compare
+        run: python -m engine.alpha_swing_run_v12 --previous artifacts/previous_alpha_swing_v12.json
+      - name: Upload report even if any market failed
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-swing-v12
+          path: artifacts/alpha_swing_v12.json
+          retention-days: 14
+          if-no-files-found: warn
