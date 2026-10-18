@@ -1,0 +1,29 @@
+name: Alpha Research Scores v0.7
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Research scoring tests
+        run: python -m unittest discover -s tests -p 'test_alpha_scoring_v07.py' -v
+      - name: Collect once using existing v0.6 engine
+        run: python -m engine.alpha_momentum_run_v06
+      - name: Score existing research artifact
+        run: python -m engine.alpha_scoring_run_v07
+      - name: Upload research reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-research-scoring-v07
+          path: |
+            artifacts/alpha_momentum_v06.json
+            artifacts/alpha_scoring_v07.json
+          retention-days: 14
