@@ -1,0 +1,28 @@
+name: Alpha Research Diagnostics v0.2
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run consolidated mathematical checks
+        run: |
+          python -m unittest discover -s tests -p 'test_alpha_core.py' -v
+          python -m unittest discover -s tests -p 'test_alpha_diagnostics.py' -v
+      - name: Collect native-market diagnostics
+        run: python engine/alpha_diagnostic_run.py
+      - name: Upload research results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-diagnostics-v02
+          path: artifacts/alpha_diagnostics_v02.json
+          if-no-files-found: warn
+          retention-days: 14
