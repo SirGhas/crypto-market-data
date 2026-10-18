@@ -1,0 +1,26 @@
+name: ZEC Gate direct-cross probe v5.11.0
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test fail-closed probe
+        run: python -m unittest -v test_zec_gate_probe_v5110.py
+      - name: Query public Gate Spot endpoints (read-only)
+        run: python zec_gate_probe_v5110.py
+      - name: Upload probe report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: zec-gate-probe-v5110-report
+          path: data/zec_gate_probe_v5110.json
+          if-no-files-found: warn
+          retention-days: 14
