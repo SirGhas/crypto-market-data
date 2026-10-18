@@ -1,7 +1,7 @@
 {
   "schema_version": 52,
-  "generated_at_utc": "2026-10-18T09:35:32.849740+00:00",
-  "source_generated_at_utc": "2026-10-18T09:34:38.538965+00:00",
+  "generated_at_utc": "2026-10-18T11:06:23.370777+00:00",
+  "source_generated_at_utc": "2026-10-18T11:05:24.945616+00:00",
   "mode": "event_screening_only_no_push_no_orders",
   "observations": [
     {
@@ -104,38 +104,21 @@
       "observations": 0
     }
   ],
-  "new_events": [
-    {
-      "id": "BTC:approaching_resistance:1792296000",
-      "coin": "BTC",
-      "event_type": "approaching_resistance",
-      "status": "forming_watch",
-      "level_usdt": 82928.5,
-      "reference_price_usdt": 81732.5,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": -1.442,
-      "volume_ratio_4h": 0.272,
-      "volume_ratio_1h": 1.088,
-      "volume_confirmed_4h": false,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": null,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-10-18T08:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    }
-  ],
+  "new_events": [],
   "summary": {
     "scanned": 11,
     "blocked": 0,
-    "new_events": 1,
-    "forming": 1
+    "new_events": 0,
+    "forming": 0
   },
   "limitations": [
     "Levels are prior 20 4h high/low, not multi-touch validated",
     "Not a TradingView or Binance feed",
     "No automatic notification is connected",
     "Missing BTC crosses must not be treated as strength confirmation"
-  ]
+  ],
+  "liquidity_guard_v546": {
+    "pair": "XRPBTC",
+    "status": "BLOCK"
+  }
 }

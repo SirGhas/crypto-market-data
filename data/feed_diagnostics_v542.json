@@ -1,13 +1,13 @@
 {
   "schema_version": "5.4.2",
-  "generated_at_utc": "2026-10-18T05:55:44.914636+00:00",
-  "snapshot_generated_at_utc": "2026-10-18T05:54:49.374697+00:00",
+  "generated_at_utc": "2026-10-18T11:06:23.145835+00:00",
+  "snapshot_generated_at_utc": "2026-10-18T11:05:24.945616+00:00",
   "summary": {
-    "attempted": 76,
-    "available": 60,
-    "unavailable": 16,
+    "attempted": 84,
+    "available": 64,
+    "unavailable": 20,
     "available_by_source": {
-      "OKX Spot": 52,
+      "OKX Spot": 56,
       "Gate.io Spot": 8
     }
   },
@@ -122,6 +122,34 @@
       "errors": [
         "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
         "Gate.io Spot: HTTP Error 400: Bad Request"
+      ]
+    },
+    "ZECBTC:15m": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "ZECBTC:1h": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "ZECBTC:4h": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
+      ]
+    },
+    "ZECBTC:5m": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
+        "Bybit Spot: HTTP Error 403: Forbidden"
       ]
     }
   },
