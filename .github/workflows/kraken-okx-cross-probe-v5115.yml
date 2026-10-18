@@ -1,0 +1,24 @@
+name: Kraken OKX Cross Probe v5.11.5
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run read-only research probe
+        run: python tests/kraken_okx_cross_probe_v5115.py
+      - name: Upload JSON result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kraken-okx-cross-probe-v5115
+          path: artifacts/kraken_okx_cross_probe_v5115.json
+          if-no-files-found: error
+          retention-days: 14
