@@ -1,0 +1,27 @@
+name: Event-aligned validation v5.9.8
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Run isolated tests
+        run: python -m unittest -v test_event_aligned_v598.py
+      - name: Refresh market data without committing
+        run: python multisource_collector.py
+      - name: Event-aligned audit and durable restart dry-run
+        run: python event_aligned_v598.py
+      - name: Upload research report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: event-aligned-v598-report
+          path: data/event_aligned_v598.json
+          if-no-files-found: warn
