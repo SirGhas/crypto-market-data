@@ -10,7 +10,7 @@ def main():
     snapshot=json.loads(src.read_text(encoding='utf-8'))
     audit=screen(snapshot)
     target=Path('artifacts/alpha_screening_v03.json')
-    target.write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\\n',encoding='utf-8')
+    target.write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print('Alpha audit:',audit['totals'], 'signals enabled:',audit['signals_enabled'])
 
 if __name__=='__main__':

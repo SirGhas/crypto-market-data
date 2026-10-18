@@ -23,7 +23,7 @@ def screen(snapshot):
       'rr_requirement':'at least 3 using validated entry, stop and target; illustrative R/R is insufficient',
       'assets':{},'totals':{}
     }
-    total=0; data_valid=0; blocked=0; rvol_ge_1=0; breakouts=0
+    total=0; data_valid=0; blocked=0; rvol_ge_1=0; breakouts=0; breakdowns=0
     for asset in assets:
         result['assets'][asset]={}
         for tf in periods:
@@ -42,10 +42,12 @@ def screen(snapshot):
                 and diag.get('signal_authorized') is False)
             vol=positive(diag.get('relative_volume_20'))
             breakout=diag.get('breakout_close_above_resistance') is True
+            breakdown=diag.get('breakdown_close_below_support') is True
             if ok: data_valid+=1
             else: blocked+=1
             if ok and vol is not None and vol>=1:rvol_ge_1+=1
             if ok and breakout:breakouts+=1
+            if ok and breakdown:breakdowns+=1
             reasons=[]
             if not ok:reasons.append('DATA_OR_IDENTITY_UNVERIFIED')
             if ok and not breakout:reasons.append('NO_CONFIRMED_CLOSE_ABOVE_STATIC_RESISTANCE')
@@ -64,12 +66,14 @@ def screen(snapshot):
                 'rvol20':str(vol) if ok and vol is not None else None,
                 'rvol_ge_1':bool(ok and vol is not None and vol>=1),
                 'close_above_resistance':bool(ok and breakout),
+                'close_below_support':bool(ok and breakdown),
                 'illustrative_rr_at_least_3':diag.get('illustrative_rr_at_least_3') if ok else None,
                 'validated_trade_rr':None,'score':None,'tier':None,
                 'signal_authorized':False,'blocking_reasons':reasons
             }
     result['totals']={'expected':total,'data_valid':data_valid,'blocked_data':blocked,
                       'rvol_ge_1':rvol_ge_1,'closes_above_resistance':breakouts,
+                      'closes_below_support':breakdowns,
                       'eligible_signals':0}
     result['outcome']='ALPHA_0_3_RESEARCH_SCREENING_ONLY'
     return result
