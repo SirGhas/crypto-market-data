@@ -1,0 +1,38 @@
+name: Alpha Research Integrity v0.8
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Offline tests
+        run: python -m unittest discover -s tests -p 'test_alpha_integrity_v08.py' -v
+      - name: Read previous v0.8 artifact if present
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python -m engine.alpha_previous_artifact_v08
+      - name: Collect the latest OKX research snapshot once
+        run: python -m engine.alpha_momentum_run_v06
+      - name: Score latest snapshot without further OKX requests
+        run: python -m engine.alpha_scoring_run_v07
+      - name: Cross-run check and independent-window event summary
+        run: python -m engine.alpha_integrity_run_v08
+      - name: Upload all research reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-research-integrity-v08
+          path: |
+            artifacts/alpha_momentum_v06.json
+            artifacts/alpha_scoring_v07.json
+            artifacts/alpha_integrity_v08.json
+          if-no-files-found: warn
+          retention-days: 14
