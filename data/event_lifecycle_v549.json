@@ -1,43 +1,13 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-10-18T01:03:52.780828+00:00",
+  "generated_at_utc": "2026-10-18T05:55:45.403312+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
   "new_publishable_events": [],
   "pending_unconfirmed": [
     {
-      "id": "BNB:approaching_support:1792267200",
-      "coin": "BNB",
-      "event_type": "approaching_support",
-      "reason": "positive_publication_gate_not_passed"
-    },
-    {
-      "id": "LINK:4h_support_reclaim:1792267200",
-      "coin": "LINK",
-      "event_type": "4h_support_reclaim",
-      "reason": "positive_publication_gate_not_passed"
-    },
-    {
-      "id": "LINK:approaching_support:1792267200",
-      "coin": "LINK",
-      "event_type": "approaching_support",
-      "reason": "positive_publication_gate_not_passed"
-    },
-    {
-      "id": "XRP:4h_support_reclaim:1792267200",
-      "coin": "XRP",
-      "event_type": "4h_support_reclaim",
-      "reason": "positive_publication_gate_not_passed"
-    },
-    {
-      "id": "XRP:approaching_support:1792267200",
-      "coin": "XRP",
-      "event_type": "approaching_support",
-      "reason": "positive_publication_gate_not_passed"
-    },
-    {
-      "id": "SUI:4h_support_reclaim:1792267200",
-      "coin": "SUI",
-      "event_type": "4h_support_reclaim",
+      "id": "BTC:approaching_resistance:1792281600",
+      "coin": "BTC",
+      "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     }
   ],
@@ -45,7 +15,7 @@
     "scanned_coins": 10,
     "blocked_scans": 0,
     "new_publishable_events": 0,
-    "pending_unconfirmed": 6
+    "pending_unconfirmed": 1
   },
   "limitations": [
     "No external notification transport configured",
