@@ -1,0 +1,26 @@
+name: Alpha Research Candidate v0.1
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  alpha:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate mathematical core offline
+        run: python -m unittest discover -s tests -p 'test_alpha_core.py' -v
+      - name: Research-only OKX 10 coin snapshot
+        run: python engine/alpha_snapshot.py
+      - name: Upload diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-research-candidate-v0-1
+          path: artifacts/alpha_research_snapshot.json
+          if-no-files-found: warn
+          retention-days: 14
