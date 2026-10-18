@@ -1,0 +1,24 @@
+name: Kraken synthetic ZEC-BTC research v5.11.4
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Read-only OHLC cross-rate snapshot
+        run: python tests/kraken_synthetic_probe_v5114.py
+      - name: Upload research JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kraken-synthetic-probe-v5114-${{ github.run_id }}
+          path: artifacts/kraken_synthetic_probe_v5114.json
+          if-no-files-found: warn
+          retention-days: 14
