@@ -1,0 +1,29 @@
+name: Alpha Swing Watch v1.1
+on:
+  workflow_dispatch:
+# After first successful manual run and baseline/cost review, enable schedule:
+#   schedule:
+#     - cron: '*/15 * * * *'
+permissions:
+  contents: read
+jobs:
+  swing-research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Research-only tests
+        run: python -m unittest discover -s tests -p 'test_alpha_swing_v11.py' -v
+      - name: Collect and explain four timeframes
+        run: python -m engine.alpha_swing_run_v11
+      - name: Upload audit regardless of success
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-swing-v11
+          path: artifacts/alpha_swing_v11.json
+          retention-days: 14
+          if-no-files-found: warn
