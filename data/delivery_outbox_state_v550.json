@@ -69,6 +69,29 @@
         "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
       },
       "status": "PENDING_DELIVERY"
+    },
+    "LTC:approaching_support:1792324800": {
+      "event": {
+        "id": "LTC:approaching_support:1792324800",
+        "coin": "LTC",
+        "event_type": "approaching_support",
+        "status": "forming_watch",
+        "level_usdt": 57.4,
+        "reference_price_usdt": 58.01,
+        "reference_price_kind": "last_closed_1h_not_live",
+        "distance_from_level_percent": 1.063,
+        "volume_ratio_4h": 2.079,
+        "volume_ratio_1h": 0.991,
+        "volume_confirmed_4h": true,
+        "trend_4h_above_sma233": false,
+        "lower_tf_confirmed": false,
+        "relative_strength_vs_btc": false,
+        "source_4h": "OKX Spot",
+        "source_1h": "OKX Spot",
+        "closed_4h_at_utc": "2026-10-18T16:00:00+00:00",
+        "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+      },
+      "status": "PENDING_DELIVERY"
     }
   },
   "delivered_ids": []
