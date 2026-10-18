@@ -1,0 +1,23 @@
+name: Kraken OKX Freshness Negative Tests v5.11.7
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  negative-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Execute offline negative validation
+        run: python tests/test_freshness_negative_v5117.py
+      - name: Preserve diagnostic JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: freshness-negative-v5117
+          path: artifacts/freshness_negative_tests_v5117.json
+          if-no-files-found: warn
