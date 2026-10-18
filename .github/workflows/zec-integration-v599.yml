@@ -1,0 +1,52 @@
+name: ZEC integration v5.9.9
+on:
+  workflow_dispatch:
+    inputs:
+      apply_changes:
+        description: 'Commit tested ZEC changes to main (true) or validate only (false)'
+        required: true
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency:
+  group: zec-integration-v599
+  cancel-in-progress: false
+jobs:
+  integrate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test patch logic
+        run: python -m unittest -v test_add_zec_v599.py
+      - name: Apply ZEC patch in runner
+        run: python add_zec_v599.py --apply
+      - name: Check integration invariants
+        run: |
+          python - <<'PY'
+          import multisource_collector as m, dual_screen_v53 as d, event_engine_v52 as e, report_v51 as r, event_aligned_v598 as a
+          for label, coins in [('collector',m.COINS),('screen',d.COINS),('events',e.SYMBOLS),('report',r.COINS),('history',a.COINS)]:
+              assert 'ZEC' in coins, label
+          assert 'ZECBTC' not in m.GATE_APPROVED, 'Gate ZEC/BTC was not independently approved'
+          print('ZEC integrated in five modules; unapproved Gate cross remains disabled')
+          PY
+          python -m unittest -v test_add_zec_v599.py
+          git diff --check
+          git diff --stat
+      - name: Commit reviewed integration when requested
+        if: ${{ inputs.apply_changes == true }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- multisource_collector.py dual_screen_v53.py event_engine_v52.py report_v51.py event_aligned_v598.py unified_guard_v548.py
+          if git diff --cached --quiet; then echo 'Already integrated'; exit 0; fi
+          git commit -m 'Add ZEC to research engine with fail-closed cross guard'
+          git push origin HEAD:main
