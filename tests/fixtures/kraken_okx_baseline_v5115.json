@@ -1,1 +1,340 @@
-
+{
+  "probe_version": "5.11.5",
+  "phase": "02b_okx_parameter_fix_cross_comparison",
+  "timestamp_utc": "2026-10-18T10:10:29Z",
+  "github": {
+    "repository": "SirGhas/crypto-market-data",
+    "run_id": "39118199854",
+    "sha": "f9ff77a99044fc5c96c14c707babe388adeee600",
+    "runner_os": "Linux"
+  },
+  "research_only": true,
+  "trading_enabled": false,
+  "signals_enabled": false,
+  "exchange_admission_authorized": false,
+  "synthetic_signal_authorized": false,
+  "release_6_0_0_approved": false,
+  "timeframe_mapping": {
+    "5m": "5m",
+    "15m": "15m",
+    "1h": "1H",
+    "4h": "4H"
+  },
+  "usd_usdt_basis_caveat": "USD versus USDT mismatch; divergence diagnostic only",
+  "intervals": {
+    "5m": {
+      "kraken": {
+        "status": "FRESH_ALIGNED",
+        "start_epoch": 1792317900,
+        "start_utc": "2026-10-18T10:05:00Z",
+        "end_utc": "2026-10-18T10:10:00Z",
+        "age_after_close_seconds": 29,
+        "aligned_candle_count": 720,
+        "zec_close": "1131.32",
+        "btc_close": "82067.0",
+        "synthetic_zec_btc": "0.013785321749",
+        "zec_native_volume": "5.85283927",
+        "btc_native_volume": "0.81646153",
+        "synthetic_volume": null,
+        "synthetic_liquidity": null,
+        "fresh": true,
+        "identity": "1792317900:5"
+      },
+      "okx_reference": {
+        "status": "FRESH_ALIGNED",
+        "start_epoch": 1792317900,
+        "start_utc": "2026-10-18T10:05:00Z",
+        "end_utc": "2026-10-18T10:10:00Z",
+        "age_after_close_seconds": 29,
+        "aligned_candle_count": 99,
+        "zec_close": "1132.65",
+        "btc_close": "82175.3",
+        "synthetic_zec_btc": "0.013783338789",
+        "zec_native_volume": "9.30149",
+        "btc_native_volume": "9.28093678",
+        "synthetic_volume": null,
+        "synthetic_liquidity": null,
+        "fresh": true,
+        "identity": "1792317900:5"
+      },
+      "divergence_percent": "0.014387",
+      "diagnostic_eligible": true,
+      "errors": [],
+      "endpoint_results": {
+        "kraken_zec": {
+          "endpoint": "https://api.kraken.com/0/public/OHLC",
+          "http_status": 200,
+          "api_code": null,
+          "api_message": null,
+          "duration_ms": 115,
+          "network_error": null
+        },
+        "kraken_btc": {
+          "endpoint": "https://api.kraken.com/0/public/OHLC",
+          "http_status": 200,
+          "api_code": null,
+          "api_message": null,
+          "duration_ms": 126,
+          "network_error": null
+        },
+        "okx_zec": {
+          "endpoint": "https://www.okx.com/api/v5/market/history-candles",
+          "http_status": 200,
+          "api_code": "0",
+          "api_message": "",
+          "duration_ms": 325,
+          "network_error": null
+        },
+        "okx_btc": {
+          "endpoint": "https://www.okx.com/api/v5/market/history-candles",
+          "http_status": 200,
+          "api_code": "0",
+          "api_message": "",
+          "duration_ms": 224,
+          "network_error": null
+        }
+      }
+    },
+    "15m": {
+      "kraken": {
+        "status": "FRESH_ALIGNED",
+        "start_epoch": 1792316700,
+        "start_utc": "2026-10-18T09:45:00Z",
+        "end_utc": "2026-10-18T10:00:00Z",
+        "age_after_close_seconds": 629,
+        "aligned_candle_count": 720,
+        "zec_close": "1133.30",
+        "btc_close": "82045.1",
+        "synthetic_zec_btc": "0.013813134483",
+        "zec_native_volume": "24.51635009",
+        "btc_native_volume": "6.04581053",
+        "synthetic_volume": null,
+        "synthetic_liquidity": null,
+        "fresh": true,
+        "identity": "1792316700:15"
+      },
+      "okx_reference": {
+        "status": "FRESH_ALIGNED",
+        "start_epoch": 1792316700,
+        "start_utc": "2026-10-18T09:45:00Z",
+        "end_utc": "2026-10-18T10:00:00Z",
+        "age_after_close_seconds": 629,
+        "aligned_candle_count": 99,
+        "zec_close": "1135.18",
+        "btc_close": "82148.1",
+        "synthetic_zec_btc": "0.013818700615",
+        "zec_native_volume": "91.48122",
+        "btc_native_volume": "33.52164564",
+        "synthetic_volume": null,
+        "synthetic_liquidity": null,
+        "fresh": true,
+        "identity": "1792316700:15"
+      },
+      "divergence_percent": "-0.040280",
+      "diagnostic_eligible": true,
+      "errors": [],
+      "endpoint_results": {
+        "kraken_zec": {
+          "endpoint": "https://api.kraken.com/0/public/OHLC",
+          "http_status": 200,
+          "api_code": null,
+          "api_message": null,
+          "duration_ms": 140,
+          "network_error": null
+        },
+        "kraken_btc": {
+          "endpoint": "https://api.kraken.com/0/public/OHLC",
+          "http_status": 200,
+          "api_code": null,
+          "api_message": null,
+          "duration_ms": 49,
+          "network_error": null
+        },
+        "okx_zec": {
+          "endpoint": "https://www.okx.com/api/v5/market/history-candles",
+          "http_status": 200,
+          "api_code": "0",
+          "api_message": "",
+          "duration_ms": 223,
+          "network_error": null
+        },
+        "okx_btc": {
+          "endpoint": "https://www.okx.com/api/v5/market/history-candles",
+          "http_status": 200,
+          "api_code": "0",
+          "api_message": "",
+          "duration_ms": 213,
+          "network_error": null
+        }
+      }
+    },
+    "1h": {
+      "kraken": {
+        "status": "FRESH_ALIGNED",
+        "start_epoch": 1792314000,
+        "start_utc": "2026-10-18T09:00:00Z",
+        "end_utc": "2026-10-18T10:00:00Z",
+        "age_after_close_seconds": 629,
+        "aligned_candle_count": 720,
+        "zec_close": "1133.30",
+        "btc_close": "82045.1",
+        "synthetic_zec_btc": "0.013813134483",
+        "zec_native_volume": "404.48343290",
+        "btc_native_volume": "38.71997980",
+        "synthetic_volume": null,
+        "synthetic_liquidity": null,
+        "fresh": true,
+        "identity": "1792314000:60"
+      },
+      "okx_reference": {
+        "status": "FRESH_ALIGNED",
+        "start_epoch": 1792314000,
+        "start_utc": "2026-10-18T09:00:00Z",
+        "end_utc": "2026-10-18T10:00:00Z",
+        "age_after_close_seconds": 629,
+        "aligned_candle_count": 99,
+        "zec_close": "1135.18",
+        "btc_close": "82148.1",
+        "synthetic_zec_btc": "0.013818700615",
+        "zec_native_volume": "1182.12944",
+        "btc_native_volume": "198.90771063",
+        "synthetic_volume": null,
+        "synthetic_liquidity": null,
+        "fresh": true,
+        "identity": "1792314000:60"
+      },
+      "divergence_percent": "-0.040280",
+      "diagnostic_eligible": true,
+      "errors": [],
+      "endpoint_results": {
+        "kraken_zec": {
+          "endpoint": "https://api.kraken.com/0/public/OHLC",
+          "http_status": 200,
+          "api_code": null,
+          "api_message": null,
+          "duration_ms": 131,
+          "network_error": null
+        },
+        "kraken_btc": {
+          "endpoint": "https://api.kraken.com/0/public/OHLC",
+          "http_status": 200,
+          "api_code": null,
+          "api_message": null,
+          "duration_ms": 42,
+          "network_error": null
+        },
+        "okx_zec": {
+          "endpoint": "https://www.okx.com/api/v5/market/history-candles",
+          "http_status": 200,
+          "api_code": "0",
+          "api_message": "",
+          "duration_ms": 257,
+          "network_error": null
+        },
+        "okx_btc": {
+          "endpoint": "https://www.okx.com/api/v5/market/history-candles",
+          "http_status": 200,
+          "api_code": "0",
+          "api_message": "",
+          "duration_ms": 213,
+          "network_error": null
+        }
+      }
+    },
+    "4h": {
+      "kraken": {
+        "status": "FRESH_ALIGNED",
+        "start_epoch": 1792296000,
+        "start_utc": "2026-10-18T04:00:00Z",
+        "end_utc": "2026-10-18T08:00:00Z",
+        "age_after_close_seconds": 7829,
+        "aligned_candle_count": 720,
+        "zec_close": "1126.52",
+        "btc_close": "81576.9",
+        "synthetic_zec_btc": "0.013809301408",
+        "zec_native_volume": "1196.46362024",
+        "btc_native_volume": "48.67880191",
+        "synthetic_volume": null,
+        "synthetic_liquidity": null,
+        "fresh": true,
+        "identity": "1792296000:240"
+      },
+      "okx_reference": {
+        "status": "FRESH_ALIGNED",
+        "start_epoch": 1792296000,
+        "start_utc": "2026-10-18T04:00:00Z",
+        "end_utc": "2026-10-18T08:00:00Z",
+        "age_after_close_seconds": 7829,
+        "aligned_candle_count": 99,
+        "zec_close": "1127.96",
+        "btc_close": "81679.5",
+        "synthetic_zec_btc": "0.013809585024",
+        "zec_native_volume": "8509.06103",
+        "btc_native_volume": "227.02093753",
+        "synthetic_volume": null,
+        "synthetic_liquidity": null,
+        "fresh": true,
+        "identity": "1792296000:240"
+      },
+      "divergence_percent": "-0.002054",
+      "diagnostic_eligible": true,
+      "errors": [],
+      "endpoint_results": {
+        "kraken_zec": {
+          "endpoint": "https://api.kraken.com/0/public/OHLC",
+          "http_status": 200,
+          "api_code": null,
+          "api_message": null,
+          "duration_ms": 138,
+          "network_error": null
+        },
+        "kraken_btc": {
+          "endpoint": "https://api.kraken.com/0/public/OHLC",
+          "http_status": 200,
+          "api_code": null,
+          "api_message": null,
+          "duration_ms": 136,
+          "network_error": null
+        },
+        "okx_zec": {
+          "endpoint": "https://www.okx.com/api/v5/market/history-candles",
+          "http_status": 200,
+          "api_code": "0",
+          "api_message": "",
+          "duration_ms": 223,
+          "network_error": null
+        },
+        "okx_btc": {
+          "endpoint": "https://www.okx.com/api/v5/market/history-candles",
+          "http_status": 200,
+          "api_code": "0",
+          "api_message": "",
+          "duration_ms": 226,
+          "network_error": null
+        }
+      }
+    }
+  },
+  "errors": [],
+  "outcome": "RESEARCH_SNAPSHOT_ONLY",
+  "kraken_catalog_endpoint": {
+    "endpoint": "https://api.kraken.com/0/public/AssetPairs",
+    "http_status": 200,
+    "api_code": null,
+    "api_message": null,
+    "duration_ms": 95,
+    "network_error": null
+  },
+  "kraken_discovered_pairs": {
+    "ZEC": {
+      "pair_key": "XZECZUSD",
+      "wsname": "ZEC/USD",
+      "status": "online"
+    },
+    "BTC": {
+      "pair_key": "XXBTZUSD",
+      "wsname": "XBT/USD",
+      "status": "online"
+    }
+  }
+}
