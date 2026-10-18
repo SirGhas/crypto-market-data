@@ -30,10 +30,10 @@ def assess(before,after,tf,source,previous_run,new_run):
         old_at=iso_timestamp(previous_run)
         entry['previous_identity']=before.get('identity');entry['current_identity']=after.get('identity')
         if entry['previous_identity']!=f'{a}:{period//60}' or entry['current_identity']!=f'{b}:{period//60}':
-            entry['reasons'].append('IDENTITY_INCONSISTENT');return entry
-        if a%period!=0 or b%period!=0: entry['reasons'].append('MISALIGNED_EPOCH');return entry
-        if now<=old_at:entry['reasons'].append('RUN_TIMESTAMP_NOT_ADVANCED');return entry
-        if a+period>old_at or b+period>now:entry['reasons'].append('UNFINISHED_CANDLE');return entry
+            entry['reasons'].append('IDENTITY_INCONSISTENT');entry['status']='BLOCKED';return entry
+        if a%period!=0 or b%period!=0: entry['reasons'].append('MISALIGNED_EPOCH');entry['status']='BLOCKED';return entry
+        if now<=old_at:entry['reasons'].append('RUN_TIMESTAMP_NOT_ADVANCED');entry['status']='BLOCKED';return entry
+        if a+period>old_at or b+period>now:entry['reasons'].append('UNFINISHED_CANDLE');entry['status']='BLOCKED';return entry
         # Most recent CLOSED candle at time of current snapshot. No future inference.
         most_recent=(now//period-1)*period
         entry['new_closed_candle_due']=most_recent>a
