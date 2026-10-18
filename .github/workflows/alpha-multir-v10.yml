@@ -1,0 +1,26 @@
+name: Alpha Structural Multi-R v1.0
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests
+        run: python -m unittest discover -s tests -p 'test_alpha_multir_v10.py' -v
+      - name: Research simulation
+        run: python -m engine.alpha_multir_run_v10
+      - name: Upload research result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-multir-v10
+          path: artifacts/alpha_multir_v10.json
+          if-no-files-found: warn
+          retention-days: 14
