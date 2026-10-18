@@ -1,0 +1,25 @@
+name: ZEC Gate diagnostic v5.11.1
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unit tests
+        run: python -m unittest -v test_zec_gate_diagnostic_v5111.py
+      - name: Diagnose public Gate Spot API
+        run: python zec_gate_diagnostic_v5111.py
+      - name: Upload diagnostic JSON
+        uses: actions/upload-artifact@v4
+        with:
+          name: zec-gate-diagnostic-v5111-report
+          path: data/zec_gate_diagnostic_v5111.json
+          if-no-files-found: error
+          retention-days: 14
