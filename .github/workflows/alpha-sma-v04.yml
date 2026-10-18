@@ -1,0 +1,29 @@
+name: Alpha Research SMA Close v0.4
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  alpha:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests and SMA correctness
+        run: |
+          python -m unittest discover -s tests -p 'test_alpha_core.py' -v
+          python -m unittest discover -s tests -p 'test_alpha_diagnostics.py' -v
+          python -m unittest discover -s tests -p 'test_alpha_sma_v04.py' -v
+      - name: One paginated OKX collection per symbol and timeframe
+        run: python -m engine.alpha_sma_run_v04
+      - name: Upload diagnostic output even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-sma-close-v04
+          path: artifacts/alpha_sma_v04.json
+          if-no-files-found: warn
+          retention-days: 14
