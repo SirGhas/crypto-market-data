@@ -2,7 +2,7 @@
 import datetime as dt,json,math
 from pathlib import Path
 ROOT=Path('data')
-COINS=('BTC','ETH','BNB','SOL','LTC','LINK','XRP','AVAX','SUI','AAVE')
+COINS=('BTC','ETH','BNB','SOL','LTC','LINK','XRP','AVAX','SUI','AAVE','ZEC')
 def pct(x): return round(x*100,3)
 def analyze(coin, pairs):
     p=pairs.get(coin+'USDT',{}).get('frames',{})

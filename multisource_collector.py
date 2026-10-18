@@ -3,7 +3,7 @@ No Binance. No synthetic OHLCV. Existing Bybit fallback retained for other feeds
 """
 import datetime as dt, json, time, urllib.request, urllib.parse
 from pathlib import Path
-COINS=('BTC','ETH','BNB','SOL','LTC','LINK','XRP','AVAX','SUI','AAVE')
+COINS=('BTC','ETH','BNB','SOL','LTC','LINK','XRP','AVAX','SUI','AAVE','ZEC')
 FRAMES={'5m':(5,'5','5m'),'15m':(15,'15','15m'),'1h':(60,'60','1H'),'4h':(240,'240','4H')}
 GATE_APPROVED={'BNBBTC','XRPBTC','AAVEBTC','AVAXBTC','LINKBTC','SUIBTC'}
 ROOT=Path('data'); ROOT.mkdir(exist_ok=True)

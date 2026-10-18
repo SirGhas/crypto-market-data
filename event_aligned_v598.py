@@ -1,7 +1,7 @@
 """v5.9.8: event-aligned historical audit + restart-safe dry outbox. No orders or transport."""
 import argparse, datetime as dt, json, math, os, tempfile
 from pathlib import Path
-COINS=('ETH','BNB','SOL','LTC','LINK','XRP','AVAX','SUI','AAVE')
+COINS=('ETH','BNB','SOL','LTC','LINK','XRP','AVAX','SUI','AAVE','ZEC')
 def candle_history(frame,seconds,minimum=233):
     if not isinstance(frame,dict) or frame.get('status')!='available':return None,'missing_feed'
     cs=frame.get('candles')

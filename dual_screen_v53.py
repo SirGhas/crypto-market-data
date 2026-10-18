@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 ROOT = Path('data')
-COINS = ('ETH', 'BNB', 'SOL', 'LTC', 'LINK', 'XRP', 'AVAX', 'SUI', 'AAVE')
+COINS = ('ETH', 'BNB', 'SOL', 'LTC', 'LINK', 'XRP', 'AVAX', 'SUI', 'AAVE','ZEC')
 FRAMES = {'4h': 14400, '1h': 3600, '15m': 900}
 WEIGHTS = {'static_levels': 30, 'volume': 25, 'trend_4h': 15, 'risk_reward': 15,
            'relative_btc': 5, 'lower_timeframes': 5, 'btc_and_dominance': 5}

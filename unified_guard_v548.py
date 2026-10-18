@@ -58,6 +58,23 @@ def evaluate(market, dual, liquidity, parity, now):
             errors.append('price_parity_unconfirmed')
         if coin=='XRP' and liquidity.get('status')!='PASS':
             errors.append('xrp_btc_liquidity_unconfirmed')
+        # ZEC: fail closed unless its BTC cross is directly sourced from OKX Spot.
+        # Never infer independent cross validity from a fallback or derived series.
+        if coin == 'ZEC':
+            cross = market.get('pairs', {}).get('ZECBTC', {}).get('frames', {}).get('4h', {})
+            if cross.get('source') != 'OKX Spot' or cross.get('status') != 'available':
+                errors.append('zec_btc_cross_not_verified_okx')
+            else:
+                cs = cross.get('candles', [])
+                if not isinstance(cs, list) or len(cs) < 233:
+                    errors.append('zec_btc_cross_insufficient_history')
+                else:
+                    try:
+                        stamps = [int(c['t']) for c in cs[-233:]]
+                        if any(b - a != 14400 for a, b in zip(stamps, stamps[1:])) or not 0 <= now - (stamps[-1] + 14400) <= 14700:
+                            errors.append('zec_btc_cross_stale_or_gapped')
+                    except (KeyError, TypeError, ValueError):
+                        errors.append('zec_btc_cross_invalid')
         if e.get('tier')=='blocked': errors.append('screening_blocked')
         if coin in ('BNB','XRP'):
             cross=market.get('pairs',{}).get(coin+'BTC',{}).get('frames',{}).get('4h',{})

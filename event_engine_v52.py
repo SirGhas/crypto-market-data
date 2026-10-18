@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 ROOT = Path('data')
-SYMBOLS = ('BTC','ETH','BNB','SOL','LTC','LINK','XRP','AVAX','SUI','AAVE')
+SYMBOLS = ('BTC','ETH','BNB','SOL','LTC','LINK','XRP','AVAX','SUI','AAVE','ZEC')
 MIN_VOLUME = 1.3
 NEAR_LEVEL_PCT = 1.5
 
