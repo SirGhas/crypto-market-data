@@ -1,68 +1,51 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-10-17T22:20:27.512531+00:00",
+  "generated_at_utc": "2026-10-18T01:03:52.780828+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
-  "new_publishable_events": [
-    {
-      "id": "LINK:approaching_support:1792252800",
-      "coin": "LINK",
-      "event_type": "approaching_support",
-      "status": "forming_watch",
-      "level_usdt": 11.824,
-      "reference_price_usdt": 11.895,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 0.6,
-      "volume_ratio_4h": 1.135,
-      "volume_ratio_1h": 4.336,
-      "volume_confirmed_4h": false,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": null,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-10-17T20:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    },
-    {
-      "id": "SUI:approaching_support:1792252800",
-      "coin": "SUI",
-      "event_type": "approaching_support",
-      "status": "forming_watch",
-      "level_usdt": 0.9588,
-      "reference_price_usdt": 0.9667,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 0.824,
-      "volume_ratio_4h": 0.839,
-      "volume_ratio_1h": 4.439,
-      "volume_confirmed_4h": false,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": null,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-10-17T20:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    }
-  ],
+  "new_publishable_events": [],
   "pending_unconfirmed": [
     {
-      "id": "BNB:approaching_support:1792252800",
+      "id": "BNB:approaching_support:1792267200",
       "coin": "BNB",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "XRP:approaching_support:1792252800",
+      "id": "LINK:4h_support_reclaim:1792267200",
+      "coin": "LINK",
+      "event_type": "4h_support_reclaim",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "LINK:approaching_support:1792267200",
+      "coin": "LINK",
+      "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "XRP:4h_support_reclaim:1792267200",
+      "coin": "XRP",
+      "event_type": "4h_support_reclaim",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "XRP:approaching_support:1792267200",
       "coin": "XRP",
       "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "SUI:4h_support_reclaim:1792267200",
+      "coin": "SUI",
+      "event_type": "4h_support_reclaim",
       "reason": "positive_publication_gate_not_passed"
     }
   ],
   "summary": {
     "scanned_coins": 10,
     "blocked_scans": 0,
-    "new_publishable_events": 2,
-    "pending_unconfirmed": 2
+    "new_publishable_events": 0,
+    "pending_unconfirmed": 6
   },
   "limitations": [
     "No external notification transport configured",

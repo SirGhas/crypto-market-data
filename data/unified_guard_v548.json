@@ -1,7 +1,7 @@
 {
   "schema_version": "5.4.8",
   "mode": "research_only_no_orders_no_push",
-  "generated_at_utc": "2026-10-17T22:20:27.480402+00:00",
+  "generated_at_utc": "2026-10-18T01:03:52.749976+00:00",
   "coins": {
     "ETH": {
       "score": 45,
@@ -11,10 +11,10 @@
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 1.647
+      "risk_reward": 24.082
     },
     "BNB": {
-      "score": 36,
+      "score": 21,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -24,15 +24,17 @@
       "risk_reward": null
     },
     "SOL": {
-      "score": 60,
-      "color_band": "yellow_60_69",
-      "original_tier": "tier_2_conditional_watch",
-      "positive_publication_gate": "PASS",
-      "reason_codes": [],
-      "risk_reward": 3.615
+      "score": 51,
+      "color_band": "gray_below_60",
+      "original_tier": "below_threshold_watch_only",
+      "positive_publication_gate": "BLOCK",
+      "reason_codes": [
+        "not_a_qualified_candidate"
+      ],
+      "risk_reward": 8.149
     },
     "LTC": {
-      "score": 30,
+      "score": 15,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -42,111 +44,74 @@
       "risk_reward": null
     },
     "LINK": {
-      "score": 66,
-      "color_band": "yellow_60_69",
-      "original_tier": "tier_2_conditional_watch",
-      "positive_publication_gate": "PASS",
-      "reason_codes": [],
-      "risk_reward": 63.472
-    },
-    "XRP": {
-      "score": 60,
-      "color_band": "yellow_60_69",
-      "original_tier": "below_threshold_watch_only",
-      "positive_publication_gate": "BLOCK",
-      "reason_codes": [
-        "xrp_btc_liquidity_unconfirmed"
-      ],
-      "risk_reward": 28.915
-    },
-    "AVAX": {
-      "score": 40,
+      "score": 48,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": null
+      "risk_reward": 9.948
+    },
+    "XRP": {
+      "score": 56,
+      "color_band": "gray_below_60",
+      "original_tier": "below_threshold_watch_only",
+      "positive_publication_gate": "BLOCK",
+      "reason_codes": [
+        "xrp_btc_liquidity_unconfirmed"
+      ],
+      "risk_reward": 4.284
+    },
+    "AVAX": {
+      "score": 45,
+      "color_band": "gray_below_60",
+      "original_tier": "below_threshold_watch_only",
+      "positive_publication_gate": "BLOCK",
+      "reason_codes": [
+        "not_a_qualified_candidate"
+      ],
+      "risk_reward": 30.339
     },
     "SUI": {
-      "score": 63,
-      "color_band": "yellow_60_69",
-      "original_tier": "tier_2_conditional_watch",
-      "positive_publication_gate": "PASS",
-      "reason_codes": [],
-      "risk_reward": 18.441
+      "score": 48,
+      "color_band": "gray_below_60",
+      "original_tier": "below_threshold_watch_only",
+      "positive_publication_gate": "BLOCK",
+      "reason_codes": [
+        "not_a_qualified_candidate"
+      ],
+      "risk_reward": 6.08
     },
     "AAVE": {
-      "score": 70,
-      "color_band": "blue_70_79",
-      "original_tier": "tier_2_conditional_watch",
-      "positive_publication_gate": "PASS",
-      "reason_codes": [],
-      "risk_reward": 6.332
+      "score": 55,
+      "color_band": "gray_below_60",
+      "original_tier": "below_threshold_watch_only",
+      "positive_publication_gate": "BLOCK",
+      "reason_codes": [
+        "not_a_qualified_candidate"
+      ],
+      "risk_reward": 5.331
     }
   },
   "bands": {
     "green_80_100": [],
-    "blue_70_79": [
-      "AAVE"
-    ],
-    "yellow_60_69": [
-      "SOL",
-      "LINK",
-      "XRP",
-      "SUI"
-    ],
+    "blue_70_79": [],
+    "yellow_60_69": [],
     "gray_below_60": [
       "ETH",
       "BNB",
+      "SOL",
       "LTC",
-      "AVAX"
+      "LINK",
+      "XRP",
+      "AVAX",
+      "SUI",
+      "AAVE"
     ],
     "blocked_gray": []
   },
-  "eligible_positive_events": [
-    {
-      "id": "LINK:approaching_support:1792252800",
-      "coin": "LINK",
-      "event_type": "approaching_support",
-      "status": "forming_watch",
-      "level_usdt": 11.824,
-      "reference_price_usdt": 11.895,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 0.6,
-      "volume_ratio_4h": 1.135,
-      "volume_ratio_1h": 4.336,
-      "volume_confirmed_4h": false,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": null,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-10-17T20:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    },
-    {
-      "id": "SUI:approaching_support:1792252800",
-      "coin": "SUI",
-      "event_type": "approaching_support",
-      "status": "forming_watch",
-      "level_usdt": 0.9588,
-      "reference_price_usdt": 0.9667,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 0.824,
-      "volume_ratio_4h": 0.839,
-      "volume_ratio_1h": 4.439,
-      "volume_confirmed_4h": false,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": null,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-10-17T20:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    }
-  ],
+  "eligible_positive_events": [],
   "limitations": [
     "No verified BTC.D/USDT.D in scoring",
     "No alert delivery configured",
@@ -154,8 +119,8 @@
   ],
   "summary": {
     "green": 0,
-    "blue": 1,
-    "yellow": 4,
-    "publishable_new_events": 2
+    "blue": 0,
+    "yellow": 0,
+    "publishable_new_events": 0
   }
 }
