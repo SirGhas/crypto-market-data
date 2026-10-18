@@ -1,0 +1,31 @@
+name: Alpha Research Screening v0.3
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  alpha:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run reusable core and screening tests
+        run: |
+          python -m unittest discover -s tests -p 'test_alpha_core.py' -v
+          python -m unittest discover -s tests -p 'test_alpha_diagnostics.py' -v
+          python -m unittest discover -s tests -p 'test_alpha_screening_v03.py' -v
+      - name: One live OKX collection and conservative screening audit
+        run: python -m engine.alpha_screening_run
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-screening-v03
+          path: |
+            artifacts/alpha_diagnostics_v02.json
+            artifacts/alpha_screening_v03.json
+          if-no-files-found: warn
+          retention-days: 14
