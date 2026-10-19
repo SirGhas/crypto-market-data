@@ -1,0 +1,36 @@
+name: Alpha Observed Evidence Probe v1.6.1
+on:
+  workflow_dispatch:
+# One-time manual verification; no scheduler, no trading or notifications.
+permissions:
+  contents: read
+  actions: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test observed evidence logic
+        run: python -m unittest discover -s tests -p 'test_alpha_evidence_v161.py' -v
+      - name: Get previous v1.3 baseline
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python -m engine.alpha_prev_swing_v13
+      - name: Get previous v1.2 fallback baseline
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python -m engine.alpha_prev_swing_v12
+      - name: Collect closed candle, OHLCV and real order book snapshots
+        run: python -m engine.alpha_swing_run_v161
+      - name: Upload evidence report even if incomplete
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-swing-v161
+          path: artifacts/alpha_swing_v161.json
+          retention-days: 14
+          if-no-files-found: warn
