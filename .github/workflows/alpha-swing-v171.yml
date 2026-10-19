@@ -1,0 +1,26 @@
+name: Alpha BTC Causal Resistance Walk-forward v1.7.1
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test no-lookahead resistance outcome logic
+        run: python -m unittest discover -s tests -p 'test_alpha_walkforward_v171.py' -v
+      - name: Walk forward over historical BTC 4H closed candles
+        run: python -m engine.alpha_walkforward_v171
+      - name: Upload research report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-swing-v171-btc
+          path: artifacts/alpha_swing_v171_btc.json
+          retention-days: 14
+          if-no-files-found: warn
