@@ -3,28 +3,17 @@
   "status": "BLOCK",
   "reason_codes": [
     "5m:thin_market_nonzero_frequency",
+    "5m:last_closed_candle_zero_volume",
     "15m:thin_market_nonzero_frequency",
-    "15m:last_closed_candle_zero_volume",
     "1h:relative_volume_not_confirmed",
     "4h:relative_volume_not_confirmed"
   ],
   "frames": {
     "5m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792420500",
-      "last_closed_age_seconds": 146.2,
-      "nonzero_fraction": 0.2618,
-      "relative_volume": 0.5216,
-      "status": "BLOCK",
-      "reasons": [
-        "thin_market_nonzero_frequency"
-      ]
-    },
-    "15m": {
-      "source": "Gate.io Spot",
-      "last_candle_id": "1792419300",
-      "last_closed_age_seconds": 746.2,
-      "nonzero_fraction": 0.5322,
+      "last_candle_id": "1792441800",
+      "last_closed_age_seconds": 113.5,
+      "nonzero_fraction": 0.2489,
       "relative_volume": 0.0,
       "status": "BLOCK",
       "reasons": [
@@ -32,12 +21,23 @@
         "last_closed_candle_zero_volume"
       ]
     },
+    "15m": {
+      "source": "Gate.io Spot",
+      "last_candle_id": "1792440900",
+      "last_closed_age_seconds": 413.5,
+      "nonzero_fraction": 0.5708,
+      "relative_volume": 0.0557,
+      "status": "BLOCK",
+      "reasons": [
+        "thin_market_nonzero_frequency"
+      ]
+    },
     "1h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792414800",
-      "last_closed_age_seconds": 2546.2,
-      "nonzero_fraction": 0.927,
-      "relative_volume": 0.1785,
+      "last_candle_id": "1792436400",
+      "last_closed_age_seconds": 2213.5,
+      "nonzero_fraction": 0.9227,
+      "relative_volume": 0.5959,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -45,10 +45,10 @@
     },
     "4h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792396800",
-      "last_closed_age_seconds": 9746.2,
+      "last_candle_id": "1792425600",
+      "last_closed_age_seconds": 2213.5,
       "nonzero_fraction": 1.0,
-      "relative_volume": 0.5035,
+      "relative_volume": 0.2903,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -61,6 +61,6 @@
     "minimum_relative_volume_1h_4h": 1.3
   },
   "schema_version": "5.4.6",
-  "generated_at_utc": "2026-10-19T14:42:26.248912+00:00",
+  "generated_at_utc": "2026-10-19T20:36:53.507601+00:00",
   "mode": "research_only_fail_closed_no_orders"
 }
