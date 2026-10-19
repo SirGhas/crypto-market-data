@@ -3,7 +3,7 @@ from decimal import Decimal as D
 from engine.alpha_body_levels_v168 import extract, number
 from engine.alpha_structure_v169 import rank_primary
 
-WINDOWS=(65,75,90,100)
+WINDOWS=(60,70,80,90)
 
 def overlap_events(four_events,daily_events):
     """Report overlapping 4H/1D reaction windows, never claim independent daily corroboration."""
@@ -37,7 +37,7 @@ def audit(base,history_4h,history_daily):
     for n in WINDOWS:
         snapshot={**base,'timeframes':dict(base['timeframes'])}
         snapshot['timeframes']['4h']=extract('4h',history_4h[-n:])
-        snapshot['timeframes']['1D']=extract('1D',history_daily[-n:]) if n>=65 else base['timeframes']['1D']
+        snapshot['timeframes']['1D']=extract('1D',history_daily[-n:]) if n>=60 else base['timeframes']['1D']
         ranking=rank_primary(snapshot)
         selected=ranking['primary_candidate_4h']
         if selected is None:outcomes.append({'window_4h_bars':n,'status':'NO_PRIMARY'});continue
