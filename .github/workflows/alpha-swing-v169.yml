@@ -1,0 +1,26 @@
+name: Alpha BTC 4H Structural Resistance Ranking v1.6.9
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Structural ranking unit tests
+        run: python -m unittest discover -s tests -p 'test_alpha_structure_v169.py' -v
+      - name: Fetch six BTC frames and rank 4H levels
+        run: python -m engine.alpha_swing_run_v169
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-swing-v169-btc
+          path: artifacts/alpha_swing_v169_btc.json
+          retention-days: 14
+          if-no-files-found: warn
