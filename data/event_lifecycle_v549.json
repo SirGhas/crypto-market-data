@@ -1,19 +1,19 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-10-19T01:18:28.320574+00:00",
+  "generated_at_utc": "2026-10-19T06:19:35.694900+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
   "new_publishable_events": [],
   "pending_unconfirmed": [
     {
-      "id": "BTC:approaching_resistance:1792353600",
+      "id": "BTC:approaching_resistance:1792368000",
       "coin": "BTC",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "BNB:4h_support_reclaim:1792353600",
+      "id": "BNB:approaching_resistance:1792368000",
       "coin": "BNB",
-      "event_type": "4h_support_reclaim",
+      "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     }
   ],
