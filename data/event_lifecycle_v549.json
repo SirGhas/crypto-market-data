@@ -1,42 +1,27 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-10-18T23:13:42.777041+00:00",
+  "generated_at_utc": "2026-10-19T01:18:28.320574+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
-  "new_publishable_events": [
-    {
-      "id": "BNB:approaching_support:1792339200",
-      "coin": "BNB",
-      "event_type": "approaching_support",
-      "status": "forming_watch",
-      "level_usdt": 710.4,
-      "reference_price_usdt": 720.4,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 1.408,
-      "volume_ratio_4h": 0.824,
-      "volume_ratio_1h": 1.393,
-      "volume_confirmed_4h": false,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": false,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-10-18T20:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    }
-  ],
+  "new_publishable_events": [],
   "pending_unconfirmed": [
     {
-      "id": "BTC:approaching_resistance:1792339200",
+      "id": "BTC:approaching_resistance:1792353600",
       "coin": "BTC",
       "event_type": "approaching_resistance",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "BNB:4h_support_reclaim:1792353600",
+      "coin": "BNB",
+      "event_type": "4h_support_reclaim",
       "reason": "positive_publication_gate_not_passed"
     }
   ],
   "summary": {
     "scanned_coins": 11,
     "blocked_scans": 0,
-    "new_publishable_events": 1,
-    "pending_unconfirmed": 1
+    "new_publishable_events": 0,
+    "pending_unconfirmed": 2
   },
   "limitations": [
     "No external notification transport configured",
