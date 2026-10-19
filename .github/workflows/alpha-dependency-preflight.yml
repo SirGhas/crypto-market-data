@@ -1,0 +1,24 @@
+name: Alpha 1.6.1 Dependency Preflight (Read Only)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preflight:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit-test preflight
+        run: python -m unittest discover -s tests -p 'test_alpha_dependency_preflight.py' -v
+      - name: Check full local import chain
+        run: python -m engine.alpha_dependency_preflight
+      - name: Upload report even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-dependency-preflight
+          path: artifacts/alpha_dependency_preflight.json
+          if-no-files-found: warn
