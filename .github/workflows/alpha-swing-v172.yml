@@ -1,0 +1,26 @@
+name: Alpha BTC Resistance to Support Flip v1.7.2
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify causal flip classifier
+        run: python -m unittest discover -s tests -p 'test_alpha_flip_v172.py' -v
+      - name: Test historical BTC resistance-to-support transitions
+        run: python -m engine.alpha_flip_v172
+      - name: Upload research report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-swing-v172-btc
+          path: artifacts/alpha_swing_v172_btc.json
+          retention-days: 14
+          if-no-files-found: warn
