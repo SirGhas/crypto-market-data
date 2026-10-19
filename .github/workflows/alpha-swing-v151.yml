@@ -1,0 +1,36 @@
+name: Alpha Resistance Gates Research v1.5.1
+on:
+  workflow_dispatch:
+# Scheduled runs disabled until independently verified freshness.
+permissions:
+  contents: read
+  actions: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate resistance gates
+        run: python -m unittest discover -s tests -p 'test_alpha_resistance_v151.py' -v
+      - name: Get previous v1.3 baseline
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python -m engine.alpha_prev_swing_v13
+      - name: Get v1.2 fallback baseline
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python -m engine.alpha_prev_swing_v12
+      - name: Collect research-only data
+        run: python -m engine.alpha_swing_run_v151
+      - name: Upload research report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-swing-v151
+          path: artifacts/alpha_swing_v151.json
+          retention-days: 14
+          if-no-files-found: warn
