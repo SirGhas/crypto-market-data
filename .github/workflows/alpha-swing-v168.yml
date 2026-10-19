@@ -1,0 +1,27 @@
+name: Alpha BTC Body-First Six-TF Probe v1.6.8
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test body-first research logic
+        run: python -m unittest discover -s tests -p 'test_alpha_body_levels_v168.py' -v
+      - name: Fetch BTC closed candles and classify six timeframes
+        run: python -m engine.alpha_swing_run_v168
+      - name: Upload BTC research report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-swing-v168-btc
+          path: artifacts/alpha_swing_v168_btc.json
+          retention-days: 14
+          if-no-files-found: warn
