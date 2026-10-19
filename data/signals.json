@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-10-19T01:17:26.822609+00:00",
-  "source_generated_at_utc": "2026-10-19T01:16:56.965402+00:00",
+  "generated_at_utc": "2026-10-19T06:12:44.811347+00:00",
+  "source_generated_at_utc": "2026-10-19T06:12:11.412389+00:00",
   "mode": "screening_only_no_trades_no_notifications",
   "dominance": {
     "latest_percent": {
-      "BTC.D": 60.137731,
-      "USDT.D": 6.669297
+      "BTC.D": 60.155765,
+      "USDT.D": 6.641398
     },
-    "historical_samples": 40,
+    "historical_samples": 41,
     "trend_ready": true,
     "kind": "coingecko_market_cap_snapshots_not_ohlcv"
   },
@@ -17,7 +17,15 @@
       "coin": "ETH",
       "status": "rejected",
       "reasons": [
-        "btc_4h_below_sma233",
+        "4h_below_sma233",
+        "relative_strength_below_sma233",
+        "no_closed_1h_breakout"
+      ]
+    },
+    {
+      "coin": "BNB",
+      "status": "rejected",
+      "reasons": [
         "4h_below_sma233",
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
@@ -25,30 +33,19 @@
       ]
     },
     {
-      "coin": "BNB",
-      "status": "rejected",
-      "reasons": [
-        "btc_4h_below_sma233",
-        "4h_below_sma233",
-        "relative_strength_below_sma233",
-        "insufficient_real_usd_volume"
-      ]
-    },
-    {
       "coin": "SOL",
       "status": "rejected",
       "reasons": [
-        "btc_4h_below_sma233",
         "4h_below_sma233",
         "relative_strength_below_sma233",
-        "no_closed_1h_breakout"
+        "no_closed_1h_breakout",
+        "insufficient_real_usd_volume"
       ]
     },
     {
       "coin": "LTC",
       "status": "rejected",
       "reasons": [
-        "btc_4h_below_sma233",
         "4h_below_sma233",
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
@@ -59,9 +56,9 @@
       "coin": "LINK",
       "status": "rejected",
       "reasons": [
-        "btc_4h_below_sma233",
         "4h_below_sma233",
         "relative_strength_below_sma233",
+        "no_closed_1h_breakout",
         "insufficient_real_usd_volume"
       ]
     },
@@ -69,7 +66,6 @@
       "coin": "XRP",
       "status": "rejected",
       "reasons": [
-        "btc_4h_below_sma233",
         "4h_below_sma233",
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
@@ -80,31 +76,30 @@
       "coin": "AVAX",
       "status": "rejected",
       "reasons": [
-        "btc_4h_below_sma233",
         "4h_below_sma233",
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
-        "15m_not_confirmed"
+        "15m_not_confirmed",
+        "insufficient_real_usd_volume"
       ]
     },
     {
       "coin": "SUI",
       "status": "rejected",
       "reasons": [
-        "btc_4h_below_sma233",
         "4h_below_sma233",
         "relative_strength_below_sma233",
-        "no_closed_1h_breakout"
+        "no_closed_1h_breakout",
+        "insufficient_real_usd_volume"
       ]
     },
     {
       "coin": "AAVE",
       "status": "rejected",
       "reasons": [
-        "btc_4h_below_sma233",
         "4h_below_sma233",
+        "relative_strength_below_sma233",
         "no_closed_1h_breakout",
-        "15m_not_confirmed",
         "insufficient_real_usd_volume"
       ]
     }
@@ -114,9 +109,5 @@
     "new_events": 0,
     "blocked": 0,
     "rejected": 9
-  },
-  "liquidity_guard_v546": {
-    "pair": "XRPBTC",
-    "status": "BLOCK"
   }
 }
