@@ -94,10 +94,10 @@ def directional_reference(asset_obj):
             'volume_bullish_confirmation':bool(supportive),
             'note':'Conservative research overlay; original reference_score preserved.'}
 
-def risk_overlay(asset, baseline, get_candles=get_closed_candles):
+def risk_overlay(asset, baseline, risk_reference=None, get_candles=get_closed_candles):
     result=deepcopy(baseline)
     result['directional_reference_score']=directional_reference(baseline)
-    old=result.get('risk_research',{})
+    old=risk_reference or {}
     out={'asset':asset,'status':'BLOCKED_UNVERIFIED_RISK','research_only':True,
          'reference_candle_4h':old.get('reference_candle'),'reference_candle_daily':old.get('daily_candle'),
          'atr14_4h':None,'atr14_daily':None,'confirmed_pivot_low_4h':None,
@@ -148,7 +148,7 @@ def overlay(report,get_candles=get_closed_candles):
     if report.get('version')!='alpha-1.4-structural-risk-research':
         raise ValueError('Expected Alpha 1.4 report')
     x=deepcopy(report);x['version']=VERSION
-    x['assets']={a:risk_overlay(a,v,get_candles) for a,v in report.get('assets',{}).items()}
+    x['assets']={a:risk_overlay(a,v,report.get('risk_research',{}).get(a,{}),get_candles) for a,v in report.get('assets',{}).items()}
     x['risk_v15']={a:v['risk_v15'] for a,v in x['assets'].items()}
     x['directional_research_scores']={a:v['directional_reference_score'] for a,v in x['assets'].items()}
     x['totals']=dict(x.get('totals',{}),atr_both_timeframes_validated=sum(bool(v['data_validation'].get('matched_report_candle_identities')) for v in x['risk_v15'].values()),trade_authorized=0)
