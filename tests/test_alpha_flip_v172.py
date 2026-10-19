@@ -17,6 +17,7 @@ class TestFlip(unittest.TestCase):
     def test_failed_breakout(self):
         x=[bar(i) for i in range(8)]
         x[0]=bar(0,'105','99','103')
+        x[1]=bar(1,'101','98','99')  # next closed candle falls back below resistance
         self.assertEqual(observe_flip(D('100'),D('10'),x)['outcome'],'FAILED_BREAKOUT')
     def test_no_breakout(self):
         self.assertEqual(observe_flip(D('120'),D('10'),[bar(i) for i in range(8)])['outcome'],'NO_CONFIRMED_BREAKOUT')
