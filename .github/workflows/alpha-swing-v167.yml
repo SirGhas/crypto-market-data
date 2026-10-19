@@ -1,0 +1,35 @@
+name: Alpha Resistance Rejection Audit v1.6.7
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test directional rejection rules
+        run: python -m unittest discover -s tests -p 'test_alpha_resistance_v167.py' -v
+      - name: Download previous v1.3 baseline
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python -m engine.alpha_prev_swing_v13
+      - name: Download previous v1.2 baseline
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python -m engine.alpha_prev_swing_v12
+      - name: Research 11 assets with verified resistance events
+        run: python -m engine.alpha_swing_run_v167
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-swing-v167
+          path: artifacts/alpha_swing_v167.json
+          retention-days: 14
+          if-no-files-found: warn
