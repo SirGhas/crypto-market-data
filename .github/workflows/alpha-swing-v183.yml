@@ -1,0 +1,32 @@
+name: Alpha BTC Nonoverlap Audit v1.8.3
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'engine/alpha_nonoverlap_audit_v183.py'
+      - 'tests/test_alpha_nonoverlap_audit_v183.py'
+      - '.github/workflows/alpha-swing-v183.yml'
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Consolidated alpha research unit tests
+        run: python -m unittest discover -s tests -p 'test_alpha_*v1*.py' -v
+      - name: Nonoverlapping BTC historical evaluation
+        run: python -m engine.alpha_nonoverlap_audit_v183
+      - name: Upload descriptive report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-v183-btc-nonoverlap
+          path: artifacts/alpha_swing_v183_btc_nonoverlap.json
+          if-no-files-found: error
+          retention-days: 14
