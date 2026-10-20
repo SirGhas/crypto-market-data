@@ -8,11 +8,13 @@ SETTINGS=((6,6),(12,12),(18,18))
 def evaluate(bars,settings=SETTINGS):
     if not settings:raise ValueError('EMPTY_SETTINGS')
     seen=set();cases=[]
+    # Validate the complete configuration before processing any market history.
     for horizon,stride in settings:
-        if (horizon,stride) in seen:raise ValueError('DUPLICATE_SETTING')
-        seen.add((horizon,stride))
         if not isinstance(horizon,int) or not isinstance(stride,int) or horizon<1 or stride<horizon:
             raise ValueError('INVALID_NONOVERLAP_SETTING')
+        if (horizon,stride) in seen:raise ValueError('DUPLICATE_SETTING')
+        seen.add((horizon,stride))
+    for horizon,stride in settings:
         result=nonoverlap(bars,horizon=horizon,stride=stride)
         cases.append({'horizon_bars':horizon,'stride_bars':stride,
             'decision_windows_total':result['decision_windows_total'],
