@@ -3,27 +3,16 @@
   "status": "BLOCK",
   "reason_codes": [
     "5m:thin_market_nonzero_frequency",
+    "5m:last_closed_candle_zero_volume",
     "15m:thin_market_nonzero_frequency",
-    "15m:last_closed_candle_zero_volume",
-    "4h:relative_volume_not_confirmed"
+    "1h:relative_volume_not_confirmed"
   ],
   "frames": {
     "5m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792495800",
-      "last_closed_age_seconds": 166.0,
-      "nonzero_fraction": 0.2189,
-      "relative_volume": 0.1975,
-      "status": "BLOCK",
-      "reasons": [
-        "thin_market_nonzero_frequency"
-      ]
-    },
-    "15m": {
-      "source": "Gate.io Spot",
-      "last_candle_id": "1792494900",
-      "last_closed_age_seconds": 466.0,
-      "nonzero_fraction": 0.5279,
+      "last_candle_id": "1792515300",
+      "last_closed_age_seconds": 333.2,
+      "nonzero_fraction": 0.2833,
       "relative_volume": 0.0,
       "status": "BLOCK",
       "reasons": [
@@ -31,25 +20,36 @@
         "last_closed_candle_zero_volume"
       ]
     },
+    "15m": {
+      "source": "Gate.io Spot",
+      "last_candle_id": "1792514700",
+      "last_closed_age_seconds": 333.2,
+      "nonzero_fraction": 0.588,
+      "relative_volume": 0.0431,
+      "status": "BLOCK",
+      "reasons": [
+        "thin_market_nonzero_frequency"
+      ]
+    },
     "1h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792490400",
-      "last_closed_age_seconds": 2266.0,
+      "last_candle_id": "1792512000",
+      "last_closed_age_seconds": 333.2,
       "nonzero_fraction": 0.9227,
-      "relative_volume": 40.4692,
-      "status": "PASS",
-      "reasons": []
-    },
-    "4h": {
-      "source": "Gate.io Spot",
-      "last_candle_id": "1792468800",
-      "last_closed_age_seconds": 13066.0,
-      "nonzero_fraction": 1.0,
-      "relative_volume": 0.3026,
+      "relative_volume": 0.6483,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
       ]
+    },
+    "4h": {
+      "source": "Gate.io Spot",
+      "last_candle_id": "1792497600",
+      "last_closed_age_seconds": 3933.2,
+      "nonzero_fraction": 1.0,
+      "relative_volume": 7.4692,
+      "status": "PASS",
+      "reasons": []
     }
   },
   "thresholds": {
@@ -57,7 +57,11 @@
     "minimum_nonzero_fraction_5m_15m": 0.7,
     "minimum_relative_volume_1h_4h": 1.3
   },
+  "suppressed_event_ids": [
+    "XRP:4h_closed_breakout:1792497600",
+    "XRP:approaching_resistance:1792497600"
+  ],
   "schema_version": "5.4.6",
-  "generated_at_utc": "2026-10-20T11:37:45.984378+00:00",
+  "generated_at_utc": "2026-10-20T17:05:33.174220+00:00",
   "mode": "research_only_fail_closed_no_orders"
 }

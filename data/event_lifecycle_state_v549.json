@@ -15,6 +15,14 @@
     "AAVE:4h_closed_breakdown:1792339200",
     "ZEC:4h_closed_breakdown:1792339200",
     "BNB:approaching_support:1792339200",
-    "BNB:4h_resistance_rejection:1792440000"
+    "BNB:4h_resistance_rejection:1792440000",
+    "BTC:4h_resistance_rejection:1792497600",
+    "ETH:4h_resistance_rejection:1792497600",
+    "SOL:4h_resistance_rejection:1792497600",
+    "LTC:4h_resistance_rejection:1792497600",
+    "LINK:4h_resistance_rejection:1792497600",
+    "LINK:approaching_resistance:1792497600",
+    "SUI:4h_resistance_rejection:1792497600",
+    "AAVE:4h_resistance_rejection:1792497600"
   ]
 }
