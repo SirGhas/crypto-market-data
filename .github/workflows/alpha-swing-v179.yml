@@ -1,0 +1,32 @@
+name: Alpha BTC MTF Level Importance v1.7.9
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'engine/alpha_importance_v179.py'
+      - 'tests/test_alpha_importance_v179.py'
+      - '.github/workflows/alpha-swing-v179.yml'
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Combined historical belt and structural scoring tests
+        run: python -m unittest discover -s tests -p 'test_alpha_*v17*.py' -v
+      - name: Produce BTC multi-timeframe descriptive importance map
+        run: python -m engine.alpha_importance_v179
+      - name: Upload research report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-v179-btc-mtf-importance
+          path: artifacts/alpha_swing_v179_btc_importance.json
+          retention-days: 14
+          if-no-files-found: warn
