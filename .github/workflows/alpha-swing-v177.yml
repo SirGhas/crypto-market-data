@@ -1,0 +1,32 @@
+name: Alpha BTC Paired Belt Research v1.7.7
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'engine/alpha_belts_v177.py'
+      - 'tests/test_alpha_belts_v177.py'
+      - '.github/workflows/alpha-swing-v177.yml'
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Test consolidated recent research modules
+        run: python -m unittest discover -s tests -p 'test_alpha_*v17*.py' -v
+      - name: Historical paired belt versus exact constituent lines
+        run: python -m engine.alpha_belts_v177
+      - name: Upload paired research report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-v177-btc-paired-belts
+          path: artifacts/alpha_swing_v177_btc_paired.json
+          retention-days: 14
+          if-no-files-found: warn
