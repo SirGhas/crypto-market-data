@@ -1,0 +1,26 @@
+name: Alpha BTC MTF Belts Combined v1.7.5
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run consolidated flip and belt unit tests
+        run: python -m unittest discover -s tests -p 'test_alpha_*v17*.py' -v
+      - name: Generate BTC multi-timeframe belt prototype
+        run: python -m engine.alpha_belts_v175
+      - name: Upload one research report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-swing-v175-btc-mtf-belts
+          path: artifacts/alpha_swing_v175_btc_belts.json
+          retention-days: 14
+          if-no-files-found: warn
