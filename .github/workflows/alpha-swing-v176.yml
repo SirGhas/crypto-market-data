@@ -1,0 +1,26 @@
+name: Alpha BTC Belt Historical Sensitivity v1.7.6
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run merged belt and flip tests
+        run: python -m unittest discover -s tests -p 'test_alpha_*v17*.py' -v
+      - name: Replay historical 4h belt width scenarios
+        run: python -m engine.alpha_belts_v176
+      - name: Upload research JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-v176-btc-belt-sensitivity
+          path: artifacts/alpha_swing_v176_btc_belt_sensitivity.json
+          if-no-files-found: warn
+          retention-days: 14
