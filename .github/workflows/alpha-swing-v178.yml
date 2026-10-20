@@ -1,0 +1,32 @@
+name: Alpha BTC Strict Belt Boundaries v1.7.8
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'engine/alpha_belts_v178.py'
+      - 'tests/test_alpha_belts_v178.py'
+      - '.github/workflows/alpha-swing-v178.yml'
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Consolidated belt and flip unit tests
+        run: python -m unittest discover -s tests -p 'test_alpha_*v17*.py' -v
+      - name: Run strict historical belt boundary audit
+        run: python -m engine.alpha_belts_v178
+      - name: Upload combined research artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-v178-btc-strict-boundaries
+          path: artifacts/alpha_swing_v178_btc_boundary.json
+          retention-days: 14
+          if-no-files-found: warn
