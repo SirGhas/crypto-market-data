@@ -67,7 +67,9 @@ def build_belts(levels,price,atr,pct_cap=EXPERIMENTAL_PCT_CAP,atr_cap=ATR_CAP,
             kinds=sorted(set(z['timeframe'] for z in group),key=lambda x:TF_SECONDS[x])
             strongest=max(TF_WEIGHT[z['timeframe']] for z in group)
             # descriptive tier, NOT statistically calibrated success odds
-            tier='MAJOR' if strongest>=9 or (strongest>=6 and len(kinds)>=2) else (
+            # A 4h level plus a 15m echo is NOT sufficient major evidence.
+            # Require daily evidence, or a 4h level with independent 2h confirmation.
+            tier='MAJOR' if ('1D' in kinds or ('4h' in kinds and '2h' in kinds)) else (
                 'INTERMEDIATE' if strongest>=4 else 'MINOR')
             out.append({'side':side,'lower_bound':_fmt(low),'upper_bound':_fmt(high),
                 'geometric_center':_fmt((low+high)/2),'evidence_weighted_center':_fmt(weighted),
