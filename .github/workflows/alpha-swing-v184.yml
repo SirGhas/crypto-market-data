@@ -1,0 +1,32 @@
+name: Alpha BTC Horizon Sensitivity v1.8.4
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'engine/alpha_sensitivity_audit_v184.py'
+      - 'tests/test_alpha_sensitivity_audit_v184.py'
+      - '.github/workflows/alpha-swing-v184.yml'
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Consolidated alpha tests
+        run: python -m unittest discover -s tests -p 'test_alpha_*v1*.py' -v
+      - name: BTC horizon sensitivity research
+        run: python -m engine.alpha_sensitivity_audit_v184
+      - name: Upload audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-v184-btc-horizon-sensitivity
+          path: artifacts/alpha_swing_v184_btc_horizon_sensitivity.json
+          if-no-files-found: error
+          retention-days: 14
