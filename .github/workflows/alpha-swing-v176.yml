@@ -1,6 +1,12 @@
 name: Alpha BTC Belt Historical Sensitivity v1.7.6
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'engine/alpha_belts_v176.py'
+      - 'tests/test_alpha_belts_v176.py'
+      - '.github/workflows/alpha-swing-v176.yml'
 permissions:
   contents: read
 jobs:
