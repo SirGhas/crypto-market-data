@@ -1,25 +1,25 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-10-20T06:01:48.647558+00:00",
+  "generated_at_utc": "2026-10-20T11:37:46.138163+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
   "new_publishable_events": [],
   "pending_unconfirmed": [
     {
-      "id": "BTC:approaching_support:1792454400",
+      "id": "BTC:approaching_support:1792468800",
       "coin": "BTC",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "BNB:approaching_resistance:1792454400",
+      "id": "BNB:approaching_resistance:1792468800",
       "coin": "BNB",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "XRP:approaching_resistance:1792454400",
-      "coin": "XRP",
-      "event_type": "approaching_resistance",
+      "id": "AAVE:approaching_support:1792468800",
+      "coin": "AAVE",
+      "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     }
   ],
