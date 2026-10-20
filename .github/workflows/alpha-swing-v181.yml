@@ -1,0 +1,32 @@
+name: Alpha BTC Score Coverage v1.8.1
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'engine/alpha_score_audit_v181.py'
+      - 'tests/test_alpha_score_audit_v181.py'
+      - '.github/workflows/alpha-swing-v181.yml'
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Consolidated research unit tests
+        run: python -m unittest discover -s tests -p 'test_alpha_*v1*.py' -v
+      - name: Run 4h structural score coverage analysis
+        run: python -m engine.alpha_score_audit_v181
+      - name: Upload research report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-v181-btc-score-coverage
+          path: artifacts/alpha_swing_v181_btc_score_coverage.json
+          retention-days: 14
+          if-no-files-found: warn
