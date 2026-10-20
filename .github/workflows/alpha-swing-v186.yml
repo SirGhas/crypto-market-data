@@ -1,0 +1,32 @@
+name: Alpha BTC Outcome Distribution v1.8.6
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'engine/alpha_outcome_distribution_v186.py'
+      - 'tests/test_alpha_outcome_distribution_v186.py'
+      - '.github/workflows/alpha-swing-v186.yml'
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Consolidated alpha tests
+        run: python -m unittest discover -s tests -p 'test_alpha_*v1*.py' -v
+      - name: BTC descriptive outcome distribution
+        run: python -m engine.alpha_outcome_distribution_v186
+      - name: Upload research artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-v186-btc-outcome-distribution
+          path: artifacts/alpha_swing_v186_btc_outcome_distribution.json
+          if-no-files-found: error
+          retention-days: 14
