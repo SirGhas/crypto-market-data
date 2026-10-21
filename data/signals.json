@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-10-21T10:08:57.615856+00:00",
-  "source_generated_at_utc": "2026-10-21T10:08:27.910295+00:00",
+  "generated_at_utc": "2026-10-21T13:45:23.921777+00:00",
+  "source_generated_at_utc": "2026-10-21T13:44:47.371615+00:00",
   "mode": "screening_only_no_trades_no_notifications",
   "dominance": {
     "latest_percent": {
-      "BTC.D": 59.594294,
-      "USDT.D": 6.501606
+      "BTC.D": 59.569257,
+      "USDT.D": 6.501954
     },
-    "historical_samples": 61,
+    "historical_samples": 62,
     "trend_ready": true,
     "kind": "coingecko_market_cap_snapshots_not_ohlcv"
   },
@@ -29,7 +29,8 @@
       "reasons": [
         "4h_below_sma233",
         "relative_strength_below_sma233",
-        "no_closed_1h_breakout"
+        "no_closed_1h_breakout",
+        "insufficient_real_usd_volume"
       ]
     },
     {
@@ -67,7 +68,9 @@
       "status": "rejected",
       "reasons": [
         "4h_below_sma233",
-        "relative_strength_below_sma233"
+        "relative_strength_below_sma233",
+        "no_closed_1h_breakout",
+        "insufficient_real_usd_volume"
       ]
     },
     {
@@ -76,8 +79,7 @@
       "reasons": [
         "4h_below_sma233",
         "relative_strength_below_sma233",
-        "no_closed_1h_breakout",
-        "insufficient_real_usd_volume"
+        "no_closed_1h_breakout"
       ]
     },
     {
@@ -92,8 +94,8 @@
       "coin": "AAVE",
       "status": "rejected",
       "reasons": [
-        "no_closed_1h_breakout",
-        "insufficient_real_usd_volume"
+        "relative_strength_below_sma233",
+        "no_closed_1h_breakout"
       ]
     }
   ],
@@ -102,9 +104,5 @@
     "new_events": 0,
     "blocked": 0,
     "rejected": 9
-  },
-  "liquidity_guard_v546": {
-    "pair": "XRPBTC",
-    "status": "BLOCK"
   }
 }
