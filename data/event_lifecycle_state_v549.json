@@ -32,6 +32,15 @@
     "ETH:approaching_resistance:1792569600",
     "BNB:4h_resistance_rejection:1792569600",
     "BNB:4h_resistance_rejection:1792584000",
-    "AVAX:4h_resistance_rejection:1792584000"
+    "AVAX:4h_resistance_rejection:1792584000",
+    "BTC:4h_resistance_rejection:1792598400",
+    "ETH:4h_resistance_rejection:1792598400",
+    "BNB:4h_resistance_rejection:1792598400",
+    "SOL:4h_resistance_rejection:1792598400",
+    "LTC:4h_resistance_rejection:1792598400",
+    "LINK:4h_resistance_rejection:1792598400",
+    "AVAX:4h_resistance_rejection:1792598400",
+    "SUI:4h_resistance_rejection:1792598400",
+    "AAVE:4h_resistance_rejection:1792598400"
   ]
 }
