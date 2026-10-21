@@ -713,6 +713,52 @@
         "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
       },
       "status": "PENDING_DELIVERY"
+    },
+    "BNB:4h_resistance_rejection:1792584000": {
+      "event": {
+        "id": "BNB:4h_resistance_rejection:1792584000",
+        "coin": "BNB",
+        "event_type": "4h_resistance_rejection",
+        "status": "technical_event_needs_context",
+        "level_usdt": 750.1,
+        "reference_price_usdt": 748.4,
+        "reference_price_kind": "last_closed_1h_not_live",
+        "distance_from_level_percent": -0.227,
+        "volume_ratio_4h": 1.428,
+        "volume_ratio_1h": 0.469,
+        "volume_confirmed_4h": true,
+        "trend_4h_above_sma233": false,
+        "lower_tf_confirmed": true,
+        "relative_strength_vs_btc": false,
+        "source_4h": "OKX Spot",
+        "source_1h": "OKX Spot",
+        "closed_4h_at_utc": "2026-10-21T16:00:00+00:00",
+        "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+      },
+      "status": "PENDING_DELIVERY"
+    },
+    "AVAX:4h_resistance_rejection:1792584000": {
+      "event": {
+        "id": "AVAX:4h_resistance_rejection:1792584000",
+        "coin": "AVAX",
+        "event_type": "4h_resistance_rejection",
+        "status": "technical_event_needs_context",
+        "level_usdt": 9.919,
+        "reference_price_usdt": 9.884,
+        "reference_price_kind": "last_closed_1h_not_live",
+        "distance_from_level_percent": -0.353,
+        "volume_ratio_4h": 4.215,
+        "volume_ratio_1h": 1.087,
+        "volume_confirmed_4h": true,
+        "trend_4h_above_sma233": false,
+        "lower_tf_confirmed": false,
+        "relative_strength_vs_btc": null,
+        "source_4h": "OKX Spot",
+        "source_1h": "OKX Spot",
+        "closed_4h_at_utc": "2026-10-21T16:00:00+00:00",
+        "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+      },
+      "status": "PENDING_DELIVERY"
     }
   },
   "delivered_ids": []

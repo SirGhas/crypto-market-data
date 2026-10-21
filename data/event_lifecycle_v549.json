@@ -1,108 +1,150 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-10-21T15:19:01.449883+00:00",
+  "generated_at_utc": "2026-10-21T19:20:55.000668+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
   "new_publishable_events": [
     {
-      "id": "ETH:approaching_resistance:1792569600",
-      "coin": "ETH",
-      "event_type": "approaching_resistance",
-      "status": "forming_watch",
-      "level_usdt": 2478.0,
-      "reference_price_usdt": 2496.85,
+      "id": "BNB:4h_resistance_rejection:1792584000",
+      "coin": "BNB",
+      "event_type": "4h_resistance_rejection",
+      "status": "technical_event_needs_context",
+      "level_usdt": 750.1,
+      "reference_price_usdt": 748.4,
       "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 0.761,
-      "volume_ratio_4h": 0.922,
-      "volume_ratio_1h": 3.174,
-      "volume_confirmed_4h": false,
+      "distance_from_level_percent": -0.227,
+      "volume_ratio_4h": 1.428,
+      "volume_ratio_1h": 0.469,
+      "volume_confirmed_4h": true,
       "trend_4h_above_sma233": false,
       "lower_tf_confirmed": true,
       "relative_strength_vs_btc": false,
       "source_4h": "OKX Spot",
       "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-10-21T12:00:00+00:00",
+      "closed_4h_at_utc": "2026-10-21T16:00:00+00:00",
       "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
     },
     {
-      "id": "BNB:4h_resistance_rejection:1792569600",
-      "coin": "BNB",
+      "id": "AVAX:4h_resistance_rejection:1792584000",
+      "coin": "AVAX",
       "event_type": "4h_resistance_rejection",
-      "status": "forming_watch",
-      "level_usdt": 748.1,
-      "reference_price_usdt": 747.8,
+      "status": "technical_event_needs_context",
+      "level_usdt": 9.919,
+      "reference_price_usdt": 9.884,
       "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": -0.04,
-      "volume_ratio_4h": 0.953,
-      "volume_ratio_1h": 0.977,
-      "volume_confirmed_4h": false,
+      "distance_from_level_percent": -0.353,
+      "volume_ratio_4h": 4.215,
+      "volume_ratio_1h": 1.087,
+      "volume_confirmed_4h": true,
       "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": true,
-      "relative_strength_vs_btc": false,
+      "lower_tf_confirmed": false,
+      "relative_strength_vs_btc": null,
       "source_4h": "OKX Spot",
       "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-10-21T12:00:00+00:00",
+      "closed_4h_at_utc": "2026-10-21T16:00:00+00:00",
       "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
     }
   ],
   "pending_unconfirmed": [
     {
-      "id": "BTC:4h_closed_breakout:1792569600",
+      "id": "BTC:4h_closed_breakout:1792584000",
       "coin": "BTC",
       "event_type": "4h_closed_breakout",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "BTC:approaching_resistance:1792569600",
+      "id": "BTC:approaching_resistance:1792584000",
       "coin": "BTC",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "BNB:approaching_resistance:1792569600",
+      "id": "ETH:4h_closed_breakout:1792584000",
+      "coin": "ETH",
+      "event_type": "4h_closed_breakout",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "ETH:approaching_resistance:1792584000",
+      "coin": "ETH",
+      "event_type": "approaching_resistance",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "BNB:approaching_resistance:1792584000",
       "coin": "BNB",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "SOL:approaching_resistance:1792569600",
+      "id": "SOL:4h_closed_breakout:1792584000",
+      "coin": "SOL",
+      "event_type": "4h_closed_breakout",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "SOL:approaching_resistance:1792584000",
       "coin": "SOL",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "LTC:approaching_resistance:1792569600",
+      "id": "LTC:approaching_resistance:1792584000",
       "coin": "LTC",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "LINK:approaching_resistance:1792569600",
+      "id": "LINK:4h_closed_breakout:1792584000",
       "coin": "LINK",
-      "event_type": "approaching_resistance",
+      "event_type": "4h_closed_breakout",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "XRP:4h_closed_breakout:1792569600",
+      "id": "XRP:4h_closed_breakout:1792584000",
       "coin": "XRP",
       "event_type": "4h_closed_breakout",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "AVAX:approaching_resistance:1792569600",
+      "id": "XRP:approaching_resistance:1792584000",
+      "coin": "XRP",
+      "event_type": "approaching_resistance",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "AVAX:approaching_resistance:1792584000",
       "coin": "AVAX",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "SUI:approaching_resistance:1792569600",
+      "id": "SUI:4h_closed_breakout:1792584000",
+      "coin": "SUI",
+      "event_type": "4h_closed_breakout",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "SUI:approaching_resistance:1792584000",
       "coin": "SUI",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "AAVE:approaching_resistance:1792569600",
+      "id": "AAVE:4h_closed_breakout:1792584000",
+      "coin": "AAVE",
+      "event_type": "4h_closed_breakout",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "AAVE:approaching_resistance:1792584000",
       "coin": "AAVE",
       "event_type": "approaching_resistance",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "ZEC:4h_closed_breakout:1792584000",
+      "coin": "ZEC",
+      "event_type": "4h_closed_breakout",
       "reason": "positive_publication_gate_not_passed"
     }
   ],
@@ -110,7 +152,7 @@
     "scanned_coins": 11,
     "blocked_scans": 0,
     "new_publishable_events": 2,
-    "pending_unconfirmed": 10
+    "pending_unconfirmed": 17
   },
   "limitations": [
     "No external notification transport configured",
