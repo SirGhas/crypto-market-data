@@ -1,0 +1,32 @@
+name: Alpha BTC Equal Duration Subperiods v2.0.0
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'engine/alpha_equal_duration_v200.py'
+      - 'tests/test_alpha_equal_duration_v200.py'
+      - '.github/workflows/alpha-swing-v200.yml'
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Consolidated alpha tests
+        run: python -m unittest discover -s tests -p 'test_alpha_*v*.py' -v
+      - name: BTC equal-duration sensitivity audit
+        run: python -m engine.alpha_equal_duration_v200
+      - name: Upload research artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-v200-btc-equal-duration
+          path: artifacts/alpha_swing_v200_btc_equal_duration_subperiods.json
+          if-no-files-found: error
+          retention-days: 14
