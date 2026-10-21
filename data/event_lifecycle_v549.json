@@ -1,54 +1,107 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-10-21T10:10:00.199589+00:00",
+  "generated_at_utc": "2026-10-21T15:19:01.449883+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
-  "new_publishable_events": [],
+  "new_publishable_events": [
+    {
+      "id": "ETH:approaching_resistance:1792569600",
+      "coin": "ETH",
+      "event_type": "approaching_resistance",
+      "status": "forming_watch",
+      "level_usdt": 2478.0,
+      "reference_price_usdt": 2496.85,
+      "reference_price_kind": "last_closed_1h_not_live",
+      "distance_from_level_percent": 0.761,
+      "volume_ratio_4h": 0.922,
+      "volume_ratio_1h": 3.174,
+      "volume_confirmed_4h": false,
+      "trend_4h_above_sma233": false,
+      "lower_tf_confirmed": true,
+      "relative_strength_vs_btc": false,
+      "source_4h": "OKX Spot",
+      "source_1h": "OKX Spot",
+      "closed_4h_at_utc": "2026-10-21T12:00:00+00:00",
+      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+    },
+    {
+      "id": "BNB:4h_resistance_rejection:1792569600",
+      "coin": "BNB",
+      "event_type": "4h_resistance_rejection",
+      "status": "forming_watch",
+      "level_usdt": 748.1,
+      "reference_price_usdt": 747.8,
+      "reference_price_kind": "last_closed_1h_not_live",
+      "distance_from_level_percent": -0.04,
+      "volume_ratio_4h": 0.953,
+      "volume_ratio_1h": 0.977,
+      "volume_confirmed_4h": false,
+      "trend_4h_above_sma233": false,
+      "lower_tf_confirmed": true,
+      "relative_strength_vs_btc": false,
+      "source_4h": "OKX Spot",
+      "source_1h": "OKX Spot",
+      "closed_4h_at_utc": "2026-10-21T12:00:00+00:00",
+      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+    }
+  ],
   "pending_unconfirmed": [
     {
-      "id": "BTC:approaching_resistance:1792555200",
+      "id": "BTC:4h_closed_breakout:1792569600",
+      "coin": "BTC",
+      "event_type": "4h_closed_breakout",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "BTC:approaching_resistance:1792569600",
       "coin": "BTC",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "ETH:approaching_resistance:1792555200",
-      "coin": "ETH",
-      "event_type": "approaching_resistance",
-      "reason": "positive_publication_gate_not_passed"
-    },
-    {
-      "id": "BNB:4h_closed_breakout:1792555200",
-      "coin": "BNB",
-      "event_type": "4h_closed_breakout",
-      "reason": "positive_publication_gate_not_passed"
-    },
-    {
-      "id": "BNB:approaching_resistance:1792555200",
+      "id": "BNB:approaching_resistance:1792569600",
       "coin": "BNB",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "LTC:approaching_resistance:1792555200",
+      "id": "SOL:approaching_resistance:1792569600",
+      "coin": "SOL",
+      "event_type": "approaching_resistance",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "LTC:approaching_resistance:1792569600",
       "coin": "LTC",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "LINK:approaching_resistance:1792555200",
+      "id": "LINK:approaching_resistance:1792569600",
       "coin": "LINK",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "XRP:approaching_resistance:1792555200",
+      "id": "XRP:4h_closed_breakout:1792569600",
       "coin": "XRP",
+      "event_type": "4h_closed_breakout",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "AVAX:approaching_resistance:1792569600",
+      "coin": "AVAX",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "SUI:approaching_resistance:1792555200",
+      "id": "SUI:approaching_resistance:1792569600",
       "coin": "SUI",
+      "event_type": "approaching_resistance",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "AAVE:approaching_resistance:1792569600",
+      "coin": "AAVE",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     }
@@ -56,8 +109,8 @@
   "summary": {
     "scanned_coins": 11,
     "blocked_scans": 0,
-    "new_publishable_events": 0,
-    "pending_unconfirmed": 8
+    "new_publishable_events": 2,
+    "pending_unconfirmed": 10
   },
   "limitations": [
     "No external notification transport configured",
