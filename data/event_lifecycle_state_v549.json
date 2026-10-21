@@ -24,6 +24,10 @@
     "LINK:approaching_resistance:1792497600",
     "SUI:4h_resistance_rejection:1792497600",
     "AAVE:4h_resistance_rejection:1792497600",
-    "BNB:approaching_resistance:1792512000"
+    "BNB:approaching_resistance:1792512000",
+    "BNB:4h_resistance_rejection:1792540800",
+    "LTC:4h_resistance_rejection:1792540800",
+    "AAVE:4h_resistance_rejection:1792540800",
+    "ZEC:4h_resistance_rejection:1792540800"
   ]
 }
