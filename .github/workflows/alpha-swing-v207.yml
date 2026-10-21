@@ -1,0 +1,47 @@
+name: Alpha BTC Offline Snapshot Replay v2.0.7
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'engine/alpha_offline_replay_v207.py'
+      - 'tests/test_alpha_offline_replay_v207.py'
+      - '.github/workflows/alpha-swing-v207.yml'
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Consolidated alpha tests
+        run: python -m unittest discover -s tests -p 'test_alpha_*v*.py' -v
+      - name: Create frozen snapshot for offline replay
+        run: python -m engine.alpha_archive_v206
+      - name: Verify offline replay without fetching exchange data
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from engine.alpha_offline_replay_v207 import evaluate
+          report=json.loads(Path('artifacts/alpha_swing_v206_btc_snapshot_report.json').read_text())
+          result=evaluate('artifacts/alpha_swing_v206_btc_4h_snapshot.json',report['snapshot_file_sha256'])
+          Path('artifacts/alpha_swing_v207_btc_offline_replay.json').write_text(json.dumps(result,indent=2)+'\n')
+          print('ALPHA_V207',json.dumps({'offline_replay_verified':result['offline_replay_verified'],
+            'event_count':result['event_count'],'sha256':result['snapshot_file_sha256']}))
+          PY
+      - name: Upload snapshot and offline verification
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-v207-btc-offline-replay
+          path: |
+            artifacts/alpha_swing_v206_btc_4h_snapshot.json
+            artifacts/alpha_swing_v206_btc_snapshot_report.json
+            artifacts/alpha_swing_v207_btc_offline_replay.json
+          if-no-files-found: error
+          retention-days: 14
