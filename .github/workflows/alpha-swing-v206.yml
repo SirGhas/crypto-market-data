@@ -1,0 +1,34 @@
+name: Alpha BTC Archived Research Snapshot v2.0.6
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'engine/alpha_archive_v206.py'
+      - 'tests/test_alpha_archive_v206.py'
+      - '.github/workflows/alpha-swing-v206.yml'
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Consolidated alpha tests
+        run: python -m unittest discover -s tests -p 'test_alpha_*v*.py' -v
+      - name: BTC research snapshot and provenance
+        run: python -m engine.alpha_archive_v206
+      - name: Upload frozen snapshot and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-v206-btc-frozen-snapshot
+          path: |
+            artifacts/alpha_swing_v206_btc_4h_snapshot.json
+            artifacts/alpha_swing_v206_btc_snapshot_report.json
+          if-no-files-found: error
+          retention-days: 14
