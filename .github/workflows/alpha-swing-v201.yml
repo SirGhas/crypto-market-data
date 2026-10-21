@@ -1,0 +1,32 @@
+name: Alpha BTC Denominated Window Frequencies v2.0.1
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'engine/alpha_denominated_rates_v201.py'
+      - 'tests/test_alpha_denominated_rates_v201.py'
+      - '.github/workflows/alpha-swing-v201.yml'
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Consolidated alpha tests
+        run: python -m unittest discover -s tests -p 'test_alpha_*v*.py' -v
+      - name: BTC denominated historical frequency audit
+        run: python -m engine.alpha_denominated_rates_v201
+      - name: Upload research artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-v201-btc-denominated-rates
+          path: artifacts/alpha_swing_v201_btc_denominated_frequencies.json
+          if-no-files-found: error
+          retention-days: 14
