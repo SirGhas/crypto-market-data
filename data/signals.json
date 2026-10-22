@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-10-22T04:45:36.920153+00:00",
-  "source_generated_at_utc": "2026-10-22T04:45:07.180628+00:00",
+  "generated_at_utc": "2026-10-22T07:32:01.267831+00:00",
+  "source_generated_at_utc": "2026-10-22T07:31:30.611454+00:00",
   "mode": "screening_only_no_trades_no_notifications",
   "dominance": {
     "latest_percent": {
-      "BTC.D": 59.531019,
-      "USDT.D": 6.539777
+      "BTC.D": 59.454212,
+      "USDT.D": 6.571357
     },
-    "historical_samples": 69,
+    "historical_samples": 70,
     "trend_ready": true,
     "kind": "coingecko_market_cap_snapshots_not_ohlcv"
   },
@@ -20,6 +20,7 @@
         "4h_below_sma233",
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
+        "15m_not_confirmed",
         "insufficient_real_usd_volume"
       ]
     },
@@ -30,6 +31,7 @@
         "4h_below_sma233",
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
+        "15m_not_confirmed",
         "insufficient_real_usd_volume"
       ]
     },
@@ -41,7 +43,8 @@
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
         "15m_not_confirmed",
-        "insufficient_real_usd_volume"
+        "insufficient_real_usd_volume",
+        "invalid_or_wide_stop"
       ]
     },
     {
@@ -52,8 +55,7 @@
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
         "15m_not_confirmed",
-        "insufficient_real_usd_volume",
-        "invalid_or_wide_stop"
+        "insufficient_real_usd_volume"
       ]
     },
     {
@@ -64,7 +66,7 @@
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
         "15m_not_confirmed",
-        "invalid_or_wide_stop"
+        "insufficient_real_usd_volume"
       ]
     },
     {
@@ -106,7 +108,8 @@
         "4h_below_sma233",
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
-        "15m_not_confirmed"
+        "15m_not_confirmed",
+        "insufficient_real_usd_volume"
       ]
     }
   ],
@@ -115,9 +118,5 @@
     "new_events": 0,
     "blocked": 0,
     "rejected": 9
-  },
-  "liquidity_guard_v546": {
-    "pair": "XRPBTC",
-    "status": "BLOCK"
   }
 }
