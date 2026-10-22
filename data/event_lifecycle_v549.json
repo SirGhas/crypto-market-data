@@ -1,77 +1,107 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-10-22T19:16:44.514591+00:00",
+  "generated_at_utc": "2026-10-22T22:24:51.890470+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
   "new_publishable_events": [],
   "pending_unconfirmed": [
     {
-      "id": "BTC:approaching_support:1792670400",
+      "id": "BTC:4h_support_reclaim:1792684800",
+      "coin": "BTC",
+      "event_type": "4h_support_reclaim",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "BTC:approaching_support:1792684800",
       "coin": "BTC",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "ETH:approaching_support:1792670400",
+      "id": "ETH:4h_support_reclaim:1792684800",
+      "coin": "ETH",
+      "event_type": "4h_support_reclaim",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "ETH:approaching_support:1792684800",
       "coin": "ETH",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "BNB:approaching_support:1792670400",
+      "id": "BNB:approaching_support:1792684800",
       "coin": "BNB",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "SOL:approaching_support:1792670400",
+      "id": "SOL:4h_support_reclaim:1792684800",
+      "coin": "SOL",
+      "event_type": "4h_support_reclaim",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "SOL:approaching_support:1792684800",
       "coin": "SOL",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "LTC:approaching_support:1792670400",
+      "id": "LTC:4h_support_reclaim:1792684800",
+      "coin": "LTC",
+      "event_type": "4h_support_reclaim",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "LTC:approaching_support:1792684800",
       "coin": "LTC",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "LINK:approaching_support:1792670400",
+      "id": "LINK:4h_support_reclaim:1792684800",
+      "coin": "LINK",
+      "event_type": "4h_support_reclaim",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "LINK:approaching_support:1792684800",
       "coin": "LINK",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "AVAX:4h_support_reclaim:1792670400",
+      "id": "AVAX:4h_support_reclaim:1792684800",
       "coin": "AVAX",
       "event_type": "4h_support_reclaim",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "AVAX:approaching_support:1792670400",
+      "id": "AVAX:approaching_support:1792684800",
       "coin": "AVAX",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "SUI:4h_support_reclaim:1792670400",
+      "id": "SUI:4h_support_reclaim:1792684800",
       "coin": "SUI",
       "event_type": "4h_support_reclaim",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "SUI:approaching_support:1792670400",
+      "id": "SUI:approaching_support:1792684800",
       "coin": "SUI",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "AAVE:4h_support_reclaim:1792670400",
+      "id": "AAVE:4h_support_reclaim:1792684800",
       "coin": "AAVE",
       "event_type": "4h_support_reclaim",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "AAVE:approaching_support:1792670400",
+      "id": "AAVE:approaching_support:1792684800",
       "coin": "AAVE",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
@@ -81,7 +111,7 @@
     "scanned_coins": 11,
     "blocked_scans": 0,
     "new_publishable_events": 0,
-    "pending_unconfirmed": 12
+    "pending_unconfirmed": 17
   },
   "limitations": [
     "No external notification transport configured",
