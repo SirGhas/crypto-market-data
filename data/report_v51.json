@@ -1,7 +1,7 @@
 {
   "schema_version": 51,
-  "generated_at_utc": "2026-10-23T22:08:39.301289+00:00",
-  "source_generated_at_utc": "2026-10-23T22:07:39.737578+00:00",
+  "generated_at_utc": "2026-10-23T22:12:33.582999+00:00",
+  "source_generated_at_utc": "2026-10-23T22:11:48.971111+00:00",
   "status": "partial",
   "mode": "research_only_no_trade_or_push",
   "evaluations": [
@@ -459,5 +459,9 @@
     "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
   },
   "new_events": [],
-  "disclaimer": "No verified static level, dominance trend, or 4h breakout/reclaim confirmation. Ranking is not a buy signal."
+  "disclaimer": "No verified static level, dominance trend, or 4h breakout/reclaim confirmation. Ranking is not a buy signal.",
+  "liquidity_guard_v546": {
+    "pair": "XRPBTC",
+    "status": "BLOCK"
+  }
 }

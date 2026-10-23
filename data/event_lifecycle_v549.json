@@ -1,48 +1,48 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-10-23T18:23:06.639058+00:00",
+  "generated_at_utc": "2026-10-23T22:12:33.843913+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
   "new_publishable_events": [],
   "pending_unconfirmed": [
     {
-      "id": "BTC:approaching_support:1792756800",
+      "id": "BTC:approaching_support:1792771200",
       "coin": "BTC",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "BNB:approaching_resistance:1792756800",
+      "id": "BNB:approaching_resistance:1792771200",
       "coin": "BNB",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "SOL:approaching_support:1792756800",
+      "id": "SOL:approaching_support:1792771200",
       "coin": "SOL",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "LTC:4h_support_reclaim:1792756800",
-      "coin": "LTC",
-      "event_type": "4h_support_reclaim",
-      "reason": "positive_publication_gate_not_passed"
-    },
-    {
-      "id": "LTC:approaching_support:1792756800",
+      "id": "LTC:approaching_support:1792771200",
       "coin": "LTC",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "AVAX:4h_support_reclaim:1792756800",
-      "coin": "AVAX",
-      "event_type": "4h_support_reclaim",
+      "id": "LINK:approaching_support:1792771200",
+      "coin": "LINK",
+      "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "AVAX:approaching_support:1792756800",
-      "coin": "AVAX",
+      "id": "XRP:approaching_support:1792771200",
+      "coin": "XRP",
+      "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "SUI:approaching_support:1792771200",
+      "coin": "SUI",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     }
