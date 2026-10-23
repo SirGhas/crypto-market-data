@@ -1,19 +1,37 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-10-23T07:33:52.379794+00:00",
+  "generated_at_utc": "2026-10-23T13:28:06.762490+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
   "new_publishable_events": [],
   "pending_unconfirmed": [
     {
-      "id": "BTC:approaching_support:1792713600",
+      "id": "BTC:approaching_support:1792742400",
       "coin": "BTC",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "BNB:approaching_resistance:1792713600",
+      "id": "BNB:approaching_resistance:1792742400",
       "coin": "BNB",
       "event_type": "approaching_resistance",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "SOL:approaching_support:1792742400",
+      "coin": "SOL",
+      "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "LTC:approaching_support:1792742400",
+      "coin": "LTC",
+      "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "AVAX:approaching_support:1792742400",
+      "coin": "AVAX",
+      "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     }
   ],
@@ -21,7 +39,7 @@
     "scanned_coins": 11,
     "blocked_scans": 0,
     "new_publishable_events": 0,
-    "pending_unconfirmed": 2
+    "pending_unconfirmed": 5
   },
   "limitations": [
     "No external notification transport configured",
