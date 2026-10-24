@@ -57,6 +57,16 @@
     "SOL:approaching_support:1792828800",
     "XRP:4h_closed_breakdown:1792828800",
     "AAVE:4h_closed_breakdown:1792828800",
-    "ZEC:4h_closed_breakdown:1792828800"
+    "ZEC:4h_closed_breakdown:1792828800",
+    "BTC:4h_closed_breakdown:1792843200",
+    "ETH:4h_closed_breakdown:1792843200",
+    "BNB:4h_closed_breakdown:1792843200",
+    "SOL:4h_closed_breakdown:1792843200",
+    "LTC:4h_closed_breakdown:1792843200",
+    "LINK:4h_closed_breakdown:1792843200",
+    "XRP:4h_closed_breakdown:1792843200",
+    "AVAX:4h_closed_breakdown:1792843200",
+    "SUI:4h_closed_breakdown:1792843200",
+    "AAVE:4h_closed_breakdown:1792843200"
   ]
 }
