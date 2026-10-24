@@ -1196,6 +1196,29 @@
         "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
       },
       "status": "PENDING_DELIVERY"
+    },
+    "AAVE:4h_closed_breakdown:1792814400": {
+      "event": {
+        "id": "AAVE:4h_closed_breakdown:1792814400",
+        "coin": "AAVE",
+        "event_type": "4h_closed_breakdown",
+        "status": "forming_watch",
+        "level_usdt": 141.81,
+        "reference_price_usdt": 140.42,
+        "reference_price_kind": "last_closed_1h_not_live",
+        "distance_from_level_percent": -0.98,
+        "volume_ratio_4h": 0.58,
+        "volume_ratio_1h": 0.329,
+        "volume_confirmed_4h": false,
+        "trend_4h_above_sma233": false,
+        "lower_tf_confirmed": false,
+        "relative_strength_vs_btc": null,
+        "source_4h": "OKX Spot",
+        "source_1h": "OKX Spot",
+        "closed_4h_at_utc": "2026-10-24T08:00:00+00:00",
+        "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+      },
+      "status": "PENDING_DELIVERY"
     }
   },
   "delivered_ids": []
