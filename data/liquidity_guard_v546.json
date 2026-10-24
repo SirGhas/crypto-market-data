@@ -3,43 +3,38 @@
   "status": "BLOCK",
   "reason_codes": [
     "5m:thin_market_nonzero_frequency",
-    "5m:last_closed_candle_zero_volume",
     "15m:thin_market_nonzero_frequency",
-    "15m:last_closed_candle_zero_volume",
-    "1h:relative_volume_not_confirmed",
-    "4h:relative_volume_not_confirmed"
+    "1h:relative_volume_not_confirmed"
   ],
   "frames": {
     "5m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792839300",
-      "last_closed_age_seconds": 86.9,
-      "nonzero_fraction": 0.1974,
-      "relative_volume": 0.0,
+      "last_candle_id": "1792851900",
+      "last_closed_age_seconds": 274.6,
+      "nonzero_fraction": 0.1931,
+      "relative_volume": 11.6176,
       "status": "BLOCK",
       "reasons": [
-        "thin_market_nonzero_frequency",
-        "last_closed_candle_zero_volume"
+        "thin_market_nonzero_frequency"
       ]
     },
     "15m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792838700",
-      "last_closed_age_seconds": 86.9,
-      "nonzero_fraction": 0.6052,
-      "relative_volume": 0.0,
+      "last_candle_id": "1792851300",
+      "last_closed_age_seconds": 274.6,
+      "nonzero_fraction": 0.5966,
+      "relative_volume": 0.0767,
       "status": "BLOCK",
       "reasons": [
-        "thin_market_nonzero_frequency",
-        "last_closed_candle_zero_volume"
+        "thin_market_nonzero_frequency"
       ]
     },
     "1h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792836000",
-      "last_closed_age_seconds": 86.9,
+      "last_candle_id": "1792846800",
+      "last_closed_age_seconds": 2074.6,
       "nonzero_fraction": 0.927,
-      "relative_volume": 0.0334,
+      "relative_volume": 0.0032,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -47,14 +42,12 @@
     },
     "4h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792814400",
-      "last_closed_age_seconds": 10886.9,
+      "last_candle_id": "1792828800",
+      "last_closed_age_seconds": 9274.6,
       "nonzero_fraction": 1.0,
-      "relative_volume": 0.0602,
-      "status": "BLOCK",
-      "reasons": [
-        "relative_volume_not_confirmed"
-      ]
+      "relative_volume": 4.5104,
+      "status": "PASS",
+      "reasons": []
     }
   },
   "thresholds": {
@@ -63,6 +56,6 @@
     "minimum_relative_volume_1h_4h": 1.3
   },
   "schema_version": "5.4.6",
-  "generated_at_utc": "2026-10-24T11:01:26.916148+00:00",
+  "generated_at_utc": "2026-10-24T14:34:34.621817+00:00",
   "mode": "research_only_fail_closed_no_orders"
 }
