@@ -1,107 +1,107 @@
 {
   "schema_version": 52,
-  "generated_at_utc": "2026-10-24T18:10:31.259011+00:00",
-  "source_generated_at_utc": "2026-10-24T18:09:47.419654+00:00",
+  "generated_at_utc": "2026-10-24T20:46:20.816809+00:00",
+  "source_generated_at_utc": "2026-10-24T20:45:24.586118+00:00",
   "mode": "event_screening_only_no_push_no_orders",
   "observations": [
     {
       "coin": "BTC",
       "status": "scanned",
-      "4h_support": 80458.5,
+      "4h_support": 79220.1,
       "4h_resistance": 84899.6,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 1.946,
-      "observations": 2
+      "4h_volume_ratio": 0.708,
+      "observations": 0
     },
     {
       "coin": "ETH",
       "status": "scanned",
-      "4h_support": 2352.16,
+      "4h_support": 2282.85,
       "4h_resistance": 2526.4,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 2.983,
-      "observations": 2
+      "4h_volume_ratio": 0.679,
+      "observations": 0
     },
     {
       "coin": "BNB",
       "status": "scanned",
-      "4h_support": 725.4,
+      "4h_support": 717.7,
       "4h_resistance": 751.9,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 2.647,
-      "observations": 2
+      "4h_volume_ratio": 1.055,
+      "observations": 0
     },
     {
       "coin": "SOL",
       "status": "scanned",
-      "4h_support": 101.13,
+      "4h_support": 98.62,
       "4h_resistance": 109.22,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 3.818,
-      "observations": 2
+      "4h_volume_ratio": 0.734,
+      "observations": 0
     },
     {
       "coin": "LTC",
       "status": "scanned",
-      "4h_support": 55.96,
+      "4h_support": 55.08,
       "4h_resistance": 62.41,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 2.679,
-      "observations": 2
+      "4h_volume_ratio": 0.577,
+      "observations": 0
     },
     {
       "coin": "LINK",
       "status": "scanned",
-      "4h_support": 11.527,
+      "4h_support": 11.234,
       "4h_resistance": 12.807,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 4.61,
-      "observations": 2
+      "4h_volume_ratio": 0.531,
+      "observations": 0
     },
     {
       "coin": "XRP",
       "status": "scanned",
-      "4h_support": 1.2734,
+      "4h_support": 1.2547,
       "4h_resistance": 1.3991,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 2.054,
-      "observations": 2
+      "4h_volume_ratio": 0.626,
+      "observations": 0
     },
     {
       "coin": "AVAX",
       "status": "scanned",
-      "4h_support": 8.812,
+      "4h_support": 8.675,
       "4h_resistance": 10.054,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 1.184,
-      "observations": 2
+      "4h_volume_ratio": 0.451,
+      "observations": 0
     },
     {
       "coin": "SUI",
       "status": "scanned",
-      "4h_support": 0.9394,
+      "4h_support": 0.9117,
       "4h_resistance": 1.0566,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 1.997,
-      "observations": 1
+      "4h_volume_ratio": 0.527,
+      "observations": 0
     },
     {
       "coin": "AAVE",
       "status": "scanned",
-      "4h_support": 139.91,
+      "4h_support": 134.0,
       "4h_resistance": 160.52,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 5.938,
-      "observations": 1
+      "4h_volume_ratio": 2.133,
+      "observations": 0
     },
     {
       "coin": "ZEC",
       "status": "scanned",
-      "4h_support": 1142.54,
+      "4h_support": 1119.27,
       "4h_resistance": 1368.72,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 1.079,
-      "observations": 2
+      "4h_volume_ratio": 0.475,
+      "observations": 0
     }
   ],
   "new_events": [],
@@ -116,9 +116,5 @@
     "Not a TradingView or Binance feed",
     "No automatic notification is connected",
     "Missing BTC crosses must not be treated as strength confirmation"
-  ],
-  "liquidity_guard_v546": {
-    "pair": "XRPBTC",
-    "status": "BLOCK"
-  }
+  ]
 }
