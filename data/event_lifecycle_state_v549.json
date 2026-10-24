@@ -44,6 +44,13 @@
     "AAVE:4h_resistance_rejection:1792598400",
     "BNB:approaching_resistance:1792627200",
     "AVAX:4h_closed_breakdown:1792656000",
-    "AAVE:approaching_support:1792656000"
+    "AAVE:approaching_support:1792656000",
+    "SOL:4h_closed_breakdown:1792785600",
+    "LTC:4h_closed_breakdown:1792785600",
+    "LINK:4h_support_reclaim:1792785600",
+    "LINK:approaching_support:1792785600",
+    "XRP:4h_closed_breakdown:1792785600",
+    "SUI:4h_closed_breakdown:1792785600",
+    "SUI:approaching_support:1792785600"
   ]
 }
