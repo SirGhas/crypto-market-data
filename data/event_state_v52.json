@@ -127,6 +127,7 @@
     "BTC:approaching_support:1792756800",
     "BTC:approaching_support:1792771200",
     "BTC:approaching_support:1792785600",
+    "BTC:approaching_support:1792800000",
     "ETH:4h_closed_breakout:1792584000",
     "ETH:4h_resistance_rejection:1792497600",
     "ETH:4h_resistance_rejection:1792598400",
@@ -148,6 +149,7 @@
     "ETH:approaching_support:1792684800",
     "ETH:approaching_support:1792699200",
     "ETH:approaching_support:1792785600",
+    "ETH:approaching_support:1792800000",
     "LINK:4h_closed_breakdown:1792339200",
     "LINK:4h_closed_breakout:1792584000",
     "LINK:4h_resistance_rejection:1792497600",
@@ -226,6 +228,7 @@
     "SOL:approaching_support:1792756800",
     "SOL:approaching_support:1792771200",
     "SOL:approaching_support:1792785600",
+    "SOL:approaching_support:1792800000",
     "SUI:4h_closed_breakdown:1792339200",
     "SUI:4h_closed_breakdown:1792785600",
     "SUI:4h_closed_breakout:1792584000",
@@ -277,6 +280,7 @@
     "XRP:approaching_support:1792339200",
     "XRP:approaching_support:1792771200",
     "XRP:approaching_support:1792785600",
+    "XRP:approaching_support:1792800000",
     "ZEC:4h_closed_breakdown:1792339200",
     "ZEC:4h_closed_breakout:1792497600",
     "ZEC:4h_closed_breakout:1792526400",
@@ -286,6 +290,7 @@
     "ZEC:approaching_resistance:1792497600",
     "ZEC:approaching_resistance:1792569600",
     "ZEC:approaching_resistance:1792598400",
-    "ZEC:approaching_support:1792324800"
+    "ZEC:approaching_support:1792324800",
+    "ZEC:approaching_support:1792800000"
   ]
 }
