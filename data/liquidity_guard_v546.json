@@ -6,13 +6,14 @@
     "5m:last_closed_candle_zero_volume",
     "15m:thin_market_nonzero_frequency",
     "15m:last_closed_candle_zero_volume",
+    "1h:relative_volume_not_confirmed",
     "4h:relative_volume_not_confirmed"
   ],
   "frames": {
     "5m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792944600",
-      "last_closed_age_seconds": 302.7,
+      "last_candle_id": "1792956600",
+      "last_closed_age_seconds": 202.1,
       "nonzero_fraction": 0.2446,
       "relative_volume": 0.0,
       "status": "BLOCK",
@@ -23,9 +24,9 @@
     },
     "15m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792944000",
-      "last_closed_age_seconds": 302.7,
-      "nonzero_fraction": 0.5451,
+      "last_candle_id": "1792955700",
+      "last_closed_age_seconds": 502.1,
+      "nonzero_fraction": 0.5579,
       "relative_volume": 0.0,
       "status": "BLOCK",
       "reasons": [
@@ -35,17 +36,19 @@
     },
     "1h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1792940400",
-      "last_closed_age_seconds": 1202.7,
+      "last_candle_id": "1792951200",
+      "last_closed_age_seconds": 2302.1,
       "nonzero_fraction": 0.9356,
-      "relative_volume": 4.1199,
-      "status": "PASS",
-      "reasons": []
+      "relative_volume": 1.1467,
+      "status": "BLOCK",
+      "reasons": [
+        "relative_volume_not_confirmed"
+      ]
     },
     "4h": {
       "source": "Gate.io Spot",
       "last_candle_id": "1792929600",
-      "last_closed_age_seconds": 1202.7,
+      "last_closed_age_seconds": 13102.1,
       "nonzero_fraction": 1.0,
       "relative_volume": 0.2565,
       "status": "BLOCK",
@@ -60,6 +63,6 @@
     "minimum_relative_volume_1h_4h": 1.3
   },
   "schema_version": "5.4.6",
-  "generated_at_utc": "2026-10-25T16:20:02.686905+00:00",
+  "generated_at_utc": "2026-10-25T19:38:22.091521+00:00",
   "mode": "research_only_fail_closed_no_orders"
 }
