@@ -1,7 +1,7 @@
 {
   "schema_version": 52,
-  "generated_at_utc": "2026-10-26T12:56:44.072743+00:00",
-  "source_generated_at_utc": "2026-10-26T12:55:58.884560+00:00",
+  "generated_at_utc": "2026-10-26T13:07:55.325004+00:00",
+  "source_generated_at_utc": "2026-10-26T13:06:56.851332+00:00",
   "mode": "event_screening_only_no_push_no_orders",
   "observations": [
     {
@@ -11,7 +11,7 @@
       "4h_resistance": 82060.0,
       "relative_strength_vs_btc": null,
       "4h_volume_ratio": 0.997,
-      "observations": 0
+      "observations": 1
     },
     {
       "coin": "ETH",
@@ -106,20 +106,20 @@
   ],
   "new_events": [
     {
-      "id": "BNB:approaching_resistance:1793001600",
-      "coin": "BNB",
-      "event_type": "approaching_resistance",
+      "id": "BTC:approaching_support:1793001600",
+      "coin": "BTC",
+      "event_type": "approaching_support",
       "status": "forming_watch",
-      "level_usdt": 750.5,
-      "reference_price_usdt": 743.48,
+      "level_usdt": 79220.1,
+      "reference_price_usdt": 80342.3,
       "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": -0.935,
-      "volume_ratio_4h": 0.715,
-      "volume_ratio_1h": 0.647,
+      "distance_from_level_percent": 1.417,
+      "volume_ratio_4h": 0.997,
+      "volume_ratio_1h": 0.634,
       "volume_confirmed_4h": false,
       "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": true,
-      "relative_strength_vs_btc": true,
+      "lower_tf_confirmed": false,
+      "relative_strength_vs_btc": null,
       "source_4h": "OKX Spot",
       "source_1h": "OKX Spot",
       "closed_4h_at_utc": "2026-10-26T12:00:00+00:00",
@@ -137,5 +137,9 @@
     "Not a TradingView or Binance feed",
     "No automatic notification is connected",
     "Missing BTC crosses must not be treated as strength confirmation"
-  ]
+  ],
+  "liquidity_guard_v546": {
+    "pair": "XRPBTC",
+    "status": "BLOCK"
+  }
 }
