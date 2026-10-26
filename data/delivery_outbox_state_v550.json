@@ -1656,6 +1656,29 @@
         "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
       },
       "status": "PENDING_DELIVERY"
+    },
+    "LINK:approaching_support:1793030400": {
+      "event": {
+        "id": "LINK:approaching_support:1793030400",
+        "coin": "LINK",
+        "event_type": "approaching_support",
+        "status": "forming_watch",
+        "level_usdt": 11.234,
+        "reference_price_usdt": 11.324,
+        "reference_price_kind": "last_closed_1h_not_live",
+        "distance_from_level_percent": 0.801,
+        "volume_ratio_4h": 1.505,
+        "volume_ratio_1h": 0.671,
+        "volume_confirmed_4h": true,
+        "trend_4h_above_sma233": false,
+        "lower_tf_confirmed": false,
+        "relative_strength_vs_btc": null,
+        "source_4h": "OKX Spot",
+        "source_1h": "OKX Spot",
+        "closed_4h_at_utc": "2026-10-26T20:00:00+00:00",
+        "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+      },
+      "status": "PENDING_DELIVERY"
     }
   },
   "delivered_ids": []

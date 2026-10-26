@@ -1,114 +1,66 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-10-26T19:20:39.425665+00:00",
+  "generated_at_utc": "2026-10-26T23:54:55.224391+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
   "new_publishable_events": [
     {
-      "id": "LINK:approaching_support:1793016000",
+      "id": "LINK:approaching_support:1793030400",
       "coin": "LINK",
       "event_type": "approaching_support",
       "status": "forming_watch",
       "level_usdt": 11.234,
-      "reference_price_usdt": 11.368,
+      "reference_price_usdt": 11.324,
       "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 1.193,
-      "volume_ratio_4h": 2.577,
-      "volume_ratio_1h": 0.898,
+      "distance_from_level_percent": 0.801,
+      "volume_ratio_4h": 1.505,
+      "volume_ratio_1h": 0.671,
       "volume_confirmed_4h": true,
       "trend_4h_above_sma233": false,
       "lower_tf_confirmed": false,
       "relative_strength_vs_btc": null,
       "source_4h": "OKX Spot",
       "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-10-26T16:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    },
-    {
-      "id": "SUI:approaching_support:1793016000",
-      "coin": "SUI",
-      "event_type": "approaching_support",
-      "status": "forming_watch",
-      "level_usdt": 0.9001,
-      "reference_price_usdt": 0.9089,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 0.978,
-      "volume_ratio_4h": 1.659,
-      "volume_ratio_1h": 0.62,
-      "volume_confirmed_4h": true,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": null,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-10-26T16:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    },
-    {
-      "id": "AAVE:approaching_support:1793016000",
-      "coin": "AAVE",
-      "event_type": "approaching_support",
-      "status": "forming_watch",
-      "level_usdt": 133.58,
-      "reference_price_usdt": 134.9,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 0.988,
-      "volume_ratio_4h": 1.673,
-      "volume_ratio_1h": 2.035,
-      "volume_confirmed_4h": true,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": null,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-10-26T16:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    },
-    {
-      "id": "ZEC:4h_resistance_rejection:1793016000",
-      "coin": "ZEC",
-      "event_type": "4h_resistance_rejection",
-      "status": "technical_event_needs_context",
-      "level_usdt": 1258.78,
-      "reference_price_usdt": 1226.43,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": -2.57,
-      "volume_ratio_4h": 3.129,
-      "volume_ratio_1h": 0.2,
-      "volume_confirmed_4h": true,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": true,
-      "relative_strength_vs_btc": null,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-10-26T16:00:00+00:00",
+      "closed_4h_at_utc": "2026-10-26T20:00:00+00:00",
       "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
     }
   ],
   "pending_unconfirmed": [
     {
-      "id": "BTC:approaching_support:1793016000",
+      "id": "BTC:approaching_support:1793030400",
       "coin": "BTC",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "ETH:approaching_support:1793016000",
+      "id": "ETH:approaching_support:1793030400",
       "coin": "ETH",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "BNB:approaching_resistance:1793016000",
+      "id": "BNB:approaching_resistance:1793030400",
       "coin": "BNB",
       "event_type": "approaching_resistance",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "SUI:approaching_support:1793030400",
+      "coin": "SUI",
+      "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "AAVE:approaching_support:1793030400",
+      "coin": "AAVE",
+      "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     }
   ],
   "summary": {
     "scanned_coins": 11,
     "blocked_scans": 0,
-    "new_publishable_events": 4,
-    "pending_unconfirmed": 3
+    "new_publishable_events": 1,
+    "pending_unconfirmed": 5
   },
   "limitations": [
     "No external notification transport configured",
