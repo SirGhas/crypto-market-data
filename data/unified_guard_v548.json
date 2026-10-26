@@ -1,25 +1,27 @@
 {
   "schema_version": "5.4.8",
   "mode": "research_only_no_orders_no_push",
-  "generated_at_utc": "2026-10-26T01:11:42.905317+00:00",
+  "generated_at_utc": "2026-10-26T06:14:42.845037+00:00",
   "coins": {
     "ETH": {
-      "score": 66,
-      "color_band": "yellow_60_69",
-      "original_tier": "tier_2_conditional_watch",
-      "positive_publication_gate": "PASS",
-      "reason_codes": [],
-      "risk_reward": 12.952
-    },
-    "BNB": {
-      "score": 63,
-      "color_band": "yellow_60_69",
+      "score": 55,
+      "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 2.013
+      "risk_reward": 19.861
+    },
+    "BNB": {
+      "score": 50,
+      "color_band": "gray_below_60",
+      "original_tier": "below_threshold_watch_only",
+      "positive_publication_gate": "BLOCK",
+      "reason_codes": [
+        "not_a_qualified_candidate"
+      ],
+      "risk_reward": 1.476
     },
     "SOL": {
       "score": 55,
@@ -29,89 +31,91 @@
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 6.187
+      "risk_reward": 7.371
     },
     "LTC": {
-      "score": 52,
+      "score": 47,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 4.804
+      "risk_reward": 6.804
     },
     "LINK": {
-      "score": 65,
-      "color_band": "yellow_60_69",
-      "original_tier": "tier_2_conditional_watch",
-      "positive_publication_gate": "PASS",
-      "reason_codes": [],
-      "risk_reward": 3.858
+      "score": 48,
+      "color_band": "gray_below_60",
+      "original_tier": "below_threshold_watch_only",
+      "positive_publication_gate": "BLOCK",
+      "reason_codes": [
+        "not_a_qualified_candidate"
+      ],
+      "risk_reward": 3.747
     },
     "XRP": {
-      "score": 56,
+      "score": 55,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "xrp_btc_liquidity_unconfirmed"
       ],
-      "risk_reward": 2.456
+      "risk_reward": 5.081
     },
     "AVAX": {
-      "score": 55,
-      "color_band": "gray_below_60",
-      "original_tier": "below_threshold_watch_only",
-      "positive_publication_gate": "BLOCK",
-      "reason_codes": [
-        "not_a_qualified_candidate"
-      ],
-      "risk_reward": 4.076
-    },
-    "SUI": {
-      "score": 65,
+      "score": 63,
       "color_band": "yellow_60_69",
       "original_tier": "tier_2_conditional_watch",
       "positive_publication_gate": "PASS",
       "reason_codes": [],
-      "risk_reward": 8.594
+      "risk_reward": 4.865
     },
-    "AAVE": {
-      "score": 55,
+    "SUI": {
+      "score": 58,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 9.803
+      "risk_reward": 12.024
+    },
+    "AAVE": {
+      "score": 45,
+      "color_band": "gray_below_60",
+      "original_tier": "below_threshold_watch_only",
+      "positive_publication_gate": "BLOCK",
+      "reason_codes": [
+        "not_a_qualified_candidate"
+      ],
+      "risk_reward": 11.184
     },
     "ZEC": {
-      "score": 51,
+      "score": 50,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "zec_btc_cross_not_verified_okx"
       ],
-      "risk_reward": 1.596
+      "risk_reward": 0.702
     }
   },
   "bands": {
     "green_80_100": [],
     "blue_70_79": [],
     "yellow_60_69": [
-      "ETH",
-      "BNB",
-      "LINK",
-      "SUI"
+      "AVAX"
     ],
     "gray_below_60": [
+      "ETH",
+      "BNB",
       "SOL",
       "LTC",
+      "LINK",
       "XRP",
-      "AVAX",
+      "SUI",
       "AAVE",
       "ZEC"
     ],
@@ -126,7 +130,7 @@
   "summary": {
     "green": 0,
     "blue": 0,
-    "yellow": 4,
+    "yellow": 1,
     "publishable_new_events": 0
   }
 }
