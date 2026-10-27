@@ -1,49 +1,49 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-10-27T16:40:16.312965+00:00",
+  "generated_at_utc": "2026-10-27T21:21:12.722327+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
   "new_publishable_events": [],
   "pending_unconfirmed": [
     {
-      "id": "BTC:approaching_resistance:1793102400",
+      "id": "BTC:approaching_resistance:1793116800",
       "coin": "BTC",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "BNB:4h_closed_breakout:1793102400",
-      "coin": "BNB",
-      "event_type": "4h_closed_breakout",
+      "id": "ETH:approaching_resistance:1793116800",
+      "coin": "ETH",
+      "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "BNB:approaching_resistance:1793102400",
+      "id": "BNB:approaching_resistance:1793116800",
       "coin": "BNB",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "LTC:approaching_resistance:1793102400",
+      "id": "LTC:approaching_resistance:1793116800",
       "coin": "LTC",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "XRP:4h_closed_breakout:1793102400",
-      "coin": "XRP",
-      "event_type": "4h_closed_breakout",
-      "reason": "positive_publication_gate_not_passed"
-    },
-    {
-      "id": "XRP:approaching_resistance:1793102400",
+      "id": "XRP:approaching_resistance:1793116800",
       "coin": "XRP",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "ZEC:4h_closed_breakout:1793102400",
+      "id": "ZEC:4h_closed_breakout:1793116800",
       "coin": "ZEC",
       "event_type": "4h_closed_breakout",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "ZEC:approaching_resistance:1793116800",
+      "coin": "ZEC",
+      "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     }
   ],
