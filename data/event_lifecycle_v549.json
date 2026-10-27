@@ -1,97 +1,56 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-10-27T10:35:48.549993+00:00",
+  "generated_at_utc": "2026-10-27T16:40:16.312965+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
-  "new_publishable_events": [
-    {
-      "id": "SUI:approaching_support:1793073600",
-      "coin": "SUI",
-      "event_type": "approaching_support",
-      "status": "forming_watch",
-      "level_usdt": 0.9001,
-      "reference_price_usdt": 0.9079,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 0.867,
-      "volume_ratio_4h": 0.443,
-      "volume_ratio_1h": 1.766,
-      "volume_confirmed_4h": false,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": null,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-10-27T08:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    },
-    {
-      "id": "AAVE:4h_closed_breakdown:1793073600",
-      "coin": "AAVE",
-      "event_type": "4h_closed_breakdown",
-      "status": "forming_watch",
-      "level_usdt": 132.52,
-      "reference_price_usdt": 130.35,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": -1.637,
-      "volume_ratio_4h": 0.955,
-      "volume_ratio_1h": 1.345,
-      "volume_confirmed_4h": false,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": null,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-10-27T08:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    }
-  ],
+  "new_publishable_events": [],
   "pending_unconfirmed": [
     {
-      "id": "BTC:approaching_support:1793073600",
+      "id": "BTC:approaching_resistance:1793102400",
       "coin": "BTC",
-      "event_type": "approaching_support",
+      "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "ETH:approaching_support:1793073600",
-      "coin": "ETH",
-      "event_type": "approaching_support",
+      "id": "BNB:4h_closed_breakout:1793102400",
+      "coin": "BNB",
+      "event_type": "4h_closed_breakout",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "SOL:approaching_support:1793073600",
-      "coin": "SOL",
-      "event_type": "approaching_support",
+      "id": "BNB:approaching_resistance:1793102400",
+      "coin": "BNB",
+      "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "LINK:approaching_support:1793073600",
-      "coin": "LINK",
-      "event_type": "approaching_support",
+      "id": "LTC:approaching_resistance:1793102400",
+      "coin": "LTC",
+      "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "XRP:approaching_resistance:1793073600",
+      "id": "XRP:4h_closed_breakout:1793102400",
+      "coin": "XRP",
+      "event_type": "4h_closed_breakout",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "XRP:approaching_resistance:1793102400",
       "coin": "XRP",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "AVAX:4h_support_reclaim:1793073600",
-      "coin": "AVAX",
-      "event_type": "4h_support_reclaim",
-      "reason": "positive_publication_gate_not_passed"
-    },
-    {
-      "id": "AVAX:approaching_support:1793073600",
-      "coin": "AVAX",
-      "event_type": "approaching_support",
+      "id": "ZEC:4h_closed_breakout:1793102400",
+      "coin": "ZEC",
+      "event_type": "4h_closed_breakout",
       "reason": "positive_publication_gate_not_passed"
     }
   ],
   "summary": {
     "scanned_coins": 11,
     "blocked_scans": 0,
-    "new_publishable_events": 2,
+    "new_publishable_events": 0,
     "pending_unconfirmed": 7
   },
   "limitations": [
