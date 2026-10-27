@@ -11,9 +11,9 @@
   "frames": {
     "5m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793058300",
-      "last_closed_age_seconds": 295.1,
-      "nonzero_fraction": 0.3262,
+      "last_candle_id": "1793077200",
+      "last_closed_age_seconds": 66.8,
+      "nonzero_fraction": 0.3133,
       "relative_volume": 0.0,
       "status": "BLOCK",
       "reasons": [
@@ -23,10 +23,10 @@
     },
     "15m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793057400",
-      "last_closed_age_seconds": 595.1,
-      "nonzero_fraction": 0.6009,
-      "relative_volume": 2.88,
+      "last_candle_id": "1793076300",
+      "last_closed_age_seconds": 366.8,
+      "nonzero_fraction": 0.588,
+      "relative_volume": 0.6236,
       "status": "BLOCK",
       "reasons": [
         "thin_market_nonzero_frequency"
@@ -34,10 +34,10 @@
     },
     "1h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793052000",
-      "last_closed_age_seconds": 3295.1,
-      "nonzero_fraction": 0.9356,
-      "relative_volume": 0.6497,
+      "last_candle_id": "1793073600",
+      "last_closed_age_seconds": 366.8,
+      "nonzero_fraction": 0.9399,
+      "relative_volume": 0.1781,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -45,10 +45,10 @@
     },
     "4h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793030400",
-      "last_closed_age_seconds": 14095.1,
+      "last_candle_id": "1793059200",
+      "last_closed_age_seconds": 3966.8,
       "nonzero_fraction": 1.0,
-      "relative_volume": 0.617,
+      "relative_volume": 0.3646,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -60,7 +60,10 @@
     "minimum_nonzero_fraction_5m_15m": 0.7,
     "minimum_relative_volume_1h_4h": 1.3
   },
+  "suppressed_event_ids": [
+    "XRP:approaching_resistance:1793059200"
+  ],
   "schema_version": "5.4.6",
-  "generated_at_utc": "2026-10-26T23:54:55.097236+00:00",
+  "generated_at_utc": "2026-10-27T05:06:06.818404+00:00",
   "mode": "research_only_fail_closed_no_orders"
 }
