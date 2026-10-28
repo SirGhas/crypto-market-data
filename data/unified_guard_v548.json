@@ -1,20 +1,18 @@
 {
   "schema_version": "5.4.8",
   "mode": "research_only_no_orders_no_push",
-  "generated_at_utc": "2026-10-28T16:03:44.580961+00:00",
+  "generated_at_utc": "2026-10-28T21:06:42.406989+00:00",
   "coins": {
     "ETH": {
-      "score": 42,
-      "color_band": "gray_below_60",
-      "original_tier": "below_threshold_watch_only",
-      "positive_publication_gate": "BLOCK",
-      "reason_codes": [
-        "not_a_qualified_candidate"
-      ],
-      "risk_reward": 1.2
+      "score": 77,
+      "color_band": "blue_70_79",
+      "original_tier": "tier_2_conditional_watch",
+      "positive_publication_gate": "PASS",
+      "reason_codes": [],
+      "risk_reward": 15.396
     },
     "BNB": {
-      "score": 36,
+      "score": 55,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -24,72 +22,70 @@
       "risk_reward": null
     },
     "SOL": {
-      "score": 55,
-      "color_band": "gray_below_60",
+      "score": 62,
+      "color_band": "yellow_60_69",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 7.263
+      "risk_reward": 0.031
     },
     "LTC": {
+      "score": 65,
+      "color_band": "yellow_60_69",
+      "original_tier": "below_threshold_watch_only",
+      "positive_publication_gate": "BLOCK",
+      "reason_codes": [
+        "not_a_qualified_candidate"
+      ],
+      "risk_reward": 1.598
+    },
+    "LINK": {
       "score": 77,
       "color_band": "blue_70_79",
       "original_tier": "tier_2_conditional_watch",
       "positive_publication_gate": "PASS",
       "reason_codes": [],
-      "risk_reward": 8.483
-    },
-    "LINK": {
-      "score": 57,
-      "color_band": "gray_below_60",
-      "original_tier": "below_threshold_watch_only",
-      "positive_publication_gate": "BLOCK",
-      "reason_codes": [
-        "not_a_qualified_candidate"
-      ],
-      "risk_reward": null
+      "risk_reward": 31.429
     },
     "XRP": {
-      "score": 42,
-      "color_band": "gray_below_60",
+      "score": 60,
+      "color_band": "yellow_60_69",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "xrp_btc_liquidity_unconfirmed"
       ],
-      "risk_reward": 0.243
+      "risk_reward": 1.142
     },
     "AVAX": {
-      "score": 36,
-      "color_band": "gray_below_60",
+      "score": 62,
+      "color_band": "yellow_60_69",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 1.919
+      "risk_reward": 0.065
     },
     "SUI": {
-      "score": 52,
-      "color_band": "gray_below_60",
-      "original_tier": "below_threshold_watch_only",
-      "positive_publication_gate": "BLOCK",
-      "reason_codes": [
-        "not_a_qualified_candidate"
-      ],
-      "risk_reward": 0.353
+      "score": 77,
+      "color_band": "blue_70_79",
+      "original_tier": "tier_2_conditional_watch",
+      "positive_publication_gate": "PASS",
+      "reason_codes": [],
+      "risk_reward": 8.807
     },
     "AAVE": {
-      "score": 25,
-      "color_band": "gray_below_60",
+      "score": 62,
+      "color_band": "yellow_60_69",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": null
+      "risk_reward": 1.176
     },
     "ZEC": {
       "score": 38,
@@ -99,67 +95,108 @@
       "reason_codes": [
         "zec_btc_cross_not_verified_okx"
       ],
-      "risk_reward": 0.21
+      "risk_reward": null
     }
   },
   "bands": {
     "green_80_100": [],
     "blue_70_79": [
-      "LTC"
-    ],
-    "yellow_60_69": [],
-    "gray_below_60": [
       "ETH",
-      "BNB",
-      "SOL",
       "LINK",
+      "SUI"
+    ],
+    "yellow_60_69": [
+      "SOL",
+      "LTC",
       "XRP",
       "AVAX",
-      "SUI",
-      "AAVE",
+      "AAVE"
+    ],
+    "gray_below_60": [
+      "BNB",
       "ZEC"
     ],
     "blocked_gray": []
   },
   "eligible_positive_events": [
     {
-      "id": "LTC:4h_closed_breakout:1793188800",
-      "coin": "LTC",
-      "event_type": "4h_closed_breakout",
-      "status": "technical_event_needs_context",
-      "level_usdt": 58.02,
-      "reference_price_usdt": 58.41,
+      "id": "ETH:approaching_resistance:1793203200",
+      "coin": "ETH",
+      "event_type": "approaching_resistance",
+      "status": "forming_watch",
+      "level_usdt": 2387.65,
+      "reference_price_usdt": 2360.91,
       "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 0.672,
-      "volume_ratio_4h": 4.982,
-      "volume_ratio_1h": 5.488,
+      "distance_from_level_percent": -1.12,
+      "volume_ratio_4h": 1.862,
+      "volume_ratio_1h": 2.69,
       "volume_confirmed_4h": true,
       "trend_4h_above_sma233": false,
       "lower_tf_confirmed": false,
       "relative_strength_vs_btc": false,
       "source_4h": "OKX Spot",
       "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-10-28T16:00:00+00:00",
+      "closed_4h_at_utc": "2026-10-28T20:00:00+00:00",
       "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
     },
     {
-      "id": "LTC:approaching_resistance:1793188800",
-      "coin": "LTC",
+      "id": "LINK:approaching_resistance:1793203200",
+      "coin": "LINK",
       "event_type": "approaching_resistance",
       "status": "forming_watch",
-      "level_usdt": 58.02,
-      "reference_price_usdt": 58.41,
+      "level_usdt": 11.892,
+      "reference_price_usdt": 11.838,
       "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 0.672,
-      "volume_ratio_4h": 4.982,
-      "volume_ratio_1h": 5.488,
+      "distance_from_level_percent": -0.454,
+      "volume_ratio_4h": 1.81,
+      "volume_ratio_1h": 2.115,
       "volume_confirmed_4h": true,
       "trend_4h_above_sma233": false,
       "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": false,
+      "relative_strength_vs_btc": null,
       "source_4h": "OKX Spot",
       "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-10-28T16:00:00+00:00",
+      "closed_4h_at_utc": "2026-10-28T20:00:00+00:00",
+      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+    },
+    {
+      "id": "SUI:4h_closed_breakout:1793203200",
+      "coin": "SUI",
+      "event_type": "4h_closed_breakout",
+      "status": "technical_event_needs_context",
+      "level_usdt": 0.9483,
+      "reference_price_usdt": 0.9493,
+      "reference_price_kind": "last_closed_1h_not_live",
+      "distance_from_level_percent": 0.105,
+      "volume_ratio_4h": 2.475,
+      "volume_ratio_1h": 4.309,
+      "volume_confirmed_4h": true,
+      "trend_4h_above_sma233": false,
+      "lower_tf_confirmed": false,
+      "relative_strength_vs_btc": null,
+      "source_4h": "OKX Spot",
+      "source_1h": "OKX Spot",
+      "closed_4h_at_utc": "2026-10-28T20:00:00+00:00",
+      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+    },
+    {
+      "id": "SUI:approaching_resistance:1793203200",
+      "coin": "SUI",
+      "event_type": "approaching_resistance",
+      "status": "forming_watch",
+      "level_usdt": 0.9483,
+      "reference_price_usdt": 0.9493,
+      "reference_price_kind": "last_closed_1h_not_live",
+      "distance_from_level_percent": 0.105,
+      "volume_ratio_4h": 2.475,
+      "volume_ratio_1h": 4.309,
+      "volume_confirmed_4h": true,
+      "trend_4h_above_sma233": false,
+      "lower_tf_confirmed": false,
+      "relative_strength_vs_btc": null,
+      "source_4h": "OKX Spot",
+      "source_1h": "OKX Spot",
+      "closed_4h_at_utc": "2026-10-28T20:00:00+00:00",
       "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
     }
   ],
@@ -170,8 +207,8 @@
   ],
   "summary": {
     "green": 0,
-    "blue": 1,
-    "yellow": 0,
-    "publishable_new_events": 2
+    "blue": 3,
+    "yellow": 5,
+    "publishable_new_events": 4
   }
 }

@@ -80,6 +80,10 @@
     "ZEC:4h_resistance_rejection:1793131200",
     "ZEC:4h_resistance_rejection:1793160000",
     "LTC:4h_closed_breakout:1793188800",
-    "LTC:approaching_resistance:1793188800"
+    "LTC:approaching_resistance:1793188800",
+    "ETH:approaching_resistance:1793203200",
+    "LINK:approaching_resistance:1793203200",
+    "SUI:4h_closed_breakout:1793203200",
+    "SUI:approaching_resistance:1793203200"
   ]
 }
