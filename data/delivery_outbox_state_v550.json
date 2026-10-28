@@ -1817,6 +1817,52 @@
         "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
       },
       "status": "PENDING_DELIVERY"
+    },
+    "LTC:4h_closed_breakout:1793188800": {
+      "event": {
+        "id": "LTC:4h_closed_breakout:1793188800",
+        "coin": "LTC",
+        "event_type": "4h_closed_breakout",
+        "status": "technical_event_needs_context",
+        "level_usdt": 58.02,
+        "reference_price_usdt": 58.41,
+        "reference_price_kind": "last_closed_1h_not_live",
+        "distance_from_level_percent": 0.672,
+        "volume_ratio_4h": 4.982,
+        "volume_ratio_1h": 5.488,
+        "volume_confirmed_4h": true,
+        "trend_4h_above_sma233": false,
+        "lower_tf_confirmed": false,
+        "relative_strength_vs_btc": false,
+        "source_4h": "OKX Spot",
+        "source_1h": "OKX Spot",
+        "closed_4h_at_utc": "2026-10-28T16:00:00+00:00",
+        "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+      },
+      "status": "PENDING_DELIVERY"
+    },
+    "LTC:approaching_resistance:1793188800": {
+      "event": {
+        "id": "LTC:approaching_resistance:1793188800",
+        "coin": "LTC",
+        "event_type": "approaching_resistance",
+        "status": "forming_watch",
+        "level_usdt": 58.02,
+        "reference_price_usdt": 58.41,
+        "reference_price_kind": "last_closed_1h_not_live",
+        "distance_from_level_percent": 0.672,
+        "volume_ratio_4h": 4.982,
+        "volume_ratio_1h": 5.488,
+        "volume_confirmed_4h": true,
+        "trend_4h_above_sma233": false,
+        "lower_tf_confirmed": false,
+        "relative_strength_vs_btc": false,
+        "source_4h": "OKX Spot",
+        "source_1h": "OKX Spot",
+        "closed_4h_at_utc": "2026-10-28T16:00:00+00:00",
+        "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+      },
+      "status": "PENDING_DELIVERY"
     }
   },
   "delivered_ids": []

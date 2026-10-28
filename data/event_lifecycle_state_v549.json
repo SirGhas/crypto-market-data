@@ -78,6 +78,8 @@
     "AAVE:4h_closed_breakdown:1793073600",
     "BTC:4h_resistance_rejection:1793131200",
     "ZEC:4h_resistance_rejection:1793131200",
-    "ZEC:4h_resistance_rejection:1793160000"
+    "ZEC:4h_resistance_rejection:1793160000",
+    "LTC:4h_closed_breakout:1793188800",
+    "LTC:approaching_resistance:1793188800"
   ]
 }
