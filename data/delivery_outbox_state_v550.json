@@ -1748,6 +1748,52 @@
         "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
       },
       "status": "PENDING_DELIVERY"
+    },
+    "BTC:4h_resistance_rejection:1793131200": {
+      "event": {
+        "id": "BTC:4h_resistance_rejection:1793131200",
+        "coin": "BTC",
+        "event_type": "4h_resistance_rejection",
+        "status": "forming_watch",
+        "level_usdt": 81070.0,
+        "reference_price_usdt": 80751.6,
+        "reference_price_kind": "last_closed_1h_not_live",
+        "distance_from_level_percent": -0.393,
+        "volume_ratio_4h": 1.274,
+        "volume_ratio_1h": 0.702,
+        "volume_confirmed_4h": false,
+        "trend_4h_above_sma233": false,
+        "lower_tf_confirmed": false,
+        "relative_strength_vs_btc": null,
+        "source_4h": "OKX Spot",
+        "source_1h": "OKX Spot",
+        "closed_4h_at_utc": "2026-10-28T00:00:00+00:00",
+        "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+      },
+      "status": "PENDING_DELIVERY"
+    },
+    "ZEC:4h_resistance_rejection:1793131200": {
+      "event": {
+        "id": "ZEC:4h_resistance_rejection:1793131200",
+        "coin": "ZEC",
+        "event_type": "4h_resistance_rejection",
+        "status": "forming_watch",
+        "level_usdt": 1317.7,
+        "reference_price_usdt": 1300.31,
+        "reference_price_kind": "last_closed_1h_not_live",
+        "distance_from_level_percent": -1.32,
+        "volume_ratio_4h": 1.01,
+        "volume_ratio_1h": 1.958,
+        "volume_confirmed_4h": false,
+        "trend_4h_above_sma233": false,
+        "lower_tf_confirmed": true,
+        "relative_strength_vs_btc": null,
+        "source_4h": "OKX Spot",
+        "source_1h": "OKX Spot",
+        "closed_4h_at_utc": "2026-10-28T00:00:00+00:00",
+        "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+      },
+      "status": "PENDING_DELIVERY"
     }
   },
   "delivered_ids": []

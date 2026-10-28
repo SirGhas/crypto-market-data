@@ -5,15 +5,16 @@
     "5m:thin_market_nonzero_frequency",
     "5m:last_closed_candle_zero_volume",
     "15m:thin_market_nonzero_frequency",
+    "15m:last_closed_candle_zero_volume",
     "1h:relative_volume_not_confirmed",
     "4h:relative_volume_not_confirmed"
   ],
   "frames": {
     "5m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793135700",
-      "last_closed_age_seconds": 72.6,
-      "nonzero_fraction": 0.2403,
+      "last_candle_id": "1793150100",
+      "last_closed_age_seconds": 215.3,
+      "nonzero_fraction": 0.2747,
       "relative_volume": 0.0,
       "status": "BLOCK",
       "reasons": [
@@ -23,21 +24,22 @@
     },
     "15m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793134800",
-      "last_closed_age_seconds": 372.6,
-      "nonzero_fraction": 0.6009,
-      "relative_volume": 0.0998,
+      "last_candle_id": "1793149200",
+      "last_closed_age_seconds": 515.3,
+      "nonzero_fraction": 0.6094,
+      "relative_volume": 0.0,
       "status": "BLOCK",
       "reasons": [
-        "thin_market_nonzero_frequency"
+        "thin_market_nonzero_frequency",
+        "last_closed_candle_zero_volume"
       ]
     },
     "1h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793131200",
-      "last_closed_age_seconds": 1272.6,
-      "nonzero_fraction": 0.9442,
-      "relative_volume": 0.0282,
+      "last_candle_id": "1793145600",
+      "last_closed_age_seconds": 1415.3,
+      "nonzero_fraction": 0.9528,
+      "relative_volume": 0.0599,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -45,10 +47,10 @@
     },
     "4h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793116800",
-      "last_closed_age_seconds": 4872.6,
+      "last_candle_id": "1793131200",
+      "last_closed_age_seconds": 5015.3,
       "nonzero_fraction": 1.0,
-      "relative_volume": 0.4133,
+      "relative_volume": 0.776,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -60,7 +62,11 @@
     "minimum_nonzero_fraction_5m_15m": 0.7,
     "minimum_relative_volume_1h_4h": 1.3
   },
+  "suppressed_event_ids": [
+    "XRP:4h_closed_breakout:1793131200",
+    "XRP:approaching_resistance:1793131200"
+  ],
   "schema_version": "5.4.6",
-  "generated_at_utc": "2026-10-27T21:21:12.562446+00:00",
+  "generated_at_utc": "2026-10-28T01:23:35.281211+00:00",
   "mode": "research_only_fail_closed_no_orders"
 }
