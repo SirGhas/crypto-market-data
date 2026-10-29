@@ -11,9 +11,9 @@
   "frames": {
     "5m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793283000",
-      "last_closed_age_seconds": 353.1,
-      "nonzero_fraction": 0.3176,
+      "last_candle_id": "1793304600",
+      "last_closed_age_seconds": 245.3,
+      "nonzero_fraction": 0.3219,
       "relative_volume": 0.0,
       "status": "BLOCK",
       "reasons": [
@@ -23,10 +23,10 @@
     },
     "15m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793282400",
-      "last_closed_age_seconds": 353.1,
-      "nonzero_fraction": 0.6223,
-      "relative_volume": 4.4969,
+      "last_candle_id": "1793304000",
+      "last_closed_age_seconds": 245.3,
+      "nonzero_fraction": 0.6352,
+      "relative_volume": 3.3395,
       "status": "BLOCK",
       "reasons": [
         "thin_market_nonzero_frequency"
@@ -34,10 +34,10 @@
     },
     "1h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793278800",
-      "last_closed_age_seconds": 1253.1,
+      "last_candle_id": "1793300400",
+      "last_closed_age_seconds": 1145.3,
       "nonzero_fraction": 0.97,
-      "relative_volume": 0.0709,
+      "relative_volume": 0.9137,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -45,10 +45,10 @@
     },
     "4h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793260800",
-      "last_closed_age_seconds": 8453.1,
+      "last_candle_id": "1793289600",
+      "last_closed_age_seconds": 1145.3,
       "nonzero_fraction": 1.0,
-      "relative_volume": 0.3297,
+      "relative_volume": 0.618,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -61,9 +61,9 @@
     "minimum_relative_volume_1h_4h": 1.3
   },
   "suppressed_event_ids": [
-    "XRP:approaching_support:1793260800"
+    "XRP:approaching_support:1793289600"
   ],
   "schema_version": "5.4.6",
-  "generated_at_utc": "2026-10-29T14:20:53.080566+00:00",
+  "generated_at_utc": "2026-10-29T20:19:05.344526+00:00",
   "mode": "research_only_fail_closed_no_orders"
 }

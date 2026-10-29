@@ -93,6 +93,10 @@
     "AVAX:4h_resistance_rejection:1793217600",
     "SUI:4h_resistance_rejection:1793217600",
     "SUI:approaching_resistance:1793217600",
-    "AVAX:4h_closed_breakdown:1793232000"
+    "AVAX:4h_closed_breakdown:1793232000",
+    "BTC:4h_resistance_rejection:1793289600",
+    "SOL:approaching_support:1793289600",
+    "LINK:4h_resistance_rejection:1793289600",
+    "ZEC:4h_resistance_rejection:1793289600"
   ]
 }
