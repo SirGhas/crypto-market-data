@@ -84,6 +84,14 @@
     "ETH:approaching_resistance:1793203200",
     "LINK:approaching_resistance:1793203200",
     "SUI:4h_closed_breakout:1793203200",
-    "SUI:approaching_resistance:1793203200"
+    "SUI:approaching_resistance:1793203200",
+    "ETH:4h_resistance_rejection:1793217600",
+    "SOL:4h_resistance_rejection:1793217600",
+    "LTC:4h_resistance_rejection:1793217600",
+    "LTC:approaching_resistance:1793217600",
+    "LINK:4h_resistance_rejection:1793217600",
+    "AVAX:4h_resistance_rejection:1793217600",
+    "SUI:4h_resistance_rejection:1793217600",
+    "SUI:approaching_resistance:1793217600"
   ]
 }
