@@ -1,29 +1,30 @@
 {
   "schema_version": 51,
-  "generated_at_utc": "2026-10-29T09:54:54.666905+00:00",
-  "source_generated_at_utc": "2026-10-29T09:53:56.184409+00:00",
+  "generated_at_utc": "2026-10-29T14:20:52.908370+00:00",
+  "source_generated_at_utc": "2026-10-29T14:19:58.352180+00:00",
   "status": "partial",
   "mode": "research_only_no_trade_or_push",
   "evaluations": [
     {
       "coin": "BTC",
       "status": "watch_only",
-      "score": 30,
-      "reference_price_usdt": 80064.6,
+      "score": 10,
+      "reference_price_usdt": 80300.3,
       "reference_price_kind": "last_closed_1h_candle_not_live",
       "support_4h": 79377.7,
       "resistance_4h": 81820.0,
-      "distance_above_support_percent": 0.865,
-      "distance_below_resistance_percent": 2.192,
-      "market_entry_rr": 2.556,
-      "risk_percent_to_support": 0.858,
-      "reward_percent_to_resistance": 2.192,
-      "relative_volume_1h": 0.826,
+      "distance_above_support_percent": 1.162,
+      "distance_below_resistance_percent": 1.893,
+      "market_entry_rr": 1.647,
+      "risk_percent_to_support": 1.149,
+      "reward_percent_to_resistance": 1.893,
+      "relative_volume_1h": 1.3,
       "above_4h_sma233": false,
       "relative_strength_btc": null,
       "reasons": [
         "below_4h_sma233",
         "volume_not_confirmed",
+        "market_entry_rr_below_2_5",
         "15m_below_sma233"
       ],
       "sources": {
@@ -31,29 +32,30 @@
         "1h": "OKX Spot",
         "15m": "OKX Spot"
       },
-      "closed_1h_at_utc": "2026-10-29T09:00:00+00:00",
+      "closed_1h_at_utc": "2026-10-29T14:00:00+00:00",
       "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
     },
     {
       "coin": "ETH",
       "status": "watch_only",
-      "score": 30,
-      "reference_price_usdt": 2319.38,
+      "score": 10,
+      "reference_price_usdt": 2327.12,
       "reference_price_kind": "last_closed_1h_candle_not_live",
       "support_4h": 2293.17,
       "resistance_4h": 2391.94,
-      "distance_above_support_percent": 1.143,
-      "distance_below_resistance_percent": 3.128,
-      "market_entry_rr": 2.768,
-      "risk_percent_to_support": 1.13,
-      "reward_percent_to_resistance": 3.128,
-      "relative_volume_1h": 0.951,
+      "distance_above_support_percent": 1.48,
+      "distance_below_resistance_percent": 2.785,
+      "market_entry_rr": 1.909,
+      "risk_percent_to_support": 1.459,
+      "reward_percent_to_resistance": 2.785,
+      "relative_volume_1h": 1.053,
       "above_4h_sma233": false,
       "relative_strength_btc": false,
       "reasons": [
         "below_4h_sma233",
         "volume_not_confirmed",
         "weak_against_btc",
+        "market_entry_rr_below_2_5",
         "15m_below_sma233"
       ],
       "sources": {
@@ -61,27 +63,90 @@
         "1h": "OKX Spot",
         "15m": "OKX Spot"
       },
-      "closed_1h_at_utc": "2026-10-29T09:00:00+00:00",
+      "closed_1h_at_utc": "2026-10-29T14:00:00+00:00",
       "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
     },
     {
       "coin": "BNB",
       "status": "watch_only",
-      "score": 55,
-      "reference_price_usdt": 752.12,
+      "score": 30,
+      "reference_price_usdt": 745.07,
       "reference_price_kind": "last_closed_1h_candle_not_live",
       "support_4h": 732.33,
       "resistance_4h": 762.25,
-      "distance_above_support_percent": 2.702,
-      "distance_below_resistance_percent": 1.347,
-      "market_entry_rr": 0.512,
-      "risk_percent_to_support": 2.631,
-      "reward_percent_to_resistance": 1.347,
-      "relative_volume_1h": 2.364,
+      "distance_above_support_percent": 1.74,
+      "distance_below_resistance_percent": 2.306,
+      "market_entry_rr": 1.349,
+      "risk_percent_to_support": 1.71,
+      "reward_percent_to_resistance": 2.306,
+      "relative_volume_1h": 0.657,
       "above_4h_sma233": false,
       "relative_strength_btc": true,
       "reasons": [
         "below_4h_sma233",
+        "volume_not_confirmed",
+        "market_entry_rr_below_2_5",
+        "15m_below_sma233"
+      ],
+      "sources": {
+        "4h": "OKX Spot",
+        "1h": "OKX Spot",
+        "15m": "OKX Spot"
+      },
+      "closed_1h_at_utc": "2026-10-29T14:00:00+00:00",
+      "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
+    },
+    {
+      "coin": "SOL",
+      "status": "watch_only",
+      "score": 10,
+      "reference_price_usdt": 100.66,
+      "reference_price_kind": "last_closed_1h_candle_not_live",
+      "support_4h": 99.17,
+      "resistance_4h": 103.86,
+      "distance_above_support_percent": 1.502,
+      "distance_below_resistance_percent": 3.179,
+      "market_entry_rr": 2.148,
+      "risk_percent_to_support": 1.48,
+      "reward_percent_to_resistance": 3.179,
+      "relative_volume_1h": 1.252,
+      "above_4h_sma233": false,
+      "relative_strength_btc": false,
+      "reasons": [
+        "below_4h_sma233",
+        "volume_not_confirmed",
+        "weak_against_btc",
+        "market_entry_rr_below_2_5",
+        "15m_below_sma233"
+      ],
+      "sources": {
+        "4h": "OKX Spot",
+        "1h": "OKX Spot",
+        "15m": "OKX Spot"
+      },
+      "closed_1h_at_utc": "2026-10-29T14:00:00+00:00",
+      "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
+    },
+    {
+      "coin": "LTC",
+      "status": "watch_only",
+      "score": 10,
+      "reference_price_usdt": 57.99,
+      "reference_price_kind": "last_closed_1h_candle_not_live",
+      "support_4h": 55.74,
+      "resistance_4h": 59.86,
+      "distance_above_support_percent": 4.037,
+      "distance_below_resistance_percent": 3.225,
+      "market_entry_rr": 0.831,
+      "risk_percent_to_support": 3.88,
+      "reward_percent_to_resistance": 3.225,
+      "relative_volume_1h": 0.935,
+      "above_4h_sma233": false,
+      "relative_strength_btc": false,
+      "reasons": [
+        "below_4h_sma233",
+        "volume_not_confirmed",
+        "weak_against_btc",
         "market_entry_rr_below_2_5"
       ],
       "sources": {
@@ -89,105 +154,42 @@
         "1h": "OKX Spot",
         "15m": "OKX Spot"
       },
-      "closed_1h_at_utc": "2026-10-29T09:00:00+00:00",
-      "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
-    },
-    {
-      "coin": "SOL",
-      "status": "watch_only",
-      "score": 30,
-      "reference_price_usdt": 100.22,
-      "reference_price_kind": "last_closed_1h_candle_not_live",
-      "support_4h": 99.17,
-      "resistance_4h": 103.86,
-      "distance_above_support_percent": 1.059,
-      "distance_below_resistance_percent": 3.632,
-      "market_entry_rr": 3.467,
-      "risk_percent_to_support": 1.048,
-      "reward_percent_to_resistance": 3.632,
-      "relative_volume_1h": 0.55,
-      "above_4h_sma233": false,
-      "relative_strength_btc": false,
-      "reasons": [
-        "below_4h_sma233",
-        "volume_not_confirmed",
-        "weak_against_btc",
-        "15m_below_sma233"
-      ],
-      "sources": {
-        "4h": "OKX Spot",
-        "1h": "OKX Spot",
-        "15m": "OKX Spot"
-      },
-      "closed_1h_at_utc": "2026-10-29T09:00:00+00:00",
-      "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
-    },
-    {
-      "coin": "LTC",
-      "status": "watch_only",
-      "score": 10,
-      "reference_price_usdt": 57.16,
-      "reference_price_kind": "last_closed_1h_candle_not_live",
-      "support_4h": 55.74,
-      "resistance_4h": 59.86,
-      "distance_above_support_percent": 2.548,
-      "distance_below_resistance_percent": 4.724,
-      "market_entry_rr": 1.901,
-      "risk_percent_to_support": 2.484,
-      "reward_percent_to_resistance": 4.724,
-      "relative_volume_1h": 0.328,
-      "above_4h_sma233": false,
-      "relative_strength_btc": false,
-      "reasons": [
-        "below_4h_sma233",
-        "volume_not_confirmed",
-        "weak_against_btc",
-        "market_entry_rr_below_2_5",
-        "15m_below_sma233"
-      ],
-      "sources": {
-        "4h": "OKX Spot",
-        "1h": "OKX Spot",
-        "15m": "OKX Spot"
-      },
-      "closed_1h_at_utc": "2026-10-29T09:00:00+00:00",
+      "closed_1h_at_utc": "2026-10-29T14:00:00+00:00",
       "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
     },
     {
       "coin": "LINK",
       "status": "watch_only",
-      "score": 10,
-      "reference_price_usdt": 11.471,
+      "score": 35,
+      "reference_price_usdt": 11.65,
       "reference_price_kind": "last_closed_1h_candle_not_live",
       "support_4h": 11.228,
       "resistance_4h": 11.996,
-      "distance_above_support_percent": 2.164,
-      "distance_below_resistance_percent": 4.577,
-      "market_entry_rr": 2.16,
-      "risk_percent_to_support": 2.118,
-      "reward_percent_to_resistance": 4.577,
-      "relative_volume_1h": 0.426,
+      "distance_above_support_percent": 3.758,
+      "distance_below_resistance_percent": 2.97,
+      "market_entry_rr": 0.82,
+      "risk_percent_to_support": 3.622,
+      "reward_percent_to_resistance": 2.97,
+      "relative_volume_1h": 1.362,
       "above_4h_sma233": false,
       "relative_strength_btc": null,
       "reasons": [
         "below_4h_sma233",
-        "volume_not_confirmed",
         "btc_pair_unavailable",
-        "market_entry_rr_below_2_5",
-        "15m_below_sma233"
+        "market_entry_rr_below_2_5"
       ],
       "sources": {
         "4h": "OKX Spot",
         "1h": "OKX Spot",
         "15m": "OKX Spot"
       },
-      "closed_1h_at_utc": "2026-10-29T09:00:00+00:00",
+      "closed_1h_at_utc": "2026-10-29T14:00:00+00:00",
       "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
     },
     {
       "coin": "XRP",
       "status": "watch_only",
-      "score": 30,
+      "score": 45,
       "reference_price_usdt": 1.2914,
       "reference_price_kind": "last_closed_1h_candle_not_live",
       "support_4h": 1.2731,
@@ -197,12 +199,11 @@
       "market_entry_rr": 2.896,
       "risk_percent_to_support": 1.417,
       "reward_percent_to_resistance": 4.104,
-      "relative_volume_1h": 0.679,
+      "relative_volume_1h": 3.141,
       "above_4h_sma233": false,
       "relative_strength_btc": false,
       "reasons": [
         "below_4h_sma233",
-        "volume_not_confirmed",
         "weak_against_btc",
         "15m_below_sma233"
       ],
@@ -211,113 +212,23 @@
         "1h": "OKX Spot",
         "15m": "OKX Spot"
       },
-      "closed_1h_at_utc": "2026-10-29T09:00:00+00:00",
+      "closed_1h_at_utc": "2026-10-29T14:00:00+00:00",
       "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
     },
     {
       "coin": "AVAX",
       "status": "watch_only",
-      "score": 30,
-      "reference_price_usdt": 8.69,
+      "score": 10,
+      "reference_price_usdt": 8.827,
       "reference_price_kind": "last_closed_1h_candle_not_live",
       "support_4h": 8.559,
       "resistance_4h": 9.165,
-      "distance_above_support_percent": 1.531,
-      "distance_below_resistance_percent": 5.466,
-      "market_entry_rr": 3.626,
-      "risk_percent_to_support": 1.507,
-      "reward_percent_to_resistance": 5.466,
-      "relative_volume_1h": 0.536,
-      "above_4h_sma233": false,
-      "relative_strength_btc": null,
-      "reasons": [
-        "below_4h_sma233",
-        "volume_not_confirmed",
-        "btc_pair_unavailable",
-        "15m_below_sma233"
-      ],
-      "sources": {
-        "4h": "OKX Spot",
-        "1h": "OKX Spot",
-        "15m": "OKX Spot"
-      },
-      "closed_1h_at_utc": "2026-10-29T09:00:00+00:00",
-      "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
-    },
-    {
-      "coin": "SUI",
-      "status": "watch_only",
-      "score": 30,
-      "reference_price_usdt": 0.9116,
-      "reference_price_kind": "last_closed_1h_candle_not_live",
-      "support_4h": 0.8988,
-      "resistance_4h": 0.968,
-      "distance_above_support_percent": 1.424,
-      "distance_below_resistance_percent": 6.187,
-      "market_entry_rr": 4.406,
-      "risk_percent_to_support": 1.404,
-      "reward_percent_to_resistance": 6.187,
-      "relative_volume_1h": 0.371,
-      "above_4h_sma233": false,
-      "relative_strength_btc": null,
-      "reasons": [
-        "below_4h_sma233",
-        "volume_not_confirmed",
-        "btc_pair_unavailable",
-        "15m_below_sma233"
-      ],
-      "sources": {
-        "4h": "OKX Spot",
-        "1h": "OKX Spot",
-        "15m": "OKX Spot"
-      },
-      "closed_1h_at_utc": "2026-10-29T09:00:00+00:00",
-      "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
-    },
-    {
-      "coin": "AAVE",
-      "status": "watch_only",
-      "score": 30,
-      "reference_price_usdt": 130.54,
-      "reference_price_kind": "last_closed_1h_candle_not_live",
-      "support_4h": 128.5,
-      "resistance_4h": 138.76,
-      "distance_above_support_percent": 1.588,
-      "distance_below_resistance_percent": 6.297,
-      "market_entry_rr": 4.029,
-      "risk_percent_to_support": 1.563,
-      "reward_percent_to_resistance": 6.297,
-      "relative_volume_1h": 0.226,
-      "above_4h_sma233": false,
-      "relative_strength_btc": null,
-      "reasons": [
-        "below_4h_sma233",
-        "volume_not_confirmed",
-        "btc_pair_unavailable",
-        "15m_below_sma233"
-      ],
-      "sources": {
-        "4h": "OKX Spot",
-        "1h": "OKX Spot",
-        "15m": "OKX Spot"
-      },
-      "closed_1h_at_utc": "2026-10-29T09:00:00+00:00",
-      "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
-    },
-    {
-      "coin": "ZEC",
-      "status": "watch_only",
-      "score": 0,
-      "reference_price_usdt": 1247.6,
-      "reference_price_kind": "last_closed_1h_candle_not_live",
-      "support_4h": 1177.68,
-      "resistance_4h": 1330.35,
-      "distance_above_support_percent": 5.937,
-      "distance_below_resistance_percent": 6.633,
-      "market_entry_rr": 1.183,
-      "risk_percent_to_support": 5.604,
-      "reward_percent_to_resistance": 6.633,
-      "relative_volume_1h": 0.269,
+      "distance_above_support_percent": 3.131,
+      "distance_below_resistance_percent": 3.829,
+      "market_entry_rr": 1.261,
+      "risk_percent_to_support": 3.036,
+      "reward_percent_to_resistance": 3.829,
+      "relative_volume_1h": 0.529,
       "above_4h_sma233": false,
       "relative_strength_btc": null,
       "reasons": [
@@ -332,29 +243,28 @@
         "1h": "OKX Spot",
         "15m": "OKX Spot"
       },
-      "closed_1h_at_utc": "2026-10-29T09:00:00+00:00",
+      "closed_1h_at_utc": "2026-10-29T14:00:00+00:00",
       "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
-    }
-  ],
-  "top_three_watchlist": [
+    },
     {
-      "coin": "BNB",
+      "coin": "SUI",
       "status": "watch_only",
-      "score": 55,
-      "reference_price_usdt": 752.12,
+      "score": 35,
+      "reference_price_usdt": 0.9314,
       "reference_price_kind": "last_closed_1h_candle_not_live",
-      "support_4h": 732.33,
-      "resistance_4h": 762.25,
-      "distance_above_support_percent": 2.702,
-      "distance_below_resistance_percent": 1.347,
-      "market_entry_rr": 0.512,
-      "risk_percent_to_support": 2.631,
-      "reward_percent_to_resistance": 1.347,
-      "relative_volume_1h": 2.364,
+      "support_4h": 0.8988,
+      "resistance_4h": 0.968,
+      "distance_above_support_percent": 3.627,
+      "distance_below_resistance_percent": 3.93,
+      "market_entry_rr": 1.123,
+      "risk_percent_to_support": 3.5,
+      "reward_percent_to_resistance": 3.93,
+      "relative_volume_1h": 1.309,
       "above_4h_sma233": false,
-      "relative_strength_btc": true,
+      "relative_strength_btc": null,
       "reasons": [
         "below_4h_sma233",
+        "btc_pair_unavailable",
         "market_entry_rr_below_2_5"
       ],
       "sources": {
@@ -362,59 +272,59 @@
         "1h": "OKX Spot",
         "15m": "OKX Spot"
       },
-      "closed_1h_at_utc": "2026-10-29T09:00:00+00:00",
-      "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
-    },
-    {
-      "coin": "SUI",
-      "status": "watch_only",
-      "score": 30,
-      "reference_price_usdt": 0.9116,
-      "reference_price_kind": "last_closed_1h_candle_not_live",
-      "support_4h": 0.8988,
-      "resistance_4h": 0.968,
-      "distance_above_support_percent": 1.424,
-      "distance_below_resistance_percent": 6.187,
-      "market_entry_rr": 4.406,
-      "risk_percent_to_support": 1.404,
-      "reward_percent_to_resistance": 6.187,
-      "relative_volume_1h": 0.371,
-      "above_4h_sma233": false,
-      "relative_strength_btc": null,
-      "reasons": [
-        "below_4h_sma233",
-        "volume_not_confirmed",
-        "btc_pair_unavailable",
-        "15m_below_sma233"
-      ],
-      "sources": {
-        "4h": "OKX Spot",
-        "1h": "OKX Spot",
-        "15m": "OKX Spot"
-      },
-      "closed_1h_at_utc": "2026-10-29T09:00:00+00:00",
+      "closed_1h_at_utc": "2026-10-29T14:00:00+00:00",
       "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
     },
     {
       "coin": "AAVE",
       "status": "watch_only",
-      "score": 30,
-      "reference_price_usdt": 130.54,
+      "score": 35,
+      "reference_price_usdt": 133.06,
       "reference_price_kind": "last_closed_1h_candle_not_live",
       "support_4h": 128.5,
       "resistance_4h": 138.76,
-      "distance_above_support_percent": 1.588,
-      "distance_below_resistance_percent": 6.297,
-      "market_entry_rr": 4.029,
-      "risk_percent_to_support": 1.563,
-      "reward_percent_to_resistance": 6.297,
-      "relative_volume_1h": 0.226,
+      "distance_above_support_percent": 3.549,
+      "distance_below_resistance_percent": 4.284,
+      "market_entry_rr": 1.25,
+      "risk_percent_to_support": 3.427,
+      "reward_percent_to_resistance": 4.284,
+      "relative_volume_1h": 1.545,
+      "above_4h_sma233": false,
+      "relative_strength_btc": null,
+      "reasons": [
+        "below_4h_sma233",
+        "btc_pair_unavailable",
+        "market_entry_rr_below_2_5"
+      ],
+      "sources": {
+        "4h": "OKX Spot",
+        "1h": "OKX Spot",
+        "15m": "OKX Spot"
+      },
+      "closed_1h_at_utc": "2026-10-29T14:00:00+00:00",
+      "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
+    },
+    {
+      "coin": "ZEC",
+      "status": "watch_only",
+      "score": 0,
+      "reference_price_usdt": 1276.48,
+      "reference_price_kind": "last_closed_1h_candle_not_live",
+      "support_4h": 1177.68,
+      "resistance_4h": 1330.35,
+      "distance_above_support_percent": 8.389,
+      "distance_below_resistance_percent": 4.22,
+      "market_entry_rr": 0.545,
+      "risk_percent_to_support": 7.74,
+      "reward_percent_to_resistance": 4.22,
+      "relative_volume_1h": 1.153,
       "above_4h_sma233": false,
       "relative_strength_btc": null,
       "reasons": [
         "below_4h_sma233",
         "volume_not_confirmed",
         "btc_pair_unavailable",
+        "market_entry_rr_below_2_5",
         "15m_below_sma233"
       ],
       "sources": {
@@ -422,38 +332,134 @@
         "1h": "OKX Spot",
         "15m": "OKX Spot"
       },
-      "closed_1h_at_utc": "2026-10-29T09:00:00+00:00",
+      "closed_1h_at_utc": "2026-10-29T14:00:00+00:00",
+      "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
+    }
+  ],
+  "top_three_watchlist": [
+    {
+      "coin": "XRP",
+      "status": "watch_only",
+      "score": 45,
+      "reference_price_usdt": 1.2914,
+      "reference_price_kind": "last_closed_1h_candle_not_live",
+      "support_4h": 1.2731,
+      "resistance_4h": 1.3444,
+      "distance_above_support_percent": 1.437,
+      "distance_below_resistance_percent": 4.104,
+      "market_entry_rr": 2.896,
+      "risk_percent_to_support": 1.417,
+      "reward_percent_to_resistance": 4.104,
+      "relative_volume_1h": 3.141,
+      "above_4h_sma233": false,
+      "relative_strength_btc": false,
+      "reasons": [
+        "below_4h_sma233",
+        "weak_against_btc",
+        "15m_below_sma233"
+      ],
+      "sources": {
+        "4h": "OKX Spot",
+        "1h": "OKX Spot",
+        "15m": "OKX Spot"
+      },
+      "closed_1h_at_utc": "2026-10-29T14:00:00+00:00",
+      "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
+    },
+    {
+      "coin": "AAVE",
+      "status": "watch_only",
+      "score": 35,
+      "reference_price_usdt": 133.06,
+      "reference_price_kind": "last_closed_1h_candle_not_live",
+      "support_4h": 128.5,
+      "resistance_4h": 138.76,
+      "distance_above_support_percent": 3.549,
+      "distance_below_resistance_percent": 4.284,
+      "market_entry_rr": 1.25,
+      "risk_percent_to_support": 3.427,
+      "reward_percent_to_resistance": 4.284,
+      "relative_volume_1h": 1.545,
+      "above_4h_sma233": false,
+      "relative_strength_btc": null,
+      "reasons": [
+        "below_4h_sma233",
+        "btc_pair_unavailable",
+        "market_entry_rr_below_2_5"
+      ],
+      "sources": {
+        "4h": "OKX Spot",
+        "1h": "OKX Spot",
+        "15m": "OKX Spot"
+      },
+      "closed_1h_at_utc": "2026-10-29T14:00:00+00:00",
+      "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
+    },
+    {
+      "coin": "SUI",
+      "status": "watch_only",
+      "score": 35,
+      "reference_price_usdt": 0.9314,
+      "reference_price_kind": "last_closed_1h_candle_not_live",
+      "support_4h": 0.8988,
+      "resistance_4h": 0.968,
+      "distance_above_support_percent": 3.627,
+      "distance_below_resistance_percent": 3.93,
+      "market_entry_rr": 1.123,
+      "risk_percent_to_support": 3.5,
+      "reward_percent_to_resistance": 3.93,
+      "relative_volume_1h": 1.309,
+      "above_4h_sma233": false,
+      "relative_strength_btc": null,
+      "reasons": [
+        "below_4h_sma233",
+        "btc_pair_unavailable",
+        "market_entry_rr_below_2_5"
+      ],
+      "sources": {
+        "4h": "OKX Spot",
+        "1h": "OKX Spot",
+        "15m": "OKX Spot"
+      },
+      "closed_1h_at_utc": "2026-10-29T14:00:00+00:00",
       "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
     }
   ],
   "worst_market_entry": {
-    "coin": "BNB",
+    "coin": "ZEC",
     "status": "watch_only",
-    "score": 55,
-    "reference_price_usdt": 752.12,
+    "score": 0,
+    "reference_price_usdt": 1276.48,
     "reference_price_kind": "last_closed_1h_candle_not_live",
-    "support_4h": 732.33,
-    "resistance_4h": 762.25,
-    "distance_above_support_percent": 2.702,
-    "distance_below_resistance_percent": 1.347,
-    "market_entry_rr": 0.512,
-    "risk_percent_to_support": 2.631,
-    "reward_percent_to_resistance": 1.347,
-    "relative_volume_1h": 2.364,
+    "support_4h": 1177.68,
+    "resistance_4h": 1330.35,
+    "distance_above_support_percent": 8.389,
+    "distance_below_resistance_percent": 4.22,
+    "market_entry_rr": 0.545,
+    "risk_percent_to_support": 7.74,
+    "reward_percent_to_resistance": 4.22,
+    "relative_volume_1h": 1.153,
     "above_4h_sma233": false,
-    "relative_strength_btc": true,
+    "relative_strength_btc": null,
     "reasons": [
       "below_4h_sma233",
-      "market_entry_rr_below_2_5"
+      "volume_not_confirmed",
+      "btc_pair_unavailable",
+      "market_entry_rr_below_2_5",
+      "15m_below_sma233"
     ],
     "sources": {
       "4h": "OKX Spot",
       "1h": "OKX Spot",
       "15m": "OKX Spot"
     },
-    "closed_1h_at_utc": "2026-10-29T09:00:00+00:00",
+    "closed_1h_at_utc": "2026-10-29T14:00:00+00:00",
     "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
   },
   "new_events": [],
-  "disclaimer": "No verified static level, dominance trend, or 4h breakout/reclaim confirmation. Ranking is not a buy signal."
+  "disclaimer": "No verified static level, dominance trend, or 4h breakout/reclaim confirmation. Ranking is not a buy signal.",
+  "liquidity_guard_v546": {
+    "pair": "XRPBTC",
+    "status": "BLOCK"
+  }
 }
