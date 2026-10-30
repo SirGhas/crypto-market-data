@@ -1,11 +1,11 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-10-30T14:09:37.959227+00:00",
+  "generated_at_utc": "2026-10-30T19:23:47.532780+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
   "new_publishable_events": [],
   "pending_unconfirmed": [
     {
-      "id": "BTC:approaching_support:1793347200",
+      "id": "BTC:approaching_support:1793361600",
       "coin": "BTC",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
