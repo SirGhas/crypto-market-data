@@ -97,6 +97,16 @@
     "BTC:4h_resistance_rejection:1793289600",
     "SOL:approaching_support:1793289600",
     "LINK:4h_resistance_rejection:1793289600",
-    "ZEC:4h_resistance_rejection:1793289600"
+    "ZEC:4h_resistance_rejection:1793289600",
+    "BTC:4h_closed_breakdown:1793304000",
+    "ETH:4h_closed_breakdown:1793304000",
+    "BNB:4h_closed_breakdown:1793304000",
+    "SOL:4h_closed_breakdown:1793304000",
+    "LTC:4h_closed_breakdown:1793304000",
+    "LINK:4h_closed_breakdown:1793304000",
+    "XRP:4h_closed_breakdown:1793304000",
+    "AVAX:4h_closed_breakdown:1793304000",
+    "SUI:4h_closed_breakdown:1793304000",
+    "AAVE:4h_closed_breakdown:1793304000"
   ]
 }
