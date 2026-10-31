@@ -1,7 +1,7 @@
 {
   "schema_version": 52,
-  "generated_at_utc": "2026-10-31T18:33:18.795858+00:00",
-  "source_generated_at_utc": "2026-10-31T18:32:19.531254+00:00",
+  "generated_at_utc": "2026-10-31T21:35:41.158773+00:00",
+  "source_generated_at_utc": "2026-10-31T21:34:41.992815+00:00",
   "mode": "event_screening_only_no_push_no_orders",
   "observations": [
     {
@@ -10,7 +10,7 @@
       "4h_support": 76265.2,
       "4h_resistance": 81970.4,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.343,
+      "4h_volume_ratio": 0.133,
       "observations": 0
     },
     {
@@ -19,7 +19,7 @@
       "4h_support": 2174.0,
       "4h_resistance": 2391.94,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.355,
+      "4h_volume_ratio": 0.253,
       "observations": 0
     },
     {
@@ -28,7 +28,7 @@
       "4h_support": 678.13,
       "4h_resistance": 762.25,
       "relative_strength_vs_btc": true,
-      "4h_volume_ratio": 0.39,
+      "4h_volume_ratio": 0.275,
       "observations": 0
     },
     {
@@ -37,7 +37,7 @@
       "4h_support": 92.34,
       "4h_resistance": 103.86,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.358,
+      "4h_volume_ratio": 0.209,
       "observations": 0
     },
     {
@@ -46,7 +46,7 @@
       "4h_support": 52.84,
       "4h_resistance": 59.86,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.232,
+      "4h_volume_ratio": 0.379,
       "observations": 0
     },
     {
@@ -55,7 +55,7 @@
       "4h_support": 10.256,
       "4h_resistance": 12.023,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.324,
+      "4h_volume_ratio": 0.54,
       "observations": 0
     },
     {
@@ -64,7 +64,7 @@
       "4h_support": 1.2001,
       "4h_resistance": 1.3442,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.302,
+      "4h_volume_ratio": 0.32,
       "observations": 0
     },
     {
@@ -73,7 +73,7 @@
       "4h_support": 8.0,
       "4h_resistance": 9.165,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.798,
+      "4h_volume_ratio": 0.619,
       "observations": 0
     },
     {
@@ -82,7 +82,7 @@
       "4h_support": 0.8272,
       "4h_resistance": 0.968,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.289,
+      "4h_volume_ratio": 0.127,
       "observations": 0
     },
     {
@@ -91,7 +91,7 @@
       "4h_support": 115.11,
       "4h_resistance": 138.71,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.59,
+      "4h_volume_ratio": 0.183,
       "observations": 0
     },
     {
@@ -100,7 +100,7 @@
       "4h_support": 1182.22,
       "4h_resistance": 1398.0,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.697,
+      "4h_volume_ratio": 0.33,
       "observations": 0
     }
   ],
@@ -116,5 +116,9 @@
     "Not a TradingView or Binance feed",
     "No automatic notification is connected",
     "Missing BTC crosses must not be treated as strength confirmation"
-  ]
+  ],
+  "liquidity_guard_v546": {
+    "pair": "XRPBTC",
+    "status": "BLOCK"
+  }
 }
