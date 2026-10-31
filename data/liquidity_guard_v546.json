@@ -2,46 +2,54 @@
   "pair": "XRPBTC",
   "status": "BLOCK",
   "reason_codes": [
-    "5m:thin_market_nonzero_frequency"
+    "5m:thin_market_nonzero_frequency",
+    "5m:last_closed_candle_zero_volume",
+    "1h:relative_volume_not_confirmed",
+    "4h:relative_volume_not_confirmed"
   ],
   "frames": {
     "5m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793403600",
-      "last_closed_age_seconds": 227.5,
-      "nonzero_fraction": 0.5751,
-      "relative_volume": 0.0514,
+      "last_candle_id": "1793424900",
+      "last_closed_age_seconds": 115.6,
+      "nonzero_fraction": 0.4936,
+      "relative_volume": 0.0,
       "status": "BLOCK",
       "reasons": [
-        "thin_market_nonzero_frequency"
+        "thin_market_nonzero_frequency",
+        "last_closed_candle_zero_volume"
       ]
     },
     "15m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793403000",
-      "last_closed_age_seconds": 227.5,
-      "nonzero_fraction": 0.7897,
-      "relative_volume": 0.0312,
+      "last_candle_id": "1793423700",
+      "last_closed_age_seconds": 715.6,
+      "nonzero_fraction": 0.7768,
+      "relative_volume": 0.2284,
       "status": "PASS",
       "reasons": []
     },
     "1h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793397600",
-      "last_closed_age_seconds": 2927.5,
-      "nonzero_fraction": 0.9742,
-      "relative_volume": 1.3333,
-      "status": "PASS",
-      "reasons": []
+      "last_candle_id": "1793419200",
+      "last_closed_age_seconds": 2515.6,
+      "nonzero_fraction": 0.9785,
+      "relative_volume": 0.0349,
+      "status": "BLOCK",
+      "reasons": [
+        "relative_volume_not_confirmed"
+      ]
     },
     "4h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793376000",
-      "last_closed_age_seconds": 13727.5,
+      "last_candle_id": "1793404800",
+      "last_closed_age_seconds": 6115.6,
       "nonzero_fraction": 1.0,
-      "relative_volume": 1.5082,
-      "status": "PASS",
-      "reasons": []
+      "relative_volume": 1.1673,
+      "status": "BLOCK",
+      "reasons": [
+        "relative_volume_not_confirmed"
+      ]
     }
   },
   "thresholds": {
@@ -50,6 +58,6 @@
     "minimum_relative_volume_1h_4h": 1.3
   },
   "schema_version": "5.4.6",
-  "generated_at_utc": "2026-10-30T23:48:47.513931+00:00",
+  "generated_at_utc": "2026-10-31T05:41:55.596294+00:00",
   "mode": "research_only_fail_closed_no_orders"
 }
