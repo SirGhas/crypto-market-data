@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-11-02T15:52:03.094999+00:00",
-  "source_generated_at_utc": "2026-11-02T15:51:32.351998+00:00",
+  "generated_at_utc": "2026-11-02T18:18:38.273630+00:00",
+  "source_generated_at_utc": "2026-11-02T18:18:02.749986+00:00",
   "mode": "screening_only_no_trades_no_notifications",
   "dominance": {
     "latest_percent": {
-      "BTC.D": 59.303142,
-      "USDT.D": 6.818304
+      "BTC.D": 59.317971,
+      "USDT.D": 6.875684
     },
-    "historical_samples": 158,
+    "historical_samples": 159,
     "trend_ready": true,
     "kind": "coingecko_market_cap_snapshots_not_ohlcv"
   },
@@ -20,7 +20,8 @@
         "btc_4h_below_sma233",
         "4h_below_sma233",
         "relative_strength_below_sma233",
-        "no_closed_1h_breakout"
+        "no_closed_1h_breakout",
+        "15m_not_confirmed"
       ]
     },
     {
@@ -31,7 +32,9 @@
         "4h_below_sma233",
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
-        "15m_not_confirmed"
+        "15m_not_confirmed",
+        "insufficient_real_usd_volume",
+        "invalid_or_wide_stop"
       ]
     },
     {
@@ -43,7 +46,7 @@
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
         "15m_not_confirmed",
-        "insufficient_real_usd_volume"
+        "invalid_or_wide_stop"
       ]
     },
     {
@@ -54,7 +57,8 @@
         "4h_below_sma233",
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
-        "15m_not_confirmed"
+        "15m_not_confirmed",
+        "invalid_or_wide_stop"
       ]
     },
     {
@@ -66,7 +70,7 @@
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
         "15m_not_confirmed",
-        "insufficient_real_usd_volume"
+        "invalid_or_wide_stop"
       ]
     },
     {
@@ -77,7 +81,7 @@
         "4h_below_sma233",
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
-        "insufficient_real_usd_volume"
+        "15m_not_confirmed"
       ]
     },
     {
@@ -89,7 +93,7 @@
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
         "15m_not_confirmed",
-        "insufficient_real_usd_volume"
+        "invalid_or_wide_stop"
       ]
     },
     {
@@ -101,7 +105,7 @@
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
         "15m_not_confirmed",
-        "insufficient_real_usd_volume"
+        "invalid_or_wide_stop"
       ]
     },
     {
@@ -113,7 +117,7 @@
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
         "15m_not_confirmed",
-        "insufficient_real_usd_volume"
+        "invalid_or_wide_stop"
       ]
     }
   ],
@@ -122,9 +126,5 @@
     "new_events": 0,
     "blocked": 0,
     "rejected": 9
-  },
-  "liquidity_guard_v546": {
-    "pair": "XRPBTC",
-    "status": "BLOCK"
   }
 }
