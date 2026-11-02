@@ -11,9 +11,9 @@
   "frames": {
     "5m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793575800",
-      "last_closed_age_seconds": 136.3,
-      "nonzero_fraction": 0.2489,
+      "last_candle_id": "1793598900",
+      "last_closed_age_seconds": 213.3,
+      "nonzero_fraction": 0.2017,
       "relative_volume": 0.0,
       "status": "BLOCK",
       "reasons": [
@@ -23,10 +23,10 @@
     },
     "15m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793574900",
-      "last_closed_age_seconds": 436.3,
-      "nonzero_fraction": 0.6567,
-      "relative_volume": 9.3357,
+      "last_candle_id": "1793598300",
+      "last_closed_age_seconds": 213.3,
+      "nonzero_fraction": 0.588,
+      "relative_volume": 0.3268,
       "status": "BLOCK",
       "reasons": [
         "thin_market_nonzero_frequency"
@@ -34,10 +34,10 @@
     },
     "1h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793570400",
-      "last_closed_age_seconds": 2236.3,
-      "nonzero_fraction": 0.9742,
-      "relative_volume": 0.0249,
+      "last_candle_id": "1793595600",
+      "last_closed_age_seconds": 213.3,
+      "nonzero_fraction": 0.9657,
+      "relative_volume": 0.0604,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -45,10 +45,10 @@
     },
     "4h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1793548800",
-      "last_closed_age_seconds": 13036.3,
+      "last_candle_id": "1793577600",
+      "last_closed_age_seconds": 7413.3,
       "nonzero_fraction": 1.0,
-      "relative_volume": 0.0512,
+      "relative_volume": 0.1247,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -61,6 +61,6 @@
     "minimum_relative_volume_1h_4h": 1.3
   },
   "schema_version": "5.4.6",
-  "generated_at_utc": "2026-11-01T23:37:16.283703+00:00",
+  "generated_at_utc": "2026-11-02T06:03:33.315432+00:00",
   "mode": "research_only_fail_closed_no_orders"
 }
