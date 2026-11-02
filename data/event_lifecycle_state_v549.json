@@ -108,6 +108,10 @@
     "AVAX:4h_closed_breakdown:1793304000",
     "SUI:4h_closed_breakdown:1793304000",
     "AAVE:4h_closed_breakdown:1793304000",
-    "AAVE:4h_resistance_rejection:1793491200"
+    "AAVE:4h_resistance_rejection:1793491200",
+    "SOL:4h_closed_breakdown:1793635200",
+    "LTC:4h_closed_breakdown:1793635200",
+    "SUI:4h_closed_breakdown:1793635200",
+    "ZEC:4h_closed_breakdown:1793635200"
   ]
 }
