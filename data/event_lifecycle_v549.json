@@ -1,14 +1,27 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-11-02T06:03:33.462321+00:00",
+  "generated_at_utc": "2026-11-02T15:53:05.849456+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
   "new_publishable_events": [],
-  "pending_unconfirmed": [],
+  "pending_unconfirmed": [
+    {
+      "id": "BTC:approaching_resistance:1793606400",
+      "coin": "BTC",
+      "event_type": "approaching_resistance",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "ETH:approaching_resistance:1793606400",
+      "coin": "ETH",
+      "event_type": "approaching_resistance",
+      "reason": "positive_publication_gate_not_passed"
+    }
+  ],
   "summary": {
     "scanned_coins": 11,
     "blocked_scans": 0,
     "new_publishable_events": 0,
-    "pending_unconfirmed": 0
+    "pending_unconfirmed": 2
   },
   "limitations": [
     "No external notification transport configured",
