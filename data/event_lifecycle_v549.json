@@ -1,30 +1,57 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-11-03T15:08:41.214053+00:00",
+  "generated_at_utc": "2026-11-03T21:00:30.509189+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
-  "new_publishable_events": [],
+  "new_publishable_events": [
+    {
+      "id": "LINK:approaching_support:1793721600",
+      "coin": "LINK",
+      "event_type": "approaching_support",
+      "status": "forming_watch",
+      "level_usdt": 11.0,
+      "reference_price_usdt": 11.058,
+      "reference_price_kind": "last_closed_1h_not_live",
+      "distance_from_level_percent": 0.527,
+      "volume_ratio_4h": 1.377,
+      "volume_ratio_1h": 1.06,
+      "volume_confirmed_4h": true,
+      "trend_4h_above_sma233": false,
+      "lower_tf_confirmed": false,
+      "relative_strength_vs_btc": null,
+      "source_4h": "OKX Spot",
+      "source_1h": "OKX Spot",
+      "closed_4h_at_utc": "2026-11-03T20:00:00+00:00",
+      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+    }
+  ],
   "pending_unconfirmed": [
     {
-      "id": "BTC:approaching_support:1793692800",
-      "coin": "BTC",
-      "event_type": "approaching_support",
-      "reason": "positive_publication_gate_not_passed"
-    },
-    {
-      "id": "ETH:approaching_resistance:1793692800",
+      "id": "ETH:approaching_resistance:1793721600",
       "coin": "ETH",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "BNB:approaching_support:1793692800",
+      "id": "BNB:approaching_support:1793721600",
       "coin": "BNB",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "XRP:approaching_resistance:1793692800",
+      "id": "LTC:approaching_support:1793721600",
+      "coin": "LTC",
+      "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "XRP:approaching_resistance:1793721600",
       "coin": "XRP",
+      "event_type": "approaching_resistance",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "SUI:approaching_resistance:1793721600",
+      "coin": "SUI",
       "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     }
@@ -32,8 +59,8 @@
   "summary": {
     "scanned_coins": 11,
     "blocked_scans": 0,
-    "new_publishable_events": 0,
-    "pending_unconfirmed": 4
+    "new_publishable_events": 1,
+    "pending_unconfirmed": 5
   },
   "limitations": [
     "No external notification transport configured",
