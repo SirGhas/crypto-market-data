@@ -2645,6 +2645,52 @@
         "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
       },
       "status": "PENDING_DELIVERY"
+    },
+    "ETH:approaching_resistance:1793764800": {
+      "event": {
+        "id": "ETH:approaching_resistance:1793764800",
+        "coin": "ETH",
+        "event_type": "approaching_resistance",
+        "status": "forming_watch",
+        "level_usdt": 2317.98,
+        "reference_price_usdt": 2323.22,
+        "reference_price_kind": "last_closed_1h_not_live",
+        "distance_from_level_percent": 0.226,
+        "volume_ratio_4h": 1.91,
+        "volume_ratio_1h": 2.508,
+        "volume_confirmed_4h": true,
+        "trend_4h_above_sma233": false,
+        "lower_tf_confirmed": true,
+        "relative_strength_vs_btc": false,
+        "source_4h": "OKX Spot",
+        "source_1h": "OKX Spot",
+        "closed_4h_at_utc": "2026-11-04T08:00:00+00:00",
+        "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+      },
+      "status": "PENDING_DELIVERY"
+    },
+    "ZEC:4h_resistance_rejection:1793764800": {
+      "event": {
+        "id": "ZEC:4h_resistance_rejection:1793764800",
+        "coin": "ZEC",
+        "event_type": "4h_resistance_rejection",
+        "status": "technical_event_needs_context",
+        "level_usdt": 1286.21,
+        "reference_price_usdt": 1289.12,
+        "reference_price_kind": "last_closed_1h_not_live",
+        "distance_from_level_percent": 0.226,
+        "volume_ratio_4h": 2.142,
+        "volume_ratio_1h": 0.386,
+        "volume_confirmed_4h": true,
+        "trend_4h_above_sma233": true,
+        "lower_tf_confirmed": true,
+        "relative_strength_vs_btc": null,
+        "source_4h": "OKX Spot",
+        "source_1h": "OKX Spot",
+        "closed_4h_at_utc": "2026-11-04T08:00:00+00:00",
+        "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+      },
+      "status": "PENDING_DELIVERY"
     }
   },
   "delivered_ids": []
