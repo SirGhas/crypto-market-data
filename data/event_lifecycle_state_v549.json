@@ -116,6 +116,12 @@
     "LINK:approaching_support:1793721600",
     "BNB:approaching_support:1793736000",
     "ETH:approaching_resistance:1793764800",
-    "ZEC:4h_resistance_rejection:1793764800"
+    "ZEC:4h_resistance_rejection:1793764800",
+    "BNB:4h_resistance_rejection:1793793600",
+    "SOL:4h_closed_breakout:1793793600",
+    "SOL:approaching_resistance:1793793600",
+    "LTC:4h_resistance_rejection:1793793600",
+    "AVAX:4h_resistance_rejection:1793793600",
+    "ZEC:4h_resistance_rejection:1793793600"
   ]
 }
