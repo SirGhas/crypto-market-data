@@ -2852,6 +2852,29 @@
         "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
       },
       "status": "PENDING_DELIVERY"
+    },
+    "XRP:4h_closed_breakdown:1793908800": {
+      "event": {
+        "id": "XRP:4h_closed_breakdown:1793908800",
+        "coin": "XRP",
+        "event_type": "4h_closed_breakdown",
+        "status": "technical_event_needs_context",
+        "level_usdt": 1.2286,
+        "reference_price_usdt": 1.2195,
+        "reference_price_kind": "last_closed_1h_not_live",
+        "distance_from_level_percent": -0.741,
+        "volume_ratio_4h": 2.656,
+        "volume_ratio_1h": 0.983,
+        "volume_confirmed_4h": true,
+        "trend_4h_above_sma233": false,
+        "lower_tf_confirmed": false,
+        "relative_strength_vs_btc": false,
+        "source_4h": "OKX Spot",
+        "source_1h": "OKX Spot",
+        "closed_4h_at_utc": "2026-11-06T00:00:00+00:00",
+        "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+      },
+      "status": "PENDING_DELIVERY"
     }
   },
   "delivered_ids": []
