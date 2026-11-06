@@ -1,52 +1,58 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-11-06T09:25:07.680993+00:00",
+  "generated_at_utc": "2026-11-06T17:31:00.507855+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
   "new_publishable_events": [
     {
-      "id": "XRP:4h_closed_breakdown:1793937600",
-      "coin": "XRP",
-      "event_type": "4h_closed_breakdown",
+      "id": "ZEC:4h_resistance_rejection:1793966400",
+      "coin": "ZEC",
+      "event_type": "4h_resistance_rejection",
       "status": "technical_event_needs_context",
-      "level_usdt": 1.1995,
-      "reference_price_usdt": 1.1878,
+      "level_usdt": 1352.22,
+      "reference_price_usdt": 1368.9,
       "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": -0.975,
-      "volume_ratio_4h": 1.955,
-      "volume_ratio_1h": 0.641,
+      "distance_from_level_percent": 1.234,
+      "volume_ratio_4h": 2.792,
+      "volume_ratio_1h": 1.002,
       "volume_confirmed_4h": true,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": false,
+      "trend_4h_above_sma233": true,
+      "lower_tf_confirmed": true,
+      "relative_strength_vs_btc": null,
       "source_4h": "OKX Spot",
       "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-11-06T08:00:00+00:00",
+      "closed_4h_at_utc": "2026-11-06T16:00:00+00:00",
       "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
     }
   ],
   "pending_unconfirmed": [
     {
-      "id": "BTC:approaching_support:1793937600",
+      "id": "BTC:4h_support_reclaim:1793966400",
+      "coin": "BTC",
+      "event_type": "4h_support_reclaim",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "BTC:approaching_support:1793966400",
       "coin": "BTC",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "ETH:approaching_support:1793937600",
+      "id": "ETH:approaching_support:1793966400",
       "coin": "ETH",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "SOL:approaching_support:1793937600",
-      "coin": "SOL",
-      "event_type": "approaching_support",
+      "id": "XRP:4h_support_reclaim:1793966400",
+      "coin": "XRP",
+      "event_type": "4h_support_reclaim",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "XRP:approaching_support:1793937600",
-      "coin": "XRP",
-      "event_type": "approaching_support",
+      "id": "ZEC:approaching_resistance:1793966400",
+      "coin": "ZEC",
+      "event_type": "approaching_resistance",
       "reason": "positive_publication_gate_not_passed"
     }
   ],
@@ -54,7 +60,7 @@
     "scanned_coins": 11,
     "blocked_scans": 0,
     "new_publishable_events": 1,
-    "pending_unconfirmed": 4
+    "pending_unconfirmed": 5
   },
   "limitations": [
     "No external notification transport configured",
