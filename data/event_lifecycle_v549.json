@@ -1,30 +1,24 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-11-07T20:54:21.450710+00:00",
+  "generated_at_utc": "2026-11-08T00:37:15.178583+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
   "new_publishable_events": [],
   "pending_unconfirmed": [
     {
-      "id": "BTC:approaching_support:1794067200",
+      "id": "BTC:approaching_support:1794081600",
       "coin": "BTC",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "ETH:approaching_support:1794067200",
-      "coin": "ETH",
-      "event_type": "approaching_support",
-      "reason": "positive_publication_gate_not_passed"
-    },
-    {
-      "id": "XRP:approaching_support:1794067200",
+      "id": "XRP:4h_support_reclaim:1794081600",
       "coin": "XRP",
-      "event_type": "approaching_support",
+      "event_type": "4h_support_reclaim",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "AVAX:approaching_support:1794067200",
-      "coin": "AVAX",
+      "id": "XRP:approaching_support:1794081600",
+      "coin": "XRP",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     }
@@ -33,7 +27,7 @@
     "scanned_coins": 11,
     "blocked_scans": 0,
     "new_publishable_events": 0,
-    "pending_unconfirmed": 4
+    "pending_unconfirmed": 3
   },
   "limitations": [
     "No external notification transport configured",
