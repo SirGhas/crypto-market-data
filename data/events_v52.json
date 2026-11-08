@@ -1,52 +1,52 @@
 {
   "schema_version": 52,
-  "generated_at_utc": "2026-11-08T15:13:32.636580+00:00",
-  "source_generated_at_utc": "2026-11-08T15:12:33.852902+00:00",
+  "generated_at_utc": "2026-11-08T16:41:30.423936+00:00",
+  "source_generated_at_utc": "2026-11-08T16:40:45.633494+00:00",
   "mode": "event_screening_only_no_push_no_orders",
   "observations": [
     {
       "coin": "BTC",
       "status": "scanned",
       "4h_support": 74887.9,
-      "4h_resistance": 80914.2,
+      "4h_resistance": 80791.9,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.206,
+      "4h_volume_ratio": 0.251,
       "observations": 0
     },
     {
       "coin": "ETH",
       "status": "scanned",
       "4h_support": 2206.0,
-      "4h_resistance": 2437.3,
+      "4h_resistance": 2435.0,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.123,
+      "4h_volume_ratio": 0.133,
       "observations": 0
     },
     {
       "coin": "BNB",
       "status": "scanned",
       "4h_support": 683.76,
-      "4h_resistance": 722.0,
+      "4h_resistance": 717.93,
       "relative_strength_vs_btc": true,
-      "4h_volume_ratio": 0.352,
+      "4h_volume_ratio": 0.467,
       "observations": 0
     },
     {
       "coin": "SOL",
       "status": "scanned",
       "4h_support": 88.29,
-      "4h_resistance": 97.1,
+      "4h_resistance": 97.09,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.338,
-      "observations": 1
+      "4h_volume_ratio": 0.402,
+      "observations": 0
     },
     {
       "coin": "LTC",
       "status": "scanned",
       "4h_support": 51.1,
-      "4h_resistance": 56.49,
+      "4h_resistance": 56.33,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.291,
+      "4h_volume_ratio": 0.411,
       "observations": 1
     },
     {
@@ -55,7 +55,7 @@
       "4h_support": 10.504,
       "4h_resistance": 11.656,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.205,
+      "4h_volume_ratio": 0.826,
       "observations": 0
     },
     {
@@ -64,25 +64,25 @@
       "4h_support": 1.1495,
       "4h_resistance": 1.3269,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.217,
+      "4h_volume_ratio": 0.675,
       "observations": 1
     },
     {
       "coin": "AVAX",
       "status": "scanned",
       "4h_support": 8.085,
-      "4h_resistance": 8.858,
+      "4h_resistance": 8.824,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.661,
-      "observations": 1
+      "4h_volume_ratio": 0.598,
+      "observations": 0
     },
     {
       "coin": "SUI",
       "status": "scanned",
       "4h_support": 0.8303,
-      "4h_resistance": 0.9398,
+      "4h_resistance": 0.9345,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.824,
+      "4h_volume_ratio": 0.529,
       "observations": 0
     },
     {
@@ -91,7 +91,7 @@
       "4h_support": 122.13,
       "4h_resistance": 133.89,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.337,
+      "4h_volume_ratio": 0.593,
       "observations": 0
     },
     {
@@ -100,86 +100,62 @@
       "4h_support": 1213.56,
       "4h_resistance": 1387.89,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 1.28,
+      "4h_volume_ratio": 0.914,
       "observations": 0
     }
   ],
   "new_events": [
     {
-      "id": "SOL:approaching_support:1794124800",
-      "coin": "SOL",
-      "event_type": "approaching_support",
-      "status": "forming_watch",
-      "level_usdt": 88.29,
-      "reference_price_usdt": 89.57,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 1.45,
-      "volume_ratio_4h": 0.338,
-      "volume_ratio_1h": 1.467,
-      "volume_confirmed_4h": false,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": false,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-11-08T12:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    },
-    {
-      "id": "LTC:approaching_support:1794124800",
+      "id": "LTC:approaching_support:1794139200",
       "coin": "LTC",
       "event_type": "approaching_support",
       "status": "forming_watch",
       "level_usdt": 51.1,
-      "reference_price_usdt": 51.66,
+      "reference_price_usdt": 51.86,
       "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 1.096,
-      "volume_ratio_4h": 0.291,
-      "volume_ratio_1h": 1.371,
+      "distance_from_level_percent": 1.487,
+      "volume_ratio_4h": 0.411,
+      "volume_ratio_1h": 0.619,
       "volume_confirmed_4h": false,
       "trend_4h_above_sma233": false,
       "lower_tf_confirmed": false,
       "relative_strength_vs_btc": false,
       "source_4h": "OKX Spot",
       "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-11-08T12:00:00+00:00",
+      "closed_4h_at_utc": "2026-11-08T16:00:00+00:00",
       "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
     },
     {
-      "id": "AVAX:approaching_support:1794124800",
-      "coin": "AVAX",
+      "id": "XRP:approaching_support:1794139200",
+      "coin": "XRP",
       "event_type": "approaching_support",
       "status": "forming_watch",
-      "level_usdt": 8.085,
-      "reference_price_usdt": 8.204,
+      "level_usdt": 1.1495,
+      "reference_price_usdt": 1.1562,
       "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 1.472,
-      "volume_ratio_4h": 0.661,
-      "volume_ratio_1h": 0.858,
+      "distance_from_level_percent": 0.583,
+      "volume_ratio_4h": 0.675,
+      "volume_ratio_1h": 4.263,
       "volume_confirmed_4h": false,
       "trend_4h_above_sma233": false,
       "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": null,
+      "relative_strength_vs_btc": false,
       "source_4h": "OKX Spot",
       "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-11-08T12:00:00+00:00",
+      "closed_4h_at_utc": "2026-11-08T16:00:00+00:00",
       "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
     }
   ],
   "summary": {
     "scanned": 11,
     "blocked": 0,
-    "new_events": 3,
-    "forming": 3
+    "new_events": 2,
+    "forming": 2
   },
   "limitations": [
     "Levels are prior 20 4h high/low, not multi-touch validated",
     "Not a TradingView or Binance feed",
     "No automatic notification is connected",
     "Missing BTC crosses must not be treated as strength confirmation"
-  ],
-  "liquidity_guard_v546": {
-    "pair": "XRPBTC",
-    "status": "BLOCK"
-  }
+  ]
 }
