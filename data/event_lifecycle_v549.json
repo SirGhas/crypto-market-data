@@ -1,51 +1,39 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-11-08T23:44:33.576354+00:00",
+  "generated_at_utc": "2026-11-09T06:29:17.413853+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
   "new_publishable_events": [
     {
-      "id": "BNB:approaching_support:1794153600",
+      "id": "BNB:approaching_support:1794182400",
       "coin": "BNB",
       "event_type": "approaching_support",
       "status": "forming_watch",
-      "level_usdt": 683.76,
-      "reference_price_usdt": 683.68,
+      "level_usdt": 678.3,
+      "reference_price_usdt": 684.85,
       "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": -0.012,
-      "volume_ratio_4h": 0.265,
-      "volume_ratio_1h": 7.751,
-      "volume_confirmed_4h": false,
+      "distance_from_level_percent": 0.966,
+      "volume_ratio_4h": 2.059,
+      "volume_ratio_1h": 1.377,
+      "volume_confirmed_4h": true,
       "trend_4h_above_sma233": false,
       "lower_tf_confirmed": false,
       "relative_strength_vs_btc": true,
       "source_4h": "OKX Spot",
       "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-11-08T20:00:00+00:00",
+      "closed_4h_at_utc": "2026-11-09T04:00:00+00:00",
       "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
     }
   ],
   "pending_unconfirmed": [
     {
-      "id": "BTC:approaching_support:1794153600",
+      "id": "BTC:approaching_support:1794182400",
       "coin": "BTC",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "LINK:approaching_support:1794153600",
-      "coin": "LINK",
-      "event_type": "approaching_support",
-      "reason": "positive_publication_gate_not_passed"
-    },
-    {
-      "id": "SUI:approaching_support:1794153600",
-      "coin": "SUI",
-      "event_type": "approaching_support",
-      "reason": "positive_publication_gate_not_passed"
-    },
-    {
-      "id": "ZEC:approaching_support:1794153600",
-      "coin": "ZEC",
+      "id": "XRP:approaching_support:1794182400",
+      "coin": "XRP",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     }
@@ -54,7 +42,7 @@
     "scanned_coins": 11,
     "blocked_scans": 0,
     "new_publishable_events": 1,
-    "pending_unconfirmed": 4
+    "pending_unconfirmed": 2
   },
   "limitations": [
     "No external notification transport configured",

@@ -3,27 +3,15 @@
   "status": "BLOCK",
   "reason_codes": [
     "5m:thin_market_nonzero_frequency",
-    "15m:thin_market_nonzero_frequency",
-    "15m:last_closed_candle_zero_volume",
-    "4h:relative_volume_not_confirmed"
+    "5m:last_closed_candle_zero_volume",
+    "15m:thin_market_nonzero_frequency"
   ],
   "frames": {
     "5m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1794180900",
-      "last_closed_age_seconds": 273.4,
-      "nonzero_fraction": 0.0987,
-      "relative_volume": 0.0749,
-      "status": "BLOCK",
-      "reasons": [
-        "thin_market_nonzero_frequency"
-      ]
-    },
-    "15m": {
-      "source": "Gate.io Spot",
-      "last_candle_id": "1794179700",
-      "last_closed_age_seconds": 873.4,
-      "nonzero_fraction": 0.2918,
+      "last_candle_id": "1794205200",
+      "last_closed_age_seconds": 257.3,
+      "nonzero_fraction": 0.2446,
       "relative_volume": 0.0,
       "status": "BLOCK",
       "reasons": [
@@ -31,25 +19,34 @@
         "last_closed_candle_zero_volume"
       ]
     },
+    "15m": {
+      "source": "Gate.io Spot",
+      "last_candle_id": "1794204000",
+      "last_closed_age_seconds": 857.3,
+      "nonzero_fraction": 0.2747,
+      "relative_volume": 0.0113,
+      "status": "BLOCK",
+      "reasons": [
+        "thin_market_nonzero_frequency"
+      ]
+    },
     "1h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1794175200",
-      "last_closed_age_seconds": 2673.4,
+      "last_candle_id": "1794200400",
+      "last_closed_age_seconds": 1757.3,
       "nonzero_fraction": 0.8541,
-      "relative_volume": 2.3438,
+      "relative_volume": 8.9383,
       "status": "PASS",
       "reasons": []
     },
     "4h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1794153600",
-      "last_closed_age_seconds": 13473.4,
+      "last_candle_id": "1794182400",
+      "last_closed_age_seconds": 8957.3,
       "nonzero_fraction": 0.9914,
-      "relative_volume": 0.6028,
-      "status": "BLOCK",
-      "reasons": [
-        "relative_volume_not_confirmed"
-      ]
+      "relative_volume": 3.9994,
+      "status": "PASS",
+      "reasons": []
     }
   },
   "thresholds": {
@@ -57,7 +54,10 @@
     "minimum_nonzero_fraction_5m_15m": 0.7,
     "minimum_relative_volume_1h_4h": 1.3
   },
+  "suppressed_event_ids": [
+    "XRP:approaching_support:1794182400"
+  ],
   "schema_version": "5.4.6",
-  "generated_at_utc": "2026-11-08T23:44:33.415555+00:00",
+  "generated_at_utc": "2026-11-09T06:29:17.255412+00:00",
   "mode": "research_only_fail_closed_no_orders"
 }
