@@ -3013,6 +3013,52 @@
         "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
       },
       "status": "PENDING_DELIVERY"
+    },
+    "AVAX:4h_closed_breakout:1794225600": {
+      "event": {
+        "id": "AVAX:4h_closed_breakout:1794225600",
+        "coin": "AVAX",
+        "event_type": "4h_closed_breakout",
+        "status": "technical_event_needs_context",
+        "level_usdt": 8.475,
+        "reference_price_usdt": 8.746,
+        "reference_price_kind": "last_closed_1h_not_live",
+        "distance_from_level_percent": 3.198,
+        "volume_ratio_4h": 14.272,
+        "volume_ratio_1h": 0.651,
+        "volume_confirmed_4h": true,
+        "trend_4h_above_sma233": false,
+        "lower_tf_confirmed": true,
+        "relative_strength_vs_btc": null,
+        "source_4h": "OKX Spot",
+        "source_1h": "OKX Spot",
+        "closed_4h_at_utc": "2026-11-09T16:00:00+00:00",
+        "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+      },
+      "status": "PENDING_DELIVERY"
+    },
+    "AAVE:4h_resistance_rejection:1794225600": {
+      "event": {
+        "id": "AAVE:4h_resistance_rejection:1794225600",
+        "coin": "AAVE",
+        "event_type": "4h_resistance_rejection",
+        "status": "forming_watch",
+        "level_usdt": 133.54,
+        "reference_price_usdt": 133.4,
+        "reference_price_kind": "last_closed_1h_not_live",
+        "distance_from_level_percent": -0.105,
+        "volume_ratio_4h": 1.034,
+        "volume_ratio_1h": 0.567,
+        "volume_confirmed_4h": false,
+        "trend_4h_above_sma233": false,
+        "lower_tf_confirmed": true,
+        "relative_strength_vs_btc": null,
+        "source_4h": "OKX Spot",
+        "source_1h": "OKX Spot",
+        "closed_4h_at_utc": "2026-11-09T16:00:00+00:00",
+        "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+      },
+      "status": "PENDING_DELIVERY"
     }
   },
   "delivered_ids": []

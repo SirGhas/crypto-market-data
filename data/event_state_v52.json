@@ -14,6 +14,7 @@
     "AAVE:4h_resistance_rejection:1792598400",
     "AAVE:4h_resistance_rejection:1793491200",
     "AAVE:4h_resistance_rejection:1793505600",
+    "AAVE:4h_resistance_rejection:1794225600",
     "AAVE:4h_support_reclaim:1792670400",
     "AAVE:4h_support_reclaim:1792684800",
     "AAVE:4h_support_reclaim:1792785600",
@@ -33,6 +34,7 @@
     "AAVE:approaching_resistance:1793275200",
     "AAVE:approaching_resistance:1793491200",
     "AAVE:approaching_resistance:1793505600",
+    "AAVE:approaching_resistance:1794225600",
     "AAVE:approaching_support:1792324800",
     "AAVE:approaching_support:1792339200",
     "AAVE:approaching_support:1792425600",
@@ -62,6 +64,7 @@
     "AVAX:4h_closed_breakdown:1793304000",
     "AVAX:4h_closed_breakdown:1793880000",
     "AVAX:4h_closed_breakdown:1794168000",
+    "AVAX:4h_closed_breakout:1794225600",
     "AVAX:4h_resistance_rejection:1792584000",
     "AVAX:4h_resistance_rejection:1792598400",
     "AVAX:4h_resistance_rejection:1793145600",
@@ -858,6 +861,7 @@
     "ZEC:approaching_support:1793664000",
     "ZEC:approaching_support:1793678400",
     "ZEC:approaching_support:1794153600",
-    "ZEC:approaching_support:1794168000"
+    "ZEC:approaching_support:1794168000",
+    "ZEC:approaching_support:1794225600"
   ]
 }
