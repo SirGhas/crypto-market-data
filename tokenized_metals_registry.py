@@ -22,10 +22,10 @@ METALS = {
         identity_verified=True, data_enabled=False, analysis_enabled=False,
         status="pending_closed_candle_quality_and_reference_price_validation",
     ),
-    "XLVON": MetalAsset(
-        ticker="XLVON", metal="silver", market_pair=None, venue=None,
+    "SLVON": MetalAsset(
+        ticker="SLVON", metal="silver", market_pair=None, venue=None,
         identity_verified=False, data_enabled=False, analysis_enabled=False,
-        status="pending_exact_token_identity_and_spot_pair_confirmation",
+        status="ondo_token_identified_pending_exchange_pair_and_data_validation",
     ),
 }
 
