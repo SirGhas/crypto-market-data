@@ -2,7 +2,7 @@ name: Alpha v2.0.8 Cross-Run Validation Launcher
 on:
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
   actions: read
 jobs:
   verify:
@@ -50,6 +50,43 @@ jobs:
           out.write_text(json.dumps(result,indent=2)+'\n')
           print('ALPHA_V208',json.dumps(result))
           PY
+      - name: Publish run pointer on dedicated validation branch
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          JOB_STATUS: ${{ job.status }}
+          REPO: ${{ github.repository }}
+          WORKFLOW_PATH: .github/workflows/alpha-v208-validation-launcher.yml
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          p=Path('/tmp/alpha-v208-latest-run.json')
+          p.write_text(json.dumps({
+              'run_id': int(os.environ['RUN_ID']),
+              'run_attempt': int(os.environ['RUN_ATTEMPT']),
+              'workflow_path': os.environ['WORKFLOW_PATH'],
+              'result_of_prior_steps': os.environ['JOB_STATUS'],
+              'source_run_id': 42835221306,
+              'candidate_commit': '02a90b7a6158c29000a385c596d8d3f23cfacc71',
+              'run_url': 'https://github.com/'+os.environ['REPO']+'/actions/runs/'+os.environ['RUN_ID'],
+              'note': 'job status before artifact upload and pointer commit; verify final run via Actions API'
+          },indent=2)+'\\n')
+          PY
+          git fetch origin refs/heads/research/alpha-v208-run-index:refs/remotes/origin/research/alpha-v208-run-index || true
+          if git show-ref --verify --quiet refs/remotes/origin/research/alpha-v208-run-index; then
+            git checkout -B research/alpha-v208-run-index refs/remotes/origin/research/alpha-v208-run-index
+          else
+            git checkout --orphan research/alpha-v208-run-index
+            git rm -rf . >/dev/null 2>&1 || true
+          fi
+          mkdir -p artifacts
+          cp /tmp/alpha-v208-latest-run.json artifacts/alpha_v208_latest_run.json
+          git add artifacts/alpha_v208_latest_run.json
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m "Record alpha v2.0.8 validation run ${RUN_ID}" || true
+          git push origin HEAD:refs/heads/research/alpha-v208-run-index
       - name: Upload verification report
         if: always()
         uses: actions/upload-artifact@v4
