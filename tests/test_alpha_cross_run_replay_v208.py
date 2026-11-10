@@ -13,7 +13,7 @@ class CrossRunReplayTests(unittest.TestCase):
         self.report = Path(self.tmp.name) / 'report.json'
         self.source = {'snapshot_file_sha256': 'a'*64, 'replay_event_count': 3,
                        'recurrence_counts': {'repeated': 1},
-                       'history_quality': {'bar_count': 2}}
+                       'history_quality': {'bar_count': 2}, 'gap_counts': {}}
         self.report.write_text(json.dumps(self.source))
         self.replay = {'event_count': 3, 'recurrence_counts': {'repeated': 1},
                        'history_quality': {'bar_count': 2}, 'gap_counts': {}}
@@ -43,6 +43,14 @@ class CrossRunReplayTests(unittest.TestCase):
         mock.return_value = dict(self.replay, recurrence_counts={})
         with self.assertRaisesRegex(ValueError, 'CROSS_RUN_RECURRENCE_MISMATCH'):
             verify(self.snapshot, self.report, 'a'*64, '100', '200')
+    @patch('engine.alpha_cross_run_replay_v208.offline_evaluate')
+    def test_gap_mismatch_rejected(self, mock):
+        mock.return_value = dict(self.replay, gap_counts={'different': 1})
+        with self.assertRaisesRegex(ValueError, 'CROSS_RUN_GAP_COUNTS_MISMATCH'):
+            verify(self.snapshot, self.report, 'a'*64, '100', '200')
+    def test_missing_snapshot_fails(self):
+        with self.assertRaises(FileNotFoundError):
+            verify(self.snapshot.with_name('missing.json'), self.report, 'a'*64, '100', '200')
     def test_missing_report_fails(self):
         with self.assertRaises(FileNotFoundError):
             verify(self.snapshot, self.report.with_name('missing.json'), 'a'*64, '100', '200')
