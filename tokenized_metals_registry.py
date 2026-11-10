@@ -23,9 +23,9 @@ METALS = {
         status="pending_closed_candle_quality_and_reference_price_validation",
     ),
     "SLVON": MetalAsset(
-        ticker="SLVON", metal="silver", market_pair=None, venue=None,
-        identity_verified=False, data_enabled=False, analysis_enabled=False,
-        status="ondo_token_identified_pending_exchange_pair_and_data_validation",
+        ticker="SLVON", metal="silver", market_pair="SLVON/USDT", venue="Phemex Spot",
+        identity_verified=True, data_enabled=False, analysis_enabled=False,
+        status="phemex_listing_confirmed_pending_api_candle_liquidity_and_parity_validation",
     ),
 }
 
