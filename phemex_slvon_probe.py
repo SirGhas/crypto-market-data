@@ -81,12 +81,24 @@ def probe(now=None):
     try:
         product = find_spot_product(get_json("/public/products"))
         result["exchange_symbol"] = product["symbol"]
+        result["product_scale_metadata"] = {
+            key: product[key] for key in (
+                "priceScale", "valueScale", "qtyScale", "pricePrecision",
+                "baseCurrency", "quoteCurrency", "type", "status"
+            ) if key in product
+        }
         for frame, resolution in RESOLUTIONS.items():
             payload = get_json("/exchange/public/md/v2/kline",
                                {"symbol": product["symbol"], "resolution": resolution, "limit": 500})
             if payload.get("code") != 0:
                 raise ValueError("PHEMEX_KLINE_API_ERROR")
-            result["frames"][frame] = validate_rows(payload.get("data", {}).get("rows"), resolution, now)
+            rows = payload.get("data", {}).get("rows")
+            result["frames"][frame] = validate_rows(rows, resolution, now)
+            latest = max((r for r in rows if int(r[0]) + resolution <= now - 2), key=lambda r: int(r[0]))
+            result["frames"][frame]["latest_raw_scaled_ohlcv"] = {
+                "timestamp": latest[0], "open": latest[3], "high": latest[4],
+                "low": latest[5], "close": latest[6], "volume": latest[7]
+            }
         result["status"] = "HISTORY_CHECK_PASSED_SCALING_AND_REFERENCE_PARITY_PENDING"
     except Exception as exc:
         result["reason"] = str(exc)[:180]
