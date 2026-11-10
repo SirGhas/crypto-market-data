@@ -1,5 +1,5 @@
 import unittest
-from phemex_slvon_probe import find_spot_product, validate_rows, probe
+from phemex_slvon_probe import find_spot_product, validate_rows, probe, normalize_price
 
 
 class PhemexSLVONProbeTests(unittest.TestCase):
@@ -37,6 +37,21 @@ class PhemexSLVONProbeTests(unittest.TestCase):
         result = validate_rows(rows, 900, 233*900+3)
         self.assertEqual(result["closed_candles"], 233)
         self.assertTrue(result["scaled_prices_not_yet_normalized"])
+
+    def test_exchange_price_scale_normalization(self):
+        self.assertEqual(normalize_price(4764000000, {"priceScale": 8}), "47.64")
+
+    def test_missing_price_scale_fails_closed(self):
+        with self.assertRaisesRegex(ValueError, "INVALID_PHEMEX_PRICE_SCALE"):
+            normalize_price(4764000000, {})
+
+    def test_invalid_price_scale_fails_closed(self):
+        with self.assertRaisesRegex(ValueError, "INVALID_PHEMEX_PRICE_SCALE"):
+            normalize_price(4764000000, {"priceScale": "8"})
+
+    def test_nonpositive_price_fails_closed(self):
+        with self.assertRaisesRegex(ValueError, "INVALID_SCALED_PRICE"):
+            normalize_price(0, {"priceScale": 8})
 
     def test_probe_fails_closed_on_network_error(self):
         from unittest.mock import patch
