@@ -132,6 +132,12 @@
     "BNB:approaching_support:1794153600",
     "BNB:approaching_support:1794182400",
     "AVAX:4h_closed_breakout:1794225600",
-    "AAVE:4h_resistance_rejection:1794225600"
+    "AAVE:4h_resistance_rejection:1794225600",
+    "BTC:4h_closed_breakdown:1794312000",
+    "ETH:4h_closed_breakdown:1794312000",
+    "SOL:4h_closed_breakdown:1794312000",
+    "XRP:4h_closed_breakdown:1794312000",
+    "AAVE:4h_closed_breakdown:1794312000",
+    "ZEC:4h_closed_breakdown:1794312000"
   ]
 }
