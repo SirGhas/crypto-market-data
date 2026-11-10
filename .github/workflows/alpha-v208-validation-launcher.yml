@@ -12,13 +12,18 @@ jobs:
       - name: Checkout isolated research candidate
         uses: actions/checkout@v4
         with:
-          ref: 9fe2389f07259ef921198ea6e48d583c92b23aa6
+          ref: 02a90b7a6158c29000a385c596d8d3f23cfacc71
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - name: Run alpha unit tests
         run: python -m unittest discover -s tests -p 'test_alpha_*v*.py' -v
+      - name: Verify source run identity and successful completion
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api repos/"${{ github.repository }}"/actions/runs/42835221306 --jq '. | select(.status == "completed" and .conclusion == "success" and .head_branch == "main" and .path == ".github/workflows/alpha-swing-v207.yml") | .id' | grep -qx '42835221306'
       - name: Download independent v2.0.7 snapshot
         env:
           GH_TOKEN: ${{ github.token }}
