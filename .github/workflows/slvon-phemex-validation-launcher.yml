@@ -1,0 +1,31 @@
+name: SLVON Phemex Isolated Validation Launcher
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout pinned research candidate
+        uses: actions/checkout@v4
+        with:
+          ref: 9bff065c5e2a73f0c451a69ddb9e382406ed1406
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests
+        run: python -m unittest discover -s tests -p 'test_*slvon*.py' -v
+      - name: Registry unit tests
+        run: python -m unittest discover -s tests -p 'test_tokenized_metals_registry.py' -v
+      - name: Public API feed integrity probe
+        run: python phemex_slvon_probe.py
+      - name: Preserve diagnostic evidence on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phemex-slvon-feed-evidence
+          path: artifacts/slvon_phemex_probe.json
+          if-no-files-found: warn
+          retention-days: 14
