@@ -1,0 +1,55 @@
+name: Alpha v2.0.8 Cross-Run Validation Launcher
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - name: Checkout isolated research candidate
+        uses: actions/checkout@v4
+        with:
+          ref: 9fe2389f07259ef921198ea6e48d583c92b23aa6
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run alpha unit tests
+        run: python -m unittest discover -s tests -p 'test_alpha_*v*.py' -v
+      - name: Download independent v2.0.7 snapshot
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p cross_run_input
+          gh run download 42835221306 --repo "${{ github.repository }}" --name alpha-v207-btc-offline-replay --dir cross_run_input
+      - name: Replay frozen snapshot without exchange fetch
+        env:
+          CURRENT_RUN_ID: ${{ github.run_id }}
+        run: |
+          python - <<'PY'
+          import json,os
+          from pathlib import Path
+          from engine.alpha_cross_run_replay_v208 import verify
+          root=Path('cross_run_input')
+          source=json.loads((root/'alpha_swing_v206_btc_snapshot_report.json').read_text())
+          result=verify(root/'alpha_swing_v206_btc_4h_snapshot.json',
+                        root/'alpha_swing_v206_btc_snapshot_report.json',
+                        source['snapshot_file_sha256'],
+                        '42835221306',os.environ['CURRENT_RUN_ID'],
+                        root/'alpha_swing_v207_btc_offline_replay.json')
+          out=Path('artifacts/alpha_swing_v208_cross_run_replay.json')
+          out.parent.mkdir(parents=True,exist_ok=True)
+          out.write_text(json.dumps(result,indent=2)+'\n')
+          print('ALPHA_V208',json.dumps(result))
+          PY
+      - name: Upload verification report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: alpha-v208-cross-run-verification
+          path: artifacts/alpha_swing_v208_cross_run_replay.json
+          if-no-files-found: warn
+          retention-days: 14
