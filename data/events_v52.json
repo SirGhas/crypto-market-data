@@ -1,7 +1,7 @@
 {
   "schema_version": 52,
-  "generated_at_utc": "2026-11-10T23:17:39.911224+00:00",
-  "source_generated_at_utc": "2026-11-10T23:16:41.420984+00:00",
+  "generated_at_utc": "2026-11-10T23:23:26.643685+00:00",
+  "source_generated_at_utc": "2026-11-10T23:22:31.771498+00:00",
   "mode": "event_screening_only_no_push_no_orders",
   "observations": [
     {
@@ -104,118 +104,21 @@
       "observations": 1
     }
   ],
-  "new_events": [
-    {
-      "id": "BTC:4h_support_reclaim:1794326400",
-      "coin": "BTC",
-      "event_type": "4h_support_reclaim",
-      "status": "technical_event_needs_context",
-      "level_usdt": 72858.5,
-      "reference_price_usdt": 73699.7,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 1.155,
-      "volume_ratio_4h": 1.833,
-      "volume_ratio_1h": 0.375,
-      "volume_confirmed_4h": true,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": null,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-11-10T20:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    },
-    {
-      "id": "BTC:approaching_support:1794326400",
-      "coin": "BTC",
-      "event_type": "approaching_support",
-      "status": "forming_watch",
-      "level_usdt": 72858.5,
-      "reference_price_usdt": 73699.7,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 1.155,
-      "volume_ratio_4h": 1.833,
-      "volume_ratio_1h": 0.375,
-      "volume_confirmed_4h": true,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": null,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-11-10T20:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    },
-    {
-      "id": "BNB:4h_support_reclaim:1794326400",
-      "coin": "BNB",
-      "event_type": "4h_support_reclaim",
-      "status": "technical_event_needs_context",
-      "level_usdt": 673.21,
-      "reference_price_usdt": 677.79,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 0.68,
-      "volume_ratio_4h": 1.716,
-      "volume_ratio_1h": 0.227,
-      "volume_confirmed_4h": true,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": true,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-11-10T20:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    },
-    {
-      "id": "BNB:approaching_support:1794326400",
-      "coin": "BNB",
-      "event_type": "approaching_support",
-      "status": "forming_watch",
-      "level_usdt": 673.21,
-      "reference_price_usdt": 677.79,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 0.68,
-      "volume_ratio_4h": 1.716,
-      "volume_ratio_1h": 0.227,
-      "volume_confirmed_4h": true,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": true,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-11-10T20:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    },
-    {
-      "id": "ZEC:4h_closed_breakdown:1794326400",
-      "coin": "ZEC",
-      "event_type": "4h_closed_breakdown",
-      "status": "technical_event_needs_context",
-      "level_usdt": 1075.82,
-      "reference_price_usdt": 1038.45,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": -3.474,
-      "volume_ratio_4h": 2.197,
-      "volume_ratio_1h": 1.389,
-      "volume_confirmed_4h": true,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": null,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-11-10T20:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    }
-  ],
+  "new_events": [],
   "summary": {
     "scanned": 11,
     "blocked": 0,
-    "new_events": 5,
-    "forming": 2
+    "new_events": 0,
+    "forming": 0
   },
   "limitations": [
     "Levels are prior 20 4h high/low, not multi-touch validated",
     "Not a TradingView or Binance feed",
     "No automatic notification is connected",
     "Missing BTC crosses must not be treated as strength confirmation"
-  ]
+  ],
+  "liquidity_guard_v546": {
+    "pair": "XRPBTC",
+    "status": "BLOCK"
+  }
 }
