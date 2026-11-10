@@ -41,8 +41,9 @@ jobs:
           report=root/'alpha_swing_v206_btc_snapshot_report.json'
           snapshot=root/'alpha_swing_v206_btc_4h_snapshot.json'
           source=json.loads(report.read_text())
+          source_replay=root/'alpha_swing_v207_btc_offline_replay.json'
           result=verify(snapshot,report,source['snapshot_file_sha256'],
-                        os.environ['SOURCE_RUN_ID'],os.environ['CURRENT_RUN_ID'])
+                        os.environ['SOURCE_RUN_ID'],os.environ['CURRENT_RUN_ID'],source_replay)
           out=Path('artifacts/alpha_swing_v208_cross_run_replay.json')
           out.parent.mkdir(parents=True,exist_ok=True)
           out.write_text(json.dumps(result,indent=2)+'\n')
