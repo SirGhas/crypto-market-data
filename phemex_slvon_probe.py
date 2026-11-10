@@ -3,6 +3,7 @@ import argparse
 import datetime as dt
 import json
 import math
+from decimal import Decimal, InvalidOperation
 import urllib.parse
 import urllib.request
 
@@ -70,6 +71,19 @@ def validate_rows(rows, resolution, now):
             "scaled_prices_not_yet_normalized": True}
 
 
+def normalize_price(raw, product):
+    scale = product.get("priceScale")
+    if type(scale) is not int or not 0 <= scale <= 18:
+        raise ValueError("INVALID_PHEMEX_PRICE_SCALE")
+    try:
+        value = Decimal(str(raw)) / (Decimal(10) ** scale)
+    except (InvalidOperation, ValueError, TypeError) as exc:
+        raise ValueError("INVALID_SCALED_PRICE") from exc
+    if not value.is_finite() or value <= 0:
+        raise ValueError("INVALID_SCALED_PRICE")
+    return str(value)
+
+
 def probe(now=None):
     if now is None:
         now = int(dt.datetime.now(dt.timezone.utc).timestamp())
@@ -95,11 +109,12 @@ def probe(now=None):
             rows = payload.get("data", {}).get("rows")
             result["frames"][frame] = validate_rows(rows, resolution, now)
             latest = max((r for r in rows if int(r[0]) + resolution <= now - 2), key=lambda r: int(r[0]))
+            result["frames"][frame]["latest_normalized_close_usdt"] = normalize_price(latest[6], product)
             result["frames"][frame]["latest_raw_scaled_ohlcv"] = {
                 "timestamp": latest[0], "open": latest[3], "high": latest[4],
                 "low": latest[5], "close": latest[6], "volume": latest[7]
             }
-        result["status"] = "HISTORY_CHECK_PASSED_SCALING_AND_REFERENCE_PARITY_PENDING"
+        result["status"] = "PRICE_SCALE_VERIFIED_VOLUME_SCALE_AND_REFERENCE_PARITY_PENDING"
     except Exception as exc:
         result["reason"] = str(exc)[:180]
     return result
