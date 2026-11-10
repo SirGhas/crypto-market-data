@@ -19,6 +19,10 @@ def verify(snapshot_path, source_report_path, expected_sha256, source_run_id, cu
         raise ValueError('CROSS_RUN_RECURRENCE_MISMATCH')
     if replay['history_quality'] != source.get('history_quality'):
         raise ValueError('CROSS_RUN_HISTORY_MISMATCH')
+    if 'gap_counts' not in source:
+        raise ValueError('SOURCE_GAP_COUNTS_REQUIRED')
+    if replay['gap_counts'] != source['gap_counts']:
+        raise ValueError('CROSS_RUN_GAP_COUNTS_MISMATCH')
     return {
         'version': 'alpha-2.0.8-cross-run-offline-replay',
         'source_run_id': str(source_run_id),
@@ -29,6 +33,9 @@ def verify(snapshot_path, source_report_path, expected_sha256, source_run_id, cu
         'gap_counts': replay['gap_counts'],
         'cross_run_verified': True,
         'research_only': True,
+        'signals': [],
+        'backtest_completed': False,
+        'continuous_freshness_proven': False,
         'signals_enabled': False,
         'trading_enabled': False,
         'trade_authorized': False,
