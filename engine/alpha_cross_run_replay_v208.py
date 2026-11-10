@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from engine.alpha_offline_replay_v207 import evaluate as offline_evaluate
 
-def verify(snapshot_path, source_report_path, expected_sha256, source_run_id, current_run_id):
+def verify(snapshot_path, source_report_path, expected_sha256, source_run_id, current_run_id, source_replay_path):
     if not str(source_run_id).isdigit() or not str(current_run_id).isdigit():
         raise ValueError('RUN_ID_REQUIRED')
     if str(source_run_id) == str(current_run_id):
@@ -19,9 +19,10 @@ def verify(snapshot_path, source_report_path, expected_sha256, source_run_id, cu
         raise ValueError('CROSS_RUN_RECURRENCE_MISMATCH')
     if replay['history_quality'] != source.get('history_quality'):
         raise ValueError('CROSS_RUN_HISTORY_MISMATCH')
-    if 'gap_counts' not in source:
-        raise ValueError('SOURCE_GAP_COUNTS_REQUIRED')
-    if replay['gap_counts'] != source['gap_counts']:
+    source_replay = json.loads(Path(source_replay_path).read_text(encoding='utf-8'))
+    if source_replay.get('snapshot_file_sha256') != expected_sha256:
+        raise ValueError('SOURCE_REPLAY_DIGEST_MISMATCH')
+    if replay['gap_counts'] != source_replay.get('gap_counts'):
         raise ValueError('CROSS_RUN_GAP_COUNTS_MISMATCH')
     return {
         'version': 'alpha-2.0.8-cross-run-offline-replay',
@@ -50,9 +51,10 @@ def main():
     parser.add_argument('--sha256', required=True)
     parser.add_argument('--source-run-id', required=True)
     parser.add_argument('--current-run-id', required=True)
+    parser.add_argument('--source-replay', required=True)
     args = parser.parse_args()
     result = verify(args.snapshot, args.source_report, args.sha256,
-                    args.source_run_id, args.current_run_id)
+                    args.source_run_id, args.current_run_id, args.source_replay)
     out = Path('artifacts/alpha_swing_v208_cross_run_replay.json')
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(result, indent=2) + '\n', encoding='utf-8')
