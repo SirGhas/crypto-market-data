@@ -4,6 +4,7 @@ import datetime as dt
 import json
 import math
 from decimal import Decimal, InvalidOperation
+from zoneinfo import ZoneInfo
 import urllib.parse
 import urllib.request
 
@@ -65,7 +66,11 @@ def validate_rows(rows, resolution, now):
         raise ValueError("STALE_CLOSED_KLINE")
     if recent[-1] + resolution > now:
         raise ValueError("FUTURE_CLOSED_KLINE")
+    volumes = [Decimal(str(clean[t][7])) for t in recent]
     return {"closed_candles": len(times),
+            "last_closed_at_tehran": dt.datetime.fromtimestamp(recent[-1] + resolution, ZoneInfo("Asia/Tehran")).isoformat(),
+            "raw_volume_last_233_total": str(sum(volumes)),
+            "raw_volume_last_233_zero_candles": sum(v == 0 for v in volumes),
             "last_closed_at_utc": dt.datetime.fromtimestamp(recent[-1] + resolution, dt.timezone.utc).isoformat(),
             "nonzero_volume_last_233": sum(float(clean[t][7]) > 0 for t in recent),
             "scaled_prices_not_yet_normalized": True}
@@ -110,11 +115,15 @@ def probe(now=None):
             result["frames"][frame] = validate_rows(rows, resolution, now)
             latest = max((r for r in rows if int(r[0]) + resolution <= now - 2), key=lambda r: int(r[0]))
             result["frames"][frame]["latest_normalized_close_usdt"] = normalize_price(latest[6], product)
+            result["frames"][frame]["volume_scale_verified"] = False
+            result["frames"][frame]["notional_volume_usdt_verified"] = False
             result["frames"][frame]["latest_raw_scaled_ohlcv"] = {
                 "timestamp": latest[0], "open": latest[3], "high": latest[4],
                 "low": latest[5], "close": latest[6], "volume": latest[7]
             }
         result["status"] = "PRICE_SCALE_VERIFIED_VOLUME_SCALE_AND_REFERENCE_PARITY_PENDING"
+        result["liquidity_approved"] = False
+        result["reference_parity_approved"] = False
     except Exception as exc:
         result["reason"] = str(exc)[:180]
     return result
