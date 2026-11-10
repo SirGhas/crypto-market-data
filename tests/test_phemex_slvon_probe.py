@@ -36,6 +36,9 @@ class PhemexSLVONProbeTests(unittest.TestCase):
         rows = [[i*900, 900, 1, 1, 2, 0.5, 1, 1, 1] for i in range(233)]
         result = validate_rows(rows, 900, 233*900+3)
         self.assertEqual(result["closed_candles"], 233)
+        self.assertEqual(result["raw_volume_last_233_total"], "233")
+        self.assertEqual(result["raw_volume_last_233_zero_candles"], 0)
+        self.assertTrue(result["last_closed_at_tehran"].endswith("+03:30"))
         self.assertTrue(result["scaled_prices_not_yet_normalized"])
 
     def test_exchange_price_scale_normalization(self):
