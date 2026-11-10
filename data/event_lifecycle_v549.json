@@ -1,17 +1,29 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-11-10T01:32:05.358857+00:00",
+  "generated_at_utc": "2026-11-10T09:51:44.039693+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
   "new_publishable_events": [],
   "pending_unconfirmed": [
     {
-      "id": "ZEC:4h_support_reclaim:1794254400",
-      "coin": "ZEC",
-      "event_type": "4h_support_reclaim",
+      "id": "SOL:approaching_support:1794283200",
+      "coin": "SOL",
+      "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "ZEC:approaching_support:1794254400",
+      "id": "XRP:approaching_support:1794283200",
+      "coin": "XRP",
+      "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "AAVE:approaching_support:1794283200",
+      "coin": "AAVE",
+      "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "ZEC:approaching_support:1794283200",
       "coin": "ZEC",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
@@ -21,7 +33,7 @@
     "scanned_coins": 11,
     "blocked_scans": 0,
     "new_publishable_events": 0,
-    "pending_unconfirmed": 2
+    "pending_unconfirmed": 4
   },
   "limitations": [
     "No external notification transport configured",

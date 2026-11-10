@@ -1,7 +1,7 @@
 {
   "schema_version": 51,
-  "generated_at_utc": "2026-11-10T09:45:33.489617+00:00",
-  "source_generated_at_utc": "2026-11-10T09:44:38.307319+00:00",
+  "generated_at_utc": "2026-11-10T09:51:43.774924+00:00",
+  "source_generated_at_utc": "2026-11-10T09:51:03.916443+00:00",
   "status": "partial",
   "mode": "research_only_no_trade_or_push",
   "evaluations": [
@@ -129,7 +129,7 @@
     {
       "coin": "LTC",
       "status": "watch_only",
-      "score": 10,
+      "score": 0,
       "reference_price_usdt": 51.5,
       "reference_price_kind": "last_closed_1h_candle_not_live",
       "support_4h": 49.24,
@@ -146,7 +146,8 @@
         "below_4h_sma233",
         "volume_not_confirmed",
         "weak_against_btc",
-        "market_entry_rr_below_2_5"
+        "market_entry_rr_below_2_5",
+        "15m_below_sma233"
       ],
       "sources": {
         "4h": "OKX Spot",
@@ -462,5 +463,9 @@
     "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
   },
   "new_events": [],
-  "disclaimer": "No verified static level, dominance trend, or 4h breakout/reclaim confirmation. Ranking is not a buy signal."
+  "disclaimer": "No verified static level, dominance trend, or 4h breakout/reclaim confirmation. Ranking is not a buy signal.",
+  "liquidity_guard_v546": {
+    "pair": "XRPBTC",
+    "status": "BLOCK"
+  }
 }
