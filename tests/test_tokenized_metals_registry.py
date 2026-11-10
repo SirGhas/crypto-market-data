@@ -13,9 +13,10 @@ class TokenizedMetalsRegistryTests(unittest.TestCase):
         self.assertEqual(METALS["XAUT"].market_pair, "XAUT-USDT")
         self.assertEqual(METALS["XAUT"].venue, "OKX Spot")
 
-    def test_silver_not_mapped_to_guessed_instrument(self):
-        self.assertIsNone(METALS["SLVON"].market_pair)
-        self.assertFalse(METALS["SLVON"].identity_verified)
+    def test_silver_phemex_spot_listing_is_registered(self):
+        self.assertEqual(METALS["SLVON"].market_pair, "SLVON/USDT")
+        self.assertEqual(METALS["SLVON"].venue, "Phemex Spot")
+        self.assertTrue(METALS["SLVON"].identity_verified)
 
     def test_both_assets_fail_closed_until_data_validation(self):
         for ticker in research_watchlist():
