@@ -57,6 +57,7 @@
     "AAVE:approaching_support:1793217600",
     "AAVE:approaching_support:1793232000",
     "AAVE:approaching_support:1793664000",
+    "AAVE:approaching_support:1794283200",
     "AVAX:4h_closed_breakdown:1792339200",
     "AVAX:4h_closed_breakdown:1792656000",
     "AVAX:4h_closed_breakdown:1792843200",
@@ -643,6 +644,7 @@
     "SOL:approaching_support:1794139200",
     "SOL:approaching_support:1794153600",
     "SOL:approaching_support:1794182400",
+    "SOL:approaching_support:1794283200",
     "SUI:4h_closed_breakdown:1792339200",
     "SUI:4h_closed_breakdown:1792785600",
     "SUI:4h_closed_breakdown:1792843200",
@@ -814,6 +816,7 @@
     "XRP:approaching_support:1794139200",
     "XRP:approaching_support:1794153600",
     "XRP:approaching_support:1794182400",
+    "XRP:approaching_support:1794283200",
     "ZEC:4h_closed_breakdown:1792339200",
     "ZEC:4h_closed_breakdown:1792828800",
     "ZEC:4h_closed_breakdown:1793635200",
@@ -864,6 +867,7 @@
     "ZEC:approaching_support:1794153600",
     "ZEC:approaching_support:1794168000",
     "ZEC:approaching_support:1794225600",
-    "ZEC:approaching_support:1794254400"
+    "ZEC:approaching_support:1794254400",
+    "ZEC:approaching_support:1794283200"
   ]
 }
