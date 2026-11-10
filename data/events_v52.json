@@ -1,7 +1,7 @@
 {
   "schema_version": 52,
-  "generated_at_utc": "2026-11-09T18:45:33.201682+00:00",
-  "source_generated_at_utc": "2026-11-09T18:44:45.243409+00:00",
+  "generated_at_utc": "2026-11-10T01:32:05.194357+00:00",
+  "source_generated_at_utc": "2026-11-10T01:31:03.915460+00:00",
   "mode": "event_screening_only_no_push_no_orders",
   "observations": [
     {
@@ -10,7 +10,7 @@
       "4h_support": 73500.0,
       "4h_resistance": 76378.7,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 1.643,
+      "4h_volume_ratio": 0.543,
       "observations": 0
     },
     {
@@ -19,7 +19,7 @@
       "4h_support": 2063.29,
       "4h_resistance": 2254.25,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 2.101,
+      "4h_volume_ratio": 0.577,
       "observations": 0
     },
     {
@@ -28,7 +28,7 @@
       "4h_support": 673.21,
       "4h_resistance": 702.0,
       "relative_strength_vs_btc": true,
-      "4h_volume_ratio": 1.848,
+      "4h_volume_ratio": 0.738,
       "observations": 0
     },
     {
@@ -37,7 +37,7 @@
       "4h_support": 84.98,
       "4h_resistance": 91.6,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 1.328,
+      "4h_volume_ratio": 0.531,
       "observations": 0
     },
     {
@@ -46,7 +46,7 @@
       "4h_support": 49.24,
       "4h_resistance": 53.45,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 1.967,
+      "4h_volume_ratio": 0.584,
       "observations": 0
     },
     {
@@ -55,26 +55,26 @@
       "4h_support": 10.137,
       "4h_resistance": 11.041,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 2.075,
+      "4h_volume_ratio": 0.449,
       "observations": 0
     },
     {
       "coin": "XRP",
       "status": "scanned",
       "4h_support": 1.0764,
-      "4h_resistance": 1.2078,
+      "4h_resistance": 1.2031,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 1.953,
+      "4h_volume_ratio": 1.068,
       "observations": 0
     },
     {
       "coin": "AVAX",
       "status": "scanned",
       "4h_support": 7.757,
-      "4h_resistance": 8.475,
+      "4h_resistance": 9.011,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 14.272,
-      "observations": 1
+      "4h_volume_ratio": 1.235,
+      "observations": 0
     },
     {
       "coin": "SUI",
@@ -82,39 +82,84 @@
       "4h_support": 0.8016,
       "4h_resistance": 0.8819,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 1.686,
+      "4h_volume_ratio": 0.521,
       "observations": 0
     },
     {
       "coin": "AAVE",
       "status": "scanned",
       "4h_support": 123.98,
-      "4h_resistance": 133.54,
+      "4h_resistance": 134.68,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 1.034,
-      "observations": 2
+      "4h_volume_ratio": 1.878,
+      "observations": 0
     },
     {
       "coin": "ZEC",
       "status": "scanned",
-      "4h_support": 1180.0,
+      "4h_support": 1159.36,
       "4h_resistance": 1387.89,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.894,
-      "observations": 1
+      "4h_volume_ratio": 0.694,
+      "observations": 2
     }
   ],
-  "new_events": [],
+  "new_events": [
+    {
+      "id": "ZEC:4h_support_reclaim:1794254400",
+      "coin": "ZEC",
+      "event_type": "4h_support_reclaim",
+      "status": "forming_watch",
+      "level_usdt": 1159.36,
+      "reference_price_usdt": 1170.66,
+      "reference_price_kind": "last_closed_1h_not_live",
+      "distance_from_level_percent": 0.975,
+      "volume_ratio_4h": 0.694,
+      "volume_ratio_1h": 0.596,
+      "volume_confirmed_4h": false,
+      "trend_4h_above_sma233": false,
+      "lower_tf_confirmed": false,
+      "relative_strength_vs_btc": null,
+      "source_4h": "OKX Spot",
+      "source_1h": "OKX Spot",
+      "closed_4h_at_utc": "2026-11-10T00:00:00+00:00",
+      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+    },
+    {
+      "id": "ZEC:approaching_support:1794254400",
+      "coin": "ZEC",
+      "event_type": "approaching_support",
+      "status": "forming_watch",
+      "level_usdt": 1159.36,
+      "reference_price_usdt": 1170.66,
+      "reference_price_kind": "last_closed_1h_not_live",
+      "distance_from_level_percent": 0.975,
+      "volume_ratio_4h": 0.694,
+      "volume_ratio_1h": 0.596,
+      "volume_confirmed_4h": false,
+      "trend_4h_above_sma233": false,
+      "lower_tf_confirmed": false,
+      "relative_strength_vs_btc": null,
+      "source_4h": "OKX Spot",
+      "source_1h": "OKX Spot",
+      "closed_4h_at_utc": "2026-11-10T00:00:00+00:00",
+      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+    }
+  ],
   "summary": {
     "scanned": 11,
     "blocked": 0,
-    "new_events": 0,
-    "forming": 0
+    "new_events": 2,
+    "forming": 2
   },
   "limitations": [
     "Levels are prior 20 4h high/low, not multi-touch validated",
     "Not a TradingView or Binance feed",
     "No automatic notification is connected",
     "Missing BTC crosses must not be treated as strength confirmation"
-  ]
+  ],
+  "liquidity_guard_v546": {
+    "pair": "XRPBTC",
+    "status": "BLOCK"
+  }
 }

@@ -838,6 +838,7 @@
     "ZEC:4h_support_reclaim:1793304000",
     "ZEC:4h_support_reclaim:1793318400",
     "ZEC:4h_support_reclaim:1793678400",
+    "ZEC:4h_support_reclaim:1794254400",
     "ZEC:approaching_resistance:1792497600",
     "ZEC:approaching_resistance:1792569600",
     "ZEC:approaching_resistance:1792598400",
@@ -862,6 +863,7 @@
     "ZEC:approaching_support:1793678400",
     "ZEC:approaching_support:1794153600",
     "ZEC:approaching_support:1794168000",
-    "ZEC:approaching_support:1794225600"
+    "ZEC:approaching_support:1794225600",
+    "ZEC:approaching_support:1794254400"
   ]
 }
