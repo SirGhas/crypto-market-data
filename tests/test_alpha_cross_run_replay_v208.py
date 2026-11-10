@@ -16,7 +16,7 @@ class CrossRunReplayTests(unittest.TestCase):
                        'history_quality': {'bar_count': 2}, 'gap_counts': {}}
         self.report.write_text(json.dumps(self.source))
         self.source_replay = Path(self.tmp.name) / 'source_replay.json'
-        self.source_replay.write_text(json.dumps({'snapshot_file_sha256': 'a'*64, 'gap_counts': {}}))
+        self.source_replay.write_text(json.dumps({'snapshot_file_sha256': 'a'*64, 'gap_counts': {}, 'event_count': 3, 'recurrence_counts': {'repeated': 1}, 'history_quality': {'bar_count': 2}}))
         self.replay = {'event_count': 3, 'recurrence_counts': {'repeated': 1},
                        'history_quality': {'bar_count': 2}, 'gap_counts': {}}
     def tearDown(self):
@@ -49,6 +49,30 @@ class CrossRunReplayTests(unittest.TestCase):
     def test_gap_mismatch_rejected(self, mock):
         mock.return_value = dict(self.replay, gap_counts={'different': 1})
         with self.assertRaisesRegex(ValueError, 'CROSS_RUN_GAP_COUNTS_MISMATCH'):
+            verify(self.snapshot, self.report, 'a'*64, '100', '200', self.source_replay)
+    @patch('engine.alpha_cross_run_replay_v208.offline_evaluate')
+    def test_source_replay_event_tampering_rejected(self, mock):
+        mock.return_value = self.replay
+        report = json.loads(self.source_replay.read_text())
+        report['event_count'] = 999
+        self.source_replay.write_text(json.dumps(report))
+        with self.assertRaisesRegex(ValueError, 'SOURCE_REPORT_EVENT_COUNT_MISMATCH'):
+            verify(self.snapshot, self.report, 'a'*64, '100', '200', self.source_replay)
+    @patch('engine.alpha_cross_run_replay_v208.offline_evaluate')
+    def test_source_replay_recurrence_tampering_rejected(self, mock):
+        mock.return_value = self.replay
+        report = json.loads(self.source_replay.read_text())
+        report['recurrence_counts'] = {}
+        self.source_replay.write_text(json.dumps(report))
+        with self.assertRaisesRegex(ValueError, 'SOURCE_REPORT_RECURRENCE_MISMATCH'):
+            verify(self.snapshot, self.report, 'a'*64, '100', '200', self.source_replay)
+    @patch('engine.alpha_cross_run_replay_v208.offline_evaluate')
+    def test_source_replay_missing_gap_counts_rejected(self, mock):
+        mock.return_value = self.replay
+        report = json.loads(self.source_replay.read_text())
+        report.pop('gap_counts')
+        self.source_replay.write_text(json.dumps(report))
+        with self.assertRaisesRegex(ValueError, 'SOURCE_REPLAY_GAP_COUNTS_MISSING'):
             verify(self.snapshot, self.report, 'a'*64, '100', '200', self.source_replay)
     def test_missing_snapshot_fails(self):
         with self.assertRaises(FileNotFoundError):
