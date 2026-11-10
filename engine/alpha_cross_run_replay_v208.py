@@ -22,6 +22,14 @@ def verify(snapshot_path, source_report_path, expected_sha256, source_run_id, cu
     source_replay = json.loads(Path(source_replay_path).read_text(encoding='utf-8'))
     if source_replay.get('snapshot_file_sha256') != expected_sha256:
         raise ValueError('SOURCE_REPLAY_DIGEST_MISMATCH')
+    if source_replay.get('event_count') != source.get('replay_event_count'):
+        raise ValueError('SOURCE_REPORT_EVENT_COUNT_MISMATCH')
+    if source_replay.get('recurrence_counts') != source.get('recurrence_counts'):
+        raise ValueError('SOURCE_REPORT_RECURRENCE_MISMATCH')
+    if source_replay.get('history_quality') != source.get('history_quality'):
+        raise ValueError('SOURCE_REPORT_HISTORY_MISMATCH')
+    if source_replay.get('gap_counts') is None:
+        raise ValueError('SOURCE_REPLAY_GAP_COUNTS_MISSING')
     if replay['gap_counts'] != source_replay.get('gap_counts'):
         raise ValueError('CROSS_RUN_GAP_COUNTS_MISMATCH')
     return {
