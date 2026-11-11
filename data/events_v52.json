@@ -1,7 +1,7 @@
 {
   "schema_version": 52,
-  "generated_at_utc": "2026-11-11T02:50:10.733752+00:00",
-  "source_generated_at_utc": "2026-11-11T02:49:12.955154+00:00",
+  "generated_at_utc": "2026-11-11T06:20:39.317430+00:00",
+  "source_generated_at_utc": "2026-11-11T06:19:40.544851+00:00",
   "mode": "event_screening_only_no_push_no_orders",
   "observations": [
     {
@@ -10,16 +10,16 @@
       "4h_support": 72727.3,
       "4h_resistance": 76200.0,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 1.318,
-      "observations": 1
+      "4h_volume_ratio": 1.12,
+      "observations": 0
     },
     {
       "coin": "ETH",
       "status": "scanned",
       "4h_support": 2005.0,
-      "4h_resistance": 2248.0,
+      "4h_resistance": 2246.22,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.524,
+      "4h_volume_ratio": 0.652,
       "observations": 0
     },
     {
@@ -28,16 +28,16 @@
       "4h_support": 669.9,
       "4h_resistance": 702.0,
       "relative_strength_vs_btc": true,
-      "4h_volume_ratio": 0.563,
+      "4h_volume_ratio": 0.794,
       "observations": 0
     },
     {
       "coin": "SOL",
       "status": "scanned",
       "4h_support": 81.23,
-      "4h_resistance": 90.15,
+      "4h_resistance": 90.0,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.861,
+      "4h_volume_ratio": 0.736,
       "observations": 0
     },
     {
@@ -46,25 +46,25 @@
       "4h_support": 49.24,
       "4h_resistance": 52.38,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.593,
+      "4h_volume_ratio": 0.612,
       "observations": 0
     },
     {
       "coin": "LINK",
       "status": "scanned",
       "4h_support": 10.102,
-      "4h_resistance": 10.965,
+      "4h_resistance": 10.948,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.71,
+      "4h_volume_ratio": 0.905,
       "observations": 0
     },
     {
       "coin": "XRP",
       "status": "scanned",
       "4h_support": 1.0311,
-      "4h_resistance": 1.1735,
+      "4h_resistance": 1.1697,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.684,
+      "4h_volume_ratio": 0.664,
       "observations": 0
     },
     {
@@ -73,7 +73,7 @@
       "4h_support": 7.757,
       "4h_resistance": 9.011,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.415,
+      "4h_volume_ratio": 0.993,
       "observations": 0
     },
     {
@@ -82,7 +82,7 @@
       "4h_support": 0.8016,
       "4h_resistance": 0.8697,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.689,
+      "4h_volume_ratio": 1.145,
       "observations": 0
     },
     {
@@ -91,51 +91,34 @@
       "4h_support": 120.81,
       "4h_resistance": 134.68,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.681,
+      "4h_volume_ratio": 0.636,
       "observations": 0
     },
     {
       "coin": "ZEC",
       "status": "scanned",
       "4h_support": 993.43,
-      "4h_resistance": 1297.58,
+      "4h_resistance": 1292.18,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 1.139,
+      "4h_volume_ratio": 0.78,
       "observations": 0
     }
   ],
-  "new_events": [
-    {
-      "id": "BTC:approaching_support:1794340800",
-      "coin": "BTC",
-      "event_type": "approaching_support",
-      "status": "forming_watch",
-      "level_usdt": 72727.3,
-      "reference_price_usdt": 73600.8,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 1.201,
-      "volume_ratio_4h": 1.318,
-      "volume_ratio_1h": 0.997,
-      "volume_confirmed_4h": true,
-      "trend_4h_above_sma233": false,
-      "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": null,
-      "source_4h": "OKX Spot",
-      "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-11-11T00:00:00+00:00",
-      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
-    }
-  ],
+  "new_events": [],
   "summary": {
     "scanned": 11,
     "blocked": 0,
-    "new_events": 1,
-    "forming": 1
+    "new_events": 0,
+    "forming": 0
   },
   "limitations": [
     "Levels are prior 20 4h high/low, not multi-touch validated",
     "Not a TradingView or Binance feed",
     "No automatic notification is connected",
     "Missing BTC crosses must not be treated as strength confirmation"
-  ]
+  ],
+  "liquidity_guard_v546": {
+    "pair": "XRPBTC",
+    "status": "BLOCK"
+  }
 }
