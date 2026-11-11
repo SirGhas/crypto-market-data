@@ -1,10 +1,10 @@
 {
   "schema_version": "5.4.8",
   "mode": "research_only_no_orders_no_push",
-  "generated_at_utc": "2026-11-11T15:13:19.781906+00:00",
+  "generated_at_utc": "2026-11-11T21:59:12.899449+00:00",
   "coins": {
     "ETH": {
-      "score": 35,
+      "score": 20,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -14,15 +14,17 @@
       "risk_reward": null
     },
     "BNB": {
-      "score": 65,
-      "color_band": "yellow_60_69",
-      "original_tier": "tier_2_conditional_watch",
-      "positive_publication_gate": "PASS",
-      "reason_codes": [],
-      "risk_reward": 12.198
+      "score": 42,
+      "color_band": "gray_below_60",
+      "original_tier": "below_threshold_watch_only",
+      "positive_publication_gate": "BLOCK",
+      "reason_codes": [
+        "not_a_qualified_candidate"
+      ],
+      "risk_reward": 0.144
     },
     "SOL": {
-      "score": 35,
+      "score": 20,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -32,25 +34,27 @@
       "risk_reward": null
     },
     "LTC": {
-      "score": 50,
+      "score": 40,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 0.689
+      "risk_reward": 0.679
     },
     "LINK": {
-      "score": 65,
-      "color_band": "yellow_60_69",
-      "original_tier": "tier_2_conditional_watch",
-      "positive_publication_gate": "PASS",
-      "reason_codes": [],
-      "risk_reward": 3.703
+      "score": 54,
+      "color_band": "gray_below_60",
+      "original_tier": "below_threshold_watch_only",
+      "positive_publication_gate": "BLOCK",
+      "reason_codes": [
+        "not_a_qualified_candidate"
+      ],
+      "risk_reward": 2.009
     },
     "XRP": {
-      "score": 30,
+      "score": 23,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -60,35 +64,37 @@
       "risk_reward": null
     },
     "AVAX": {
-      "score": 48,
+      "score": 40,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 0.52
+      "risk_reward": 0.146
     },
     "SUI": {
-      "score": 65,
-      "color_band": "yellow_60_69",
-      "original_tier": "tier_2_conditional_watch",
-      "positive_publication_gate": "PASS",
-      "reason_codes": [],
-      "risk_reward": 11.561
-    },
-    "AAVE": {
-      "score": 31,
+      "score": 43,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": null
+      "risk_reward": 2.426
+    },
+    "AAVE": {
+      "score": 45,
+      "color_band": "gray_below_60",
+      "original_tier": "below_threshold_watch_only",
+      "positive_publication_gate": "BLOCK",
+      "reason_codes": [
+        "not_a_qualified_candidate"
+      ],
+      "risk_reward": 43.838
     },
     "ZEC": {
-      "score": 30,
+      "score": 25,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -101,17 +107,16 @@
   "bands": {
     "green_80_100": [],
     "blue_70_79": [],
-    "yellow_60_69": [
-      "BNB",
-      "LINK",
-      "SUI"
-    ],
+    "yellow_60_69": [],
     "gray_below_60": [
       "ETH",
+      "BNB",
       "SOL",
       "LTC",
+      "LINK",
       "XRP",
       "AVAX",
+      "SUI",
       "AAVE",
       "ZEC"
     ],
@@ -126,7 +131,7 @@
   "summary": {
     "green": 0,
     "blue": 0,
-    "yellow": 3,
+    "yellow": 0,
     "publishable_new_events": 0
   }
 }
