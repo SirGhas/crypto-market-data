@@ -1,5 +1,5 @@
 import unittest
-from phemex_slvon_probe import find_spot_product, validate_rows, probe, normalize_price
+from phemex_slvon_probe import find_spot_product, validate_rows, probe, normalize_price, verify_cross_frame_closes
 
 
 class PhemexSLVONProbeTests(unittest.TestCase):
@@ -55,6 +55,28 @@ class PhemexSLVONProbeTests(unittest.TestCase):
     def test_nonpositive_price_fails_closed(self):
         with self.assertRaisesRegex(ValueError, "INVALID_SCALED_PRICE"):
             normalize_price(0, {"priceScale": 8})
+
+    def test_cross_frame_equal_close_passes(self):
+        frames = {name: {"last_closed_at_utc": "2026-11-10T16:00:00+00:00",
+                         "latest_normalized_close_usdt": "47.64"}
+                  for name in ("15m", "1h", "4h")}
+        self.assertTrue(verify_cross_frame_closes(frames))
+
+    def test_cross_frame_mismatch_rejected(self):
+        frames = {name: {"last_closed_at_utc": "2026-11-10T16:00:00+00:00",
+                         "latest_normalized_close_usdt": price}
+                  for name, price in (("15m", "47.64"), ("1h", "47.63"), ("4h", "47.64"))}
+        with self.assertRaisesRegex(ValueError, "CROSS_FRAME_CLOSE_MISMATCH"):
+            verify_cross_frame_closes(frames)
+
+    def test_different_boundaries_not_compared(self):
+        frames = {name: {"last_closed_at_utc": timestamp,
+                         "latest_normalized_close_usdt": price}
+                  for name, timestamp, price in (
+                      ("15m", "2026-11-10T16:15:00+00:00", "47.64"),
+                      ("1h", "2026-11-10T16:00:00+00:00", "47.63"),
+                      ("4h", "2026-11-10T12:00:00+00:00", "47.62"))}
+        self.assertTrue(verify_cross_frame_closes(frames))
 
     def test_probe_fails_closed_on_network_error(self):
         from unittest.mock import patch
