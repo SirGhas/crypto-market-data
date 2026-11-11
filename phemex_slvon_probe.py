@@ -89,6 +89,18 @@ def normalize_price(raw, product):
     return str(value)
 
 
+def verify_cross_frame_closes(frames):
+    """At matching closed boundaries, candle closes must agree across resolutions."""
+    pairs = (("15m", "1h"), ("1h", "4h"))
+    for short, long in pairs:
+        a, b = frames[short], frames[long]
+        if a["last_closed_at_utc"] != b["last_closed_at_utc"]:
+            continue  # Different closing boundaries: no comparison is valid.
+        if Decimal(a["latest_normalized_close_usdt"]) != Decimal(b["latest_normalized_close_usdt"]):
+            raise ValueError("CROSS_FRAME_CLOSE_MISMATCH")
+    return True
+
+
 def probe(now=None):
     if now is None:
         now = int(dt.datetime.now(dt.timezone.utc).timestamp())
@@ -121,6 +133,7 @@ def probe(now=None):
                 "timestamp": latest[0], "open": latest[3], "high": latest[4],
                 "low": latest[5], "close": latest[6], "volume": latest[7]
             }
+        result["cross_frame_closes_consistent"] = verify_cross_frame_closes(result["frames"])
         result["status"] = "PRICE_SCALE_VERIFIED_VOLUME_SCALE_AND_REFERENCE_PARITY_PENDING"
         result["liquidity_approved"] = False
         result["reference_parity_approved"] = False
