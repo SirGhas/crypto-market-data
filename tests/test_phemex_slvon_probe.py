@@ -60,7 +60,7 @@ class PhemexSLVONProbeTests(unittest.TestCase):
         frames = {name: {"last_closed_at_utc": "2026-11-10T16:00:00+00:00",
                          "latest_normalized_close_usdt": "47.64"}
                   for name in ("15m", "1h", "4h")}
-        self.assertTrue(verify_cross_frame_closes(frames))
+        self.assertEqual(verify_cross_frame_closes(frames)["status"], "NOT_COMPARABLE")
 
     def test_cross_frame_mismatch_rejected(self):
         frames = {name: {"last_closed_at_utc": "2026-11-10T16:00:00+00:00",
