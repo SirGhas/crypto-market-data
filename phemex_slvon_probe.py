@@ -90,15 +90,20 @@ def normalize_price(raw, product):
 
 
 def verify_cross_frame_closes(frames):
-    """At matching closed boundaries, candle closes must agree across resolutions."""
-    pairs = (("15m", "1h"), ("1h", "4h"))
-    for short, long in pairs:
+    """Check equal closing boundaries; never treat skipped comparisons as passes."""
+    comparisons = []
+    for short, long in (("15m", "1h"), ("1h", "4h")):
         a, b = frames[short], frames[long]
         if a["last_closed_at_utc"] != b["last_closed_at_utc"]:
-            continue  # Different closing boundaries: no comparison is valid.
+            comparisons.append({"pair": [short, long], "status": "NOT_COMPARABLE_DIFFERENT_CLOSE_TIME"})
+            continue
         if Decimal(a["latest_normalized_close_usdt"]) != Decimal(b["latest_normalized_close_usdt"]):
             raise ValueError("CROSS_FRAME_CLOSE_MISMATCH")
-    return True
+        comparisons.append({"pair": [short, long], "status": "MATCHED"})
+    return {"status": "VERIFIED" if all(item["status"] == "MATCHED" for item in comparisons)
+            else "PARTIALLY_VERIFIED" if any(item["status"] == "MATCHED" for item in comparisons)
+            else "NOT_COMPARABLE",
+            "comparisons": comparisons}
 
 
 def probe(now=None):
@@ -137,7 +142,7 @@ def probe(now=None):
                 "timestamp": latest[0], "open": latest[3], "high": latest[4],
                 "low": latest[5], "close": latest[6], "volume": latest[7]
             }
-        result["cross_frame_closes_consistent"] = verify_cross_frame_closes(result["frames"])
+        result["cross_frame_close_validation"] = verify_cross_frame_closes(result["frames"])
         result["status"] = "PRICE_SCALE_VERIFIED_VOLUME_SCALE_AND_REFERENCE_PARITY_PENDING"
         result["tehran_timezone"] = "Asia/Tehran"
         result["liquidity_approved"] = False
