@@ -73,7 +73,7 @@ def validate_rows(rows, resolution, now):
             "raw_volume_last_233_zero_candles": sum(v == 0 for v in volumes),
             "last_closed_at_utc": dt.datetime.fromtimestamp(recent[-1] + resolution, dt.timezone.utc).isoformat(),
             "nonzero_volume_last_233": sum(float(clean[t][7]) > 0 for t in recent),
-            "scaled_prices_not_yet_normalized": True}
+            "raw_price_fields_are_exchange_scaled": True}
 
 
 def normalize_price(raw, product):
@@ -127,6 +127,10 @@ def probe(now=None):
             result["frames"][frame] = validate_rows(rows, resolution, now)
             latest = max((r for r in rows if int(r[0]) + resolution <= now - 2), key=lambda r: int(r[0]))
             result["frames"][frame]["latest_normalized_close_usdt"] = normalize_price(latest[6], product)
+            result["frames"][frame]["normalized_price_ohlc_usdt"] = {
+                name: normalize_price(latest[index], product)
+                for name, index in (("open", 3), ("high", 4), ("low", 5), ("close", 6))
+            }
             result["frames"][frame]["volume_scale_verified"] = False
             result["frames"][frame]["notional_volume_usdt_verified"] = False
             result["frames"][frame]["latest_raw_scaled_ohlcv"] = {
@@ -135,6 +139,7 @@ def probe(now=None):
             }
         result["cross_frame_closes_consistent"] = verify_cross_frame_closes(result["frames"])
         result["status"] = "PRICE_SCALE_VERIFIED_VOLUME_SCALE_AND_REFERENCE_PARITY_PENDING"
+        result["tehran_timezone"] = "Asia/Tehran"
         result["liquidity_approved"] = False
         result["reference_parity_approved"] = False
     except Exception as exc:
