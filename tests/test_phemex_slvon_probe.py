@@ -39,7 +39,7 @@ class PhemexSLVONProbeTests(unittest.TestCase):
         self.assertEqual(result["raw_volume_last_233_total"], "233")
         self.assertEqual(result["raw_volume_last_233_zero_candles"], 0)
         self.assertTrue(result["last_closed_at_tehran"].endswith("+03:30"))
-        self.assertTrue(result["scaled_prices_not_yet_normalized"])
+        self.assertTrue(result["raw_price_fields_are_exchange_scaled"])
 
     def test_exchange_price_scale_normalization(self):
         self.assertEqual(normalize_price(4764000000, {"priceScale": 8}), "47.64")
