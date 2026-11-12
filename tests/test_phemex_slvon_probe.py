@@ -38,6 +38,8 @@ class PhemexSLVONProbeTests(unittest.TestCase):
         self.assertEqual(result["closed_candles"], 233)
         self.assertEqual(result["raw_volume_last_233_total"], "233")
         self.assertEqual(result["raw_volume_last_233_zero_candles"], 0)
+        self.assertEqual(result["raw_volume_last_233_max_candle"], "1")
+        self.assertFalse(result["raw_volume_concentration_flag"])
         self.assertTrue(result["last_closed_at_tehran"].endswith("+03:30"))
         self.assertTrue(result["raw_price_fields_are_exchange_scaled"])
 
