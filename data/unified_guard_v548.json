@@ -1,7 +1,7 @@
 {
   "schema_version": "5.4.8",
   "mode": "research_only_no_orders_no_push",
-  "generated_at_utc": "2026-11-12T03:00:10.572912+00:00",
+  "generated_at_utc": "2026-11-12T11:10:12.599500+00:00",
   "coins": {
     "ETH": {
       "score": 15,
@@ -24,7 +24,7 @@
       "risk_reward": null
     },
     "SOL": {
-      "score": 18,
+      "score": 15,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -34,17 +34,17 @@
       "risk_reward": null
     },
     "LTC": {
-      "score": 51,
+      "score": 45,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 4.54
+      "risk_reward": 28.583
     },
     "LINK": {
-      "score": 30,
+      "score": 15,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -54,7 +54,7 @@
       "risk_reward": null
     },
     "XRP": {
-      "score": 15,
+      "score": 20,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -64,27 +64,27 @@
       "risk_reward": null
     },
     "AVAX": {
-      "score": 55,
+      "score": 43,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 0.582
+      "risk_reward": 0.998
     },
     "SUI": {
-      "score": 48,
+      "score": 50,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "not_a_qualified_candidate"
       ],
-      "risk_reward": 2.556
+      "risk_reward": 4.118
     },
     "AAVE": {
-      "score": 36,
+      "score": 23,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -94,7 +94,7 @@
       "risk_reward": null
     },
     "ZEC": {
-      "score": 18,
+      "score": 20,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",

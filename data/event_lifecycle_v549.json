@@ -1,64 +1,52 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-11-12T03:00:10.606977+00:00",
+  "generated_at_utc": "2026-11-12T11:10:12.618861+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
   "new_publishable_events": [
     {
-      "id": "AAVE:4h_closed_breakdown:1794427200",
+      "id": "AAVE:4h_closed_breakdown:1794456000",
       "coin": "AAVE",
       "event_type": "4h_closed_breakdown",
       "status": "forming_watch",
-      "level_usdt": 120.81,
-      "reference_price_usdt": 118.25,
+      "level_usdt": 117.81,
+      "reference_price_usdt": 115.21,
       "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": -2.119,
-      "volume_ratio_4h": 1.299,
-      "volume_ratio_1h": 1.365,
+      "distance_from_level_percent": -2.207,
+      "volume_ratio_4h": 0.929,
+      "volume_ratio_1h": 0.838,
       "volume_confirmed_4h": false,
       "trend_4h_above_sma233": false,
       "lower_tf_confirmed": false,
       "relative_strength_vs_btc": null,
       "source_4h": "OKX Spot",
       "source_1h": "OKX Spot",
-      "closed_4h_at_utc": "2026-11-12T00:00:00+00:00",
+      "closed_4h_at_utc": "2026-11-12T08:00:00+00:00",
       "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
     }
   ],
   "pending_unconfirmed": [
     {
-      "id": "BTC:approaching_support:1794427200",
+      "id": "BTC:approaching_support:1794456000",
       "coin": "BTC",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "BNB:approaching_support:1794427200",
+      "id": "BNB:approaching_support:1794456000",
       "coin": "BNB",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "LTC:approaching_support:1794427200",
+      "id": "LTC:approaching_support:1794456000",
       "coin": "LTC",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "LINK:4h_support_reclaim:1794427200",
-      "coin": "LINK",
-      "event_type": "4h_support_reclaim",
-      "reason": "positive_publication_gate_not_passed"
-    },
-    {
-      "id": "LINK:approaching_support:1794427200",
+      "id": "LINK:approaching_support:1794456000",
       "coin": "LINK",
       "event_type": "approaching_support",
-      "reason": "positive_publication_gate_not_passed"
-    },
-    {
-      "id": "ZEC:4h_support_reclaim:1794427200",
-      "coin": "ZEC",
-      "event_type": "4h_support_reclaim",
       "reason": "positive_publication_gate_not_passed"
     }
   ],
@@ -66,7 +54,7 @@
     "scanned_coins": 11,
     "blocked_scans": 0,
     "new_publishable_events": 1,
-    "pending_unconfirmed": 6
+    "pending_unconfirmed": 4
   },
   "limitations": [
     "No external notification transport configured",
