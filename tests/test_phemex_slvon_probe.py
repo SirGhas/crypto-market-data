@@ -60,7 +60,7 @@ class PhemexSLVONProbeTests(unittest.TestCase):
         frames = {name: {"last_closed_at_utc": "2026-11-10T16:00:00+00:00",
                          "latest_normalized_close_usdt": "47.64"}
                   for name in ("15m", "1h", "4h")}
-        self.assertEqual(verify_cross_frame_closes(frames)["status"], "NOT_COMPARABLE")
+        self.assertEqual(verify_cross_frame_closes(frames)["status"], "VERIFIED")
 
     def test_cross_frame_mismatch_rejected(self):
         frames = {name: {"last_closed_at_utc": "2026-11-10T16:00:00+00:00",
@@ -76,7 +76,7 @@ class PhemexSLVONProbeTests(unittest.TestCase):
                       ("15m", "2026-11-10T16:15:00+00:00", "47.64"),
                       ("1h", "2026-11-10T16:00:00+00:00", "47.63"),
                       ("4h", "2026-11-10T12:00:00+00:00", "47.62"))}
-        self.assertTrue(verify_cross_frame_closes(frames))
+        self.assertEqual(verify_cross_frame_closes(frames)["status"], "NOT_COMPARABLE")
 
     def test_probe_fails_closed_on_network_error(self):
         from unittest.mock import patch
