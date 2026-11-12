@@ -67,9 +67,15 @@ def validate_rows(rows, resolution, now):
     if recent[-1] + resolution > now:
         raise ValueError("FUTURE_CLOSED_KLINE")
     volumes = [Decimal(str(clean[t][7])) for t in recent]
+    total_volume = sum(volumes)
+    largest_volume = max(volumes)
+    concentration = (largest_volume / total_volume) if total_volume > 0 else None
     return {"closed_candles": len(times),
             "last_closed_at_tehran": dt.datetime.fromtimestamp(recent[-1] + resolution, ZoneInfo("Asia/Tehran")).isoformat(),
-            "raw_volume_last_233_total": str(sum(volumes)),
+            "raw_volume_last_233_total": str(total_volume),
+            "raw_volume_last_233_max_candle": str(largest_volume),
+            "raw_volume_max_candle_share": str(concentration) if concentration is not None else None,
+            "raw_volume_concentration_flag": concentration is not None and concentration > Decimal("0.25"),
             "raw_volume_last_233_zero_candles": sum(v == 0 for v in volumes),
             "last_closed_at_utc": dt.datetime.fromtimestamp(recent[-1] + resolution, dt.timezone.utc).isoformat(),
             "nonzero_volume_last_233": sum(float(clean[t][7]) > 0 for t in recent),
