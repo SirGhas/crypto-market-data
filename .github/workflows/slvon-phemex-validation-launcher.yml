@@ -11,7 +11,7 @@ jobs:
       - name: Checkout pinned research candidate
         uses: actions/checkout@v4
         with:
-          ref: b920f9a25aa1e70ec41eb23ec624ad859c7f2c5a
+          ref: 04cdb328c7f2dfe769ef7e2383aa4aedb1a385eb
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
