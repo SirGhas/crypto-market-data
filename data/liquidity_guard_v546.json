@@ -3,16 +3,16 @@
   "status": "BLOCK",
   "reason_codes": [
     "5m:thin_market_nonzero_frequency",
-    "15m:last_closed_candle_zero_volume",
-    "1h:relative_volume_not_confirmed"
+    "1h:relative_volume_not_confirmed",
+    "4h:relative_volume_not_confirmed"
   ],
   "frames": {
     "5m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1794509400",
-      "last_closed_age_seconds": 142.8,
-      "nonzero_fraction": 0.4764,
-      "relative_volume": 0.252,
+      "last_candle_id": "1794528900",
+      "last_closed_age_seconds": 302.8,
+      "nonzero_fraction": 0.5279,
+      "relative_volume": 8.233,
       "status": "BLOCK",
       "reasons": [
         "thin_market_nonzero_frequency"
@@ -20,21 +20,19 @@
     },
     "15m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1794508200",
-      "last_closed_age_seconds": 742.8,
-      "nonzero_fraction": 0.794,
-      "relative_volume": 0.0,
-      "status": "BLOCK",
-      "reasons": [
-        "last_closed_candle_zero_volume"
-      ]
+      "last_candle_id": "1794528000",
+      "last_closed_age_seconds": 602.8,
+      "nonzero_fraction": 0.7983,
+      "relative_volume": 1.8381,
+      "status": "PASS",
+      "reasons": []
     },
     "1h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1794502800",
-      "last_closed_age_seconds": 3442.8,
+      "last_candle_id": "1794524400",
+      "last_closed_age_seconds": 1502.8,
       "nonzero_fraction": 0.867,
-      "relative_volume": 0.0728,
+      "relative_volume": 0.1842,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -42,12 +40,14 @@
     },
     "4h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1794484800",
-      "last_closed_age_seconds": 10642.8,
+      "last_candle_id": "1794513600",
+      "last_closed_age_seconds": 1502.8,
       "nonzero_fraction": 0.9914,
-      "relative_volume": 2.3258,
-      "status": "PASS",
-      "reasons": []
+      "relative_volume": 0.1909,
+      "status": "BLOCK",
+      "reasons": [
+        "relative_volume_not_confirmed"
+      ]
     }
   },
   "thresholds": {
@@ -56,6 +56,6 @@
     "minimum_relative_volume_1h_4h": 1.3
   },
   "schema_version": "5.4.6",
-  "generated_at_utc": "2026-11-12T18:57:22.811679+00:00",
+  "generated_at_utc": "2026-11-13T00:25:02.816853+00:00",
   "mode": "research_only_fail_closed_no_orders"
 }
