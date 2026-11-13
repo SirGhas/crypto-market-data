@@ -1,14 +1,33 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-11-13T16:25:17.105515+00:00",
+  "generated_at_utc": "2026-11-13T22:39:11.792341+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
   "new_publishable_events": [],
-  "pending_unconfirmed": [],
+  "pending_unconfirmed": [
+    {
+      "id": "BTC:approaching_support:1794585600",
+      "coin": "BTC",
+      "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "BNB:approaching_support:1794585600",
+      "coin": "BNB",
+      "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "SOL:approaching_support:1794585600",
+      "coin": "SOL",
+      "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    }
+  ],
   "summary": {
     "scanned_coins": 11,
     "blocked_scans": 0,
     "new_publishable_events": 0,
-    "pending_unconfirmed": 0
+    "pending_unconfirmed": 3
   },
   "limitations": [
     "No external notification transport configured",
