@@ -1,7 +1,7 @@
 {
   "schema_version": "5.4.8",
   "mode": "research_only_no_orders_no_push",
-  "generated_at_utc": "2026-11-14T17:09:03.941411+00:00",
+  "generated_at_utc": "2026-11-14T21:30:55.944916+00:00",
   "coins": {
     "ETH": {
       "score": 40,
@@ -14,7 +14,7 @@
       "risk_reward": null
     },
     "BNB": {
-      "score": 45,
+      "score": 40,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -84,7 +84,7 @@
       "risk_reward": null
     },
     "AAVE": {
-      "score": 40,
+      "score": 33,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -94,7 +94,7 @@
       "risk_reward": null
     },
     "ZEC": {
-      "score": 36,
+      "score": 40,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
