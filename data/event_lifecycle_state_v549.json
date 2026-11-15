@@ -176,6 +176,16 @@
     "AVAX:4h_closed_breakdown:1794672000",
     "SUI:4h_closed_breakdown:1794672000",
     "AAVE:4h_closed_breakdown:1794672000",
-    "ZEC:4h_closed_breakdown:1794672000"
+    "ZEC:4h_closed_breakdown:1794672000",
+    "BTC:4h_closed_breakdown:1794686400",
+    "ETH:4h_closed_breakdown:1794686400",
+    "BNB:4h_closed_breakdown:1794686400",
+    "SOL:4h_closed_breakdown:1794686400",
+    "LTC:4h_closed_breakdown:1794686400",
+    "LINK:4h_closed_breakdown:1794686400",
+    "XRP:4h_closed_breakdown:1794686400",
+    "AVAX:4h_closed_breakdown:1794686400",
+    "SUI:4h_closed_breakdown:1794686400",
+    "AAVE:4h_closed_breakdown:1794686400"
   ]
 }
