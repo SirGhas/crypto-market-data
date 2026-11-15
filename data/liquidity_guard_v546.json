@@ -2,34 +2,37 @@
   "pair": "XRPBTC",
   "status": "BLOCK",
   "reason_codes": [
+    "5m:thin_market_nonzero_frequency",
     "1h:relative_volume_not_confirmed",
     "4h:relative_volume_not_confirmed"
   ],
   "frames": {
     "5m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1794734400",
-      "last_closed_age_seconds": 129.4,
-      "nonzero_fraction": 0.7039,
-      "relative_volume": 0.3176,
-      "status": "PASS",
-      "reasons": []
+      "last_candle_id": "1794762300",
+      "last_closed_age_seconds": 115.1,
+      "nonzero_fraction": 0.618,
+      "relative_volume": 2.7363,
+      "status": "BLOCK",
+      "reasons": [
+        "thin_market_nonzero_frequency"
+      ]
     },
     "15m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1794733200",
-      "last_closed_age_seconds": 729.4,
-      "nonzero_fraction": 0.9013,
-      "relative_volume": 1.3704,
+      "last_candle_id": "1794761100",
+      "last_closed_age_seconds": 715.1,
+      "nonzero_fraction": 0.9142,
+      "relative_volume": 1.1123,
       "status": "PASS",
       "reasons": []
     },
     "1h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1794729600",
-      "last_closed_age_seconds": 1629.4,
+      "last_candle_id": "1794758400",
+      "last_closed_age_seconds": 715.1,
       "nonzero_fraction": 0.8712,
-      "relative_volume": 0.0455,
+      "relative_volume": 0.0349,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -37,10 +40,10 @@
     },
     "4h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1794715200",
-      "last_closed_age_seconds": 5229.4,
+      "last_candle_id": "1794744000",
+      "last_closed_age_seconds": 4315.1,
       "nonzero_fraction": 0.9914,
-      "relative_volume": 0.0265,
+      "relative_volume": 0.126,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -53,6 +56,6 @@
     "minimum_relative_volume_1h_4h": 1.3
   },
   "schema_version": "5.4.6",
-  "generated_at_utc": "2026-11-15T09:27:09.372498+00:00",
+  "generated_at_utc": "2026-11-15T17:11:55.138710+00:00",
   "mode": "research_only_fail_closed_no_orders"
 }
