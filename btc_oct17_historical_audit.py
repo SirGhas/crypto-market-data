@@ -3,7 +3,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import Request, urlopen
-from causal_sma_backtest import run_backtest
+from paired_historical_benchmark import compare
 
 CUTOFF=datetime(2026,10,18,0,0,0,tzinfo=timezone.utc)
 START_MS=int(datetime(2026,9,1,tzinfo=timezone.utc).timestamp()*1000)
@@ -38,9 +38,9 @@ def main():
             "execution_allowed":False,"status":"BLOCKED"}
     try:
         source,candles=fetch()
-        result=run_backtest(candles,CUTOFF,fast=5,slow=20,horizon=4,fee_bps=10)
+        result=compare(candles,CUTOFF,factors=None,fast=5,slow=20,horizon=4,fee_bps=10)
         output.update({"source":source,"data_candles":len(candles),"result":result,
-                       "status":"EVALUATED" if result["evaluated"] else "NO_EVALUABLE_SIGNAL"})
+                       "status":"EVALUATED" if result["baseline"]["evaluated"] else "NO_EVALUABLE_SIGNAL"})
     except Exception as exc:
         output["reason"]=str(exc)[:400]
     path.write_text(json.dumps(output,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
