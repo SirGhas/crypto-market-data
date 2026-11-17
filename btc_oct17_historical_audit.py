@@ -25,7 +25,7 @@ def fetch():
             if not isinstance(rows,list) or not rows or not all(isinstance(x,list) and len(x)>=7 for x in rows):
                 raise ValueError("INVALID_KLINES")
             candles=[{"closed_at_utc":datetime.fromtimestamp((int(r[6])+1)/1000,timezone.utc).isoformat(),
-                      "close":str(r[4]),"high":str(r[2]),"low":str(r[3]),"volume":str(r[5])} for r in rows]
+                      "close":str(r[4]),"high":str(r[2]),"low":str(r[3]),"volume":str(r[5]) for r in rows]
             if not any(datetime.fromisoformat(c["closed_at_utc"]).date().isoformat()=="2026-10-18" for c in candles):
                 raise ValueError("CUTOFF_DATE_NOT_IN_DATA")
             return source,candles
