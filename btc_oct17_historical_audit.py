@@ -5,6 +5,7 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 from paired_historical_benchmark import compare
 from full_engine_acceptance import assess, write_report
+from ohlcv_factor_evidence import evidence_from_ohlcv
 
 CUTOFF=datetime(2026,10,18,0,0,0,tzinfo=timezone.utc)
 START_MS=int(datetime(2026,9,1,tzinfo=timezone.utc).timestamp()*1000)
@@ -24,7 +25,7 @@ def fetch():
             if not isinstance(rows,list) or not rows or not all(isinstance(x,list) and len(x)>=7 for x in rows):
                 raise ValueError("INVALID_KLINES")
             candles=[{"closed_at_utc":datetime.fromtimestamp((int(r[6])+1)/1000,timezone.utc).isoformat(),
-                      "close":str(r[4])} for r in rows]
+                      "close":str(r[4]),"high":str(r[2]),"low":str(r[3]),"volume":str(r[5])} for r in rows]
             if not any(datetime.fromisoformat(c["closed_at_utc"]).date().isoformat()=="2026-10-18" for c in candles):
                 raise ValueError("CUTOFF_DATE_NOT_IN_DATA")
             return source,candles
@@ -41,7 +42,8 @@ def main():
         source,candles=fetch()
         result=compare(candles,CUTOFF,factors=None,fast=5,slow=20,horizon=4,fee_bps=10)
         observed=CUTOFF.isoformat()
-        components={"market_ohlcv":{"status":"PASS","as_of_utc":observed,
+        components=evidence_from_ohlcv(candles,CUTOFF,source)
+        components["market_ohlcv"]={"status":"PASS","as_of_utc":observed,
                     "evidence":{"source":source,"past_candles":result["baseline"]["past_candles"]}}}
         if result["baseline"]["past_candles"]>=21:
             components["technical_trend"]={"status":"PASS","as_of_utc":observed,
