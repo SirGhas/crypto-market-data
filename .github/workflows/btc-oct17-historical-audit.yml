@@ -36,3 +36,17 @@ jobs:
             artifacts/full-engine-acceptance/full_engine_acceptance.html
           if-no-files-found: warn
           retention-days: 30
+      - name: Enforce full engine acceptance verdict
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("artifacts/full-engine-acceptance/full_engine_acceptance.json")
+          if not p.exists():
+              raise SystemExit("FAIL: acceptance report missing")
+          audit=json.loads(p.read_text(encoding="utf-8"))
+          print("FULL_ENGINE_ACCEPTANCE:",audit["verdict"],audit["passed"],"/",audit["total"])
+          if audit["verdict"]!="PASS":
+              raise SystemExit("FAIL: full engine acceptance requirements not met")
+          PY
