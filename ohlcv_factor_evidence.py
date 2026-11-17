@@ -41,10 +41,6 @@ def evidence_from_ohlcv(rows, cutoff, source):
                             "metrics":{k:str(v) for k,v in metrics.items()}}}
     return {
         "momentum":item({"rsi14":rsi,"last_close":closes[-1]}),
-        "volume_liquidity":item({"volume":volumes[-1],"relative_volume_20":relative_volume,
-                                  "note":"Volume evidence only; liquidity spread not independently verified"}),
-        "multi_timeframe":item({"daily_sma5":sum(closes[-5:])/5,
-                                "daily_sma20":sum(closes[-20:])/20,
-                                "weekly_proxy_sma4":sum(closes[-28:])/28,
-                                "note":"Weekly proxy from daily closes, not independent weekly feed"}),
+        "volume_liquidity":{"status":"FAIL","reason":"VOLUME_AVAILABLE_BUT_SPREAD_AND_DEPTH_UNVERIFIED"},
+        "multi_timeframe":{"status":"FAIL","reason":"INDEPENDENT_INTRADAY_AND_WEEKLY_FEEDS_NOT_VERIFIED"},
     }
