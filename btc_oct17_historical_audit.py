@@ -5,7 +5,7 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 from causal_sma_backtest import run_backtest
 
-CUTOFF=datetime(2026,10,17,23,59,59,tzinfo=timezone.utc)
+CUTOFF=datetime(2026,10,18,0,0,0,tzinfo=timezone.utc)
 START_MS=int(datetime(2026,9,1,tzinfo=timezone.utc).timestamp()*1000)
 END_MS=int(datetime(2026,11,10,tzinfo=timezone.utc).timestamp()*1000)
 SOURCES=[
@@ -24,7 +24,7 @@ def fetch():
                 raise ValueError("INVALID_KLINES")
             candles=[{"closed_at_utc":datetime.fromtimestamp((int(r[6])+1)/1000,timezone.utc).isoformat(),
                       "close":str(r[4])} for r in rows]
-            if not any(datetime.fromisoformat(c["closed_at_utc"]).date().isoformat()=="2026-10-17" for c in candles):
+            if not any(datetime.fromisoformat(c["closed_at_utc"]).date().isoformat()=="2026-10-18" for c in candles):
                 raise ValueError("CUTOFF_DATE_NOT_IN_DATA")
             return source,candles
         except Exception as exc:
