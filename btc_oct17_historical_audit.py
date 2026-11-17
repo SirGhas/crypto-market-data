@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import Request, urlopen
 from paired_historical_benchmark import compare
+from full_engine_acceptance import assess, write_report
 
 CUTOFF=datetime(2026,10,18,0,0,0,tzinfo=timezone.utc)
 START_MS=int(datetime(2026,9,1,tzinfo=timezone.utc).timestamp()*1000)
@@ -39,10 +40,28 @@ def main():
     try:
         source,candles=fetch()
         result=compare(candles,CUTOFF,factors=None,fast=5,slow=20,horizon=4,fee_bps=10)
+        observed=CUTOFF.isoformat()
+        components={"market_ohlcv":{"status":"PASS","as_of_utc":observed,
+                    "evidence":{"source":source,"past_candles":result["baseline"]["past_candles"]}}}
+        if result["baseline"]["past_candles"]>=21:
+            components["technical_trend"]={"status":"PASS","as_of_utc":observed,
+                "evidence":{"strategy":"SMA_CROSSOVER_BASELINE",
+                            "signal":result["baseline"]["signal"]}}
+        components["signal_decision"]={"status":"FAIL","reason":"MULTIFACTOR_ENGINE_NOT_CONNECTED"}
+        components["historical_outcome"]={"status":"FAIL","reason":"NO_EVALUABLE_SIGNAL_OR_INSUFFICIENT_VALIDATION"}
+        audit=assess(components,CUTOFF)
+        write_report(audit,"artifacts/full-engine-acceptance")
+        output["acceptance"]={"verdict":audit["verdict"],"passed":audit["passed"],
+                              "total":audit["total"],"failed_components":audit["failed_components"]}
         output.update({"source":source,"data_candles":len(candles),"result":result,
                        "status":"EVALUATED" if result["baseline"]["evaluated"] else "NO_EVALUABLE_SIGNAL"})
     except Exception as exc:
         output["reason"]=str(exc)[:400]
+    if "acceptance" not in output:
+        audit=assess({},CUTOFF)
+        write_report(audit,"artifacts/full-engine-acceptance")
+        output["acceptance"]={"verdict":audit["verdict"],"passed":audit["passed"],
+                              "total":audit["total"],"failed_components":audit["failed_components"]}
     path.write_text(json.dumps(output,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     print(json.dumps(output,ensure_ascii=False))
     if output["status"]=="BLOCKED":
