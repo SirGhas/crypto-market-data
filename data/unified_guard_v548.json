@@ -1,7 +1,7 @@
 {
   "schema_version": "5.4.8",
   "mode": "research_only_no_orders_no_push",
-  "generated_at_utc": "2026-11-16T20:30:13.056095+00:00",
+  "generated_at_utc": "2026-11-17T03:55:02.446343+00:00",
   "coins": {
     "ETH": {
       "score": 17,
@@ -14,7 +14,7 @@
       "risk_reward": null
     },
     "BNB": {
-      "score": 20,
+      "score": 27,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -24,7 +24,7 @@
       "risk_reward": null
     },
     "SOL": {
-      "score": 15,
+      "score": 17,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -34,7 +34,7 @@
       "risk_reward": null
     },
     "LTC": {
-      "score": 20,
+      "score": 17,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -44,7 +44,7 @@
       "risk_reward": null
     },
     "LINK": {
-      "score": 17,
+      "score": 32,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -54,17 +54,17 @@
       "risk_reward": null
     },
     "XRP": {
-      "score": 17,
+      "score": 47,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
       "reason_codes": [
         "xrp_btc_liquidity_unconfirmed"
       ],
-      "risk_reward": null
+      "risk_reward": 7.126
     },
     "AVAX": {
-      "score": 33,
+      "score": 15,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -74,7 +74,7 @@
       "risk_reward": null
     },
     "SUI": {
-      "score": 15,
+      "score": 17,
       "color_band": "gray_below_60",
       "original_tier": "below_threshold_watch_only",
       "positive_publication_gate": "BLOCK",
@@ -101,7 +101,7 @@
       "reason_codes": [
         "zec_btc_cross_not_verified_okx"
       ],
-      "risk_reward": 15.054
+      "risk_reward": 13.908
     }
   },
   "bands": {
