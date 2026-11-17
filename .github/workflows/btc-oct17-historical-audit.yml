@@ -1,0 +1,29 @@
+name: BTC October 17 Historical Paper Audit
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'btc_oct17_historical_audit.py'
+      - 'causal_sma_backtest.py'
+      - '.github/workflows/btc-oct17-historical-audit.yml'
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Historical BTC paper replay
+        run: python btc_oct17_historical_audit.py
+      - name: Upload audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: btc-oct17-historical-audit
+          path: artifacts/btc_2026_10_17_historical_audit.json
+          if-no-files-found: warn
+          retention-days: 30
