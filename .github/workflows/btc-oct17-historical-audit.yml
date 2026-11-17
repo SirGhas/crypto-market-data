@@ -6,6 +6,8 @@ on:
       - 'btc_oct17_historical_audit.py'
       - 'causal_sma_backtest.py'
       - 'paired_historical_benchmark.py'
+      - 'full_engine_acceptance.py'
+      - 'tests/test_full_engine_acceptance.py'
       - 'tests/test_paired_historical_benchmark.py'
       - '.github/workflows/btc-oct17-historical-audit.yml'
 permissions:
@@ -20,7 +22,9 @@ jobs:
         with:
           python-version: '3.11'
       - name: Paired model unit tests
-        run: python -m unittest tests.test_causal_sma_backtest tests.test_paired_historical_benchmark -v
+        run: python -m unittest tests.test_causal_sma_backtest tests.test_paired_historical_benchmark tests.test_full_engine_acceptance -v
+      - name: Full engine acceptance audit (informational until coverage complete)
+        run: python full_engine_acceptance.py
       - name: Historical BTC paper replay
         run: python btc_oct17_historical_audit.py
       - name: Upload audit evidence
@@ -28,6 +32,9 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: btc-oct17-historical-audit
-          path: artifacts/btc_2026_10_17_historical_audit.json
+          path: |
+            artifacts/btc_2026_10_17_historical_audit.json
+            artifacts/full-engine-acceptance/full_engine_acceptance.json
+            artifacts/full-engine-acceptance/full_engine_acceptance.html
           if-no-files-found: warn
           retention-days: 30
