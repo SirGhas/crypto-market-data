@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>داشبورد موتور تحلیل بازار</title><style>
+:root{color-scheme:dark;font-family:Tahoma,Arial,sans-serif}*{box-sizing:border-box}body{margin:0;background:#0b1220;color:#edf3fa;line-height:1.8}main{max-width:1100px;margin:auto;padding:24px}h1{font-size:clamp(23px,4vw,34px);margin:0}p{color:#adbed0}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.pill{border:1px solid #334a63;border-radius:99px;padding:3px 13px;color:#b4c4d6}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(225px,1fr));gap:14px;margin:24px 0}.card{background:#172438;border:1px solid #2a3c55;border-radius:15px;padding:20px}.card strong{font-size:24px}.muted{color:#a5b6ca}.buttons{display:flex;gap:10px;flex-wrap:wrap}a.btn,button{font:inherit;background:#197cce;color:#fff;text-decoration:none;padding:10px 17px;border:0;border-radius:9px;cursor:pointer}a.secondary{background:#30425b}a:focus-visible,button:focus-visible{outline:3px solid #fff}table{width:100%;border-collapse:collapse}td,th{padding:12px;border-bottom:1px solid #34445a;text-align:right}td{word-break:break-word}.ok{color:#58d6a2}.bad{color:#ff8e8e}.warn{color:#ffd080}small{color:#a5b6ca}.notice{border-right:4px solid #e3ad48;padding:10px 15px;background:#312b22}#refresh{background:#30425b} @media(max-width:600px){main{padding:14px}table{font-size:12px}td,th{padding:8px}}
+</style></head><body><main>
+<header class="top"><div><h1>موتور تحلیل بازار</h1><p>مرکز اجرای آزمون و مشاهده وضعیت GitHub Actions</p></div><span class="pill" id="sync">در حال دریافت وضعیت...</span></header>
+<div class="notice">این داشبورد فعلاً اجرای دستی را از طریق صفحه امن GitHub آغاز می‌کند. برای امنیت، هیچ توکن دسترسی در مرورگر ذخیره یا درخواست نمی‌شود. موفقیت اجرای کد به معنای قبولی آزمون موتور نیست.</div>
+<section class="grid"><div class="card"><span class="muted">آخرین اجرای آزمون تاریخی</span><div><strong id="run">—</strong></div><small id="runTime">—</small></div><div class="card"><span class="muted">وضعیت اجرای GitHub</span><div><strong id="ci">—</strong></div><small>وضعیت فنی اجرای گردش‌کار</small></div><div class="card"><span class="muted">پذیرش کامل موتور</span><div><strong id="acceptance" class="warn">تأیید نشده</strong></div><small>مستقل از موفقیت گردش‌کار</small></div></section>
+<section class="card"><h2>اجرای موتور</h2><p>برای شروع آزمون جدید، صفحه گردش‌کار را باز کن، گزینه «Run workflow» را بزن و شاخه موردنظر را انتخاب کن.</p><div class="buttons"><a class="btn" target="_blank" rel="noopener" href="https://github.com/SirGhas/crypto-market-data/actions/workflows/btc-oct17-historical-audit.yml">اجرای آزمون تاریخی</a><a class="btn secondary" target="_blank" rel="noopener" href="https://github.com/SirGhas/crypto-market-data/actions">تمام اجراها</a><button id="refresh">به‌روزرسانی وضعیت</button></div></section>
+<section class="card"><h2>نتایج و شواهد</h2><p id="summary">آخرین اجرا را برای دریافت وضعیت بررسی کن.</p><div id="links" class="buttons"></div><p><small>گزارش کامل HTML و JSON در بخش Artifacts اجرای مربوط در GitHub قرار می‌گیرد. برای دیدن محتوای آن باید فایل گزارش را باز کنی؛ داشبورد فعلاً نتیجه داخلی فایل را از روی وضعیت سبز GitHub حدس نمی‌زند.</small></p></section>
+<section class="card"><h2>پوشش آزمون پذیرش</h2><table><thead><tr><th>بخش</th><th>وضعیت</th></tr></thead><tbody id="components"></tbody></table></section>
+<footer><small>منبع وضعیت: رابط عمومی GitHub API | منطقه زمانی نمایش: تهران | معاملات واقعی غیرفعال</small></footer>
+</main><script>
+"use strict";
+const repo="SirGhas/crypto-market-data", workflow="btc-oct17-historical-audit.yml";
+const parts=["داده بازار","روند تکنیکال","مومنتوم","حجم و نقدشوندگی","چندبازه زمانی","بین‌بازاری","اقتصاد کلان","اخبار و ژئوپلیتیک","مدیریت ریسک","تصمیم معاملاتی","هشدارها","نمایش گزارش","نتیجه تاریخی"];
+const el=id=>document.getElementById(id);
+el("components").innerHTML=parts.map(s=>"<tr><td>"+s+"</td><td class='warn'>در انتظار شواهد پذیرش</td></tr>").join("");
+function safeLink(url,label){const a=document.createElement("a");a.className="btn secondary";a.href=url;a.target="_blank";a.rel="noopener";a.textContent=label;return a}
+async function refresh(){
+ el("sync").textContent="در حال دریافت...";el("refresh").disabled=true;
+ try{
+ const url="https://api.github.com/repos/"+repo+"/actions/workflows/"+workflow+"/runs?per_page=10";
+ const response=await fetch(url,{headers:{"Accept":"application/vnd.github+json"}});
+ if(!response.ok)throw Error("HTTP "+response.status);
+ const data=await response.json();const run=(data.workflow_runs||[])[0];
+ if(!run){el("sync").textContent="اجرایی یافت نشد";return}
+ el("run").textContent="#"+run.run_number;
+ el("runTime").textContent=new Intl.DateTimeFormat("fa-IR",{timeZone:"Asia/Tehran",dateStyle:"medium",timeStyle:"short"}).format(new Date(run.created_at));
+ const success=run.conclusion==="success";el("ci").textContent=run.status==="completed"?(success?"موفق":run.conclusion||"نامشخص"):"در حال اجرا";
+ el("ci").className=success?"ok":run.status==="completed"?"bad":"warn";
+ el("acceptance").textContent="نیازمند خواندن گزارش پذیرش";
+ el("summary").textContent="اجرای "+run.run_number+" از نظر GitHub: "+(run.conclusion||run.status)+". نتیجه آزمون پذیرش باید از فایل گزارش استخراج شود.";
+ const links=el("links");links.replaceChildren(safeLink(run.html_url,"مشاهده اجرای اخیر"),safeLink(run.html_url+"#artifacts","مشاهده گزارش‌ها"));
+ el("sync").textContent="به‌روزرسانی شد";
+ }catch(e){el("sync").textContent="خطا در دریافت وضعیت";el("summary").textContent="دریافت وضعیت ممکن نشد: "+e.message}
+ finally{el("refresh").disabled=false}
+}
+el("refresh").addEventListener("click",refresh);refresh();
+</script></body></html>
