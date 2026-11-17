@@ -1,6 +1,13 @@
 name: Phemex SLVON Read-only Feed Probe
 on:
   workflow_dispatch:
+  pull_request:
+    paths:
+      - 'phemex_slvon_probe.py'
+      - 'tokenized_metals_registry.py'
+      - 'tests/test_phemex_slvon_probe.py'
+      - 'tests/test_tokenized_metals_registry.py'
+      - '.github/workflows/phemex-slvon-probe.yml'
 permissions:
   contents: read
 jobs:
