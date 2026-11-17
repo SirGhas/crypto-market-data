@@ -5,6 +5,8 @@ on:
     paths:
       - 'btc_oct17_historical_audit.py'
       - 'causal_sma_backtest.py'
+      - 'paired_historical_benchmark.py'
+      - 'tests/test_paired_historical_benchmark.py'
       - '.github/workflows/btc-oct17-historical-audit.yml'
 permissions:
   contents: read
@@ -17,6 +19,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Paired model unit tests
+        run: python -m unittest tests.test_causal_sma_backtest tests.test_paired_historical_benchmark -v
       - name: Historical BTC paper replay
         run: python btc_oct17_historical_audit.py
       - name: Upload audit evidence
