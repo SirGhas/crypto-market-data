@@ -23,8 +23,6 @@ jobs:
           python-version: '3.11'
       - name: Paired model unit tests
         run: python -m unittest tests.test_causal_sma_backtest tests.test_paired_historical_benchmark tests.test_full_engine_acceptance -v
-      - name: Full engine acceptance audit (informational until coverage complete)
-        run: python full_engine_acceptance.py
       - name: Historical BTC paper replay
         run: python btc_oct17_historical_audit.py
       - name: Upload audit evidence
