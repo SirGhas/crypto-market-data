@@ -1,6 +1,20 @@
 name: Phemex SLVON Read-only Feed Probe
+run-name: "SLVON-FEED | ${{ inputs.focus || 'CI regression / changed code' }} | #${{ github.run_number }} | ${{ github.ref_name }}"
 on:
   workflow_dispatch:
+    inputs:
+      focus:
+        description: "Change log: what does this run validate?"
+        required: true
+        type: choice
+        default: "Phemex SLVON market feed"
+        options:
+          - "Phemex SLVON market feed"
+          - "Market-data validation"
+          - "Paper signal gate"
+          - "Journal and performance"
+          - "Historical replay safeguards"
+          - "Regression / bug fix"
   pull_request:
     paths:
       - 'phemex_slvon_probe.py'
@@ -25,6 +39,17 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
+      - name: Record experiment in GitHub run summary
+        env:
+          FOCUS: ${{ inputs.focus || 'Automatic regression after code change' }}
+        run: |
+          echo "## Experiment change log" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Workflow: ${{ github.workflow }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- GitHub run: #${{ github.run_number }} (attempt ${{ github.run_attempt }})" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Focus: $FOCUS" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Branch: ${{ github.ref_name }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Commit: \`${{ github.sha }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Trigger: ${{ github.event_name }}" >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
