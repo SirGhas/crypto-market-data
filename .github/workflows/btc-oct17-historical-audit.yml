@@ -11,6 +11,7 @@ on:
         options:
           - "Full-engine acceptance"
           - "Historical BTC replay"
+          - "TEST-018 October walk-forward"
           - "RSI and momentum"
           - "Volume and liquidity"
           - "Multi-timeframe signals"
@@ -25,6 +26,8 @@ on:
       - 'paired_historical_benchmark.py'
       - 'full_engine_acceptance.py'
       - 'ohlcv_factor_evidence.py'
+      - 'walkforward_audit.py'
+      - 'tests/test_walkforward_audit.py'
       - 'tests/test_ohlcv_factor_evidence.py'
       - 'tests/test_full_engine_acceptance.py'
       - 'tests/test_paired_historical_benchmark.py'
@@ -52,7 +55,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Paired model unit tests
-        run: python -m unittest tests.test_causal_sma_backtest tests.test_paired_historical_benchmark tests.test_full_engine_acceptance tests.test_ohlcv_factor_evidence -v
+        run: python -m unittest tests.test_causal_sma_backtest tests.test_paired_historical_benchmark tests.test_full_engine_acceptance tests.test_ohlcv_factor_evidence tests.test_walkforward_audit -v
       - name: Historical BTC paper replay
         run: python btc_oct17_historical_audit.py
       - name: Upload audit evidence
