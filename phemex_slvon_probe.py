@@ -67,10 +67,17 @@ def validate_rows(rows, resolution, now):
     if recent[-1] + resolution > now:
         raise ValueError("FUTURE_CLOSED_KLINE")
     volumes = [Decimal(str(clean[t][7])) for t in recent]
+    # Diagnostic only: raw exchange units are NOT a validated asset quantity.
+    zero_count = sum(v == 0 for v in volumes)
+    total_raw = sum(volumes)
+    volume_quality = ("ALL_ZERO" if zero_count == len(volumes) else
+                      "INTERMITTENT_ZERO" if zero_count else "NONZERO_RAW_UNITS_UNVERIFIED")
     return {"closed_candles": len(times),
             "last_closed_at_tehran": dt.datetime.fromtimestamp(recent[-1] + resolution, ZoneInfo("Asia/Tehran")).isoformat(),
-            "raw_volume_last_233_total": str(sum(volumes)),
-            "raw_volume_last_233_zero_candles": sum(v == 0 for v in volumes),
+            "raw_volume_last_233_total": str(total_raw),
+            "raw_volume_quality": volume_quality,
+            "raw_volume_units_verified": False,
+            "raw_volume_last_233_zero_candles": zero_count,
             "last_closed_at_utc": dt.datetime.fromtimestamp(recent[-1] + resolution, dt.timezone.utc).isoformat(),
             "nonzero_volume_last_233": sum(float(clean[t][7]) > 0 for t in recent),
             "raw_price_fields_are_exchange_scaled": True}
