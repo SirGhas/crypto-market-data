@@ -6,6 +6,7 @@ from urllib.request import Request, urlopen
 from paired_historical_benchmark import compare
 from full_engine_acceptance import assess, write_report
 from ohlcv_factor_evidence import evidence_from_ohlcv
+from walkforward_audit import audit_window
 
 CUTOFF=datetime(2026,10,18,0,0,0,tzinfo=timezone.utc)
 START_MS=int(datetime(2026,9,1,tzinfo=timezone.utc).timestamp()*1000)
@@ -41,6 +42,7 @@ def main():
     try:
         source,candles=fetch()
         result=compare(candles,CUTOFF,factors=None,fast=5,slow=20,horizon=4,fee_bps=10)
+        walkforward=audit_window(candles,"2026-10-01","2026-10-31",fast=5,slow=20,horizon=4,fee_bps=10)
         observed=CUTOFF.isoformat()
         components=evidence_from_ohlcv(candles,CUTOFF,source)
         components["market_ohlcv"]={"status":"PASS","as_of_utc":observed,
@@ -56,6 +58,7 @@ def main():
         output["acceptance"]={"verdict":audit["verdict"],"passed":audit["passed"],
                               "total":audit["total"],"failed_components":audit["failed_components"]}
         output.update({"source":source,"data_candles":len(candles),"result":result,
+                       "walkforward_october_2026":walkforward,
                        "status":"EVALUATED" if result["baseline"]["evaluated"] else "NO_EVALUABLE_SIGNAL"})
     except Exception as exc:
         output["reason"]=str(exc)[:400]
