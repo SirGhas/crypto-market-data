@@ -3,53 +3,48 @@
   "status": "BLOCK",
   "reason_codes": [
     "5m:thin_market_nonzero_frequency",
-    "5m:last_closed_candle_zero_volume",
-    "15m:last_closed_candle_zero_volume",
-    "4h:relative_volume_not_confirmed"
+    "1h:relative_volume_not_confirmed"
   ],
   "frames": {
     "5m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1794975300",
-      "last_closed_age_seconds": 120.5,
-      "nonzero_fraction": 0.485,
-      "relative_volume": 0.0,
+      "last_candle_id": "1795009800",
+      "last_closed_age_seconds": 262.8,
+      "nonzero_fraction": 0.4464,
+      "relative_volume": 0.2444,
       "status": "BLOCK",
       "reasons": [
-        "thin_market_nonzero_frequency",
-        "last_closed_candle_zero_volume"
+        "thin_market_nonzero_frequency"
       ]
     },
     "15m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1794974400",
-      "last_closed_age_seconds": 420.5,
-      "nonzero_fraction": 0.8155,
-      "relative_volume": 0.0,
-      "status": "BLOCK",
-      "reasons": [
-        "last_closed_candle_zero_volume"
-      ]
-    },
-    "1h": {
-      "source": "Gate.io Spot",
-      "last_candle_id": "1794970800",
-      "last_closed_age_seconds": 1320.5,
-      "nonzero_fraction": 0.9742,
-      "relative_volume": 3.4211,
+      "last_candle_id": "1795008600",
+      "last_closed_age_seconds": 862.8,
+      "nonzero_fraction": 0.8112,
+      "relative_volume": 0.435,
       "status": "PASS",
       "reasons": []
     },
-    "4h": {
+    "1h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1794960000",
-      "last_closed_age_seconds": 1320.5,
-      "nonzero_fraction": 0.9914,
-      "relative_volume": 0.072,
+      "last_candle_id": "1795003200",
+      "last_closed_age_seconds": 3562.8,
+      "nonzero_fraction": 0.9957,
+      "relative_volume": 0.0976,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
       ]
+    },
+    "4h": {
+      "source": "Gate.io Spot",
+      "last_candle_id": "1794988800",
+      "last_closed_age_seconds": 7162.8,
+      "nonzero_fraction": 0.9914,
+      "relative_volume": 1.5136,
+      "status": "PASS",
+      "reasons": []
     }
   },
   "thresholds": {
@@ -58,6 +53,6 @@
     "minimum_relative_volume_1h_4h": 1.3
   },
   "schema_version": "5.4.6",
-  "generated_at_utc": "2026-11-18T04:22:00.495961+00:00",
+  "generated_at_utc": "2026-11-18T13:59:22.795938+00:00",
   "mode": "research_only_fail_closed_no_orders"
 }

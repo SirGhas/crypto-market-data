@@ -1,33 +1,35 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-11-18T04:22:00.617422+00:00",
+  "generated_at_utc": "2026-11-18T13:59:22.893838+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
-  "new_publishable_events": [],
-  "pending_unconfirmed": [
+  "new_publishable_events": [
     {
-      "id": "BNB:approaching_resistance:1794960000",
-      "coin": "BNB",
-      "event_type": "approaching_resistance",
-      "reason": "positive_publication_gate_not_passed"
-    },
-    {
-      "id": "SOL:approaching_resistance:1794960000",
-      "coin": "SOL",
-      "event_type": "approaching_resistance",
-      "reason": "positive_publication_gate_not_passed"
-    },
-    {
-      "id": "XRP:approaching_resistance:1794960000",
+      "id": "XRP:4h_resistance_rejection:1794988800",
       "coin": "XRP",
-      "event_type": "approaching_resistance",
-      "reason": "positive_publication_gate_not_passed"
+      "event_type": "4h_resistance_rejection",
+      "status": "forming_watch",
+      "level_usdt": 1.0069,
+      "reference_price_usdt": 0.9831,
+      "reference_price_kind": "last_closed_1h_not_live",
+      "distance_from_level_percent": -2.364,
+      "volume_ratio_4h": 0.781,
+      "volume_ratio_1h": 1.159,
+      "volume_confirmed_4h": false,
+      "trend_4h_above_sma233": false,
+      "lower_tf_confirmed": false,
+      "relative_strength_vs_btc": false,
+      "source_4h": "OKX Spot",
+      "source_1h": "OKX Spot",
+      "closed_4h_at_utc": "2026-11-18T12:00:00+00:00",
+      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
     }
   ],
+  "pending_unconfirmed": [],
   "summary": {
     "scanned_coins": 11,
     "blocked_scans": 0,
-    "new_publishable_events": 0,
-    "pending_unconfirmed": 3
+    "new_publishable_events": 1,
+    "pending_unconfirmed": 0
   },
   "limitations": [
     "No external notification transport configured",
