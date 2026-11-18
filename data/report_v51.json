@@ -1,7 +1,7 @@
 {
   "schema_version": 51,
-  "generated_at_utc": "2026-11-18T21:25:25.351006+00:00",
-  "source_generated_at_utc": "2026-11-18T21:24:44.900595+00:00",
+  "generated_at_utc": "2026-11-18T21:57:48.970300+00:00",
+  "source_generated_at_utc": "2026-11-18T21:57:09.445449+00:00",
   "status": "partial",
   "mode": "research_only_no_trade_or_push",
   "evaluations": [
@@ -98,7 +98,7 @@
     {
       "coin": "SOL",
       "status": "watch_only",
-      "score": 10,
+      "score": 0,
       "reference_price_usdt": 73.06,
       "reference_price_kind": "last_closed_1h_candle_not_live",
       "support_4h": 69.79,
@@ -115,7 +115,8 @@
         "below_4h_sma233",
         "volume_not_confirmed",
         "weak_against_btc",
-        "market_entry_rr_below_2_5"
+        "market_entry_rr_below_2_5",
+        "15m_below_sma233"
       ],
       "sources": {
         "4h": "OKX Spot",
@@ -188,7 +189,7 @@
     {
       "coin": "XRP",
       "status": "watch_only",
-      "score": 20,
+      "score": 10,
       "reference_price_usdt": 0.968,
       "reference_price_kind": "last_closed_1h_candle_not_live",
       "support_4h": 0.942,
@@ -205,7 +206,8 @@
         "below_4h_sma233",
         "volume_not_confirmed",
         "weak_against_btc",
-        "market_entry_rr_below_2_5"
+        "market_entry_rr_below_2_5",
+        "15m_below_sma233"
       ],
       "sources": {
         "4h": "OKX Spot",
@@ -462,5 +464,9 @@
     "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
   },
   "new_events": [],
-  "disclaimer": "No verified static level, dominance trend, or 4h breakout/reclaim confirmation. Ranking is not a buy signal."
+  "disclaimer": "No verified static level, dominance trend, or 4h breakout/reclaim confirmation. Ranking is not a buy signal.",
+  "liquidity_guard_v546": {
+    "pair": "XRPBTC",
+    "status": "BLOCK"
+  }
 }

@@ -187,6 +187,10 @@
     "AVAX:4h_closed_breakdown:1794686400",
     "SUI:4h_closed_breakdown:1794686400",
     "AAVE:4h_closed_breakdown:1794686400",
-    "XRP:4h_resistance_rejection:1794988800"
+    "XRP:4h_resistance_rejection:1794988800",
+    "BTC:4h_closed_breakdown:1795017600",
+    "BNB:4h_closed_breakdown:1795017600",
+    "LINK:4h_support_reclaim:1795017600",
+    "LINK:approaching_support:1795017600"
   ]
 }
