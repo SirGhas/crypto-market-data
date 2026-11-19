@@ -4,7 +4,7 @@ from copy import deepcopy
 from dual_screen_v53 import COINS, FRAMES, WEIGHTS, evaluate
 from unified_guard_v548 import evaluate as guard_evaluate
 
-NOW=1795000000
+NOW=1794989400
 
 def frame(tf, *, trend=True, volume=1.0):
     sec=FRAMES[tf]
