@@ -1,0 +1,48 @@
+name: Market Engine UI — Publish browser dashboard
+run-name: "Dashboard publish | #${{ github.run_number }}"
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'dashboard/index.html'
+      - '.github/workflows/publish-market-dashboard.yml'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: market-dashboard-pages
+  cancel-in-progress: true
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate read-only dashboard
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path("dashboard/index.html")
+          s=p.read_text()
+          assert '<html lang="fa" dir="rtl">' in s
+          assert 'Asia/Tehran' in s
+          assert 'stable/v5-5-0-approved' in s
+          assert 'unified_guard_v548.json' in s
+          assert 'innerHTML' not in s
+          print("Dashboard validation passed")
+          PY
+      - name: Build static site
+        run: |
+          mkdir -p _site
+          cp dashboard/index.html _site/index.html
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4
