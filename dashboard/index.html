@@ -61,8 +61,8 @@ cell(tr,tier(e.tier));cell(tr,blocked?"مسدود":"واجد شرایط انتش
 cell(tr,num(e.reference_price_usdt));cell(tr,num(e.risk_reward_validated_levels));
 cell(tr,[...(e.reasons||[]),...(g?.reason_codes||[])].join("، ")||"—");body.append(tr)}
 const freshness=health.freshness||{};const outbox=health.outbox||{};
-$("feed-health").textContent=JSON.stringify(freshness).slice(0,650)||"نامشخص";
-$("delivery").textContent=JSON.stringify(outbox).slice(0,650)||"نامشخص";
+const fs=freshness.summary||{};$("feed-health").textContent="سالم: "+num(fs.PASS)+" | تأییدنشده: "+num(fs.UNVERIFIED)+" | قدیمی: "+num(fs.STALE)+" | بدون تغییر موردانتظار: "+num(fs.UNCHANGED_EXPECTED);
+$("delivery").textContent="در انتظار ارسال: "+num(outbox.pending_delivery)+" | ارسال‌شده در این اجرا: "+num(outbox.delivered_in_this_run)+" | رویداد جدید: "+num(outbox.new_events_in_lifecycle);
 }
 async function load(){$("error").textContent="";try{const [dual,guard,health]=await Promise.all([json("../data/dual_screen_v53.json"),json("../data/unified_guard_v548.json"),json("../data/delivery_health_v550.json")]);render(dual,guard,health)}
 catch(e){$("error").textContent="خواندن گزارش‌ها ناموفق بود: "+e.message+". داشبورد باید از مسیر وب‌سرور مخزن اجرا شود؛ باز کردن مستقیم فایل HTML کافی نیست.";}}
