@@ -1,0 +1,35 @@
+name: LAB dashboard web preview (GitHub Pages)
+run-name: "LAB UI Preview | #${{ github.run_number }}"
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: lab-dashboard-pages
+  cancel-in-progress: true
+jobs:
+  verify-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify lab engine and dashboard
+        run: python -m unittest discover -s tests -p 'test_recovery_v55_*.py' -v
+      - name: Prepare standalone UI site
+        run: |
+          mkdir -p _site
+          cp dashboard/index.html _site/index.html
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
