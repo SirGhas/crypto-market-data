@@ -1,0 +1,46 @@
+name: Recovery v5.5 integrated acceptance and UI contracts
+run-name: "RECOVERY-001 | Weighted MTF + risk veto parity | #${{ github.run_number }} | ${{ github.ref_name }}"
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'tests/test_recovery_v55_*.py'
+      - 'dual_screen_v53.py'
+      - 'unified_guard_v548.py'
+      - '.github/workflows/recovery-v55-parity.yml'
+      - 'dashboard/**'
+      - 'data/dual_screen_v53.json'
+      - 'data/unified_guard_v548.json'
+      - 'data/delivery_health_v550.json'
+permissions:
+  contents: read
+jobs:
+  parity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Original weighted screener and guard parity tests
+        run: python -m unittest discover -s tests -p 'test_recovery_v55_*.py' -v
+      - name: Package read-only dashboard and report snapshots
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: recovery-v55-dashboard-snapshot
+          path: |
+            dashboard/index.html
+            data/dual_screen_v53.json
+            data/unified_guard_v548.json
+            data/delivery_health_v550.json
+          retention-days: 14
+      - name: Recovery test scope
+        if: always()
+        run: |
+          echo "## RECOVERY-001/002/003: integrated core acceptance and UI contract" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Actual modules: dual_screen_v53.py, unified_guard_v548.py" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Checks: weights, MTF sensitivities, stale/gapped veto, reproducibility, snapshot/report parity, dashboard safety" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Does NOT prove: profitability, calibrated signals, live execution readiness" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Commit: ${{ github.sha }}" >> "$GITHUB_STEP_SUMMARY"
