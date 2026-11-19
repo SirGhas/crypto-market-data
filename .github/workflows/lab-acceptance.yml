@@ -1,0 +1,41 @@
+name: LAB integrated acceptance and dashboard preview
+run-name: "LAB-ACCEPTANCE | #${{ github.run_number }} | ${{ github.ref_name }}"
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'tests/test_recovery_v55_*.py'
+      - 'dual_screen_v53.py'
+      - 'unified_guard_v548.py'
+      - 'dashboard/**'
+      - '.github/workflows/lab-acceptance.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Integrated baseline and UI acceptance tests
+        run: python -m unittest discover -s tests -p 'test_recovery_v55_*.py' -v
+      - name: Package dashboard preview
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lab-dashboard-preview
+          path: |
+            dashboard/index.html
+            data/dual_screen_v53.json
+            data/unified_guard_v548.json
+            data/delivery_health_v550.json
+          retention-days: 14
+      - name: Test summary
+        if: always()
+        run: |
+          echo "## LAB acceptance" >> "$GITHUB_STEP_SUMMARY"
+          echo "Only lab code is tested; stable remains frozen." >> "$GITHUB_STEP_SUMMARY"
+          echo "Commit: ${{ github.sha }}" >> "$GITHUB_STEP_SUMMARY"
