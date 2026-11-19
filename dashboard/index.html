@@ -30,7 +30,7 @@ button:hover{background:#34527f}.bar{background:#2b354a;border-radius:9px;height
 </div>
 <section class="card"><div class="top"><h2>وضعیت اعتبار گزارش</h2><span id="freshness" class="pill warn">در انتظار داده</span></div>
 <div class="row"><span class="muted">زمان تولید امتیازها: <b id="scored-at">—</b></span><span class="muted">آخرین بررسی محافظ: <b id="guard-at">—</b></span></div></section>
-<section class="card"><h2>رتبه‌بندی و محدودیت انتشار دارایی‌ها</h2><div class="tablewrap"><table><thead><tr><th>دارایی</th><th>امتیاز پژوهشی</th><th>سطح</th><th>محافظ انتشار</th><th>قیمت مرجع USDT</th><th>ریسک به بازده</th><th>علت‌های محدودیت</th></tr></thead><tbody id="assets"><tr><td colspan="7">در حال خواندن داده‌ها…</td></tr></tbody></table></div></section>
+<section class="card"><div class="top"><h2>آخرین اجراهای موتور و آزمایشگاه</h2><button id="reload-runs" type="button">بازخوانی اجراها</button></div><div id="runs" class="tablewrap"><p>در انتظار دریافت تاریخچه اجراها…</p></div><p class="muted">وضعیت اجراها از GitHub Actions خوانده می‌شود؛ موفقیت یک اجرا لزوماً به معنی تازگی قیمت‌ها یا اعتبار معاملاتی سیگنال‌ها نیست.</p></section><section class="card"><h2>رتبه‌بندی و محدودیت انتشار دارایی‌ها</h2><div class="tablewrap"><table><thead><tr><th>دارایی</th><th>امتیاز پژوهشی</th><th>سطح</th><th>محافظ انتشار</th><th>قیمت مرجع USDT</th><th>ریسک به بازده</th><th>علت‌های محدودیت</th></tr></thead><tbody id="assets"><tr><td colspan="7">در حال خواندن داده‌ها…</td></tr></tbody></table></div></section>
 <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
 <section class="card"><h2>کیفیت دریافت داده</h2><p id="feed-health">در انتظار گزارش سلامت</p></section>
 <section class="card"><h2>صف اعلان‌ها</h2><p id="delivery">در انتظار گزارش ارسال</p></section>
@@ -66,5 +66,31 @@ $("delivery").textContent="در انتظار ارسال: "+num(outbox.pending_de
 }
 async function load(){$("error").textContent="";$("engine-version").textContent=$("source").value;try{const [dual,guard,health]=await Promise.all([json("../data/dual_screen_v53.json"),json("../data/unified_guard_v548.json"),json("../data/delivery_health_v550.json")]);render(dual,guard,health)}
 catch(e){$("error").textContent="خواندن گزارش‌ها ناموفق بود: "+e.message+". درخواست داده از GitHub ناموفق بود. اتصال اینترنت و عمومی بودن مخزن را بررسی کنید.";}}
+async function loadRuns(){
+ const el=$("runs");el.replaceChildren();
+ try{
+  const url="https://api.github.com/repos/SirGhas/crypto-market-data/actions/runs?per_page=15";
+  const response=await fetch(url,{cache:"no-store",headers:{"Accept":"application/vnd.github+json"}});
+  if(!response.ok)throw Error("HTTP "+response.status);
+  const payload=await response.json();
+  const runs=(payload.workflow_runs||[]).filter(r=>["main","lab/market-engine-next","stable/v5-5-0-approved","recovery/v5-5-core-audit"].includes(r.head_branch)).slice(0,10);
+  if(!runs.length){el.textContent="اجرایی برای شاخه‌های انتخابی پیدا نشد.";return}
+  const table=document.createElement("table"),thead=document.createElement("thead"),header=document.createElement("tr");
+  for(const label of ["گردش‌کار","شاخه","وضعیت","زمان تهران","مشاهده"]){const th=document.createElement("th");th.textContent=label;header.append(th)}
+  thead.append(header);table.append(thead);
+  const tbody=document.createElement("tbody");
+  for(const run of runs){
+   const tr=document.createElement("tr");
+   cell(tr,run.name||"—");cell(tr,run.head_branch||"—");
+   cell(tr,run.status==="completed"?(run.conclusion==="success"?"موفق":run.conclusion==="failure"?"ناموفق":run.conclusion||"پایان‌یافته"):"در حال اجرا / انتظار");
+   cell(tr,time(run.updated_at||run.created_at));
+   const td=document.createElement("td"),link=document.createElement("a");
+   link.textContent="جزئیات";link.href=run.html_url;link.target="_blank";link.rel="noopener noreferrer";link.style.color="#9fc5ff";td.append(link);tr.append(td);tbody.append(tr)
+  }
+  table.append(tbody);el.append(table);
+ }catch(e){el.textContent="تاریخچه اجراها در دسترس نیست: "+e.message+". برای مخزن خصوصی یا محدودیت GitHub API، وارد GitHub شوید."}
+}
+$("reload-runs").addEventListener("click",loadRuns);
+loadRuns();
 $("refresh").addEventListener("click",load);$("source").addEventListener("change",load);$("run").addEventListener("click",()=>window.open("https://github.com/SirGhas/crypto-market-data/actions","_blank","noopener,noreferrer"));load();
 </script></body></html>
