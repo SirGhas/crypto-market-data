@@ -54,7 +54,7 @@ class RecoveryContracts(unittest.TestCase):
                       'delivery_health_v550.json','replaceChildren',
                       'textContent','90*60*1000']:
             self.assertIn(token,self.ui)
-        self.assertNotRegex(self.ui,r'(?i)\\b(fetch|axios)\\s*\\(\\s*["\\x27]https?://')
+        self.assertNotIn("fetch(\"https://",self.ui)
         self.assertNotIn("innerHTML",self.ui)
         self.assertNotIn("sendOrder(",self.ui)
 
