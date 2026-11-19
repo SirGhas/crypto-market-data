@@ -1,27 +1,72 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-11-19T13:07:33.890113+00:00",
+  "generated_at_utc": "2026-11-19T21:34:54.796273+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
-  "new_publishable_events": [],
+  "new_publishable_events": [
+    {
+      "id": "LTC:4h_closed_breakdown:1795104000",
+      "coin": "LTC",
+      "event_type": "4h_closed_breakdown",
+      "status": "technical_event_needs_context",
+      "level_usdt": 43.11,
+      "reference_price_usdt": 42.26,
+      "reference_price_kind": "last_closed_1h_not_live",
+      "distance_from_level_percent": -1.972,
+      "volume_ratio_4h": 1.562,
+      "volume_ratio_1h": 2.482,
+      "volume_confirmed_4h": true,
+      "trend_4h_above_sma233": false,
+      "lower_tf_confirmed": false,
+      "relative_strength_vs_btc": false,
+      "source_4h": "OKX Spot",
+      "source_1h": "OKX Spot",
+      "closed_4h_at_utc": "2026-11-19T20:00:00+00:00",
+      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+    }
+  ],
   "pending_unconfirmed": [
     {
-      "id": "BNB:approaching_resistance:1795075200",
-      "coin": "BNB",
-      "event_type": "approaching_resistance",
+      "id": "BTC:approaching_support:1795104000",
+      "coin": "BTC",
+      "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "SOL:approaching_resistance:1795075200",
-      "coin": "SOL",
-      "event_type": "approaching_resistance",
+      "id": "BNB:approaching_support:1795104000",
+      "coin": "BNB",
+      "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "LINK:approaching_support:1795104000",
+      "coin": "LINK",
+      "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "SUI:approaching_support:1795104000",
+      "coin": "SUI",
+      "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "AAVE:4h_support_reclaim:1795104000",
+      "coin": "AAVE",
+      "event_type": "4h_support_reclaim",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "AAVE:approaching_support:1795104000",
+      "coin": "AAVE",
+      "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     }
   ],
   "summary": {
     "scanned_coins": 11,
     "blocked_scans": 0,
-    "new_publishable_events": 0,
-    "pending_unconfirmed": 2
+    "new_publishable_events": 1,
+    "pending_unconfirmed": 6
   },
   "limitations": [
     "No external notification transport configured",

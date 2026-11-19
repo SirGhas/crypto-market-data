@@ -1,13 +1,13 @@
 {
   "schema_version": "5.4.2",
-  "generated_at_utc": "2026-11-19T13:07:33.553272+00:00",
-  "snapshot_generated_at_utc": "2026-11-19T13:06:53.080420+00:00",
+  "generated_at_utc": "2026-11-19T21:34:54.278689+00:00",
+  "snapshot_generated_at_utc": "2026-11-19T21:34:13.213847+00:00",
   "summary": {
     "attempted": 84,
-    "available": 64,
-    "unavailable": 20,
+    "available": 63,
+    "unavailable": 21,
     "available_by_source": {
-      "OKX Spot": 56,
+      "OKX Spot": 55,
       "Gate.io Spot": 8
     }
   },
@@ -122,6 +122,13 @@
       "errors": [
         "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
         "Gate.io Spot: HTTP Error 400: Bad Request"
+      ]
+    },
+    "SUIUSDT:5m": {
+      "status": "unavailable",
+      "errors": [
+        "OKX Spot: gap_in_last_233_candles",
+        "Bybit Spot: HTTP Error 403: Forbidden"
       ]
     },
     "ZECBTC:15m": {

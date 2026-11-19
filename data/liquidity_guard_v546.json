@@ -3,16 +3,15 @@
   "status": "BLOCK",
   "reason_codes": [
     "5m:thin_market_nonzero_frequency",
-    "1h:relative_volume_not_confirmed",
-    "4h:relative_volume_not_confirmed"
+    "1h:relative_volume_not_confirmed"
   ],
   "frames": {
     "5m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1795093200",
-      "last_closed_age_seconds": 153.8,
-      "nonzero_fraction": 0.4034,
-      "relative_volume": 0.128,
+      "last_candle_id": "1795123500",
+      "last_closed_age_seconds": 294.6,
+      "nonzero_fraction": 0.5408,
+      "relative_volume": 0.1592,
       "status": "BLOCK",
       "reasons": [
         "thin_market_nonzero_frequency"
@@ -20,19 +19,19 @@
     },
     "15m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1795092300",
-      "last_closed_age_seconds": 453.8,
-      "nonzero_fraction": 0.8026,
-      "relative_volume": 0.486,
+      "last_candle_id": "1795122900",
+      "last_closed_age_seconds": 294.6,
+      "nonzero_fraction": 0.8326,
+      "relative_volume": 0.1283,
       "status": "PASS",
       "reasons": []
     },
     "1h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1795089600",
-      "last_closed_age_seconds": 453.8,
+      "last_candle_id": "1795118400",
+      "last_closed_age_seconds": 2094.6,
       "nonzero_fraction": 0.9957,
-      "relative_volume": 0.102,
+      "relative_volume": 0.0798,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -40,14 +39,12 @@
     },
     "4h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1795075200",
-      "last_closed_age_seconds": 4053.8,
+      "last_candle_id": "1795104000",
+      "last_closed_age_seconds": 5694.6,
       "nonzero_fraction": 0.9914,
-      "relative_volume": 1.2171,
-      "status": "BLOCK",
-      "reasons": [
-        "relative_volume_not_confirmed"
-      ]
+      "relative_volume": 3.5435,
+      "status": "PASS",
+      "reasons": []
     }
   },
   "thresholds": {
@@ -56,6 +53,6 @@
     "minimum_relative_volume_1h_4h": 1.3
   },
   "schema_version": "5.4.6",
-  "generated_at_utc": "2026-11-19T13:07:33.791764+00:00",
+  "generated_at_utc": "2026-11-19T21:34:54.641759+00:00",
   "mode": "research_only_fail_closed_no_orders"
 }
