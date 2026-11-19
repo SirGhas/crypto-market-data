@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark"><title>موتور تحلیل بازار | داشبورد پژوهشی</title>
+<style>
+:root{font-family:Tahoma,Arial,sans-serif;color:#edf1fa;background:#0c1220}
+*{box-sizing:border-box}body{margin:0}main{max-width:1260px;margin:auto;padding:24px}
+header,.top,.row{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+h1{font-size:24px;margin:8px 0}h2{font-size:17px;margin:0 0 14px}p{line-height:1.8;color:#a9b5cc}
+small,.muted{color:#9aaac4}.pill{display:inline-block;border-radius:99px;padding:7px 12px;background:#243047;color:#c6d4eb}
+.warn{background:#47361f;color:#ffd38b}.bad{background:#48252b;color:#ffb5be}.good{background:#193d35;color:#95e7cd}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:20px 0}
+.card{background:#141e30;border:1px solid #2b3b56;border-radius:16px;padding:18px}
+.metric{font-size:28px;font-weight:700;margin:12px 0 4px;direction:ltr;text-align:right}
+section{margin:24px 0}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:720px}
+th,td{text-align:right;padding:14px 12px;border-bottom:1px solid #2b3b56;white-space:nowrap}
+th{color:#9eacc5;font-size:13px}td{font-size:14px}
+button{background:#283b5c;color:#f5f7ff;border:1px solid #46618a;padding:10px 15px;border-radius:10px;cursor:pointer}
+button:hover{background:#34527f}.bar{background:#2b354a;border-radius:9px;height:7px;width:105px;overflow:hidden;display:inline-block;vertical-align:middle;margin-left:8px}
+.bar i{display:block;height:100%;background:#7da8ff}#error{color:#ffb5be}
+@media(max-width:760px){main{padding:14px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}h1{font-size:19px}.metric{font-size:23px}}
+</style></head><body><main>
+<header><div><small>بازارهای جهانی · هسته پژوهشی ۵.۵</small><h1>موتور تحلیل بازار</h1><span class="pill warn">فقط پایش و بررسی — بدون مجوز معامله</span></div><div class="row"><button id="refresh" type="button">دریافت آخرین گزارش</button><button id="launch" type="button">اجرای موتور در GitHub</button></div></header>
+<p>امتیازها احتمال سود نیستند. قیمت‌ها مربوط به آخرین کندل بسته‌شده‌اند و قیمت لحظه‌ای محسوب نمی‌شوند. زمان‌ها به وقت تهران نمایش داده می‌شوند.</p>
+<div class="card"><div class="row"><label for="source">منبع گزارش</label><select id="source" style="background:#283b5c;color:#fff;padding:10px;border-radius:10px"><option value="stable/v5-5-0-approved">نسخه رسمی ثابت ۵.۵</option><option value="main">آخرین خروجی شاخه اصلی (ممکن است تغییر کند)</option></select><span id="version" class="pill">stable/v5-5-0-approved</span></div></div><div id="error" role="alert"></div>
+<div class="grid">
+<div class="card"><small>دارایی‌های بررسی‌شده</small><div class="metric" id="scanned">—</div></div>
+<div class="card"><small>اولویت بررسی سطح ۱</small><div class="metric" id="tier1">—</div></div>
+<div class="card"><small>بررسی مشروط سطح ۲</small><div class="metric" id="tier2">—</div></div>
+<div class="card"><small>مسدودشده</small><div class="metric" id="blocked">—</div></div>
+</div>
+<section class="card"><div class="top"><h2>وضعیت اعتبار گزارش</h2><span id="freshness" class="pill warn">در انتظار داده</span></div>
+<div class="row"><span class="muted">زمان تولید امتیازها: <b id="scored-at">—</b></span><span class="muted">آخرین بررسی محافظ: <b id="guard-at">—</b></span></div></section>
+<section class="card"><h2>رتبه‌بندی و محدودیت انتشار دارایی‌ها</h2><div class="tablewrap"><table><thead><tr><th>دارایی</th><th>امتیاز پژوهشی</th><th>سطح</th><th>محافظ انتشار</th><th>قیمت مرجع USDT</th><th>ریسک به بازده</th><th>علت‌های محدودیت</th></tr></thead><tbody id="assets"><tr><td colspan="7">در حال خواندن داده‌ها…</td></tr></tbody></table></div></section>
+<div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+<section class="card"><h2>کیفیت دریافت داده</h2><p id="feed-health">در انتظار گزارش سلامت</p></section>
+<section class="card"><h2>صف اعلان‌ها</h2><p id="delivery">در انتظار گزارش ارسال</p></section>
+<section class="card"><h2>محدودیت‌های تحلیل</h2><p>تأیید نشده: اعتبار پیش‌بینی، هزینه و لغزش معامله، بازده خارج از نمونه و ریسک کل سبد. بازار ایران، فلزات و اخبار کلان هنوز در این نمای پژوهشی یکپارچه نشده‌اند.</p></section>
+</div><footer><small>STABLE-UI-001 · داده‌های GitHub · اجرای دستی از Actions · بدون اتصال به سفارش‌گذاری</small></footer>
+</main><script>
+"use strict";
+const $=id=>document.getElementById(id);
+const fmt=new Intl.DateTimeFormat("fa-IR",{timeZone:"Asia/Tehran",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"});
+const num=v=>typeof v==="number"?new Intl.NumberFormat("fa-IR",{maximumFractionDigits:3}).format(v):"—";
+const time=v=>{const d=new Date(v);return Number.isFinite(d.getTime())?fmt.format(d):"نامشخص"};
+const age=v=>{const ms=Date.now()-Date.parse(v);return Number.isFinite(ms)&&ms>=0?ms:Infinity};
+const tier=t=>({tier_1_priority_watch:"اولویت بررسی ۱",tier_2_conditional_watch:"بررسی مشروط ۲",below_threshold_watch_only:"فقط پایش",blocked:"مسدود"})[t]||"نامشخص";
+async function json(path){const ref=$("source").value;const url="https://raw.githubusercontent.com/SirGhas/crypto-market-data/"+ref+"/"+path.replace(/^\.\.\//,"");const r=await fetch(url+"?v="+Date.now(),{cache:"no-store"});if(!r.ok)throw Error(path+": HTTP "+r.status);return r.json()}
+function cell(tr,value){const td=document.createElement("td");td.textContent=String(value);tr.append(td);return td}
+function render(dual,guard,health){
+if(!Array.isArray(dual.evaluations)||!guard.coins||!dual.summary)throw Error("ساختار گزارش موتور نامعتبر است");
+$("scanned").textContent=num(dual.summary.scanned);$("tier1").textContent=num(dual.summary.tier_1);$("tier2").textContent=num(dual.summary.tier_2);$("blocked").textContent=num(dual.summary.blocked);
+$("scored-at").textContent=time(dual.generated_at_utc);$("guard-at").textContent=time(guard.generated_at_utc);
+const stale=Math.max(age(dual.generated_at_utc),age(guard.generated_at_utc))>90*60*1000;
+$("freshness").textContent=stale?"گزارش قدیمی — غیرقابل اتکا برای تصمیم جاری":"گزارش اخیر — صرفاً پژوهشی";
+$("freshness").className="pill "+(stale?"bad":"warn");
+const body=$("assets");body.replaceChildren();
+const evaluations=[...dual.evaluations].sort((a,b)=>(b.score??-1)-(a.score??-1));
+for(const e of evaluations){const tr=document.createElement("tr");const g=guard.coins[e.coin];const blocked=!g||g.positive_publication_gate!=="PASS";
+cell(tr,e.coin);const score=cell(tr,num(e.score));if(typeof e.score==="number"){const bar=document.createElement("span");bar.className="bar";const fill=document.createElement("i");fill.style.width=Math.max(0,Math.min(100,e.score))+"%";bar.append(fill);score.prepend(bar)}
+cell(tr,tier(e.tier));cell(tr,blocked?"مسدود":"واجد شرایط انتشار پژوهشی");
+cell(tr,num(e.reference_price_usdt));cell(tr,num(e.risk_reward_validated_levels));
+cell(tr,[...(e.reasons||[]),...(g?.reason_codes||[])].join("، ")||"—");body.append(tr)}
+const freshness=health.freshness||{};const outbox=health.outbox||{};
+const fs=freshness.summary||{};$("feed-health").textContent="سالم: "+num(fs.PASS)+" | تأییدنشده: "+num(fs.UNVERIFIED)+" | قدیمی: "+num(fs.STALE)+" | بدون تغییر موردانتظار: "+num(fs.UNCHANGED_EXPECTED);
+$("delivery").textContent="در انتظار ارسال: "+num(outbox.pending_delivery)+" | ارسال‌شده در این اجرا: "+num(outbox.delivered_in_this_run)+" | رویداد جدید: "+num(outbox.new_events_in_lifecycle);
+}
+async function load(){$("error").textContent="";$("version").textContent=$("source").value;try{const [dual,guard,health]=await Promise.all([json("../data/dual_screen_v53.json"),json("../data/unified_guard_v548.json"),json("../data/delivery_health_v550.json")]);render(dual,guard,health)}
+catch(e){$("error").textContent="خواندن گزارش‌ها ناموفق بود: "+e.message+". اتصال به گزارش‌های عمومی GitHub را بررسی کنید.";}}
+$("refresh").addEventListener("click",load);$("source").addEventListener("change",load);$("launch").addEventListener("click",()=>window.open("https://github.com/SirGhas/crypto-market-data/actions","_blank","noopener,noreferrer"));load();
+</script></body></html>
