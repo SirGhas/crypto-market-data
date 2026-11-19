@@ -1,0 +1,31 @@
+name: Recovery v5.5 core parity tests
+run-name: "RECOVERY-001 | Weighted MTF + risk veto parity | #${{ github.run_number }} | ${{ github.ref_name }}"
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'tests/test_recovery_v55_parity.py'
+      - 'dual_screen_v53.py'
+      - 'unified_guard_v548.py'
+      - '.github/workflows/recovery-v55-parity.yml'
+permissions:
+  contents: read
+jobs:
+  parity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Original weighted screener and guard parity tests
+        run: python -m unittest discover -s tests -p 'test_recovery_v55_parity.py' -v
+      - name: Recovery test scope
+        if: always()
+        run: |
+          echo "## RECOVERY-001: v5.5 architecture parity" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Actual modules: dual_screen_v53.py, unified_guard_v548.py" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Checks: unchanged weights, volume sensitivity, 15m sensitivity, stale and gapped data vetoes" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Does NOT prove: profitability, calibrated signals, live execution readiness" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Commit: ${{ github.sha }}" >> "$GITHUB_STEP_SUMMARY"
