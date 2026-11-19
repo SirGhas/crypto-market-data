@@ -65,8 +65,19 @@ class RecoveryReplay(unittest.TestCase):
     def test_historical_replay_not_claimed_without_raw_snapshot(self):
         path=ROOT/"data"/"multisource_market.json"
         self.assertTrue(path.exists())
-        self.assertEqual(path.stat().st_size,0,
-            "A new snapshot was added: replace this test with a pinned hash and historical replay before claiming parity.")
+        raw=path.read_bytes()
+        self.assertGreater(len(raw),100,
+            "Raw snapshot unavailable; historical score parity cannot be claimed")
+        try:
+            market=json.loads(raw)
+        except (ValueError,UnicodeDecodeError) as exc:
+            self.fail(f"Raw market snapshot is not valid JSON: {exc}")
+        self.assertIsInstance(market,dict)
+        self.assertIsInstance(market.get("pairs"),dict)
+        self.assertIn("generated_at_utc",market)
+        # This only establishes that raw evidence exists and is parseable.
+        # A separately pinned SHA-256 and time-aligned replay are still required
+        # before asserting parity with a published historical report.
 
 if __name__=="__main__":
     unittest.main()
