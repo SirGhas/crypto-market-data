@@ -196,6 +196,13 @@
     "BTC:4h_closed_breakdown:1795118400",
     "ETH:approaching_support:1795118400",
     "LTC:4h_closed_breakdown:1795118400",
-    "ZEC:4h_closed_breakdown:1795147200"
+    "ZEC:4h_closed_breakdown:1795147200",
+    "BTC:4h_closed_breakdown:1795190400",
+    "ETH:4h_closed_breakdown:1795190400",
+    "BNB:4h_closed_breakdown:1795190400",
+    "XRP:4h_closed_breakdown:1795190400",
+    "SUI:4h_closed_breakdown:1795190400",
+    "AAVE:4h_closed_breakdown:1795190400",
+    "ZEC:4h_closed_breakdown:1795190400"
   ]
 }
