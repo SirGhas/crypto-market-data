@@ -4508,6 +4508,29 @@
         "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
       },
       "status": "PENDING_DELIVERY"
+    },
+    "ZEC:4h_closed_breakdown:1795147200": {
+      "event": {
+        "id": "ZEC:4h_closed_breakdown:1795147200",
+        "coin": "ZEC",
+        "event_type": "4h_closed_breakdown",
+        "status": "forming_watch",
+        "level_usdt": 859.7,
+        "reference_price_usdt": 835.54,
+        "reference_price_kind": "last_closed_1h_not_live",
+        "distance_from_level_percent": -2.81,
+        "volume_ratio_4h": 0.794,
+        "volume_ratio_1h": 2.258,
+        "volume_confirmed_4h": false,
+        "trend_4h_above_sma233": false,
+        "lower_tf_confirmed": false,
+        "relative_strength_vs_btc": null,
+        "source_4h": "OKX Spot",
+        "source_1h": "OKX Spot",
+        "closed_4h_at_utc": "2026-11-20T08:00:00+00:00",
+        "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+      },
+      "status": "PENDING_DELIVERY"
     }
   },
   "delivered_ids": []

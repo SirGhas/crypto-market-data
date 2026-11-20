@@ -1,13 +1,13 @@
 {
   "schema_version": "5.5.0",
-  "generated_at_utc": "2026-11-20T03:16:55.386354+00:00",
+  "generated_at_utc": "2026-11-20T11:49:05.247900+00:00",
   "mode": "research_only_no_transport_no_orders",
   "freshness": {
     "summary": {
-      "PASS": 63,
+      "PASS": 64,
       "UNCHANGED_EXPECTED": 0,
       "STALE": 0,
-      "UNVERIFIED": 21
+      "UNVERIFIED": 20
     },
     "unchanged_expected_feeds": [],
     "stale_feeds": [],
@@ -28,7 +28,6 @@
       "SUIBTC:15m",
       "SUIBTC:1h",
       "SUIBTC:4h",
-      "SUIUSDT:5m",
       "ZECBTC:5m",
       "ZECBTC:15m",
       "ZECBTC:1h",
@@ -36,8 +35,8 @@
     ]
   },
   "outbox": {
-    "pending_delivery": 196,
-    "new_events_in_lifecycle": 3,
+    "pending_delivery": 197,
+    "new_events_in_lifecycle": 1,
     "delivered_in_this_run": 0
   },
   "limitations": [
