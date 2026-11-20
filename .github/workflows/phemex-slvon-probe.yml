@@ -1,0 +1,68 @@
+name: Phemex SLVON Read-only Feed Probe
+run-name: "SLVON-FEED | ${{ inputs.focus || 'CI regression / changed code' }} | #${{ github.run_number }} | ${{ github.ref_name }}"
+on:
+  workflow_dispatch:
+    inputs:
+      focus:
+        description: "Change log: what does this run validate?"
+        required: true
+        type: choice
+        default: "Phemex SLVON market feed"
+        options:
+          - "Phemex SLVON market feed"
+          - "Market-data validation"
+          - "Paper signal gate"
+          - "Journal and performance"
+          - "Historical replay safeguards"
+          - "Regression / bug fix"
+  pull_request:
+    paths:
+      - 'phemex_slvon_probe.py'
+      - 'tokenized_metals_registry.py'
+      - 'tests/test_phemex_slvon_probe.py'
+      - 'tests/test_tokenized_metals_registry.py'
+      - 'paper_signal_gate.py'
+      - 'tests/test_paper_signal_gate.py'
+      - 'paper_signal_journal.py'
+      - 'tests/test_paper_signal_journal.py'
+      - 'paper_performance.py'
+      - 'tests/test_paper_performance.py'
+      - 'historical_replay_audit.py'
+      - 'tests/test_historical_replay_audit.py'
+      - 'causal_sma_backtest.py'
+      - 'tests/test_causal_sma_backtest.py'
+      - '.github/workflows/phemex-slvon-probe.yml'
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Record experiment in GitHub run summary
+        env:
+          FOCUS: ${{ inputs.focus || 'Automatic regression after code change' }}
+        run: |
+          echo "## Experiment change log" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Workflow: ${{ github.workflow }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- GitHub run: #${{ github.run_number }} (attempt ${{ github.run_attempt }})" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Focus: $FOCUS" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Branch: ${{ github.ref_name }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Commit: \`${{ github.sha }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Trigger: ${{ github.event_name }}" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests
+        run: python -m unittest tests.test_phemex_slvon_probe tests.test_tokenized_metals_registry tests.test_paper_signal_gate tests.test_paper_signal_journal tests.test_paper_performance tests.test_historical_replay_audit tests.test_causal_sma_backtest -v
+      - name: Read-only public Phemex probe
+        run: python phemex_slvon_probe.py
+      - name: Upload evidence even if probe fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phemex-slvon-feed-evidence
+          path: artifacts/slvon_phemex_probe.json
+          if-no-files-found: warn
+          retention-days: 14

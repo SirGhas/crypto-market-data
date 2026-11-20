@@ -1,0 +1,85 @@
+name: BTC October 17 Historical Paper Audit
+run-name: "BTC-ACCEPT | ${{ inputs.focus || 'CI regression / changed code' }} | #${{ github.run_number }} | ${{ github.ref_name }}"
+on:
+  workflow_dispatch:
+    inputs:
+      focus:
+        description: "Change log: what does this run validate?"
+        required: true
+        type: choice
+        default: "Full-engine acceptance"
+        options:
+          - "Full-engine acceptance"
+          - "Historical BTC replay"
+          - "TEST-018 October walk-forward"
+          - "RSI and momentum"
+          - "Volume and liquidity"
+          - "Multi-timeframe signals"
+          - "Cross-asset and macro"
+          - "News and geopolitical risk"
+          - "Risk, alerts and dashboard"
+          - "Regression / bug fix"
+  pull_request:
+    paths:
+      - 'btc_oct17_historical_audit.py'
+      - 'causal_sma_backtest.py'
+      - 'paired_historical_benchmark.py'
+      - 'full_engine_acceptance.py'
+      - 'ohlcv_factor_evidence.py'
+      - 'walkforward_audit.py'
+      - 'tests/test_walkforward_audit.py'
+      - 'tests/test_ohlcv_factor_evidence.py'
+      - 'tests/test_full_engine_acceptance.py'
+      - 'tests/test_paired_historical_benchmark.py'
+      - '.github/workflows/btc-oct17-historical-audit.yml'
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Record experiment in GitHub run summary
+        env:
+          FOCUS: ${{ inputs.focus || 'Automatic regression after code change' }}
+        run: |
+          echo "## Experiment change log" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Workflow: ${{ github.workflow }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- GitHub run: #${{ github.run_number }} (attempt ${{ github.run_attempt }})" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Focus: $FOCUS" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Branch: ${{ github.ref_name }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Commit: \`${{ github.sha }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Trigger: ${{ github.event_name }}" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Paired model unit tests
+        run: python -m unittest tests.test_causal_sma_backtest tests.test_paired_historical_benchmark tests.test_full_engine_acceptance tests.test_ohlcv_factor_evidence tests.test_walkforward_audit -v
+      - name: Historical BTC paper replay
+        run: python btc_oct17_historical_audit.py
+      - name: Upload audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: btc-oct17-historical-audit
+          path: |
+            artifacts/btc_2026_10_17_historical_audit.json
+            artifacts/full-engine-acceptance/full_engine_acceptance.json
+            artifacts/full-engine-acceptance/full_engine_acceptance.html
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Enforce full engine acceptance verdict
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("artifacts/full-engine-acceptance/full_engine_acceptance.json")
+          if not p.exists():
+              raise SystemExit("FAIL: acceptance report missing")
+          audit=json.loads(p.read_text(encoding="utf-8"))
+          print("FULL_ENGINE_ACCEPTANCE:",audit["verdict"],audit["passed"],"/",audit["total"])
+          if audit["verdict"]!="PASS":
+              raise SystemExit("FAIL: full engine acceptance requirements not met")
+          PY
