@@ -70,11 +70,22 @@ def validate_rows(rows, resolution, now):
     total_volume = sum(volumes)
     largest_volume = max(volumes)
     concentration = (largest_volume / total_volume) if total_volume > 0 else None
+    ordered_volumes = sorted(volumes)
+    median_volume = ordered_volumes[len(ordered_volumes) // 2]
+    latest_volume = volumes[-1]
+    # Dimensionless comparisons are valid even before exchange volume scale is verified.
+    latest_to_median = (latest_volume / median_volume) if median_volume > 0 else None
+    top_ten_share = (sum(ordered_volumes[-10:]) / total_volume) if total_volume > 0 else None
     return {"closed_candles": len(times),
             "last_closed_at_tehran": dt.datetime.fromtimestamp(recent[-1] + resolution, ZoneInfo("Asia/Tehran")).isoformat(),
             "raw_volume_last_233_total": str(total_volume),
             "raw_volume_last_233_max_candle": str(largest_volume),
             "raw_volume_max_candle_share": str(concentration) if concentration is not None else None,
+            "raw_volume_top_10_share": str(top_ten_share) if top_ten_share is not None else None,
+            "raw_volume_median_candle": str(median_volume),
+            "raw_volume_latest_to_median_ratio": str(latest_to_median) if latest_to_median is not None else None,
+            "raw_volume_units": "UNVERIFIED_EXCHANGE_SCALED",
+            "notional_volume_usdt": None,
             "raw_volume_concentration_flag": concentration is not None and concentration > Decimal("0.25"),
             "raw_volume_last_233_zero_candles": sum(v == 0 for v in volumes),
             "last_closed_at_utc": dt.datetime.fromtimestamp(recent[-1] + resolution, dt.timezone.utc).isoformat(),
