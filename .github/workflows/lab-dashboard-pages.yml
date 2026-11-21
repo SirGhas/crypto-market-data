@@ -1,20 +1,13 @@
-name: LAB dashboard web preview (GitHub Pages)
+name: LAB dashboard preview artifact (no production Pages deployment)
 run-name: "LAB UI Preview | #${{ github.run_number }}"
 on:
   workflow_dispatch:
 permissions:
   contents: read
-  pages: write
-  id-token: write
-concurrency:
-  group: lab-dashboard-pages
-  cancel-in-progress: true
 jobs:
-  verify-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  verify-and-package:
     runs-on: ubuntu-24.04
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -22,14 +15,13 @@ jobs:
           python-version: '3.12'
       - name: Verify lab engine and dashboard
         run: python -m unittest discover -s tests -p 'test_recovery_v55_*.py' -v
-      - name: Prepare standalone UI site
-        run: |
-          mkdir -p _site
-          cp dashboard/index.html _site/index.html
-          touch _site/.nojekyll
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - name: Generate provenance manifest
+        run: python engine_manifest.py --output dashboard/engine-manifest.json
+      - name: Package isolated preview
+        uses: actions/upload-artifact@v4
         with:
-          path: _site
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          name: lab-dashboard-preview
+          path: |
+            dashboard/index.html
+            dashboard/engine-manifest.json
+          retention-days: 14
