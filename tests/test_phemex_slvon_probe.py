@@ -40,8 +40,20 @@ class PhemexSLVONProbeTests(unittest.TestCase):
         self.assertEqual(result["raw_volume_last_233_zero_candles"], 0)
         self.assertEqual(result["raw_volume_last_233_max_candle"], "1")
         self.assertFalse(result["raw_volume_concentration_flag"])
+        self.assertEqual(result["raw_volume_median_candle"], "1")
+        self.assertEqual(result["raw_volume_latest_to_median_ratio"], "1")
+        self.assertEqual(result["raw_volume_units"], "UNVERIFIED_EXCHANGE_SCALED")
+        self.assertIsNone(result["notional_volume_usdt"])
         self.assertTrue(result["last_closed_at_tehran"].endswith("+03:30"))
         self.assertTrue(result["raw_price_fields_are_exchange_scaled"])
+
+    def test_volume_distribution_outlier_without_unit_conversion(self):
+        rows = [[i*900, 900, 1, 1, 2, 0.5, 1, 100 if i == 232 else 1, 1]
+                for i in range(233)]
+        result = validate_rows(rows, 900, 233*900+3)
+        self.assertEqual(result["raw_volume_latest_to_median_ratio"], "100")
+        self.assertTrue(result["raw_volume_concentration_flag"])
+        self.assertIsNone(result["notional_volume_usdt"])
 
     def test_exchange_price_scale_normalization(self):
         self.assertEqual(normalize_price(4764000000, {"priceScale": 8}), "47.64")
