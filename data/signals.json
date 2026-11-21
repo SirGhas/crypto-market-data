@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-11-21T17:28:03.790472+00:00",
-  "source_generated_at_utc": "2026-11-21T17:27:34.550534+00:00",
+  "generated_at_utc": "2026-11-21T17:32:27.116974+00:00",
+  "source_generated_at_utc": "2026-11-21T17:31:51.905508+00:00",
   "mode": "screening_only_no_trades_no_notifications",
   "dominance": {
     "latest_percent": {
@@ -131,5 +131,9 @@
     "new_events": 0,
     "blocked": 0,
     "rejected": 9
+  },
+  "liquidity_guard_v546": {
+    "pair": "XRPBTC",
+    "status": "BLOCK"
   }
 }
