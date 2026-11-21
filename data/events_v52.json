@@ -1,106 +1,106 @@
 {
   "schema_version": 52,
-  "generated_at_utc": "2026-11-21T09:53:46.083713+00:00",
-  "source_generated_at_utc": "2026-11-21T09:52:50.785869+00:00",
+  "generated_at_utc": "2026-11-21T17:28:58.974189+00:00",
+  "source_generated_at_utc": "2026-11-21T17:28:03.834619+00:00",
   "mode": "event_screening_only_no_push_no_orders",
   "observations": [
     {
       "coin": "BTC",
       "status": "scanned",
-      "4h_support": 56388.3,
-      "4h_resistance": 65277.9,
+      "4h_support": 55134.0,
+      "4h_resistance": 64960.1,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 3.507,
-      "observations": 1
+      "4h_volume_ratio": 1.63,
+      "observations": 0
     },
     {
       "coin": "ETH",
       "status": "scanned",
-      "4h_support": 1554.63,
-      "4h_resistance": 1836.06,
+      "4h_support": 1536.59,
+      "4h_resistance": 1819.9,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 3.175,
-      "observations": 1
+      "4h_volume_ratio": 1.351,
+      "observations": 0
     },
     {
       "coin": "BNB",
       "status": "scanned",
-      "4h_support": 515.23,
-      "4h_resistance": 599.48,
-      "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 2.708,
-      "observations": 2
+      "4h_support": 503.58,
+      "4h_resistance": 594.49,
+      "relative_strength_vs_btc": true,
+      "4h_volume_ratio": 1.221,
+      "observations": 0
     },
     {
       "coin": "SOL",
       "status": "scanned",
-      "4h_support": 65.76,
-      "4h_resistance": 75.78,
+      "4h_support": 64.84,
+      "4h_resistance": 75.65,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 2.984,
-      "observations": 1
+      "4h_volume_ratio": 1.631,
+      "observations": 0
     },
     {
       "coin": "LTC",
       "status": "scanned",
-      "4h_support": 38.34,
-      "4h_resistance": 45.43,
+      "4h_support": 37.41,
+      "4h_resistance": 44.91,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 3.094,
-      "observations": 2
+      "4h_volume_ratio": 1.322,
+      "observations": 0
     },
     {
       "coin": "LINK",
       "status": "scanned",
-      "4h_support": 8.112,
-      "4h_resistance": 9.412,
+      "4h_support": 7.969,
+      "4h_resistance": 9.305,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 3.05,
-      "observations": 1
+      "4h_volume_ratio": 1.07,
+      "observations": 0
     },
     {
       "coin": "XRP",
       "status": "scanned",
-      "4h_support": 0.8723,
+      "4h_support": 0.8597,
       "4h_resistance": 1.0079,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 2.293,
-      "observations": 1
+      "4h_volume_ratio": 1.261,
+      "observations": 0
     },
     {
       "coin": "AVAX",
       "status": "scanned",
-      "4h_support": 6.133,
-      "4h_resistance": 7.317,
+      "4h_support": 6.012,
+      "4h_resistance": 7.219,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 2.099,
-      "observations": 1
+      "4h_volume_ratio": 1.009,
+      "observations": 0
     },
     {
       "coin": "SUI",
       "status": "scanned",
-      "4h_support": 0.6036,
-      "4h_resistance": 0.7443,
+      "4h_support": 0.588,
+      "4h_resistance": 0.7372,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 3.053,
-      "observations": 1
+      "4h_volume_ratio": 1.178,
+      "observations": 0
     },
     {
       "coin": "AAVE",
       "status": "scanned",
-      "4h_support": 92.16,
-      "4h_resistance": 113.56,
+      "4h_support": 91.11,
+      "4h_resistance": 112.66,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 1.879,
-      "observations": 1
+      "4h_volume_ratio": 1.062,
+      "observations": 0
     },
     {
       "coin": "ZEC",
       "status": "scanned",
       "4h_support": 679.23,
-      "4h_resistance": 973.75,
+      "4h_resistance": 969.85,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 1.718,
+      "4h_volume_ratio": 2.478,
       "observations": 0
     }
   ],
@@ -116,9 +116,5 @@
     "Not a TradingView or Binance feed",
     "No automatic notification is connected",
     "Missing BTC crosses must not be treated as strength confirmation"
-  ],
-  "liquidity_guard_v546": {
-    "pair": "XRPBTC",
-    "status": "BLOCK"
-  }
+  ]
 }
