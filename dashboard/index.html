@@ -22,7 +22,7 @@ button:hover{background:#34527f}.bar{background:#2b354a;border-radius:9px;height
 <header><div><small>بازارهای جهانی · هسته پژوهشی ۵.۵</small><h1>موتور تحلیل بازار</h1><span class="pill warn">فقط پایش و بررسی — بدون مجوز معامله</span></div><div class="row"><button id="refresh" type="button">بازخوانی گزارش‌ها</button><button id="run" type="button">اجرای موتور در Actions</button></div></header>
 <p>امتیازها احتمال سود نیستند. قیمت‌ها مربوط به آخرین کندل بسته‌شده‌اند و قیمت لحظه‌ای محسوب نمی‌شوند. زمان‌ها به وقت تهران نمایش داده می‌شوند.</p>
 <div class="card"><div class="row"><label for="source">منبع داده</label><select id="source" style="background:#283b5c;color:#fff;padding:10px;border-radius:10px"><option value="stable/v5-5-0-approved">نسخه رسمی ثابت</option><option value="main">آخرین گزارش main</option></select><span class="pill" id="engine-version">stable/v5-5-0-approved</span></div><p>این داشبورد فقط خروجی‌های GitHub را می‌خواند. اجرای موتور نیازمند ورود به GitHub Actions است؛ کلید دسترسی در مرورگر ذخیره نمی‌شود.</p></div><div id="error" role="alert"></div>
-<div class="grid">
+<section class="card"><h2>مشخصات اجرای تحلیل</h2><div class="row"><span class="muted">نسخه گزارش: <b id="schema-version">—</b></span><span class="muted">حالت موتور: <b id="engine-mode">—</b></span><span class="muted">زمان منبع داده (تهران): <b id="source-at">—</b></span><span class="muted">فاصله تولید گزارش تا منبع: <b id="source-lag">—</b></span></div></section><div class="grid">
 <div class="card"><small>دارایی‌های بررسی‌شده</small><div class="metric" id="scanned">—</div></div>
 <div class="card"><small>اولویت بررسی سطح ۱</small><div class="metric" id="tier1">—</div></div>
 <div class="card"><small>بررسی مشروط سطح ۲</small><div class="metric" id="tier2">—</div></div>
@@ -48,6 +48,7 @@ async function json(path){const ref=$("source").value;const url="https://raw.git
 function cell(tr,value){const td=document.createElement("td");td.textContent=String(value);tr.append(td);return td}
 function render(dual,guard,health){
 if(!Array.isArray(dual.evaluations)||!guard.coins||!dual.summary)throw Error("ساختار گزارش موتور نامعتبر است");
+$("schema-version").textContent=String(dual.schema_version??"نامشخص");$("engine-mode").textContent=String(dual.mode??"نامشخص");$("source-at").textContent=time(dual.source_generated_at_utc);const lag=Date.parse(dual.generated_at_utc)-Date.parse(dual.source_generated_at_utc);$("source-lag").textContent=Number.isFinite(lag)&&lag>=0?Math.round(lag/60000)+" دقیقه":"نامشخص";
 $("scanned").textContent=num(dual.summary.scanned);$("tier1").textContent=num(dual.summary.tier_1);$("tier2").textContent=num(dual.summary.tier_2);$("blocked").textContent=num(dual.summary.blocked);
 $("scored-at").textContent=time(dual.generated_at_utc);$("guard-at").textContent=time(guard.generated_at_utc);
 const stale=Math.max(age(dual.generated_at_utc),age(guard.generated_at_utc))>90*60*1000;
