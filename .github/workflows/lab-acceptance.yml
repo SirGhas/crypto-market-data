@@ -5,6 +5,7 @@ on:
   pull_request:
     paths:
       - 'tests/test_recovery_v55_*.py'
+      - 'engine_manifest.py'
       - 'dual_screen_v53.py'
       - 'unified_guard_v548.py'
       - 'dashboard/**'
