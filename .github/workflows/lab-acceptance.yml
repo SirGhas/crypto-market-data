@@ -22,6 +22,8 @@ jobs:
           python-version: '3.12'
       - name: Integrated baseline and UI acceptance tests
         run: python -m unittest discover -s tests -p 'test_recovery_v55_*.py' -v
+      - name: Generate verified provenance manifest
+        run: python engine_manifest.py --output dashboard/engine-manifest.json
       - name: Package dashboard preview
         if: success()
         uses: actions/upload-artifact@v4
@@ -29,6 +31,7 @@ jobs:
           name: lab-dashboard-preview
           path: |
             dashboard/index.html
+            dashboard/engine-manifest.json
             data/dual_screen_v53.json
             data/unified_guard_v548.json
             data/delivery_health_v550.json
