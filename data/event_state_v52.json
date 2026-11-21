@@ -111,6 +111,7 @@
     "AVAX:4h_support_reclaim:1795017600",
     "AVAX:4h_support_reclaim:1795147200",
     "AVAX:4h_support_reclaim:1795190400",
+    "AVAX:4h_support_reclaim:1795204800",
     "AVAX:approaching_resistance:1792569600",
     "AVAX:approaching_resistance:1792584000",
     "AVAX:approaching_resistance:1792598400",
@@ -666,6 +667,7 @@
     "LTC:4h_support_reclaim:1795017600",
     "LTC:4h_support_reclaim:1795147200",
     "LTC:4h_support_reclaim:1795190400",
+    "LTC:4h_support_reclaim:1795204800",
     "LTC:approaching_resistance:1792454400",
     "LTC:approaching_resistance:1792483200",
     "LTC:approaching_resistance:1792497600",
@@ -754,6 +756,7 @@
     "SOL:4h_support_reclaim:1794600000",
     "SOL:4h_support_reclaim:1794628800",
     "SOL:4h_support_reclaim:1795190400",
+    "SOL:4h_support_reclaim:1795204800",
     "SOL:approaching_resistance:1792454400",
     "SOL:approaching_resistance:1792483200",
     "SOL:approaching_resistance:1792497600",
@@ -857,6 +860,7 @@
     "SUI:4h_support_reclaim:1795017600",
     "SUI:4h_support_reclaim:1795118400",
     "SUI:4h_support_reclaim:1795147200",
+    "SUI:4h_support_reclaim:1795204800",
     "SUI:approaching_resistance:1792497600",
     "SUI:approaching_resistance:1792512000",
     "SUI:approaching_resistance:1792526400",
@@ -948,6 +952,7 @@
     "XRP:4h_support_reclaim:1793966400",
     "XRP:4h_support_reclaim:1793995200",
     "XRP:4h_support_reclaim:1794081600",
+    "XRP:4h_support_reclaim:1795204800",
     "XRP:approaching_resistance:1792454400",
     "XRP:approaching_resistance:1792497600",
     "XRP:approaching_resistance:1792512000",
@@ -1065,6 +1070,7 @@
     "ZEC:4h_support_reclaim:1794528000",
     "ZEC:4h_support_reclaim:1794657600",
     "ZEC:4h_support_reclaim:1794686400",
+    "ZEC:4h_support_reclaim:1795204800",
     "ZEC:approaching_resistance:1792497600",
     "ZEC:approaching_resistance:1792569600",
     "ZEC:approaching_resistance:1792598400",
@@ -1098,6 +1104,7 @@
     "ZEC:approaching_support:1794484800",
     "ZEC:approaching_support:1794499200",
     "ZEC:approaching_support:1794686400",
-    "ZEC:approaching_support:1795190400"
+    "ZEC:approaching_support:1795190400",
+    "ZEC:approaching_support:1795204800"
   ]
 }
