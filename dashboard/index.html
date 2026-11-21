@@ -22,7 +22,7 @@ button:hover{background:#34527f}.bar{background:#2b354a;border-radius:9px;height
 <header><div><small>بازارهای جهانی · هسته پژوهشی ۵.۵</small><h1>موتور تحلیل بازار</h1><span class="pill warn">فقط پایش و بررسی — بدون مجوز معامله</span></div><div class="row"><button id="refresh" type="button">بازخوانی گزارش‌ها</button><button id="run" type="button">اجرای موتور در Actions</button></div></header>
 <p>امتیازها احتمال سود نیستند. قیمت‌ها مربوط به آخرین کندل بسته‌شده‌اند و قیمت لحظه‌ای محسوب نمی‌شوند. زمان‌ها به وقت تهران نمایش داده می‌شوند.</p>
 <div class="card"><div class="row"><label for="source">منبع داده</label><select id="source" style="background:#283b5c;color:#fff;padding:10px;border-radius:10px"><option value="stable/v5-5-0-approved">نسخه رسمی ثابت</option><option value="main">آخرین گزارش main</option></select><span class="pill" id="engine-version">stable/v5-5-0-approved</span></div><p>این داشبورد فقط خروجی‌های GitHub را می‌خواند. اجرای موتور نیازمند ورود به GitHub Actions است؛ کلید دسترسی در مرورگر ذخیره نمی‌شود.</p></div><div id="error" role="alert"></div>
-<section class="card"><h2>مشخصات اجرای تحلیل</h2><div class="row"><span class="muted">نسخه گزارش: <b id="schema-version">—</b></span><span class="muted">حالت موتور: <b id="engine-mode">—</b></span><span class="muted">زمان منبع داده (تهران): <b id="source-at">—</b></span><span class="muted">فاصله تولید گزارش تا منبع: <b id="source-lag">—</b></span></div></section><div class="grid">
+<section class="card"><h2>ردیابی و اعتبارسنجی خروجی آزمایشگاه</h2><div class="row"><span class="muted">نتیجه بررسی: <b id="manifest-status">—</b></span><span class="muted">دارایی‌های ثبت‌شده: <b id="manifest-assets">—</b></span><span class="muted">اثر انگشت گزارش: <b id="manifest-hash" style="direction:ltr;display:inline-block">—</b></span></div><p id="manifest-findings" class="muted">در انتظار فایل اعتبارسنجی آزمایشگاه؛ این وضعیت تأیید موتور رسمی نیست.</p></section><section class="card"><h2>مشخصات اجرای تحلیل</h2><div class="row"><span class="muted">نسخه گزارش: <b id="schema-version">—</b></span><span class="muted">حالت موتور: <b id="engine-mode">—</b></span><span class="muted">زمان منبع داده (تهران): <b id="source-at">—</b></span><span class="muted">فاصله تولید گزارش تا منبع: <b id="source-lag">—</b></span></div></section><div class="grid">
 <div class="card"><small>دارایی‌های بررسی‌شده</small><div class="metric" id="scanned">—</div></div>
 <div class="card"><small>اولویت بررسی سطح ۱</small><div class="metric" id="tier1">—</div></div>
 <div class="card"><small>بررسی مشروط سطح ۲</small><div class="metric" id="tier2">—</div></div>
@@ -67,6 +67,20 @@ $("delivery").textContent="در انتظار ارسال: "+num(outbox.pending_de
 }
 async function load(){$("error").textContent="";$("engine-version").textContent=$("source").value;try{const [dual,guard,health]=await Promise.all([json("../data/dual_screen_v53.json"),json("../data/unified_guard_v548.json"),json("../data/delivery_health_v550.json")]);render(dual,guard,health)}
 catch(e){$("error").textContent="خواندن گزارش‌ها ناموفق بود: "+e.message+". درخواست داده از GitHub ناموفق بود. اتصال اینترنت و عمومی بودن مخزن را بررسی کنید.";}}
+async function loadManifest(){
+ const status=$("manifest-status"), findings=$("manifest-findings");
+ status.textContent="در حال بررسی";findings.textContent="فایل اعتبارسنجی فقط از شاخه آزمایشگاه دریافت می‌شود.";
+ try{
+  const url="https://raw.githubusercontent.com/SirGhas/crypto-market-data/lab/market-engine-next/dashboard/engine-manifest.json";
+  const response=await fetch(url+"?v="+Date.now(),{cache:"no-store"});
+  if(!response.ok)throw Error("HTTP "+response.status);
+  const manifest=await response.json();
+  status.textContent=manifest.status==="PASS"?"سازگاری گزارش‌ها تأیید شد (پژوهشی)":manifest.status==="FAIL"?"ناسازگاری گزارش‌ها":"وضعیت نامعتبر";
+  $("manifest-assets").textContent=num(manifest.asset_count);
+  $("manifest-hash").textContent=(manifest.files?.screen?.sha256||"—").slice(0,16);
+  findings.textContent=(manifest.findings||[]).length?"موارد بررسی: "+manifest.findings.join("، "):"ناسازگاری ساختاری ثبت نشده؛ این نتیجه به معنی تازگی داده یا مجوز معامله نیست.";
+ }catch(e){status.textContent="منتشر نشده / تأیید نشده";findings.textContent="فایل اعتبارسنجی آزمایشگاه در دسترس نیست: "+e.message+". نبود فایل نباید به‌عنوان موفقیت تفسیر شود."}
+}
 async function loadRuns(){
  const el=$("runs");el.replaceChildren();
  try{
@@ -92,6 +106,6 @@ async function loadRuns(){
  }catch(e){el.textContent="تاریخچه اجراها در دسترس نیست: "+e.message+". برای مخزن خصوصی یا محدودیت GitHub API، وارد GitHub شوید."}
 }
 $("reload-runs").addEventListener("click",loadRuns);
-loadRuns();
-$("refresh").addEventListener("click",load);$("source").addEventListener("change",load);$("run").addEventListener("click",()=>window.open("https://github.com/SirGhas/crypto-market-data/actions","_blank","noopener,noreferrer"));load();
+loadRuns();loadManifest();
+$("refresh").addEventListener("click",()=>{load();loadManifest();loadRuns()});$("source").addEventListener("change",load);$("run").addEventListener("click",()=>window.open("https://github.com/SirGhas/crypto-market-data/actions","_blank","noopener,noreferrer"));load();
 </script></body></html>
