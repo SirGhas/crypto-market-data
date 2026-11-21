@@ -62,9 +62,16 @@ def build_manifest(root=ROOT):
     if not isinstance(evaluations, list) or not isinstance(coins, dict):
         findings.append("MISSING_EVALUATIONS_OR_GUARD")
     else:
-        if {e.get("coin") for e in evaluations} != set(coins):
+        names = [e.get("coin") for e in evaluations if isinstance(e, dict)]
+        if len(names) != len(evaluations) or any(not isinstance(name, str) or not name for name in names):
+            findings.append("INVALID_SCREEN_ASSET_ENTRY")
+        if len(names) != len(set(names)):
+            findings.append("DUPLICATE_SCREEN_ASSET")
+        if set(names) != set(coins):
             findings.append("COIN_COVERAGE_MISMATCH")
         for entry in evaluations:
+            if not isinstance(entry, dict):
+                continue
             coin = entry.get("coin")
             gate = coins.get(coin, {})
             if gate.get("score") != entry.get("score") or gate.get("original_tier") != entry.get("tier"):
