@@ -33,6 +33,21 @@ class ManifestContract(unittest.TestCase):
             self.assertEqual(result["status"], "FAIL")
             self.assertIn("SCORE_GUARD_MISMATCH:" + first, result["findings"])
 
+    def test_duplicate_asset_fails_closed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp)
+            for relative in FILES.values():
+                dest = base / relative
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                dest.write_bytes((ROOT / relative).read_bytes())
+            path = base / FILES["screen"]
+            payload = json.loads(path.read_text())
+            payload["evaluations"].append(dict(payload["evaluations"][0]))
+            path.write_text(json.dumps(payload))
+            result = build_manifest(base)
+            self.assertEqual(result["status"], "FAIL")
+            self.assertIn("DUPLICATE_SCREEN_ASSET", result["findings"])
+
     def test_invalid_report_timestamp_fails_closed(self):
         with tempfile.TemporaryDirectory() as tmp:
             base = Path(tmp)
