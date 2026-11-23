@@ -1,7 +1,7 @@
 {
   "schema_version": 51,
-  "generated_at_utc": "2026-11-23T00:18:09.898718+00:00",
-  "source_generated_at_utc": "2026-11-23T00:17:24.042154+00:00",
+  "generated_at_utc": "2026-11-23T00:55:03.590941+00:00",
+  "source_generated_at_utc": "2026-11-23T00:54:06.372474+00:00",
   "status": "partial",
   "mode": "research_only_no_trade_or_push",
   "evaluations": [
@@ -275,7 +275,7 @@
     {
       "coin": "AAVE",
       "status": "watch_only",
-      "score": 10,
+      "score": 0,
       "reference_price_usdt": 98.08,
       "reference_price_kind": "last_closed_1h_candle_not_live",
       "support_4h": 91.11,
@@ -292,7 +292,8 @@
         "below_4h_sma233",
         "volume_not_confirmed",
         "btc_pair_unavailable",
-        "market_entry_rr_below_2_5"
+        "market_entry_rr_below_2_5",
+        "15m_below_sma233"
       ],
       "sources": {
         "4h": "OKX Spot",
@@ -393,19 +394,19 @@
       "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
     },
     {
-      "coin": "AAVE",
+      "coin": "ZEC",
       "status": "watch_only",
       "score": 10,
-      "reference_price_usdt": 98.08,
+      "reference_price_usdt": 798.52,
       "reference_price_kind": "last_closed_1h_candle_not_live",
-      "support_4h": 91.11,
-      "resistance_4h": 110.14,
-      "distance_above_support_percent": 7.65,
-      "distance_below_resistance_percent": 12.296,
-      "market_entry_rr": 1.73,
-      "risk_percent_to_support": 7.106,
-      "reward_percent_to_resistance": 12.296,
-      "relative_volume_1h": 0.254,
+      "support_4h": 679.23,
+      "resistance_4h": 955.5,
+      "distance_above_support_percent": 17.563,
+      "distance_below_resistance_percent": 19.659,
+      "market_entry_rr": 1.316,
+      "risk_percent_to_support": 14.939,
+      "reward_percent_to_resistance": 19.659,
+      "relative_volume_1h": 0.728,
       "above_4h_sma233": false,
       "relative_strength_btc": null,
       "reasons": [
@@ -454,5 +455,9 @@
     "notes": "20 prior 4h candle range is provisional, not verified multi-touch static levels; RR excludes fees/slippage"
   },
   "new_events": [],
-  "disclaimer": "No verified static level, dominance trend, or 4h breakout/reclaim confirmation. Ranking is not a buy signal."
+  "disclaimer": "No verified static level, dominance trend, or 4h breakout/reclaim confirmation. Ranking is not a buy signal.",
+  "liquidity_guard_v546": {
+    "pair": "XRPBTC",
+    "status": "BLOCK"
+  }
 }

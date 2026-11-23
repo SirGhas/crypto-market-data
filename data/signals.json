@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-11-23T00:17:24.005930+00:00",
-  "source_generated_at_utc": "2026-11-23T00:16:46.719319+00:00",
+  "generated_at_utc": "2026-11-23T00:54:06.320241+00:00",
+  "source_generated_at_utc": "2026-11-23T00:53:31.680911+00:00",
   "mode": "screening_only_no_trades_no_notifications",
   "dominance": {
     "latest_percent": {
-      "BTC.D": 58.861501,
-      "USDT.D": 8.360485
+      "BTC.D": 58.880553,
+      "USDT.D": 8.371553
     },
     "historical_samples": 270,
     "trend_ready": true,
@@ -108,6 +108,7 @@
         "4h_below_sma233",
         "relative_strength_below_sma233",
         "no_closed_1h_breakout",
+        "15m_not_confirmed",
         "insufficient_real_usd_volume"
       ]
     }
@@ -117,5 +118,9 @@
     "new_events": 0,
     "blocked": 0,
     "rejected": 9
+  },
+  "liquidity_guard_v546": {
+    "pair": "XRPBTC",
+    "status": "BLOCK"
   }
 }

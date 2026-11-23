@@ -1,7 +1,7 @@
 {
   "schema_version": 53,
-  "generated_at_utc": "2026-11-22T19:41:02.562768+00:00",
-  "source_generated_at_utc": "2026-11-22T19:40:03.284184+00:00",
+  "generated_at_utc": "2026-11-23T00:55:03.685027+00:00",
+  "source_generated_at_utc": "2026-11-23T00:54:06.372474+00:00",
   "mode": "two_tier_research_only_no_orders_no_push_notifications",
   "weights": {
     "static_levels": 30,
@@ -16,15 +16,15 @@
   "tier_2_top_three": [],
   "closest_three_below_threshold_not_buy_signals": [
     {
-      "coin": "BNB",
+      "coin": "LINK",
       "tier": "below_threshold_watch_only",
-      "score": 37,
+      "score": 42,
       "score_components": {
-        "static_levels": 15,
-        "volume": 10,
+        "static_levels": 30,
+        "volume": 5,
         "trend_4h": 5,
         "risk_reward": 0,
-        "relative_btc": 5,
+        "relative_btc": 0,
         "lower_timeframes": 2,
         "btc_and_dominance": 0
       },
@@ -37,26 +37,28 @@
         "lower_timeframes": 5,
         "btc_and_dominance": 5
       },
-      "reference_price_usdt": 558.92,
+      "reference_price_usdt": 8.824,
       "reference_price_kind": "last_closed_1h_not_live",
-      "closed_1h_at_utc": "2026-11-22T19:00:00+00:00",
+      "closed_1h_at_utc": "2026-11-23T00:00:00+00:00",
       "static_levels": {
-        "resistance": 597.308,
-        "resistance_touches": 5
+        "support": 8.5355,
+        "support_touches": 2,
+        "resistance": 9.359,
+        "resistance_touches": 4
       },
       "provisional_20x4h_bounds_not_validated": {
-        "support": 503.58,
-        "resistance": 593.92
+        "support": 7.969,
+        "resistance": 9.282
       },
-      "risk_reward_validated_levels": null,
-      "relative_volume_1h": 1.026,
+      "risk_reward_validated_levels": 1.854,
+      "relative_volume_1h": 0.965,
       "relative_volume_4h": 0.406,
-      "relative_strength_btc": true,
+      "relative_strength_btc": null,
       "reasons": [
-        "validated_multitouch_support_or_resistance_missing",
         "volume_below_first_tier_minimum",
+        "btc_cross_missing_or_stale",
         "dominance_trend_unverified",
-        "risk_reward_not_valid_without_both_validated_levels"
+        "risk_reward_below_2"
       ],
       "sources": {
         "4h": "OKX Spot",
@@ -68,10 +70,10 @@
     {
       "coin": "LTC",
       "tier": "below_threshold_watch_only",
-      "score": 25,
+      "score": 40,
       "score_components": {
         "static_levels": 15,
-        "volume": 3,
+        "volume": 18,
         "trend_4h": 5,
         "risk_reward": 0,
         "relative_btc": 0,
@@ -87,24 +89,23 @@
         "lower_timeframes": 5,
         "btc_and_dominance": 5
       },
-      "reference_price_usdt": 39.95,
+      "reference_price_usdt": 40.21,
       "reference_price_kind": "last_closed_1h_not_live",
-      "closed_1h_at_utc": "2026-11-22T19:00:00+00:00",
+      "closed_1h_at_utc": "2026-11-23T00:00:00+00:00",
       "static_levels": {
         "resistance": 44.985,
         "resistance_touches": 2
       },
       "provisional_20x4h_bounds_not_validated": {
         "support": 37.41,
-        "resistance": 44.79
+        "resistance": 44.64
       },
       "risk_reward_validated_levels": null,
-      "relative_volume_1h": 0.719,
-      "relative_volume_4h": 0.852,
+      "relative_volume_1h": 2.634,
+      "relative_volume_4h": 0.836,
       "relative_strength_btc": false,
       "reasons": [
         "validated_multitouch_support_or_resistance_missing",
-        "volume_below_first_tier_minimum",
         "dominance_trend_unverified",
         "risk_reward_not_valid_without_both_validated_levels"
       ],
@@ -116,12 +117,12 @@
       "notes": "Heuristic static pivots, not verified order book; excludes fees/slippage. No trade instruction."
     },
     {
-      "coin": "AVAX",
+      "coin": "ETH",
       "tier": "below_threshold_watch_only",
-      "score": 25,
+      "score": 32,
       "score_components": {
         "static_levels": 15,
-        "volume": 3,
+        "volume": 10,
         "trend_4h": 5,
         "risk_reward": 0,
         "relative_btc": 0,
@@ -137,25 +138,24 @@
         "lower_timeframes": 5,
         "btc_and_dominance": 5
       },
-      "reference_price_usdt": 6.691,
+      "reference_price_usdt": 1724.44,
       "reference_price_kind": "last_closed_1h_not_live",
-      "closed_1h_at_utc": "2026-11-22T19:00:00+00:00",
+      "closed_1h_at_utc": "2026-11-23T00:00:00+00:00",
       "static_levels": {
-        "resistance": 7.3206666667,
-        "resistance_touches": 3
+        "resistance": 1842.0925,
+        "resistance_touches": 4
       },
       "provisional_20x4h_bounds_not_validated": {
-        "support": 6.012,
-        "resistance": 7.175
+        "support": 1536.59,
+        "resistance": 1817.49
       },
       "risk_reward_validated_levels": null,
-      "relative_volume_1h": 0.545,
-      "relative_volume_4h": 0.921,
-      "relative_strength_btc": null,
+      "relative_volume_1h": 1.062,
+      "relative_volume_4h": 0.303,
+      "relative_strength_btc": false,
       "reasons": [
         "validated_multitouch_support_or_resistance_missing",
         "volume_below_first_tier_minimum",
-        "btc_cross_missing_or_stale",
         "dominance_trend_unverified",
         "risk_reward_not_valid_without_both_validated_levels"
       ],
@@ -171,10 +171,10 @@
     {
       "coin": "ETH",
       "tier": "below_threshold_watch_only",
-      "score": 22,
+      "score": 32,
       "score_components": {
         "static_levels": 15,
-        "volume": 0,
+        "volume": 10,
         "trend_4h": 5,
         "risk_reward": 0,
         "relative_btc": 0,
@@ -190,9 +190,9 @@
         "lower_timeframes": 5,
         "btc_and_dominance": 5
       },
-      "reference_price_usdt": 1714.86,
+      "reference_price_usdt": 1724.44,
       "reference_price_kind": "last_closed_1h_not_live",
-      "closed_1h_at_utc": "2026-11-22T19:00:00+00:00",
+      "closed_1h_at_utc": "2026-11-23T00:00:00+00:00",
       "static_levels": {
         "resistance": 1842.0925,
         "resistance_touches": 4
@@ -202,8 +202,8 @@
         "resistance": 1817.49
       },
       "risk_reward_validated_levels": null,
-      "relative_volume_1h": 0.346,
-      "relative_volume_4h": 0.653,
+      "relative_volume_1h": 1.062,
+      "relative_volume_4h": 0.303,
       "relative_strength_btc": false,
       "reasons": [
         "validated_multitouch_support_or_resistance_missing",
@@ -221,10 +221,10 @@
     {
       "coin": "BNB",
       "tier": "below_threshold_watch_only",
-      "score": 37,
+      "score": 27,
       "score_components": {
         "static_levels": 15,
-        "volume": 10,
+        "volume": 0,
         "trend_4h": 5,
         "risk_reward": 0,
         "relative_btc": 5,
@@ -240,9 +240,9 @@
         "lower_timeframes": 5,
         "btc_and_dominance": 5
       },
-      "reference_price_usdt": 558.92,
+      "reference_price_usdt": 559.59,
       "reference_price_kind": "last_closed_1h_not_live",
-      "closed_1h_at_utc": "2026-11-22T19:00:00+00:00",
+      "closed_1h_at_utc": "2026-11-23T00:00:00+00:00",
       "static_levels": {
         "resistance": 597.308,
         "resistance_touches": 5
@@ -252,8 +252,8 @@
         "resistance": 593.92
       },
       "risk_reward_validated_levels": null,
-      "relative_volume_1h": 1.026,
-      "relative_volume_4h": 0.406,
+      "relative_volume_1h": 0.4,
+      "relative_volume_4h": 0.236,
       "relative_strength_btc": true,
       "reasons": [
         "validated_multitouch_support_or_resistance_missing",
@@ -271,10 +271,10 @@
     {
       "coin": "SOL",
       "tier": "below_threshold_watch_only",
-      "score": 22,
+      "score": 32,
       "score_components": {
         "static_levels": 15,
-        "volume": 0,
+        "volume": 10,
         "trend_4h": 5,
         "risk_reward": 0,
         "relative_btc": 0,
@@ -290,9 +290,9 @@
         "lower_timeframes": 5,
         "btc_and_dominance": 5
       },
-      "reference_price_usdt": 70.42,
+      "reference_price_usdt": 70.73,
       "reference_price_kind": "last_closed_1h_not_live",
-      "closed_1h_at_utc": "2026-11-22T19:00:00+00:00",
+      "closed_1h_at_utc": "2026-11-23T00:00:00+00:00",
       "static_levels": {
         "resistance": 73.105,
         "resistance_touches": 2
@@ -302,8 +302,8 @@
         "resistance": 75.65
       },
       "risk_reward_validated_levels": null,
-      "relative_volume_1h": 0.649,
-      "relative_volume_4h": 0.537,
+      "relative_volume_1h": 1.143,
+      "relative_volume_4h": 0.35,
       "relative_strength_btc": false,
       "reasons": [
         "validated_multitouch_support_or_resistance_missing",
@@ -321,10 +321,10 @@
     {
       "coin": "LTC",
       "tier": "below_threshold_watch_only",
-      "score": 25,
+      "score": 40,
       "score_components": {
         "static_levels": 15,
-        "volume": 3,
+        "volume": 18,
         "trend_4h": 5,
         "risk_reward": 0,
         "relative_btc": 0,
@@ -340,24 +340,23 @@
         "lower_timeframes": 5,
         "btc_and_dominance": 5
       },
-      "reference_price_usdt": 39.95,
+      "reference_price_usdt": 40.21,
       "reference_price_kind": "last_closed_1h_not_live",
-      "closed_1h_at_utc": "2026-11-22T19:00:00+00:00",
+      "closed_1h_at_utc": "2026-11-23T00:00:00+00:00",
       "static_levels": {
         "resistance": 44.985,
         "resistance_touches": 2
       },
       "provisional_20x4h_bounds_not_validated": {
         "support": 37.41,
-        "resistance": 44.79
+        "resistance": 44.64
       },
       "risk_reward_validated_levels": null,
-      "relative_volume_1h": 0.719,
-      "relative_volume_4h": 0.852,
+      "relative_volume_1h": 2.634,
+      "relative_volume_4h": 0.836,
       "relative_strength_btc": false,
       "reasons": [
         "validated_multitouch_support_or_resistance_missing",
-        "volume_below_first_tier_minimum",
         "dominance_trend_unverified",
         "risk_reward_not_valid_without_both_validated_levels"
       ],
@@ -371,10 +370,10 @@
     {
       "coin": "LINK",
       "tier": "below_threshold_watch_only",
-      "score": 22,
+      "score": 42,
       "score_components": {
-        "static_levels": 15,
-        "volume": 0,
+        "static_levels": 30,
+        "volume": 5,
         "trend_4h": 5,
         "risk_reward": 0,
         "relative_btc": 0,
@@ -390,10 +389,12 @@
         "lower_timeframes": 5,
         "btc_and_dominance": 5
       },
-      "reference_price_usdt": 8.821,
+      "reference_price_usdt": 8.824,
       "reference_price_kind": "last_closed_1h_not_live",
-      "closed_1h_at_utc": "2026-11-22T19:00:00+00:00",
+      "closed_1h_at_utc": "2026-11-23T00:00:00+00:00",
       "static_levels": {
+        "support": 8.5355,
+        "support_touches": 2,
         "resistance": 9.359,
         "resistance_touches": 4
       },
@@ -401,16 +402,15 @@
         "support": 7.969,
         "resistance": 9.282
       },
-      "risk_reward_validated_levels": null,
-      "relative_volume_1h": 0.472,
-      "relative_volume_4h": 0.36,
+      "risk_reward_validated_levels": 1.854,
+      "relative_volume_1h": 0.965,
+      "relative_volume_4h": 0.406,
       "relative_strength_btc": null,
       "reasons": [
-        "validated_multitouch_support_or_resistance_missing",
         "volume_below_first_tier_minimum",
         "btc_cross_missing_or_stale",
         "dominance_trend_unverified",
-        "risk_reward_not_valid_without_both_validated_levels"
+        "risk_reward_below_2"
       ],
       "sources": {
         "4h": "OKX Spot",
@@ -422,11 +422,11 @@
     {
       "coin": "XRP",
       "tier": "below_threshold_watch_only",
-      "score": 17,
+      "score": 27,
       "score_components": {
         "static_levels": 15,
-        "volume": 0,
-        "trend_4h": 0,
+        "volume": 5,
+        "trend_4h": 5,
         "risk_reward": 0,
         "relative_btc": 0,
         "lower_timeframes": 2,
@@ -441,20 +441,20 @@
         "lower_timeframes": 5,
         "btc_and_dominance": 5
       },
-      "reference_price_usdt": 0.9297,
+      "reference_price_usdt": 0.9289,
       "reference_price_kind": "last_closed_1h_not_live",
-      "closed_1h_at_utc": "2026-11-22T19:00:00+00:00",
+      "closed_1h_at_utc": "2026-11-23T00:00:00+00:00",
       "static_levels": {
-        "resistance": 0.9766,
-        "resistance_touches": 3
+        "resistance": 0.9389,
+        "resistance_touches": 2
       },
       "provisional_20x4h_bounds_not_validated": {
         "support": 0.8597,
         "resistance": 0.9979
       },
       "risk_reward_validated_levels": null,
-      "relative_volume_1h": 0.643,
-      "relative_volume_4h": 0.744,
+      "relative_volume_1h": 0.94,
+      "relative_volume_4h": 0.336,
       "relative_strength_btc": false,
       "reasons": [
         "validated_multitouch_support_or_resistance_missing",
@@ -474,10 +474,10 @@
     {
       "coin": "AVAX",
       "tier": "below_threshold_watch_only",
-      "score": 25,
+      "score": 22,
       "score_components": {
         "static_levels": 15,
-        "volume": 3,
+        "volume": 0,
         "trend_4h": 5,
         "risk_reward": 0,
         "relative_btc": 0,
@@ -493,9 +493,9 @@
         "lower_timeframes": 5,
         "btc_and_dominance": 5
       },
-      "reference_price_usdt": 6.691,
+      "reference_price_usdt": 6.687,
       "reference_price_kind": "last_closed_1h_not_live",
-      "closed_1h_at_utc": "2026-11-22T19:00:00+00:00",
+      "closed_1h_at_utc": "2026-11-23T00:00:00+00:00",
       "static_levels": {
         "resistance": 7.3206666667,
         "resistance_touches": 3
@@ -505,8 +505,8 @@
         "resistance": 7.175
       },
       "risk_reward_validated_levels": null,
-      "relative_volume_1h": 0.545,
-      "relative_volume_4h": 0.921,
+      "relative_volume_1h": 0.266,
+      "relative_volume_4h": 0.241,
       "relative_strength_btc": null,
       "reasons": [
         "validated_multitouch_support_or_resistance_missing",
@@ -544,20 +544,20 @@
         "lower_timeframes": 5,
         "btc_and_dominance": 5
       },
-      "reference_price_usdt": 0.6575,
+      "reference_price_usdt": 0.6563,
       "reference_price_kind": "last_closed_1h_not_live",
-      "closed_1h_at_utc": "2026-11-22T19:00:00+00:00",
+      "closed_1h_at_utc": "2026-11-23T00:00:00+00:00",
       "static_levels": {
         "resistance": 0.738775,
         "resistance_touches": 4
       },
       "provisional_20x4h_bounds_not_validated": {
         "support": 0.588,
-        "resistance": 0.7343
+        "resistance": 0.7339
       },
       "risk_reward_validated_levels": null,
-      "relative_volume_1h": 0.612,
-      "relative_volume_4h": 0.589,
+      "relative_volume_1h": 0.346,
+      "relative_volume_4h": 0.261,
       "relative_strength_btc": null,
       "reasons": [
         "validated_multitouch_support_or_resistance_missing",
@@ -575,6 +575,57 @@
     },
     {
       "coin": "AAVE",
+      "tier": "below_threshold_watch_only",
+      "score": 20,
+      "score_components": {
+        "static_levels": 15,
+        "volume": 0,
+        "trend_4h": 5,
+        "risk_reward": 0,
+        "relative_btc": 0,
+        "lower_timeframes": 0,
+        "btc_and_dominance": 0
+      },
+      "weights": {
+        "static_levels": 30,
+        "volume": 25,
+        "trend_4h": 15,
+        "risk_reward": 15,
+        "relative_btc": 5,
+        "lower_timeframes": 5,
+        "btc_and_dominance": 5
+      },
+      "reference_price_usdt": 98.08,
+      "reference_price_kind": "last_closed_1h_not_live",
+      "closed_1h_at_utc": "2026-11-23T00:00:00+00:00",
+      "static_levels": {
+        "resistance": 110.83,
+        "resistance_touches": 2
+      },
+      "provisional_20x4h_bounds_not_validated": {
+        "support": 91.11,
+        "resistance": 110.14
+      },
+      "risk_reward_validated_levels": null,
+      "relative_volume_1h": 0.254,
+      "relative_volume_4h": 0.32,
+      "relative_strength_btc": null,
+      "reasons": [
+        "validated_multitouch_support_or_resistance_missing",
+        "volume_below_first_tier_minimum",
+        "btc_cross_missing_or_stale",
+        "dominance_trend_unverified",
+        "risk_reward_not_valid_without_both_validated_levels"
+      ],
+      "sources": {
+        "4h": "OKX Spot",
+        "1h": "OKX Spot",
+        "15m": "OKX Spot"
+      },
+      "notes": "Heuristic static pivots, not verified order book; excludes fees/slippage. No trade instruction."
+    },
+    {
+      "coin": "ZEC",
       "tier": "below_threshold_watch_only",
       "score": 22,
       "score_components": {
@@ -595,68 +646,20 @@
         "lower_timeframes": 5,
         "btc_and_dominance": 5
       },
-      "reference_price_usdt": 98.68,
+      "reference_price_usdt": 798.52,
       "reference_price_kind": "last_closed_1h_not_live",
-      "closed_1h_at_utc": "2026-11-22T19:00:00+00:00",
+      "closed_1h_at_utc": "2026-11-23T00:00:00+00:00",
       "static_levels": {
-        "resistance": 110.83,
+        "resistance": 808.735,
         "resistance_touches": 2
       },
       "provisional_20x4h_bounds_not_validated": {
-        "support": 91.11,
-        "resistance": 110.81
-      },
-      "risk_reward_validated_levels": null,
-      "relative_volume_1h": 0.179,
-      "relative_volume_4h": 0.78,
-      "relative_strength_btc": null,
-      "reasons": [
-        "validated_multitouch_support_or_resistance_missing",
-        "volume_below_first_tier_minimum",
-        "btc_cross_missing_or_stale",
-        "dominance_trend_unverified",
-        "risk_reward_not_valid_without_both_validated_levels"
-      ],
-      "sources": {
-        "4h": "OKX Spot",
-        "1h": "OKX Spot",
-        "15m": "OKX Spot"
-      },
-      "notes": "Heuristic static pivots, not verified order book; excludes fees/slippage. No trade instruction."
-    },
-    {
-      "coin": "ZEC",
-      "tier": "below_threshold_watch_only",
-      "score": 7,
-      "score_components": {
-        "static_levels": 0,
-        "volume": 0,
-        "trend_4h": 5,
-        "risk_reward": 0,
-        "relative_btc": 0,
-        "lower_timeframes": 2,
-        "btc_and_dominance": 0
-      },
-      "weights": {
-        "static_levels": 30,
-        "volume": 25,
-        "trend_4h": 15,
-        "risk_reward": 15,
-        "relative_btc": 5,
-        "lower_timeframes": 5,
-        "btc_and_dominance": 5
-      },
-      "reference_price_usdt": 791.06,
-      "reference_price_kind": "last_closed_1h_not_live",
-      "closed_1h_at_utc": "2026-11-22T19:00:00+00:00",
-      "static_levels": {},
-      "provisional_20x4h_bounds_not_validated": {
         "support": 679.23,
-        "resistance": 960.18
+        "resistance": 955.5
       },
       "risk_reward_validated_levels": null,
-      "relative_volume_1h": 0.251,
-      "relative_volume_4h": 0.641,
+      "relative_volume_1h": 0.728,
+      "relative_volume_4h": 0.363,
       "relative_strength_btc": null,
       "reasons": [
         "validated_multitouch_support_or_resistance_missing",
