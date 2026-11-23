@@ -1,6 +1,6 @@
 {
   "schema_version": "5.4.7",
-  "generated_at_utc": "2026-11-23T00:55:03.784605+00:00",
+  "generated_at_utc": "2026-11-23T09:06:09.594072+00:00",
   "mode": "fail_closed_research_only_no_trades",
   "max_deviation_percent": 1.5,
   "pairs": {
@@ -13,37 +13,37 @@
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1795377600",
-          "observed_gate_btc": 0.009132,
-          "implied_okx_btc": 0.009133359883,
-          "max_deviation_percent": 0.1232
+          "latest_candle_id": "1795406400",
+          "observed_gate_btc": 0.009072,
+          "implied_okx_btc": 0.009066932202,
+          "max_deviation_percent": 0.1118
         },
         "1h": {
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1795388400",
-          "observed_gate_btc": 0.009132,
-          "implied_okx_btc": 0.009133359883,
-          "max_deviation_percent": 0.3269
+          "latest_candle_id": "1795420800",
+          "observed_gate_btc": 0.009111,
+          "implied_okx_btc": 0.009096717034,
+          "max_deviation_percent": 0.157
         },
         "15m": {
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1795393800",
-          "observed_gate_btc": 0.009144,
-          "implied_okx_btc": 0.009143883939,
-          "max_deviation_percent": 0.1201
+          "latest_candle_id": "1795423500",
+          "observed_gate_btc": 0.009111,
+          "implied_okx_btc": 0.009096717034,
+          "max_deviation_percent": 0.157
         },
         "5m": {
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1795394700",
-          "observed_gate_btc": 0.009152,
-          "implied_okx_btc": 0.009148749452,
-          "max_deviation_percent": 0.0355
+          "latest_candle_id": "1795424400",
+          "observed_gate_btc": 0.009104,
+          "implied_okx_btc": 0.009102741596,
+          "max_deviation_percent": 0.157
         }
       },
       "reasons": []
@@ -57,37 +57,37 @@
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1795377600",
-          "observed_gate_btc": 1.513e-05,
-          "implied_okx_btc": 1.5161061e-05,
-          "max_deviation_percent": 0.3111
+          "latest_candle_id": "1795406400",
+          "observed_gate_btc": 1.525e-05,
+          "implied_okx_btc": 1.525365e-05,
+          "max_deviation_percent": 0.2049
         },
         "1h": {
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1795388400",
-          "observed_gate_btc": 1.513e-05,
-          "implied_okx_btc": 1.5161061e-05,
-          "max_deviation_percent": 0.2226
+          "latest_candle_id": "1795420800",
+          "observed_gate_btc": 1.528e-05,
+          "implied_okx_btc": 1.5293955e-05,
+          "max_deviation_percent": 0.0979
         },
         "15m": {
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1795393800",
-          "observed_gate_btc": 1.506e-05,
-          "implied_okx_btc": 1.5078211e-05,
-          "max_deviation_percent": 0.1208
+          "latest_candle_id": "1795423500",
+          "observed_gate_btc": 1.528e-05,
+          "implied_okx_btc": 1.5293955e-05,
+          "max_deviation_percent": 0.1016
         },
         "5m": {
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1795394700",
-          "observed_gate_btc": 1.51e-05,
-          "implied_okx_btc": 1.5090738e-05,
-          "max_deviation_percent": 0.1271
+          "latest_candle_id": "1795424400",
+          "observed_gate_btc": 1.527e-05,
+          "implied_okx_btc": 1.5280919e-05,
+          "max_deviation_percent": 0.2431
         }
       },
       "reasons": []
