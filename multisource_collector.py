@@ -64,6 +64,18 @@ def validate(rows,frame,now):
     if now-(candles[-1]['t']+seconds)>seconds+180: raise ValueError('stale_closed_candle')
     return candles[-250:]
 
+def collect_silver_price_only():
+    from engine.phemex_slvon_probe import probe
+    evidence = probe()
+    if evidence.get('status') != 'PRICE_SCALE_VERIFIED_VOLUME_SCALE_AND_REFERENCE_PARITY_PENDING':
+        return {'status':'unavailable','reason':evidence.get('reason','validation_failed')}
+    return {'status':'available','source':'Phemex Spot','symbol':'SLVONUSDT',
+            'price_only':True,'volume_enabled':False,'reference_parity_enabled':False,
+            'signals_enabled':False,'trading_enabled':False,
+            'frames':{name:{'candles':frame['price_candles'],
+                            'last_closed_at_tehran':frame['last_closed_at_tehran']}
+                      for name,frame in evidence['frames'].items()}}
+
 def main():
     now=int(time.time()); output={'schema_version':51,'generated_at_utc':dt.datetime.now(dt.timezone.utc).isoformat(), 'quote':'USDT','kind':'spot_closed_candles','pairs':{},'summary':{}}
     for coin in COINS:
@@ -93,6 +105,10 @@ def main():
             output['pairs'][symbol]=entry
     available=sum(f['status']=='available' for p in output['pairs'].values() for f in p['frames'].values())
     output['summary']={'available_feeds':available,'attempted_feeds':len(output['pairs'])*len(FRAMES),'status':'available' if available==len(output['pairs'])*len(FRAMES) else ('partial' if available else 'unavailable')}
+    try:
+        output['price_only_assets'] = {'SLVONUSDT':collect_silver_price_only()}
+    except Exception as exc:
+        output['price_only_assets'] = {'SLVONUSDT':{'status':'unavailable','reason':str(exc)[:130]}}
     (ROOT/'multisource_market.json').write_text(json.dumps(output,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
     print(json.dumps(output['summary']))
 if __name__=='__main__': main()
