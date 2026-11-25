@@ -123,6 +123,28 @@ def verify_cross_frame_closes(frames):
             "comparisons": comparisons}
 
 
+def audit_volume_aggregation(histories, now):
+    """Compare raw volume sums at common closed boundaries without assuming units."""
+    checks = []
+    for short, long in (("15m", "1h"), ("1h", "4h")):
+        s, l = RESOLUTIONS[short], RESOLUTIONS[long]
+        fine = {int(r[0]): r for r in histories[short] if int(r[0]) + s <= now - 2}
+        coarse = {int(r[0]): r for r in histories[long] if int(r[0]) + l <= now - 2}
+        matched = mismatched = 0
+        for t, row in coarse.items():
+            slots = list(range(t, t + l, s))
+            if not all(k in fine for k in slots):
+                continue
+            total = sum(Decimal(str(fine[k][7])) for k in slots)
+            if total == Decimal(str(row[7])):
+                matched += 1
+            else:
+                mismatched += 1
+        checks.append({"pair": [short, long], "matched": matched, "mismatched": mismatched,
+                       "status": "MISMATCH" if mismatched else "MATCHED" if matched else "NO_OVERLAP"})
+    return checks
+
+
 def probe(now=None):
     if now is None:
         now = int(dt.datetime.now(dt.timezone.utc).timestamp())
@@ -140,6 +162,7 @@ def probe(now=None):
                 "baseCurrency", "quoteCurrency", "type", "status"
             ) if key in product
         }
+        histories = {}
         for frame, resolution in RESOLUTIONS.items():
             payload = get_json("/exchange/public/md/v2/kline",
                                {"symbol": product["symbol"], "resolution": resolution, "limit": 500})
@@ -147,6 +170,7 @@ def probe(now=None):
                 raise ValueError("PHEMEX_KLINE_API_ERROR")
             rows = payload.get("data", {}).get("rows")
             result["frames"][frame] = validate_rows(rows, resolution, now)
+            histories[frame] = rows
             latest = max((r for r in rows if int(r[0]) + resolution <= now - 2), key=lambda r: int(r[0]))
             result["frames"][frame]["latest_normalized_close_usdt"] = normalize_price(latest[6], product)
             result["frames"][frame]["normalized_price_ohlc_usdt"] = {
@@ -159,6 +183,7 @@ def probe(now=None):
                 "timestamp": latest[0], "open": latest[3], "high": latest[4],
                 "low": latest[5], "close": latest[6], "volume": latest[7]
             }
+        result["raw_volume_aggregation_audit"] = audit_volume_aggregation(histories, now)
         result["cross_frame_close_validation"] = verify_cross_frame_closes(result["frames"])
         result["status"] = "PRICE_SCALE_VERIFIED_VOLUME_SCALE_AND_REFERENCE_PARITY_PENDING"
         result["tehran_timezone"] = "Asia/Tehran"
