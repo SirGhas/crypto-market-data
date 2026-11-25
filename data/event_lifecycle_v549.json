@@ -1,35 +1,166 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-11-25T02:29:49.303047+00:00",
+  "generated_at_utc": "2026-11-25T12:55:55.197310+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
-  "new_publishable_events": [],
+  "new_publishable_events": [
+    {
+      "id": "SOL:4h_closed_breakdown:1795593600",
+      "coin": "SOL",
+      "event_type": "4h_closed_breakdown",
+      "status": "forming_watch",
+      "level_usdt": 67.72,
+      "reference_price_usdt": 67.54,
+      "reference_price_kind": "last_closed_1h_not_live",
+      "distance_from_level_percent": -0.266,
+      "volume_ratio_4h": 0.658,
+      "volume_ratio_1h": 0.706,
+      "volume_confirmed_4h": false,
+      "trend_4h_above_sma233": false,
+      "lower_tf_confirmed": false,
+      "relative_strength_vs_btc": false,
+      "source_4h": "OKX Spot",
+      "source_1h": "OKX Spot",
+      "closed_4h_at_utc": "2026-11-25T12:00:00+00:00",
+      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+    },
+    {
+      "id": "XRP:4h_closed_breakdown:1795593600",
+      "coin": "XRP",
+      "event_type": "4h_closed_breakdown",
+      "status": "forming_watch",
+      "level_usdt": 0.9094,
+      "reference_price_usdt": 0.9086,
+      "reference_price_kind": "last_closed_1h_not_live",
+      "distance_from_level_percent": -0.088,
+      "volume_ratio_4h": 0.588,
+      "volume_ratio_1h": 1.325,
+      "volume_confirmed_4h": false,
+      "trend_4h_above_sma233": false,
+      "lower_tf_confirmed": false,
+      "relative_strength_vs_btc": false,
+      "source_4h": "OKX Spot",
+      "source_1h": "OKX Spot",
+      "closed_4h_at_utc": "2026-11-25T12:00:00+00:00",
+      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+    },
+    {
+      "id": "AVAX:4h_closed_breakdown:1795593600",
+      "coin": "AVAX",
+      "event_type": "4h_closed_breakdown",
+      "status": "forming_watch",
+      "level_usdt": 6.424,
+      "reference_price_usdt": 6.403,
+      "reference_price_kind": "last_closed_1h_not_live",
+      "distance_from_level_percent": -0.327,
+      "volume_ratio_4h": 0.444,
+      "volume_ratio_1h": 0.759,
+      "volume_confirmed_4h": false,
+      "trend_4h_above_sma233": false,
+      "lower_tf_confirmed": false,
+      "relative_strength_vs_btc": null,
+      "source_4h": "OKX Spot",
+      "source_1h": "OKX Spot",
+      "closed_4h_at_utc": "2026-11-25T12:00:00+00:00",
+      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+    },
+    {
+      "id": "SUI:4h_closed_breakdown:1795593600",
+      "coin": "SUI",
+      "event_type": "4h_closed_breakdown",
+      "status": "forming_watch",
+      "level_usdt": 0.6339,
+      "reference_price_usdt": 0.6292,
+      "reference_price_kind": "last_closed_1h_not_live",
+      "distance_from_level_percent": -0.741,
+      "volume_ratio_4h": 0.503,
+      "volume_ratio_1h": 0.615,
+      "volume_confirmed_4h": false,
+      "trend_4h_above_sma233": false,
+      "lower_tf_confirmed": false,
+      "relative_strength_vs_btc": null,
+      "source_4h": "OKX Spot",
+      "source_1h": "OKX Spot",
+      "closed_4h_at_utc": "2026-11-25T12:00:00+00:00",
+      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+    },
+    {
+      "id": "AAVE:4h_closed_breakdown:1795593600",
+      "coin": "AAVE",
+      "event_type": "4h_closed_breakdown",
+      "status": "forming_watch",
+      "level_usdt": 91.89,
+      "reference_price_usdt": 91.27,
+      "reference_price_kind": "last_closed_1h_not_live",
+      "distance_from_level_percent": -0.675,
+      "volume_ratio_4h": 0.479,
+      "volume_ratio_1h": 0.69,
+      "volume_confirmed_4h": false,
+      "trend_4h_above_sma233": false,
+      "lower_tf_confirmed": false,
+      "relative_strength_vs_btc": null,
+      "source_4h": "OKX Spot",
+      "source_1h": "OKX Spot",
+      "closed_4h_at_utc": "2026-11-25T12:00:00+00:00",
+      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+    }
+  ],
   "pending_unconfirmed": [
     {
-      "id": "ETH:approaching_support:1795550400",
+      "id": "BTC:4h_support_reclaim:1795593600",
+      "coin": "BTC",
+      "event_type": "4h_support_reclaim",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "BTC:approaching_support:1795593600",
+      "coin": "BTC",
+      "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "ETH:approaching_support:1795593600",
       "coin": "ETH",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "SOL:approaching_support:1795550400",
+      "id": "BNB:approaching_support:1795593600",
+      "coin": "BNB",
+      "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "SOL:approaching_support:1795593600",
       "coin": "SOL",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "XRP:approaching_support:1795550400",
+      "id": "LINK:approaching_support:1795593600",
+      "coin": "LINK",
+      "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "XRP:approaching_support:1795593600",
       "coin": "XRP",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "AAVE:4h_support_reclaim:1795550400",
-      "coin": "AAVE",
-      "event_type": "4h_support_reclaim",
+      "id": "AVAX:approaching_support:1795593600",
+      "coin": "AVAX",
+      "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
     },
     {
-      "id": "AAVE:approaching_support:1795550400",
+      "id": "SUI:approaching_support:1795593600",
+      "coin": "SUI",
+      "event_type": "approaching_support",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "AAVE:approaching_support:1795593600",
       "coin": "AAVE",
       "event_type": "approaching_support",
       "reason": "positive_publication_gate_not_passed"
@@ -38,8 +169,8 @@
   "summary": {
     "scanned_coins": 11,
     "blocked_scans": 0,
-    "new_publishable_events": 0,
-    "pending_unconfirmed": 5
+    "new_publishable_events": 5,
+    "pending_unconfirmed": 10
   },
   "limitations": [
     "No external notification transport configured",
