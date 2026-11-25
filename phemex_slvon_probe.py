@@ -145,6 +145,16 @@ def audit_volume_aggregation(histories, now):
     return checks
 
 
+def volume_reference_evidence(product, histories):
+    """Retain candidate scale evidence without inferring units from priceScale."""
+    return {"status": "UNVERIFIED" if "qtyScale" not in product else "METADATA_PRESENT_UNVERIFIED",
+            "qty_scale": product.get("qtyScale"), "value_scale": product.get("valueScale"),
+            "sample_raw_volume_and_turnover": {frame: [row[7:9] for row in rows[-5:]]
+                                               for frame, rows in histories.items()},
+            "reference_asset": "SLV", "reference_parity_status": "NO_INDEPENDENT_TIMESTAMPED_QUOTE",
+            "notional_approved": False}
+
+
 def probe(now=None):
     if now is None:
         now = int(dt.datetime.now(dt.timezone.utc).timestamp())
@@ -183,6 +193,7 @@ def probe(now=None):
                 "timestamp": latest[0], "open": latest[3], "high": latest[4],
                 "low": latest[5], "close": latest[6], "volume": latest[7]
             }
+        result["volume_reference_evidence"] = volume_reference_evidence(product, histories)
         result["raw_volume_aggregation_audit"] = audit_volume_aggregation(histories, now)
         result["cross_frame_close_validation"] = verify_cross_frame_closes(result["frames"])
         result["status"] = "PRICE_SCALE_VERIFIED_VOLUME_SCALE_AND_REFERENCE_PARITY_PENDING"
