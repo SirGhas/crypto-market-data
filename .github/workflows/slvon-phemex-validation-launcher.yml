@@ -11,7 +11,7 @@ jobs:
       - name: Checkout pinned research candidate
         uses: actions/checkout@v4
         with:
-          ref: 4d379893258e6e3242233076ffe8fe01a791ab50
+          ref: 085ce02064a0a061cc57588435ca9d896c8a81e2
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -21,6 +21,9 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_tokenized_metals_registry.py' -v
       - name: Public API feed integrity probe
         run: python phemex_slvon_probe.py
+      - name: Restricted silver research adapter smoke test
+        run: |
+          python -c 'import json; from tokenized_metals_registry import silver_price_snapshot; print(json.dumps(silver_price_snapshot(json.load(open("artifacts/slvon_phemex_probe.json")))))'
       - name: Preserve diagnostic evidence on failure
         if: always()
         uses: actions/upload-artifact@v4
