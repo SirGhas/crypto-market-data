@@ -25,12 +25,31 @@ METALS = {
     "SLVON": MetalAsset(
         ticker="SLVON", metal="silver", market_pair="SLVON/USDT", venue="Phemex Spot",
         identity_verified=True, data_enabled=False, analysis_enabled=False,
-        status="phemex_listing_confirmed_pending_api_candle_liquidity_and_parity_validation",
+        status="price_only_research_candidate_volume_and_reference_unverified",
     ),
 }
 
 def research_watchlist():
     return tuple(METALS)
+
+def silver_price_snapshot(evidence: dict) -> dict:
+    """Restricted engine-facing research adapter; never authorize full analysis."""
+    from decimal import Decimal
+    from datetime import datetime
+    if evidence.get("asset") != "SLVON" or evidence.get("venue") != "Phemex Spot":
+        raise ValueError("SLVON_IDENTITY_MISMATCH")
+    if evidence.get("status") != "PRICE_SCALE_VERIFIED_VOLUME_SCALE_AND_REFERENCE_PARITY_PENDING":
+        raise ValueError("SLVON_PRICE_NOT_VALIDATED")
+    frame = evidence["frames"]["15m"]
+    price = Decimal(frame["latest_normalized_close_usdt"])
+    timestamp = datetime.fromisoformat(frame["last_closed_at_tehran"])
+    if not price.is_finite() or price <= 0 or timestamp.utcoffset() is None:
+        raise ValueError("SLVON_INVALID_SNAPSHOT")
+    return {"ticker": "SLVON", "close_usdt": str(price),
+            "closed_at": timestamp.isoformat(), "research_only": True,
+            "volume_enabled": False, "reference_parity_enabled": False,
+            "analysis_enabled": False, "signals_enabled": False, "trading_enabled": False}
+
 
 def eligible_for_analysis(ticker: str) -> bool:
     asset = METALS[ticker]
