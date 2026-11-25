@@ -1,6 +1,6 @@
 {
   "schema_version": "5.4.7",
-  "generated_at_utc": "2026-11-24T17:46:19.478755+00:00",
+  "generated_at_utc": "2026-11-25T02:29:49.215196+00:00",
   "mode": "fail_closed_research_only_no_trades",
   "max_deviation_percent": 1.5,
   "pairs": {
@@ -13,37 +13,37 @@
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1795521600",
-          "observed_gate_btc": 0.009149,
-          "implied_okx_btc": 0.009142042848,
-          "max_deviation_percent": 0.1772
+          "latest_candle_id": "1795550400",
+          "observed_gate_btc": 0.009174,
+          "implied_okx_btc": 0.00917072975,
+          "max_deviation_percent": 0.0761
         },
         "1h": {
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1795536000",
-          "observed_gate_btc": 0.009174,
-          "implied_okx_btc": 0.009169628792,
-          "max_deviation_percent": 0.0761
+          "latest_candle_id": "1795568400",
+          "observed_gate_btc": 0.009179,
+          "implied_okx_btc": 0.009170223894,
+          "max_deviation_percent": 0.196
         },
         "15m": {
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1795541400",
-          "observed_gate_btc": 0.009164,
-          "implied_okx_btc": 0.009152901955,
-          "max_deviation_percent": 0.2608
+          "latest_candle_id": "1795572000",
+          "observed_gate_btc": 0.009169,
+          "implied_okx_btc": 0.00914465685,
+          "max_deviation_percent": 0.2662
         },
         "5m": {
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1795542000",
+          "latest_candle_id": "1795573200",
           "observed_gate_btc": 0.009164,
-          "implied_okx_btc": 0.009152901955,
-          "max_deviation_percent": 0.1275
+          "implied_okx_btc": 0.009160715163,
+          "max_deviation_percent": 0.135
         }
       },
       "reasons": []
@@ -57,37 +57,37 @@
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1795521600",
-          "observed_gate_btc": 1.528e-05,
-          "implied_okx_btc": 1.5308463e-05,
-          "max_deviation_percent": 0.3221
+          "latest_candle_id": "1795550400",
+          "observed_gate_btc": 1.543e-05,
+          "implied_okx_btc": 1.5462841e-05,
+          "max_deviation_percent": 0.3056
         },
         "1h": {
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1795536000",
-          "observed_gate_btc": 1.53e-05,
-          "implied_okx_btc": 1.5334047e-05,
-          "max_deviation_percent": 0.222
+          "latest_candle_id": "1795568400",
+          "observed_gate_btc": 1.542e-05,
+          "implied_okx_btc": 1.5421215e-05,
+          "max_deviation_percent": 0.2124
         },
         "15m": {
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1795541400",
-          "observed_gate_btc": 1.538e-05,
-          "implied_okx_btc": 1.5368629e-05,
-          "max_deviation_percent": 0.3985
+          "latest_candle_id": "1795572000",
+          "observed_gate_btc": 1.543e-05,
+          "implied_okx_btc": 1.5428263e-05,
+          "max_deviation_percent": 0.106
         },
         "5m": {
           "status": "PASS",
           "errors": [],
           "matched_closed_candles": 3,
-          "latest_candle_id": "1795542000",
-          "observed_gate_btc": 1.538e-05,
-          "implied_okx_btc": 1.5368629e-05,
-          "max_deviation_percent": 0.1773
+          "latest_candle_id": "1795573200",
+          "observed_gate_btc": 1.545e-05,
+          "implied_okx_btc": 1.5474192e-05,
+          "max_deviation_percent": 0.1563
         }
       },
       "reasons": []

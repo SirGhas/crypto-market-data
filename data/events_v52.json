@@ -1,7 +1,7 @@
 {
   "schema_version": 52,
-  "generated_at_utc": "2026-11-25T00:41:32.843317+00:00",
-  "source_generated_at_utc": "2026-11-25T00:40:53.493417+00:00",
+  "generated_at_utc": "2026-11-25T02:29:49.051310+00:00",
+  "source_generated_at_utc": "2026-11-25T02:28:50.878961+00:00",
   "mode": "event_screening_only_no_push_no_orders",
   "observations": [
     {
@@ -20,7 +20,7 @@
       "4h_resistance": 1845.28,
       "relative_strength_vs_btc": false,
       "4h_volume_ratio": 0.467,
-      "observations": 0
+      "observations": 1
     },
     {
       "coin": "BNB",
@@ -38,7 +38,7 @@
       "4h_resistance": 78.5,
       "relative_strength_vs_btc": false,
       "4h_volume_ratio": 0.367,
-      "observations": 0
+      "observations": 1
     },
     {
       "coin": "LTC",
@@ -65,7 +65,7 @@
       "4h_resistance": 1.0262,
       "relative_strength_vs_btc": false,
       "4h_volume_ratio": 0.433,
-      "observations": 0
+      "observations": 1
     },
     {
       "coin": "AVAX",
@@ -106,40 +106,40 @@
   ],
   "new_events": [
     {
-      "id": "AAVE:4h_support_reclaim:1795550400",
-      "coin": "AAVE",
-      "event_type": "4h_support_reclaim",
+      "id": "ETH:approaching_support:1795550400",
+      "coin": "ETH",
+      "event_type": "approaching_support",
       "status": "forming_watch",
-      "level_usdt": 93.01,
-      "reference_price_usdt": 94.09,
+      "level_usdt": 1648.34,
+      "reference_price_usdt": 1658.28,
       "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 1.161,
-      "volume_ratio_4h": 0.281,
-      "volume_ratio_1h": 0.341,
+      "distance_from_level_percent": 0.603,
+      "volume_ratio_4h": 0.467,
+      "volume_ratio_1h": 1.75,
       "volume_confirmed_4h": false,
       "trend_4h_above_sma233": false,
       "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": null,
+      "relative_strength_vs_btc": false,
       "source_4h": "OKX Spot",
       "source_1h": "OKX Spot",
       "closed_4h_at_utc": "2026-11-25T00:00:00+00:00",
       "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
     },
     {
-      "id": "AAVE:approaching_support:1795550400",
-      "coin": "AAVE",
+      "id": "SOL:approaching_support:1795550400",
+      "coin": "SOL",
       "event_type": "approaching_support",
       "status": "forming_watch",
-      "level_usdt": 93.01,
-      "reference_price_usdt": 94.09,
+      "level_usdt": 68.58,
+      "reference_price_usdt": 69.03,
       "reference_price_kind": "last_closed_1h_not_live",
-      "distance_from_level_percent": 1.161,
-      "volume_ratio_4h": 0.281,
-      "volume_ratio_1h": 0.341,
+      "distance_from_level_percent": 0.656,
+      "volume_ratio_4h": 0.367,
+      "volume_ratio_1h": 0.972,
       "volume_confirmed_4h": false,
       "trend_4h_above_sma233": false,
       "lower_tf_confirmed": false,
-      "relative_strength_vs_btc": null,
+      "relative_strength_vs_btc": false,
       "source_4h": "OKX Spot",
       "source_1h": "OKX Spot",
       "closed_4h_at_utc": "2026-11-25T00:00:00+00:00",
@@ -157,5 +157,9 @@
     "Not a TradingView or Binance feed",
     "No automatic notification is connected",
     "Missing BTC crosses must not be treated as strength confirmation"
-  ]
+  ],
+  "liquidity_guard_v546": {
+    "pair": "XRPBTC",
+    "status": "BLOCK"
+  }
 }
