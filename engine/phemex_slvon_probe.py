@@ -181,6 +181,8 @@ def probe(now=None):
             rows = payload.get("data", {}).get("rows")
             result["frames"][frame] = validate_rows(rows, resolution, now)
             histories[frame] = rows
+            closed = {int(r[0]): r for r in rows if int(r[0]) + resolution <= now - 2}
+            result["frames"][frame]["price_candles"] = [dict(t=t, **{k: normalize_price(closed[t][i], product) for k,i in (("o",3),("h",4),("l",5),("c",6))}) for t in sorted(closed)[-233:]]
             latest = max((r for r in rows if int(r[0]) + resolution <= now - 2), key=lambda r: int(r[0]))
             result["frames"][frame]["latest_normalized_close_usdt"] = normalize_price(latest[6], product)
             result["frames"][frame]["normalized_price_ohlc_usdt"] = {
