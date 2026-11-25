@@ -1,5 +1,5 @@
 import unittest
-from phemex_slvon_probe import find_spot_product, validate_rows, probe, normalize_price, verify_cross_frame_closes
+from phemex_slvon_probe import find_spot_product, validate_rows, probe, normalize_price, verify_cross_frame_closes, audit_volume_aggregation
 
 
 class PhemexSLVONProbeTests(unittest.TestCase):
@@ -91,6 +91,20 @@ class PhemexSLVONProbeTests(unittest.TestCase):
                       ("1h", "2026-11-10T16:00:00+00:00", "47.63"),
                       ("4h", "2026-11-10T12:00:00+00:00", "47.62"))}
         self.assertEqual(verify_cross_frame_closes(frames)["status"], "NOT_COMPARABLE")
+
+    def test_volume_aggregation_matches_and_mismatches(self):
+        def row(t, interval, volume):
+            return [t, interval, 1, 1, 2, 1, 1, volume, 1]
+        histories = {"15m": [row(i*900, 900, 1) for i in range(16)],
+                     "1h": [row(i*3600, 3600, 4) for i in range(4)],
+                     "4h": [row(0, 14400, 16)]}
+        self.assertEqual([x["status"] for x in audit_volume_aggregation(histories, 14403)], ["MATCHED", "MATCHED"])
+        histories["4h"][0][7] = 17
+        self.assertEqual(audit_volume_aggregation(histories, 14403)[1]["status"], "MISMATCH")
+
+    def test_volume_aggregation_no_overlap(self):
+        self.assertEqual([x["status"] for x in audit_volume_aggregation(
+            {"15m": [], "1h": [], "4h": []}, 14403)], ["NO_OVERLAP", "NO_OVERLAP"])
 
     def test_probe_fails_closed_on_network_error(self):
         from unittest.mock import patch
