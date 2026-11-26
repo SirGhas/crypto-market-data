@@ -1,7 +1,7 @@
 {
   "schema_version": 52,
-  "generated_at_utc": "2026-11-26T15:17:22.851009+00:00",
-  "source_generated_at_utc": "2026-11-26T15:16:22.448337+00:00",
+  "generated_at_utc": "2026-11-26T22:20:13.827003+00:00",
+  "source_generated_at_utc": "2026-11-26T22:19:34.170279+00:00",
   "mode": "event_screening_only_no_push_no_orders",
   "observations": [
     {
@@ -10,7 +10,7 @@
       "4h_support": 57300.0,
       "4h_resistance": 64600.0,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.32,
+      "4h_volume_ratio": 0.27,
       "observations": 0
     },
     {
@@ -19,7 +19,7 @@
       "4h_support": 1608.87,
       "4h_resistance": 1845.28,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.35,
+      "4h_volume_ratio": 0.256,
       "observations": 0
     },
     {
@@ -27,8 +27,8 @@
       "status": "scanned",
       "4h_support": 526.43,
       "4h_resistance": 587.51,
-      "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.627,
+      "relative_strength_vs_btc": true,
+      "4h_volume_ratio": 0.397,
       "observations": 0
     },
     {
@@ -37,7 +37,7 @@
       "4h_support": 65.84,
       "4h_resistance": 78.5,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.611,
+      "4h_volume_ratio": 0.273,
       "observations": 0
     },
     {
@@ -46,7 +46,7 @@
       "4h_support": 39.5,
       "4h_resistance": 44.02,
       "relative_strength_vs_btc": false,
-      "4h_volume_ratio": 0.428,
+      "4h_volume_ratio": 0.337,
       "observations": 1
     },
     {
@@ -55,7 +55,7 @@
       "4h_support": 8.464,
       "4h_resistance": 9.559,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.426,
+      "4h_volume_ratio": 0.322,
       "observations": 0
     },
     {
@@ -64,7 +64,7 @@
       "4h_support": 0.8888,
       "4h_resistance": 1.0262,
       "relative_strength_vs_btc": true,
-      "4h_volume_ratio": 0.494,
+      "4h_volume_ratio": 0.453,
       "observations": 0
     },
     {
@@ -73,7 +73,7 @@
       "4h_support": 6.243,
       "4h_resistance": 7.228,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.255,
+      "4h_volume_ratio": 0.498,
       "observations": 0
     },
     {
@@ -82,7 +82,7 @@
       "4h_support": 0.614,
       "4h_resistance": 0.7336,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.941,
+      "4h_volume_ratio": 0.448,
       "observations": 0
     },
     {
@@ -91,34 +91,51 @@
       "4h_support": 89.75,
       "4h_resistance": 106.39,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 1.818,
+      "4h_volume_ratio": 0.36,
       "observations": 0
     },
     {
       "coin": "ZEC",
       "status": "scanned",
-      "4h_support": 674.48,
+      "4h_support": 662.74,
       "4h_resistance": 903.31,
       "relative_strength_vs_btc": null,
-      "4h_volume_ratio": 0.762,
+      "4h_volume_ratio": 0.75,
       "observations": 0
     }
   ],
-  "new_events": [],
+  "new_events": [
+    {
+      "id": "LTC:approaching_resistance:1795708800",
+      "coin": "LTC",
+      "event_type": "approaching_resistance",
+      "status": "forming_watch",
+      "level_usdt": 44.02,
+      "reference_price_usdt": 44.19,
+      "reference_price_kind": "last_closed_1h_not_live",
+      "distance_from_level_percent": 0.386,
+      "volume_ratio_4h": 0.337,
+      "volume_ratio_1h": 2.891,
+      "volume_confirmed_4h": false,
+      "trend_4h_above_sma233": false,
+      "lower_tf_confirmed": true,
+      "relative_strength_vs_btc": false,
+      "source_4h": "OKX Spot",
+      "source_1h": "OKX Spot",
+      "closed_4h_at_utc": "2026-11-26T20:00:00+00:00",
+      "reason_not_buy_signal": "Requires BTC structure, dominance trend, validated levels and risk/reward; cross may be missing"
+    }
+  ],
   "summary": {
     "scanned": 11,
     "blocked": 0,
-    "new_events": 0,
-    "forming": 0
+    "new_events": 1,
+    "forming": 1
   },
   "limitations": [
     "Levels are prior 20 4h high/low, not multi-touch validated",
     "Not a TradingView or Binance feed",
     "No automatic notification is connected",
     "Missing BTC crosses must not be treated as strength confirmation"
-  ],
-  "liquidity_guard_v546": {
-    "pair": "XRPBTC",
-    "status": "BLOCK"
-  }
+  ]
 }
