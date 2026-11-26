@@ -1,6 +1,6 @@
 {
   "schema_version": "5.5.0",
-  "generated_at_utc": "2026-11-26T15:17:23.186318+00:00",
+  "generated_at_utc": "2026-11-26T23:54:52.258643+00:00",
   "mode": "research_only_no_transport_no_orders",
   "freshness": {
     "summary": {
@@ -35,8 +35,8 @@
     ]
   },
   "outbox": {
-    "pending_delivery": 211,
-    "new_events_in_lifecycle": 0,
+    "pending_delivery": 212,
+    "new_events_in_lifecycle": 1,
     "delivered_in_this_run": 0
   },
   "limitations": [
