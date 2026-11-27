@@ -211,6 +211,12 @@
     "AAVE:4h_closed_breakdown:1795593600",
     "LTC:4h_closed_breakout:1795651200",
     "LTC:approaching_resistance:1795651200",
-    "LTC:approaching_resistance:1795708800"
+    "LTC:approaching_resistance:1795708800",
+    "BTC:4h_resistance_rejection:1795752000",
+    "ETH:4h_resistance_rejection:1795752000",
+    "ETH:approaching_resistance:1795752000",
+    "SOL:4h_resistance_rejection:1795752000",
+    "LTC:4h_resistance_rejection:1795752000",
+    "SUI:4h_resistance_rejection:1795752000"
   ]
 }

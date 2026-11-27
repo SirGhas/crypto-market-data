@@ -1,7 +1,7 @@
 {
   "schema_version": "5.4.2",
-  "generated_at_utc": "2026-11-26T23:54:51.681530+00:00",
-  "snapshot_generated_at_utc": "2026-11-26T23:53:52.035431+00:00",
+  "generated_at_utc": "2026-11-27T08:33:47.647257+00:00",
+  "snapshot_generated_at_utc": "2026-11-27T08:32:49.554925+00:00",
   "summary": {
     "attempted": 84,
     "available": 64,
@@ -128,28 +128,28 @@
       "status": "unavailable",
       "errors": [
         "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
-        "Bybit Spot: HTTP Error 403: Forbidden"
+        "Bybit Spot: Not supported symbols"
       ]
     },
     "ZECBTC:1h": {
       "status": "unavailable",
       "errors": [
         "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
-        "Bybit Spot: HTTP Error 403: Forbidden"
+        "Bybit Spot: Not supported symbols"
       ]
     },
     "ZECBTC:4h": {
       "status": "unavailable",
       "errors": [
         "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
-        "Bybit Spot: HTTP Error 403: Forbidden"
+        "Bybit Spot: Not supported symbols"
       ]
     },
     "ZECBTC:5m": {
       "status": "unavailable",
       "errors": [
         "OKX Spot: Instrument ID, Instrument ID code, or Spread ID doesn't exist.",
-        "Bybit Spot: HTTP Error 403: Forbidden"
+        "Bybit Spot: Not supported symbols"
       ]
     }
   },
