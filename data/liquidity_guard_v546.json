@@ -4,16 +4,15 @@
   "reason_codes": [
     "5m:thin_market_nonzero_frequency",
     "5m:last_closed_candle_zero_volume",
-    "15m:last_closed_candle_zero_volume",
     "1h:relative_volume_not_confirmed",
     "4h:relative_volume_not_confirmed"
   ],
   "frames": {
     "5m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1795830900",
-      "last_closed_age_seconds": 70.1,
-      "nonzero_fraction": 0.4335,
+      "last_candle_id": "1795861200",
+      "last_closed_age_seconds": 216.0,
+      "nonzero_fraction": 0.3133,
       "relative_volume": 0.0,
       "status": "BLOCK",
       "reasons": [
@@ -23,21 +22,19 @@
     },
     "15m": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1795830300",
-      "last_closed_age_seconds": 70.1,
-      "nonzero_fraction": 0.7811,
-      "relative_volume": 0.0,
-      "status": "BLOCK",
-      "reasons": [
-        "last_closed_candle_zero_volume"
-      ]
+      "last_candle_id": "1795860000",
+      "last_closed_age_seconds": 816.0,
+      "nonzero_fraction": 0.7597,
+      "relative_volume": 2.6456,
+      "status": "PASS",
+      "reasons": []
     },
     "1h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1795827600",
-      "last_closed_age_seconds": 70.1,
+      "last_candle_id": "1795856400",
+      "last_closed_age_seconds": 1716.0,
       "nonzero_fraction": 1.0,
-      "relative_volume": 1.1053,
+      "relative_volume": 0.0117,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -45,10 +42,10 @@
     },
     "4h": {
       "source": "Gate.io Spot",
-      "last_candle_id": "1795809600",
-      "last_closed_age_seconds": 7270.1,
+      "last_candle_id": "1795838400",
+      "last_closed_age_seconds": 8916.0,
       "nonzero_fraction": 0.9914,
-      "relative_volume": 0.2014,
+      "relative_volume": 0.3756,
       "status": "BLOCK",
       "reasons": [
         "relative_volume_not_confirmed"
@@ -61,6 +58,6 @@
     "minimum_relative_volume_1h_4h": 1.3
   },
   "schema_version": "5.4.6",
-  "generated_at_utc": "2026-11-28T02:01:10.143745+00:00",
+  "generated_at_utc": "2026-11-28T10:28:35.975042+00:00",
   "mode": "research_only_fail_closed_no_orders"
 }
