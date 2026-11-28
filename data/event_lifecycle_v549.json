@@ -1,14 +1,27 @@
 {
   "schema_version": "5.4.9",
-  "generated_at_utc": "2026-11-27T19:00:11.543423+00:00",
+  "generated_at_utc": "2026-11-28T02:01:10.269819+00:00",
   "mode": "event_only_research_queue_no_push_no_orders",
   "new_publishable_events": [],
-  "pending_unconfirmed": [],
+  "pending_unconfirmed": [
+    {
+      "id": "LTC:4h_closed_breakout:1795809600",
+      "coin": "LTC",
+      "event_type": "4h_closed_breakout",
+      "reason": "positive_publication_gate_not_passed"
+    },
+    {
+      "id": "LTC:approaching_resistance:1795809600",
+      "coin": "LTC",
+      "event_type": "approaching_resistance",
+      "reason": "positive_publication_gate_not_passed"
+    }
+  ],
   "summary": {
     "scanned_coins": 11,
     "blocked_scans": 0,
     "new_publishable_events": 0,
-    "pending_unconfirmed": 0
+    "pending_unconfirmed": 2
   },
   "limitations": [
     "No external notification transport configured",
