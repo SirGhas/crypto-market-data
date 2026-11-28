@@ -1,0 +1,31 @@
+name: Alpha v2.1.1 feature separation
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  evaluate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s tests -p 'test_alpha_*v*.py' -v
+      - name: Evaluate chronological BTC holdout
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from engine.alpha_walkforward_v171 import history_4h
+          from engine.alpha_feature_separation_v211 import evaluate
+          result=evaluate(history_4h(pages=12))
+          Path('artifacts').mkdir(exist_ok=True)
+          Path('artifacts/alpha_v211_features.json').write_text(json.dumps(result,indent=2))
+          print(json.dumps({k:v for k,v in result.items() if k!='events'}))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: alpha-v211-features
+          path: artifacts/alpha_v211_features.json
